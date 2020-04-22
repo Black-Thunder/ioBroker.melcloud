@@ -78,12 +78,12 @@ For later updates, the above procedure is not necessary. Just do the following:
 ## Changelog
 
 ### 0.0.1
-* (BlackThunder) initial release
+* (Black-Thunder) initial release
 
 ## License
 MIT License
 
-Copyright (c) 2020 BlackThunder <glwars@aol.de>
+Copyright (c) 2020 Black-Thunder <glwars@aol.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

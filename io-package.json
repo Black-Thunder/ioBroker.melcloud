@@ -1,79 +1,81 @@
 {
-	"common": {
-		"name": "melcloud",
-		"version": "0.0.1",
-		"news": {
-			"0.0.1": {
-				"en": "initial release",
-				"de": "Erstveröffentlichung",
-				"ru": "Начальная версия",
-				"pt": "lançamento inicial",
-				"nl": "Eerste uitgave",
-				"fr": "Première version",
-				"it": "Versione iniziale",
-				"es": "Versión inicial",
-				"pl": "Pierwsze wydanie",
-				"zh-cn": "首次出版"
-			}
-		},
-		"title": "MELCloud",
-		"titleLang": {
-			"en": "MELCloud",
-			"de": "MELCloud",
-			"ru": "MELCloud",
-			"pt": "MELCloud",
-			"nl": "MELCloud",
-			"fr": "MELCloud",
-			"it": "MELCloud",
-			"es": "MELCloud",
-			"pl": "MELCloud",
-			"zh-cn": "MEL云"
-		},
-		"desc": {
-			"en": "melcloud",
-			"de": "Melcloud",
-			"ru": "melcloud",
-			"pt": "melcloud",
-			"nl": "melcloud",
-			"fr": "melcloud",
-			"it": "melcloud",
-			"es": "melcloud",
-			"pl": "melcloud",
-			"zh-cn": "梅尔云"
-		},
-		"authors": [
-			"BlackThunder <glwars@aol.de>"
-		],
-		"keywords": [
-			"ioBroker",
-			"template",
-			"Smart Home",
-			"home automation"
-		],
-		"license": "MIT",
-		"platform": "Javascript/Node.js",
-		"main": "main.js",
-		"icon": "melcloud.png",
-		"enabled": true,
-		"extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
-		"readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
-		"loglevel": "info",
-		"mode": "daemon",
-		"type": "climate-control",
-		"compact": true,
-		"connectionType": "cloud",
-		"dataSource": "poll",
-		"materialize": true,
-		"dependencies": [
-			{
-				"js-controller": ">=1.4.2"
-			}
-		]
-	},
-	"native": {
-		"option1": true,
-		"option2": "42"
-	},
-	"objects": [],
-	"instanceObjects": []
+    "common": {
+        "name": "melcloud",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "MELCloud",
+        "titleLang": {
+            "en": "MELCloud",
+            "de": "MELCloud",
+            "ru": "MELCloud",
+            "pt": "MELCloud",
+            "nl": "MELCloud",
+            "fr": "MELCloud",
+            "it": "MELCloud",
+            "es": "MELCloud",
+            "pl": "MELCloud",
+            "zh-cn": "MEL云"
+        },
+        "desc": {
+            "en": "The adapter integrates Mitsubishi air conditioning systems via MELCloud into ioBroker.",
+            "de": "Der Adapter integriert Klimaanlagen von Mitsubishi mittels MELCloud in ioBroker.",
+            "ru": "Адаптер интегрирует системы кондиционирования воздуха Mitsubishi в ioBroker с помощью MELCloud.",
+            "pt": "O adaptador integra os sistemas de ar condicionado Mitsubishi ao ioBroker usando MELCloud.",
+            "nl": "De adapter integreert Mitsubishi-airconditioningsystemen in ioBroker met behulp van MELCloud.",
+            "fr": "L'adaptateur intègre les systèmes de climatisation Mitsubishi dans ioBroker à l'aide de MELCloud.",
+            "it": "L'adattatore integra i sistemi di climatizzazione Mitsubishi in ioBroker utilizzando MELCloud.",
+            "es": "El adaptador integra sistemas de aire acondicionado Mitsubishi en ioBroker usando MELCloud.",
+            "pl": "Adapter integruje systemy klimatyzacji Mitsubishi z ioBroker za pomocą MELCloud.",
+            "zh-cn": "该适配器使用MELCloud将三菱空调系统集成到ioBroker中。"
+        },
+        "authors": [
+            "Black-Thunder <glwars@aol.de>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "MELCloud",
+            "Mitsubishi",
+            "air conditioning"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "melcloud.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
+        "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "climate-control",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=1.4.2",
+                "admin": ">=3.0.0"
+            }
+        ]
+    },
+    "native": {
+        "melCloudUsername": "",
+        "melCloudPassword": "",
+        "melCloudLanguage": 4
+    },
+    "objects": [],
+    "instanceObjects": []
 }

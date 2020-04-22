@@ -10,9 +10,20 @@ const utils = require("@iobroker/adapter-core");
 
 // Load your modules here, e.g.:
 // const fs = require("fs");
+const cloudPlatform = require("./lib/melcloudPlatform");
+
+// Global
+let gthis; //Global verfügbar machen
+
+function decrypt(key, value) {
+	let result = "";
+	for (let i = 0; i < value.length; ++i) {
+		result += String.fromCharCode(key[i % key.length].charCodeAt(0) ^ value.charCodeAt(i));
+	}
+	return result;
+}
 
 class Melcloud extends utils.Adapter {
-
 	/**
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
@@ -26,25 +37,38 @@ class Melcloud extends utils.Adapter {
 		this.on("stateChange", this.onStateChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+		gthis = this;
+	}
+
+	checkSettings() {
+		if(this.config.melCloudUsername == null || this.config.melCloudUsername == "") {
+			this.log.error("MELCloud username empty! Check settings.");	
+			return false;
+		}
+
+		if(this.config.melCloudPassword == null || this.config.melCloudPassword == "") {
+			this.log.error("MELCloud password empty! Check settings.");	
+			return false;
+		}
+		return true;
 	}
 
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		// Initialize your adapter here
+		if(!this.checkSettings()) return;
 
-		// The adapters config (in the instance object everything under the attribute "native") is accessible via
-		// this.config:
-		this.log.info("config option1: " + this.config.option1);
-		this.log.info("config option2: " + this.config.option2);
+		// Initialize your adapter here
+		const CloudPlatform = new cloudPlatform.MelCloudPlatform(this);
+		CloudPlatform.Connect();
 
 		/*
 		For every state in the system there has to be also an object of type state
 		Here a simple template for a boolean variable named "testVariable"
 		Because every adapter instance uses its own unique namespace variable names can't collide with other adapters variables
 		*/
-		await this.setObjectAsync("testVariable", {
+		/*await this.setObjectAsync("testVariable", {
 			type: "state",
 			common: {
 				name: "testVariable",
@@ -54,7 +78,7 @@ class Melcloud extends utils.Adapter {
 				write: true,
 			},
 			native: {},
-		});
+		});*/
 
 		// in this template all states changes inside the adapters namespace are subscribed
 		this.subscribeStates("*");
@@ -64,21 +88,21 @@ class Melcloud extends utils.Adapter {
 		you will notice that each setState will cause the stateChange event to fire (because of above subscribeStates cmd)
 		*/
 		// the variable testVariable is set to true as command (ack=false)
-		await this.setStateAsync("testVariable", true);
+		//await this.setStateAsync("testVariable", true);
 
 		// same thing, but the value is flagged "ack"
 		// ack should be always set to true if the value is received from or acknowledged from the target system
-		await this.setStateAsync("testVariable", { val: true, ack: true });
+		//await this.setStateAsync("testVariable", { val: true, ack: true });
 
 		// same thing, but the state is deleted after 30s (getState will return null afterwards)
-		await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
+		//await this.setStateAsync("testVariable", { val: true, ack: true, expire: 30 });
 
 		// examples for the checkPassword/checkGroup functions
-		let result = await this.checkPasswordAsync("admin", "iobroker");
-		this.log.info("check user admin pw iobroker: " + result);
+		//let result = await this.checkPasswordAsync("admin", "iobroker");
+		//this.log.info("check user admin pw iobroker: " + result);
 
-		result = await this.checkGroupAsync("admin", "admin");
-		this.log.info("check group user admin group admin: " + result);
+		//result = await this.checkGroupAsync("admin", "admin");
+		//this.log.info("check group user admin group admin: " + result);
 	}
 
 	/**
