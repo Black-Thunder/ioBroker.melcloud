@@ -18,13 +18,46 @@
 	<script type="text/javascript" src="words.js"></script>
 
 	<script type="text/javascript">
+		var secret;
+
+		function encrypt(key, value) {
+			var result = '';
+			for (var i = 0; i < value.length; ++i) {
+				result += String.fromCharCode(key[i % key.length].charCodeAt(0) ^ value.charCodeAt(i));
+			}
+			return result;
+		}
+
+		function decrypt(key, value) {
+			var result = '';
+			for (var i = 0; i < value.length; ++i) {
+				result += String.fromCharCode(key[i % key.length].charCodeAt(0) ^ value.charCodeAt(i));
+			}
+			return result;
+		}
+
 		// This will be called by the admin adapter when the settings page loads
 		function load(settings, onChange) {
+			socket.emit('getObject', 'system.config', function (err, obj) {
+				secret = (obj.native ? obj.native.secret : '') || 'Zgfr56gFe87jJOM';
+				loadHelper(settings, onChange);
+			});
+
+			onChange(false);
+		}
+
+		function loadHelper(settings, onChange) {
 			// example: select elements with id=key and class=value and insert value
 			if (!settings) return;
 			$('.value').each(function () {
 				var $key = $(this);
 				var id = $key.attr('id');
+
+				if (id === 'melCloudPassword' && (typeof supportsFeature !== 'function' || !supportsFeature(
+						'ADAPTER_AUTO_DECRYPT_NATIVE'))) {
+					settings[id] = decrypt(secret, settings[id]);
+				}
+
 				if ($key.attr('type') === 'checkbox') {
 					// do not call onChange direct, because onChange could expect some arguments
 					$key.prop('checked', settings[id])
@@ -47,9 +80,18 @@
 			var obj = {};
 			$('.value').each(function () {
 				var $this = $(this);
+				var id = $this.attr('id');
+
 				if ($this.attr('type') === 'checkbox') {
 					obj[$this.attr('id')] = $this.prop('checked');
 				} else {
+					var value = $this.val();
+
+					if (id === 'melCloudPassword' && (typeof supportsFeature !== 'function' || !supportsFeature(
+							'ADAPTER_AUTO_DECRYPT_NATIVE'))) {
+						value = encrypt(secret, value);
+					}
+
 					obj[$this.attr('id')] = $this.val();
 				}
 			});
@@ -85,32 +127,32 @@
 			</div>
 			<div class="col s2 input-field">
 				<select class="value" id="melCloudLanguage">
-					<option value="0">en-English</option>
-					<option value="1">bg-Български</option>
-					<option value="2">cs-Čeština</option>
-					<option value="3">da-Dansk</option>
-					<option value="4">de-Deutsch</option>
-					<option value="5">et-Eesti</option>
-					<option value="6">es-Español</option>
-					<option value="7">fr-Français</option>
-					<option value="8">hy-Հայերեն</option>
-					<option value="9">lv-Latviešu</option>
-					<option value="10">lt-Lietuvių</option>
-					<option value="11">hu-Magyar</option>
-					<option value="12">nl-Nederlands</option>
-					<option value="13">no-Norwegian</option>
-					<option value="14">pl-Polski</option>
-					<option value="15">pt-Português</option>
-					<option value="16">ru-Русский</option>
-					<option value="17">fi-Suomi</option>
-					<option value="18">sv-Svenska</option>
-					<option value="19">it-Italiano</option>
-					<option value="20">uk-Українська</option>
-					<option value="21">tr-Türkçe</option>
-					<option value="22">el-Ελληνικά</option>
-					<option value="23">hr-Hrvatski</option>
-					<option value="24">ro-Română</option>
-					<option value="25">sl-Slovenščina</option>
+					<option value=0>en-English</option>
+					<option value=1>bg-Български</option>
+					<option value=2>cs-Čeština</option>
+					<option value=3>da-Dansk</option>
+					<option value=4>de-Deutsch</option>
+					<option value=5>et-Eesti</option>
+					<option value=6>es-Español</option>
+					<option value=7>fr-Français</option>
+					<option value=8>hy-Հայերեն</option>
+					<option value=9>lv-Latviešu</option>
+					<option value=10>lt-Lietuvių</option>
+					<option value=11>hu-Magyar</option>
+					<option value=12>nl-Nederlands</option>
+					<option value=13>no-Norwegian</option>
+					<option value=14>pl-Polski</option>
+					<option value=15>pt-Português</option>
+					<option value=16>ru-Русский</option>
+					<option value=17>fi-Suomi</option>
+					<option value=18>sv-Svenska</option>
+					<option value=19>it-Italiano</option>
+					<option value=20>uk-Українська</option>
+					<option value=21>tr-Türkçe</option>
+					<option value=22>el-Ελληνικά</option>
+					<option value=23>hr-Hrvatski</option>
+					<option value=24>ro-Română</option>
+					<option value=25>sl-Slovenščina</option>
 				</select>
 				<label for melCloudLanguage class="translate">Select language</label>
 			</div>

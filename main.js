@@ -28,6 +28,7 @@ class Melcloud extends utils.Adapter {
 	 * @param {Partial<ioBroker.AdapterOptions>} [options={}]
 	 */
 	constructor(options) {
+		// @ts-ignore
 		super({
 			...options,
 			name: "melcloud",
@@ -41,23 +42,39 @@ class Melcloud extends utils.Adapter {
 	}
 
 	checkSettings() {
-		if(this.config.melCloudUsername == null || this.config.melCloudUsername == "") {
-			this.log.error("MELCloud username empty! Check settings.");	
+		this.getForeignObject("system.config", (err, obj) => {
+			if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
+				if (obj && obj.native && obj.native.secret) {
+					this.config.melCloudPassword = decrypt(obj.native.secret, this.config.melCloudPassword);
+				} else {
+					this.config.melCloudPassword = decrypt("Zgfr56gFe87jJOM", this.config.melCloudPassword);
+				}
+			}
+		});
+
+		if (this.config.melCloudEmail == null || this.config.melCloudEmail == "") {
+			this.log.error("MELCloud username empty! Check settings.");
 			return false;
 		}
 
-		if(this.config.melCloudPassword == null || this.config.melCloudPassword == "") {
-			this.log.error("MELCloud password empty! Check settings.");	
+		if (this.config.melCloudPassword == null || this.config.melCloudPassword == "") {
+			this.log.error("MELCloud password empty! Check settings.");
 			return false;
 		}
 		return true;
+	}
+
+	setAdapterConnectionState(isConnected) {
+		this.setState("info.connection", isConnected, true);
 	}
 
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		if(!this.checkSettings()) return;
+		this.setAdapterConnectionState(false);
+		
+		if (!this.checkSettings()) return;
 
 		// Initialize your adapter here
 		const CloudPlatform = new cloudPlatform.MelCloudPlatform(this);
