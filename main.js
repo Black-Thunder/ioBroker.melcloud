@@ -135,10 +135,10 @@ class Melcloud extends utils.Adapter {
 	 */
 	async onReady() {
 		this.setAdapterConnectionState(false);
-		await this.saveKnownDeviceIDs();
-		await this.initObjects();
 
 		if (await !this.checkSettings()) return;
+		await this.initObjects();
+		await this.saveKnownDeviceIDs();
 
 		// Initialize your adapter here
 		const CloudPlatform = new cloudPlatform.MelCloudPlatform(this);
