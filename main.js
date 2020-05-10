@@ -5,15 +5,23 @@
  */
 
 // The adapter-core module gives you access to the core ioBroker functions
-// you need to create an adapter
 const utils = require("@iobroker/adapter-core");
 
-// Load your modules here, e.g.:
-// const fs = require("fs");
+// Needed modules
 const cloudPlatform = require("./lib/melcloudPlatform");
 
-// Global
-let gthis; //Global verfügbar machen
+const currentKnownDeviceIDs = []; // array of all current known device IDs, updated on adapter start
+
+const DATAPOINT_IDS = {
+	Info: "info",
+	Devices: "devices"
+};
+
+const STATE_IDS = {
+	Connection: "connection",
+	ContextKey: "contextKey",
+	DeviceName: "deviceName"
+};
 
 function decrypt(key, value) {
 	let result = "";
@@ -38,11 +46,10 @@ class Melcloud extends utils.Adapter {
 		this.on("stateChange", this.onStateChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
-		gthis = this;
 	}
 
-	checkSettings() {
-		this.getForeignObject("system.config", (err, obj) => {
+	async checkSettings() {
+		await this.getForeignObjectAsync("system.config", (err, obj) => {
 			if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
 				if (obj && obj.native && obj.native.secret) {
 					this.config.melCloudPassword = decrypt(obj.native.secret, this.config.melCloudPassword);
@@ -64,8 +71,87 @@ class Melcloud extends utils.Adapter {
 		return true;
 	}
 
-	setAdapterConnectionState(isConnected) {
-		this.setState("info.connection", isConnected, true);
+	async setAdapterConnectionState(isConnected) {
+		await this.setStateAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.Connection, isConnected, true);
+	}
+
+	async setContextKey(key) {
+		await this.setStateAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.ContextKey, key, true);
+	}
+
+	async getContextKey() {
+		return await this.getStateAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.ContextKey);
+	}
+
+	async saveKnownDevices() {
+		this.log.debug("Getting current known devices...");
+		const objects = await this.getAdapterObjectsAsync();
+
+		for (const id of Object.keys(objects)) {
+			const obj = objects[id];
+
+			const prefix = this.namespace + "." + DATAPOINT_IDS.Devices + ".";
+			if (!id.startsWith(prefix)) {
+				continue;
+			}
+			const deviceIdTemp = id.replace(prefix, "");
+			const deviceId = parseInt(deviceIdTemp.substring(0, deviceIdTemp.lastIndexOf(".")), 10);
+
+			// Add each device only one time
+			if (!currentKnownDeviceIDs.includes(deviceId)) {
+				const deviceName = await this.getStateAsync(prefix + deviceId + "." + STATE_IDS.DeviceName);
+				currentKnownDeviceIDs.push(deviceId);
+				this.log.debug("Found known device: " + deviceId + " (" + deviceName.val + ")");
+			}
+		}
+	}
+
+	getCurrentKnownDeviceIDs() {
+		return currentKnownDeviceIDs;
+	}
+
+	async deleteMelDevice(id) {
+		const prefix = this.namespace + "." + DATAPOINT_IDS.Devices + "." + id;
+		const deviceName = await this.getStateAsync(prefix + "." + STATE_IDS.DeviceName);
+		const objects = await this.getAdapterObjectsAsync();
+
+		for (const id of Object.keys(objects)) {
+			if (id.startsWith(prefix)) {
+				const objID = id.replace(this.namespace + ".", "");
+				this.log.debug("Trying to delete device: " + objID + " (" + deviceName.val + ")");
+				await this.delObjectAsync(objID);
+				this.log.debug("Deleted device!");
+			}
+		}
+	}
+
+	async initObjects() {
+		this.log.debug("Initializing objects...");
+		await this.setObjectNotExistsAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.Connection, {
+			type: "state",
+			common: {
+				name: "Connection to cloud",
+				type: "boolean",
+				role: "indicator",
+				read: true,
+				write: true,
+				desc: "Indicates if connection to MELCloud was successful or not"
+			},
+			native: {}
+		});
+
+		await this.setObjectNotExistsAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.ContextKey, {
+			type: "state",
+			common: {
+				name: "Context key",
+				type: "string",
+				role: "value",
+				read: true,
+				write: false,
+				desc: "Key necessary for communication with MELCloud"
+			},
+			native: {}
+		});
 	}
 
 	/**
@@ -73,12 +159,17 @@ class Melcloud extends utils.Adapter {
 	 */
 	async onReady() {
 		this.setAdapterConnectionState(false);
-		
-		if (!this.checkSettings()) return;
+		await this.saveKnownDevices();
+		await this.initObjects();
+
+		if (await !this.checkSettings()) return;
 
 		// Initialize your adapter here
 		const CloudPlatform = new cloudPlatform.MelCloudPlatform(this);
-		CloudPlatform.Connect();
+		CloudPlatform.GetContextKey(CloudPlatform.SaveDevices);
+
+		// all states changes inside the adapters namespace are subscribed
+		this.subscribeStates("*");
 
 		/*
 		For every state in the system there has to be also an object of type state
@@ -96,9 +187,6 @@ class Melcloud extends utils.Adapter {
 			},
 			native: {},
 		});*/
-
-		// in this template all states changes inside the adapters namespace are subscribed
-		this.subscribeStates("*");
 
 		/*
 		setState examples
@@ -128,6 +216,9 @@ class Melcloud extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
+			this.setContextKey("");
+			this.setAdapterConnectionState(false);
+
 			this.log.info("cleaned everything up...");
 			callback();
 		} catch (e) {
