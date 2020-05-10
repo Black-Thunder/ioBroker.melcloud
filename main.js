@@ -77,21 +77,21 @@ class Melcloud extends utils.Adapter {
 
 	async saveKnownDeviceIDs() {
 		this.log.debug("Getting current known devices...");
+		const prefix = this.namespace + "." + DATAPOINT_IDS.Devices + ".";
 		const objects = await this.getAdapterObjectsAsync();
 
-		for (const id of Object.keys(objects)) {
-			const prefix = this.namespace + "." + DATAPOINT_IDS.Devices + ".";
+		for (const id of Object.keys(objects)) {			
 			if (!id.startsWith(prefix)) {
 				continue;
 			}
+
 			const deviceIdTemp = id.replace(prefix, "");
 			const deviceId = parseInt(deviceIdTemp.substring(0, deviceIdTemp.lastIndexOf(".")), 10);
 
 			// Add each device only one time
 			if (!currentKnownDeviceIDs.includes(deviceId)) {
-				const deviceName = await this.getStateAsync(prefix + deviceId + "." + STATE_IDS.DeviceName);
 				currentKnownDeviceIDs.push(deviceId);
-				this.log.debug("Found known device: " + deviceId + " (" + deviceName.val + ")");
+				this.log.debug("Found known device: " + deviceId);
 			}
 		}
 	}
@@ -102,13 +102,12 @@ class Melcloud extends utils.Adapter {
 
 	async deleteMelDevice(id) {
 		const prefix = this.namespace + "." + DATAPOINT_IDS.Devices + "." + id;
-		const deviceName = await this.getStateAsync(prefix + "." + STATE_IDS.DeviceName);
 		const objects = await this.getAdapterObjectsAsync();
 
 		for (const id of Object.keys(objects)) {
 			if (id.startsWith(prefix)) {
 				const objID = id.replace(this.namespace + ".", "");
-				this.log.debug("Trying to delete device: " + objID + " (" + deviceName.val + ")");
+				this.log.debug("Trying to delete device: " + objID);
 				await this.delObjectAsync(objID);
 				this.log.debug("Deleted device!");
 			}
@@ -124,7 +123,7 @@ class Melcloud extends utils.Adapter {
 				type: "boolean",
 				role: "indicator",
 				read: true,
-				write: true,
+				write: false,
 				desc: "Indicates if connection to MELCloud was successful or not"
 			},
 			native: {}
