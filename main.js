@@ -83,13 +83,11 @@ class Melcloud extends utils.Adapter {
 		return await this.getStateAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.ContextKey);
 	}
 
-	async saveKnownDevices() {
+	async saveKnownDeviceIDs() {
 		this.log.debug("Getting current known devices...");
 		const objects = await this.getAdapterObjectsAsync();
 
 		for (const id of Object.keys(objects)) {
-			const obj = objects[id];
-
 			const prefix = this.namespace + "." + DATAPOINT_IDS.Devices + ".";
 			if (!id.startsWith(prefix)) {
 				continue;
@@ -159,7 +157,7 @@ class Melcloud extends utils.Adapter {
 	 */
 	async onReady() {
 		this.setAdapterConnectionState(false);
-		await this.saveKnownDevices();
+		await this.saveKnownDeviceIDs();
 		await this.initObjects();
 
 		if (await !this.checkSettings()) return;
