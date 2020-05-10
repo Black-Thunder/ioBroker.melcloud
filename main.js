@@ -75,14 +75,6 @@ class Melcloud extends utils.Adapter {
 		await this.setStateAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.Connection, isConnected, true);
 	}
 
-	async setContextKey(key) {
-		await this.setStateAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.ContextKey, key, true);
-	}
-
-	async getContextKey() {
-		return await this.getStateAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.ContextKey);
-	}
-
 	async saveKnownDeviceIDs() {
 		this.log.debug("Getting current known devices...");
 		const objects = await this.getAdapterObjectsAsync();
@@ -134,19 +126,6 @@ class Melcloud extends utils.Adapter {
 				read: true,
 				write: true,
 				desc: "Indicates if connection to MELCloud was successful or not"
-			},
-			native: {}
-		});
-
-		await this.setObjectNotExistsAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.ContextKey, {
-			type: "state",
-			common: {
-				name: "Context key",
-				type: "string",
-				role: "value",
-				read: true,
-				write: false,
-				desc: "Key necessary for communication with MELCloud"
 			},
 			native: {}
 		});
@@ -214,7 +193,6 @@ class Melcloud extends utils.Adapter {
 	 */
 	onUnload(callback) {
 		try {
-			this.setContextKey("");
 			this.setAdapterConnectionState(false);
 
 			this.log.info("cleaned everything up...");
