@@ -9,19 +9,9 @@ const utils = require("@iobroker/adapter-core");
 
 // Needed modules
 const cloudPlatform = require("./lib/melcloudPlatform");
+const commonDefines = require("./lib/commonDefines");
 
 const currentKnownDeviceIDs = []; // array of all current known device IDs, updated on adapter start
-
-const DATAPOINT_IDS = {
-	Info: "info",
-	Devices: "devices"
-};
-
-const STATE_IDS = {
-	Connection: "connection",
-	ContextKey: "contextKey",
-	DeviceName: "deviceName"
-};
 
 function decrypt(key, value) {
 	let result = "";
@@ -74,12 +64,12 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async setAdapterConnectionState(isConnected) {
-		await this.setStateAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.Connection, isConnected, true);
+		await this.setStateAsync(commonDefines.DatapointIDs.Info + "." + commonDefines.StateIDs.Connection, isConnected, true);
 	}
 
 	async saveKnownDeviceIDs() {
 		this.log.debug("Getting current known devices...");
-		const prefix = this.namespace + "." + DATAPOINT_IDS.Devices + ".";
+		const prefix = this.namespace + "." + commonDefines.DatapointIDs.Devices + ".";
 		const objects = await this.getAdapterObjectsAsync();
 
 		for (const id of Object.keys(objects)) {			
@@ -103,7 +93,7 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async deleteMelDevice(id) {
-		const prefix = this.namespace + "." + DATAPOINT_IDS.Devices + "." + id;
+		const prefix = this.namespace + "." + commonDefines.DatapointIDs.Devices + "." + id;
 		const objects = await this.getAdapterObjectsAsync();
 
 		for (const id of Object.keys(objects)) {
@@ -118,7 +108,7 @@ class Melcloud extends utils.Adapter {
 
 	async initObjects() {
 		this.log.debug("Initializing objects...");
-		await this.setObjectNotExistsAsync(DATAPOINT_IDS.Info + "." + STATE_IDS.Connection, {
+		await this.setObjectNotExistsAsync(commonDefines.DatapointIDs.Info + "." + commonDefines.StateIDs.Connection, {
 			type: "state",
 			common: {
 				name: "Connection to cloud",

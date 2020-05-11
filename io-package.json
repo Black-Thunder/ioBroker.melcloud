@@ -1,7 +1,7 @@
 {
     "common": {
       "name": "melcloud",
-      "version": "0.0.1-alpha2",
+      "version": "0.0.1-alpha3",
       "news": {
         "0.0.1": {
           "en": "initial release",
