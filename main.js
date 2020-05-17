@@ -64,12 +64,12 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async setAdapterConnectionState(isConnected) {
-		await this.setStateAsync(commonDefines.DatapointIDs.Info + "." + commonDefines.StateIDs.Connection, isConnected, true);
+		await this.setStateAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
 	}
 
 	async saveKnownDeviceIDs() {
 		this.log.debug("Getting current known devices...");
-		const prefix = this.namespace + "." + commonDefines.DatapointIDs.Devices + ".";
+		const prefix = this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".";
 		const objects = await this.getAdapterObjectsAsync();
 
 		for (const id of Object.keys(objects)) {			
@@ -93,7 +93,7 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async deleteMelDevice(id) {
-		const prefix = this.namespace + "." + commonDefines.DatapointIDs.Devices + "." + id;
+		const prefix = this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + "." + id;
 		const objects = await this.getAdapterObjectsAsync();
 
 		for (const id of Object.keys(objects)) {
@@ -108,7 +108,7 @@ class Melcloud extends utils.Adapter {
 
 	async initObjects() {
 		this.log.debug("Initializing objects...");
-		await this.setObjectNotExistsAsync(commonDefines.DatapointIDs.Info + "." + commonDefines.StateIDs.Connection, {
+		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, {
 			type: "state",
 			common: {
 				name: "Connection to cloud",
