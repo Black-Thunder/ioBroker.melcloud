@@ -12,6 +12,8 @@ const cloudPlatform = require("./lib/melcloudPlatform");
 const commonDefines = require("./lib/commonDefines");
 
 const currentKnownDeviceIDs = []; // array of all current known device IDs, updated on adapter start
+let pollingJob = null;
+let gthis = null;
 
 function decrypt(key, value) {
 	let result = "";
@@ -36,20 +38,21 @@ class Melcloud extends utils.Adapter {
 		this.on("stateChange", this.onStateChange.bind(this));
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
+		gthis = this;
 	}
 
 	async checkSettings() {
 		this.log.debug("Checking adapter settings...");
 
-		await this.getForeignObjectAsync("system.config", (err, obj) => {
-			if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
-				if (obj && obj.native && obj.native.secret) {
-					this.config.melCloudPassword = decrypt(obj.native.secret, this.config.melCloudPassword);
-				} else {
-					this.config.melCloudPassword = decrypt("Zgfr56gFe87jJOM", this.config.melCloudPassword);
-				}
+		// decrypt password
+		const sysConfigObject = (await this.getForeignObjectAsync("system.config"));
+		if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
+			if (sysConfigObject && sysConfigObject.native && sysConfigObject.native.secret) {
+				this.config.melCloudPassword = decrypt(sysConfigObject.native.secret, this.config.melCloudPassword);
+			} else {
+				this.config.melCloudPassword = decrypt("Zgfr56gFe87jJOM", this.config.melCloudPassword);
 			}
-		});
+		}
 
 		if (this.config.melCloudEmail == null || this.config.melCloudEmail == "") {
 			this.log.error("MELCloud username empty! Check settings.");
@@ -60,6 +63,13 @@ class Melcloud extends utils.Adapter {
 			this.log.error("MELCloud password empty! Check settings.");
 			return false;
 		}
+
+		// if pollingInterval <= 0 than set to 1 
+		if (this.config.pollingInterval <= 0) {
+			this.config.pollingInterval = 1;
+			this.log.warn("Polling interval was set to less than 1 minute. Now set to 1 minute.");
+		}
+
 		return true;
 	}
 
@@ -72,7 +82,7 @@ class Melcloud extends utils.Adapter {
 		const prefix = this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".";
 		const objects = await this.getAdapterObjectsAsync();
 
-		for (const id of Object.keys(objects)) {			
+		for (const id of Object.keys(objects)) {
 			if (!id.startsWith(prefix)) {
 				continue;
 			}
@@ -129,13 +139,19 @@ class Melcloud extends utils.Adapter {
 		this.setAdapterConnectionState(false);
 		this.subscribeStates("*"); // all states changes inside the adapters namespace are subscribed
 
-		if (await !this.checkSettings()) return;
+		if (!this.checkSettings()) return;
 		await this.initObjects();
 		await this.saveKnownDeviceIDs();
 
-		// Connect to cloud and retrieve registered devices
-		const CloudPlatform = new cloudPlatform.MelCloudPlatform(this);
+		// Connect to cloud and retrieve/update registered devices initially
+		const CloudPlatform = new cloudPlatform.MelCloudPlatform(gthis);
 		CloudPlatform.GetContextKey(CloudPlatform.SaveDevices);
+
+		// Update data regularly according to pollingInterval
+		const jobInterval = this.config.pollingInterval * 60000; // polling interval in milliseconds
+		pollingJob = setInterval(async function () {
+			CloudPlatform.GetContextKey(CloudPlatform.SaveDevices);
+		}, jobInterval);
 	}
 
 	/**
@@ -145,7 +161,7 @@ class Melcloud extends utils.Adapter {
 	onUnload(callback) {
 		try {
 			this.setAdapterConnectionState(false);
-
+			clearInterval(pollingJob);
 			this.log.info("cleaned everything up...");
 			callback();
 		} catch (e) {
@@ -161,10 +177,10 @@ class Melcloud extends utils.Adapter {
 	onObjectChange(id, obj) {
 		if (obj) {
 			// The object was changed
-			this.log.info(`object ${id} changed: ${JSON.stringify(obj)}`);
+			this.log.debug(`object ${id} changed: ${JSON.stringify(obj)}`);
 		} else {
 			// The object was deleted
-			this.log.info(`object ${id} deleted`);
+			this.log.debug(`object ${id} deleted`);
 		}
 	}
 
@@ -176,10 +192,10 @@ class Melcloud extends utils.Adapter {
 	onStateChange(id, state) {
 		if (state) {
 			// The state was changed
-			this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+			this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 		} else {
 			// The state was deleted
-			this.log.info(`state ${id} deleted`);
+			this.log.debug(`state ${id} deleted`);
 		}
 	}
 

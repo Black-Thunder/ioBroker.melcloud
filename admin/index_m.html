@@ -54,7 +54,7 @@
 				var id = $key.attr('id');
 
 				if (id === 'melCloudPassword' && (typeof supportsFeature !== 'function' || !supportsFeature(
-						'ADAPTER_AUTO_DECRYPT_NATIVE'))) {
+					'ADAPTER_AUTO_DECRYPT_NATIVE'))) {
 					settings[id] = decrypt(secret, settings[id]);
 				}
 
@@ -88,7 +88,7 @@
 					var value = $this.val();
 
 					if (id === 'melCloudPassword' && (typeof supportsFeature !== 'function' || !supportsFeature(
-							'ADAPTER_AUTO_DECRYPT_NATIVE'))) {
+						'ADAPTER_AUTO_DECRYPT_NATIVE'))) {
 						value = encrypt(secret, value);
 					}
 
@@ -157,7 +157,13 @@
 				<label for melCloudLanguage class="translate">Select language</label>
 			</div>
 		</div>
-
+		<div class="row">
+			<div class="col s2 input-field tooltip">
+				<input type="text" data-crypt="0" class="value" id="pollingInterval" />
+				<label for="pollingInterval" class="translate">Polling interval</label>
+				<span class="tooltiptext translate">Enter your desired polling interval (in minutes) here to query data from MELCloud</span>
+			</div>
+		</div>
 	</div>
 
 </body>

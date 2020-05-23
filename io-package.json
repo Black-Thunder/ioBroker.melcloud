@@ -76,7 +76,8 @@
     "native": {
       "melCloudEmail": "",
       "melCloudPassword": "",
-      "melCloudLanguage": 4
+      "melCloudLanguage": 4,
+      "pollingInterval": 5
     },
     "objects": [],
     "instanceObjects": []
