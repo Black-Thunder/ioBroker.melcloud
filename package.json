@@ -21,7 +21,8 @@
     "url": "https://github.com/Black-Thunder/ioBroker.melcloud"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^2.3.1"
+    "@iobroker/adapter-core": "^2.3.1",
+    "request": "^1.0.0"
   },
   "devDependencies": {
     "@iobroker/testing": "^2.2.0",
