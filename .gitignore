@@ -2,6 +2,7 @@
 .idea
 *.code-workspace
 node_modules
+package-lock.json
 nbproject
 
 # npm package files
