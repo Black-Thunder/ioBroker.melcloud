@@ -42,10 +42,7 @@ class Melcloud extends utils.Adapter {
 		this.deviceObjects = []; // array of all device objects
 	}
 
-	async checkSettings() {
-		this.log.debug("Checking adapter settings...");
-
-		// decrypt password
+	async decryptPassword() {
 		const sysConfigObject = (await this.getForeignObjectAsync("system.config"));
 		if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
 			if (sysConfigObject && sysConfigObject.native && sysConfigObject.native.secret) {
@@ -54,15 +51,19 @@ class Melcloud extends utils.Adapter {
 				this.config.melCloudPassword = decrypt("Zgfr56gFe87jJOM", this.config.melCloudPassword);
 			}
 		}
+	}
+
+	async checkSettings() {
+		this.log.debug("Checking adapter settings...");
+
+		this.decryptPassword();
 
 		if (this.config.melCloudEmail == null || this.config.melCloudEmail == "") {
-			this.log.error("MELCloud username empty! Check settings.");
-			return false;
+			throw new Error("MELCloud username empty! Check settings.");
 		}
 
 		if (this.config.melCloudPassword == null || this.config.melCloudPassword == "") {
-			this.log.error("MELCloud password empty! Check settings.");
-			return false;
+			throw new Error("MELCloud password empty! Check settings.");
 		}
 
 		// if pollingInterval <= 0 than set to 1 
@@ -70,15 +71,13 @@ class Melcloud extends utils.Adapter {
 			this.config.pollingInterval = 1;
 			this.log.warn("Polling interval was set to less than 1 minute. Now set to 1 minute.");
 		}
-
-		return true;
 	}
 
 	async setAdapterConnectionState(isConnected) {
 		await this.setStateAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
 	}
 
-	async saveKnownDeviceIDs() {
+	async saveKnownDeviceIDs(callback) {
 		this.log.debug("Getting current known devices...");
 		const prefix = this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".";
 		const objects = await this.getAdapterObjectsAsync();
@@ -97,6 +96,8 @@ class Melcloud extends utils.Adapter {
 				this.log.debug("Found known device: " + deviceId);
 			}
 		}
+
+		callback && callback();
 	}
 
 	getCurrentKnownDeviceIDs() {
@@ -156,16 +157,19 @@ class Melcloud extends utils.Adapter {
 		this.setAdapterConnectionState(false);
 		this.subscribeStates("*"); // all states changes inside the adapters namespace are subscribed
 
-		if (!this.checkSettings()) return;
-		await this.initObjects();
-		await this.saveKnownDeviceIDs();
+		this.checkSettings()
+			.then(() => this.initObjects()
+				.then(() => this.saveKnownDeviceIDs(this.connectToCloud)))
+			.catch(err => this.log.error(err));
+	}
 
+	connectToCloud() {
 		// Connect to cloud and retrieve/update registered devices initially
 		const CloudPlatform = new cloudPlatform.MelCloudPlatform(gthis);
 		CloudPlatform.GetContextKey(CloudPlatform.SaveDevices);
 
 		// Update data regularly according to pollingInterval
-		const jobInterval = this.config.pollingInterval * 60000; // polling interval in milliseconds
+		const jobInterval = gthis.config.pollingInterval * 60000; // polling interval in milliseconds
 		pollingJob = setInterval(async function () {
 			CloudPlatform.GetContextKey(CloudPlatform.SaveDevices);
 		}, jobInterval);
@@ -213,8 +217,8 @@ class Melcloud extends utils.Adapter {
 		if (state) {
 			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 
-			// ack is true when state was updated by MELCloud --> in this case, we don#t need to send it again
-			if(state.ack) {
+			//ack is true when state was updated by MELCloud --> in this case, we don#t need to send it again
+			if (state.ack) {
 				this.log.silly("Updated data was retrieved from MELCloud. No need to process changed data.");
 				return;
 			}
@@ -236,11 +240,11 @@ class Melcloud extends utils.Adapter {
 					case (commonDefines.AdapterStateIDs.Power):
 						if (state.val) {
 							// switch on using current operation mode
-							device.getDeviceInfo(device.setDevice ,commonDefines.DeviceOptions.TargetHeatingCoolingState, this.mapDeviceOperationMode(device.operationMode));
+							device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, this.mapDeviceOperationMode(device.operationMode));
 						}
 						else {
 							// switch off
-							device.getDeviceInfo(device.setDevice ,commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.OFF);
+							device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.OFF);
 						}
 						break;
 					case (commonDefines.AdapterStateIDs.Mode):
