@@ -217,7 +217,7 @@ class Melcloud extends utils.Adapter {
 		if (state) {
 			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 
-			//ack is true when state was updated by MELCloud --> in this case, we don#t need to send it again
+			// ack is true when state was updated by MELCloud --> in this case, we don't need to send it again
 			if (state.ack) {
 				this.log.silly("Updated data was retrieved from MELCloud. No need to process changed data.");
 				return;
@@ -225,6 +225,12 @@ class Melcloud extends utils.Adapter {
 
 			// listen for changes at "devices.XXX.control" --> device settings/modes are changed
 			if (id.startsWith(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices) && id.includes("." + commonDefines.AdapterDatapointIDs.Control + ".")) {
+
+				if(this.deviceObjects.length == 0) {
+					this.log.error("No objects for MELCloud devices constructed yet. Try again in a few seconds...");
+					return;
+				}
+
 				let deviceId = id.replace(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".", "");
 				deviceId = deviceId.substring(0, deviceId.indexOf("."));
 

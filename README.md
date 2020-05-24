@@ -22,6 +22,9 @@ TODO
 
 ## Changelog
 
+### 0.0.X XX.XX.2020
+* (Black-Thunder) fixed check of adapter settings
+
 ### 0.0.2 24.05.2020
 * (Black-Thunder) first implementation of device control (all states under "device.XXX.control")
 * (Black-Thunder) added more device options

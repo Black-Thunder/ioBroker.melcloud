@@ -1,7 +1,7 @@
 {
     "common": {
       "name": "melcloud",
-      "version": "0.0.2",
+      "version": "0.0.2-alpha2",
       "news": {
         "0.0.2": {
           "en": "first implementation of device control, added more device options, extended and optimized logging (e.g. when logging into MelCloud), implemented polling of cloud data",
