@@ -1,8 +1,20 @@
 {
     "common": {
       "name": "melcloud",
-      "version": "0.0.1-alpha4",
+      "version": "0.0.2",
       "news": {
+        "0.0.2": {
+          "en": "first implementation of device control, added more device options, extended and optimized logging (e.g. when logging into MelCloud), implemented polling of cloud data",
+          "de": "Erste Implementierung der Gerätesteuerung, Hinzufügen weiterer Geräteoptionen, erweiterte und optimierte Protokollierung (z. B. beim Anmelden bei MelCloud), Implementierung der Abfrage von Cloud-Daten",
+          "ru": "первая реализация управления устройством, добавлены дополнительные параметры устройства, расширенное и оптимизированное ведение журнала (например, при входе в MelCloud), реализован опрос облачных данных",
+          "pt": "primeira implementação do controle de dispositivos, adição de mais opções de dispositivos, registro estendido e otimizado (por exemplo, ao fazer login no MelCloud), implementação de pesquisa de dados na nuvem",
+          "nl": "eerste implementatie van apparaatcontrole, meer apparaatopties toegevoegd, uitgebreide en geoptimaliseerde logging (bijv. bij inloggen op MelCloud), geïmplementeerde polling van cloudgegevens",
+          "fr": "première mise en œuvre du contrôle des appareils, ajout de plus d'options d'appareils, journalisation étendue et optimisée (par exemple lors de la connexion à MelCloud), implémentation de l'interrogation des données cloud",
+          "it": "prima implementazione del controllo del dispositivo, aggiunta di più opzioni del dispositivo, registrazione estesa e ottimizzata (ad esempio quando si accede a MelCloud), implementato il polling dei dati cloud",
+          "es": "primera implementación del control del dispositivo, se agregaron más opciones de dispositivo, registro extendido y optimizado (por ejemplo, al iniciar sesión en MelCloud), se implementó el sondeo de datos en la nube",
+          "pl": "pierwsza implementacja kontroli urządzenia, dodane więcej opcji urządzenia, rozszerzone i zoptymalizowane logowanie (np. podczas logowania do MelCloud), zaimplementowane odpytywanie danych w chmurze",
+          "zh-cn": "首次实施设备控制，添加了更多设备选项，扩展和优化了日志记录（例如登录MelCloud时），实现了对云数据的轮询"
+        },
         "0.0.1": {
           "en": "initial release",
           "de": "Erstveröffentlichung",

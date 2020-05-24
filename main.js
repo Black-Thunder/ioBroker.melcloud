@@ -39,6 +39,7 @@ class Melcloud extends utils.Adapter {
 		// this.on("message", this.onMessage.bind(this));
 		this.on("unload", this.onUnload.bind(this));
 		gthis = this;
+		this.deviceObjects = []; // array of all device objects
 	}
 
 	async checkSettings() {
@@ -132,6 +133,22 @@ class Melcloud extends utils.Adapter {
 		});
 	}
 
+	mapDeviceOperationMode(value) {
+		switch (value) {
+			case (commonDefines.DeviceOperationModes.AUTO.value):
+				return commonDefines.DeviceOperationModes.AUTO;
+			case (commonDefines.DeviceOperationModes.COOL.value):
+				return commonDefines.DeviceOperationModes.COOL;
+			case (commonDefines.DeviceOperationModes.HEAT.value):
+				return commonDefines.DeviceOperationModes.HEAT;
+			case (commonDefines.DeviceOperationModes.OFF.value):
+				return commonDefines.DeviceOperationModes.OFF;
+			default:
+				this.log.error("Unsupported operation mode: " + value + " - Please report this to the developer!");
+				return commonDefines.DeviceOperationModes.UNDEF;
+		}
+	}
+
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
@@ -161,7 +178,9 @@ class Melcloud extends utils.Adapter {
 	onUnload(callback) {
 		try {
 			this.setAdapterConnectionState(false);
+			this.deviceObjects.length = 0;
 			clearInterval(pollingJob);
+
 			this.log.info("cleaned everything up...");
 			callback();
 		} catch (e) {
@@ -177,10 +196,10 @@ class Melcloud extends utils.Adapter {
 	onObjectChange(id, obj) {
 		if (obj) {
 			// The object was changed
-			this.log.debug(`object ${id} changed: ${JSON.stringify(obj)}`);
+			this.log.silly(`object ${id} changed: ${JSON.stringify(obj)}`);
 		} else {
 			// The object was deleted
-			this.log.debug(`object ${id} deleted`);
+			this.log.silly(`object ${id} deleted`);
 		}
 	}
 
@@ -190,12 +209,56 @@ class Melcloud extends utils.Adapter {
 	 * @param {ioBroker.State | null | undefined} state
 	 */
 	onStateChange(id, state) {
+		// The state was changed
 		if (state) {
-			// The state was changed
-			this.log.debug(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
-		} else {
-			// The state was deleted
-			this.log.debug(`state ${id} deleted`);
+			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
+
+			// ack is true when state was updated by MELCloud --> in this case, we don#t need to send it again
+			if(state.ack) {
+				this.log.silly("Updated data was retrieved from MELCloud. No need to process changed data.");
+				return;
+			}
+
+			// listen for changes at "devices.XXX.control" --> device settings/modes are changed
+			if (id.startsWith(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices) && id.includes("." + commonDefines.AdapterDatapointIDs.Control + ".")) {
+				let deviceId = id.replace(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".", "");
+				deviceId = deviceId.substring(0, deviceId.indexOf("."));
+
+				// Get the device object that should be changed
+				const device = this.deviceObjects.find(obj => {
+					return obj.id === parseInt(deviceId);
+				});
+
+				this.log.debug("Processing change for device object with id " + device.id + " (" + device.name + ")...");
+
+				const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
+				switch (controlOption) {
+					case (commonDefines.AdapterStateIDs.Power):
+						if (state.val) {
+							// switch on using current operation mode
+							device.getDeviceInfo(device.setDevice ,commonDefines.DeviceOptions.TargetHeatingCoolingState, this.mapDeviceOperationMode(device.operationMode));
+						}
+						else {
+							// switch off
+							device.getDeviceInfo(device.setDevice ,commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.OFF);
+						}
+						break;
+					case (commonDefines.AdapterStateIDs.Mode):
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, this.mapDeviceOperationMode(state.val));
+						break;
+					case (commonDefines.AdapterStateIDs.TargetTemp):
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetTemperature, state.val);
+						break;
+					default:
+						this.log.error("Unsupported control option: " + controlOption + " - Please report this to the developer!");
+						break;
+				}
+
+			}
+		}
+		// The state was deleted 
+		else {
+			this.log.silly(`state ${id} deleted`);
 		}
 	}
 

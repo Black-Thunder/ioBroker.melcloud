@@ -14,7 +14,7 @@
 
 ## melcloud adapter for ioBroker
 
-This adapter integrates Mitsubishi air conditioning systems via MELCloud into ioBroker.
+This adapter integrates Mitsubishi air conditioning systems via MELCloud (https://www.melcloud.com/) into ioBroker.
 
 ### Adapter settings
 
@@ -22,10 +22,10 @@ TODO
 
 ## Changelog
 
-### 0.0.1-alpha5 XX.XX.2020
+### 0.0.2 24.05.2020
+* (Black-Thunder) first implementation of device control (all states under "device.XXX.control")
 * (Black-Thunder) added more device options
-* (Black-Thunder) prepared sending device values to MelCloud
-* (Black-Thunder) extended logging when logging into MelCloud
+* (Black-Thunder) extended and optimized logging (e.g. when logging into MelCloud)
 * (Black-Thunder) implemented polling of cloud data
 
 ### 0.0.1-alpha4 11.05.2020
