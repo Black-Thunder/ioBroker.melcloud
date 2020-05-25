@@ -16,11 +16,10 @@
 
 This adapter integrates Mitsubishi air conditioning systems via MELCloud (https://www.melcloud.com/) into ioBroker.
 
-### Adapter settings
+Documentation:
 
-![Adapter settings](docs/en/img/adapter_settings.png)
-
-TODO
+* [English](https://github.com/Black-Thunder/ioBroker.melcloud/tree/master/docs/en/melcloud.md)
+* [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.melcloud/tree/master/docs/de/melcloud.md)
 
 ## Changelog
 
