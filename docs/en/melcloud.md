@@ -1,5 +1,5 @@
 ### Adapter settings
 
-![Adapter settings](docs/en/img/adapter_settings.png)
+![Adapter settings](img/adapter_settings.png)
 
 TODO
