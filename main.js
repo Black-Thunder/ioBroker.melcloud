@@ -256,8 +256,10 @@ class Melcloud extends utils.Adapter {
 				});
 
 				if(device == null) {
-					this.log.debug("Failed to get device object. Known object ids:");
-					this.deviceObjects.forEach(obj => this.log.debug(obj.id));
+					let knownIds = "";
+					this.deviceObjects.forEach(obj => knownIds += obj.id + ", ");
+					this.log.error("Failed to get device object. Known object IDs: " + knownIds);
+					this.log.error("This should not happen - report this to the developer!");
 					return;
 				}
 				this.log.debug("Processing change for device object with id " + device.id + " (" + device.name + ")...");

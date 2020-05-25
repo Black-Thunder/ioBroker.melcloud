@@ -23,6 +23,9 @@ Documentation:
 
 ## Changelog
 
+### 0.0.2-alpha9 25.05.2020
+* (Black-Thunder) fixed crash when devices are assigned to different floors/areas
+
 ### 0.0.2-alpha8 25.05.2020
 * (Black-Thunder) fixed "Swing" of vanes
 
