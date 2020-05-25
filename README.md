@@ -23,6 +23,9 @@ Documentation:
 
 ## Changelog
 
+### 0.0.2-alpha8 25.05.2020
+* (Black-Thunder) fixed "Swing" of vanes
+
 ### 0.0.2-alpha7 25.05.2020
 * (Black-Thunder) fix "power" state
 
