@@ -23,6 +23,15 @@ Documentation:
 
 ## Changelog
 
+### 0.0.2-alpha6 25.05.2020
+* (Black-Thunder) create object folders as channels so that enums can be assigned
+* (Black-Thunder) predefined states for fan speed, vane horizontal/vertical, "Swing" added
+* (Black-Thunder) changing operation mode doesn't power on device anymore
+* (Black-Thunder) min/max for setTemperature added
+
+### 0.0.2-alpha5 25.05.2020
+* (Black-Thunder) added more error logging
+
 ### 0.0.2-alpha4 25.05.2020
 * (Black-Thunder) operation modes "Dry" and "Vent" added, removed confusing mode "Off" (device state is now only controlled by "power")
 * (Black-Thunder) control of fan speed, horizontal and vertical vane direction added

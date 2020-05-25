@@ -120,6 +120,15 @@ class Melcloud extends utils.Adapter {
 
 	async initObjects() {
 		this.log.debug("Initializing objects...");
+
+		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info, {
+			type: "channel",
+			common: {
+				name: "Adapter information"
+			},
+			native: {}
+		});
+
 		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, {
 			type: "state",
 			common: {
