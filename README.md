@@ -22,6 +22,11 @@ TODO
 
 ## Changelog
 
+### 0.0.2-alpha4 25.05.2020
+* (Black-Thunder) operation modes "Dry" and "Vent" added, removed confusing mode "Off" (device state is now only controlled by "power")
+* (Black-Thunder) control of fan speed, horizontal and vertical vane direction added
+* (Black-Thunder) reduced amount of logging entries
+
 ### 0.0.2-alpha3 24.05.2020
 * (Black-Thunder) fixed 'request' dependency
 

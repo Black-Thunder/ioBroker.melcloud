@@ -136,14 +136,18 @@ class Melcloud extends utils.Adapter {
 
 	mapDeviceOperationMode(value) {
 		switch (value) {
-			case (commonDefines.DeviceOperationModes.AUTO.value):
-				return commonDefines.DeviceOperationModes.AUTO;
-			case (commonDefines.DeviceOperationModes.COOL.value):
-				return commonDefines.DeviceOperationModes.COOL;
-			case (commonDefines.DeviceOperationModes.HEAT.value):
-				return commonDefines.DeviceOperationModes.HEAT;
 			case (commonDefines.DeviceOperationModes.OFF.value):
 				return commonDefines.DeviceOperationModes.OFF;
+			case (commonDefines.DeviceOperationModes.HEAT.value):
+				return commonDefines.DeviceOperationModes.HEAT;
+			case (commonDefines.DeviceOperationModes.DRY.value):
+				return commonDefines.DeviceOperationModes.DRY;
+			case (commonDefines.DeviceOperationModes.COOL.value):
+				return commonDefines.DeviceOperationModes.COOL;
+			case (commonDefines.DeviceOperationModes.VENT.value):
+				return commonDefines.DeviceOperationModes.VENT;
+			case (commonDefines.DeviceOperationModes.AUTO.value):
+				return commonDefines.DeviceOperationModes.AUTO;
 			default:
 				this.log.error("Unsupported operation mode: " + value + " - Please report this to the developer!");
 				return commonDefines.DeviceOperationModes.UNDEF;
@@ -258,6 +262,15 @@ class Melcloud extends utils.Adapter {
 						break;
 					case (commonDefines.AdapterStateIDs.TargetTemp):
 						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetTemperature, state.val);
+						break;
+					case (commonDefines.AdapterStateIDs.FanSpeed):
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.FanSpeed, state.val);
+						break;
+					case (commonDefines.AdapterStateIDs.VaneVerticalDirection):
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneVerticalDirection, state.val);
+						break;
+					case (commonDefines.AdapterStateIDs.VaneHorizontalDirection):
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneHorizontalDirection, state.val);
 						break;
 					default:
 						this.log.error("Unsupported control option: " + controlOption + " - Please report this to the developer!");
