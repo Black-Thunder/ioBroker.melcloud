@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.melcloud.png?downloads=true)](https://nodei.co/npm/iobroker.melcloud/)
 
-**Tests:**: [![Travis-CI](http://img.shields.io/travis/Black-Thunder/ioBroker.melcloud/master.svg)](https://travis-ci.org/Black-Thunder/ioBroker.melcloud)
+**Tests:**: [![Travis-CI](http://img.shields.io/travis/Black-Thunder/ioBroker.melcloud/master.svg)](https://travis-ci.com/Black-Thunder/ioBroker.melcloud)
 
 ## melcloud adapter for ioBroker
 
