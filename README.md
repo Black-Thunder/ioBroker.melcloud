@@ -23,6 +23,9 @@ Documentation:
 
 ## Changelog
 
+### 0.0.2-alpha7 25.05.2020
+* (Black-Thunder) fix "power" state
+
 ### 0.0.2-alpha6 25.05.2020
 * (Black-Thunder) create object folders as channels so that enums can be assigned
 * (Black-Thunder) predefined states for fan speed, vane horizontal/vertical, "Swing" added
