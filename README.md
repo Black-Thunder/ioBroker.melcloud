@@ -18,6 +18,8 @@ This adapter integrates Mitsubishi air conditioning systems via MELCloud (https:
 
 ### Adapter settings
 
+![Adapter settings](docs/en/img/adapter_settings.png)
+
 TODO
 
 ## Changelog
