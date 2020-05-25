@@ -230,7 +230,7 @@ class Melcloud extends utils.Adapter {
 			// listen for changes at "devices.XXX.control" --> device settings/modes are changed
 			if (id.startsWith(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices) && id.includes("." + commonDefines.AdapterDatapointIDs.Control + ".")) {
 
-				if(this.deviceObjects.length == 0) {
+				if(this.deviceObjects == [] || this.deviceObjects.length == 0) {
 					this.log.error("No objects for MELCloud devices constructed yet. Try again in a few seconds...");
 					return;
 				}
@@ -239,10 +239,16 @@ class Melcloud extends utils.Adapter {
 				deviceId = deviceId.substring(0, deviceId.indexOf("."));
 
 				// Get the device object that should be changed
+				this.log.debug("Trying to get device object with id " + deviceId + "...");
 				const device = this.deviceObjects.find(obj => {
 					return obj.id === parseInt(deviceId);
 				});
 
+				if(device == null) {
+					this.log.debug("Failed to get device object. Known object ids:");
+					this.deviceObjects.forEach(obj => this.log.debug(obj.id));
+					return;
+				}
 				this.log.debug("Processing change for device object with id " + device.id + " (" + device.name + ")...");
 
 				const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
