@@ -59,4 +59,4 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | power | X | X | Hauptschalter (schaltet Gerät ein bzw. aus) |
 | targetTemp | X | X | Zieltemperatur des Geräts |
 | vaneHorizontalDirection | X | X | Aktuelle horizontale Ausrichtung des Luftauslasses (0=Automatik, 1...5=minimal bis maximal, 12=Swing) |
-| vaneVerticalDirection | X | X | Aktuelle vertikale Ausrichtung des Luftauslasses (0=Automatik, 1...5=minimal bis maximal, 12=Swing) |
+| vaneVerticalDirection | X | X | Aktuelle vertikale Ausrichtung des Luftauslasses (0=Automatik, 1...5=minimal bis maximal, 7=Swing) |
