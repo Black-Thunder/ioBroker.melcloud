@@ -12,12 +12,12 @@ Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen 
 
 ![Einstellungen des Adapters](img/adapter_settings.png)
 
-An dieser Stelle kann die jeweilige Adapter-Instanz konfiguriert werden. Zwingedn nötig für die Funktionalität sind die Zugangsdaten (E-Mail-Adresse und Passwort) des MELCloud-Accounts. Zusätzlich kann die Region des Accounts angegeben werden.
+An dieser Stelle kann die jeweilige Adapter-Instanz konfiguriert werden. Zwingend nötig für die Funktionalität sind die Zugangsdaten (E-Mail-Adresse und Passwort) des MELCloud-Accounts. Zusätzlich kann die Region des Accounts angegeben werden.
 Zusätzlich wird hier das Intervall (in Minuten) angegeben, wie oft Daten von der MELCloud abgerufen und gespeichert werden sollen. Das kleinstmögliche Intervall ist eine Minute.
 
 ## Objekte
 
-Nachdem die Adpater-INstanz (X) erfolgreich (=grün) gestartet wurde, werden die Geräte inklusive Daten aus der MELCloud abgerufen. Für jedes Gerät (Y) wird ein separater Objekt-Knoten angelegt.
+Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die Geräte inklusive Daten aus der MELCloud abgerufen. Für jedes Gerät (Y) wird ein separater Objekt-Knoten angelegt.
 
 ### melcoud.X.info
 
@@ -58,5 +58,5 @@ Nachdem die Adpater-INstanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | mode | X | X | Betriebsmodus des Geräts (1=Heizen, 2=Entfeuchten, 3=Kühlen, 7=Lüften, 8=Automatik) |
 | power | X | X | Hauptschalter (schaltet Gerät ein bzw. aus) |
 | targetTemp | X | X | Zieltemperatur des Geräts |
-| vaneHorizontalDirection | X | X | Aktuelle hoizontale Ausrichtung des Luftauslasses (0=Automatik, 1...5=minimal bis maximal, 12=Swing) |
+| vaneHorizontalDirection | X | X | Aktuelle horizontale Ausrichtung des Luftauslasses (0=Automatik, 1...5=minimal bis maximal, 12=Swing) |
 | vaneVerticalDirection | X | X | Aktuelle vertikale Ausrichtung des Luftauslasses (0=Automatik, 1...5=minimal bis maximal, 12=Swing) |
