@@ -25,6 +25,7 @@ Documentation:
 
 ### 0.0.3 XX.XX.2020
 * (Black-Thunder) added indicator if device is reachable
+* (Black-Thunder) corrected role of "targetTemp"
 
 ### 0.0.2-alpha9 25.05.2020
 * (Black-Thunder) fixed crash when devices are assigned to different floors/areas
