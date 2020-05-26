@@ -168,7 +168,7 @@ class Melcloud extends utils.Adapter {
 	 */
 	async onReady() {
 		this.setAdapterConnectionState(false);
-		this.subscribeStates("*"); // all states changes inside the adapters namespace are subscribed
+		this.subscribeStates("*devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
 
 		this.checkSettings()
 			.then(() => this.initObjects()
@@ -179,12 +179,12 @@ class Melcloud extends utils.Adapter {
 	connectToCloud() {
 		// Connect to cloud and retrieve/update registered devices initially
 		const CloudPlatform = new cloudPlatform.MelCloudPlatform(gthis);
-		CloudPlatform.GetContextKey(CloudPlatform.SaveDevices);
+		CloudPlatform.GetContextKey(CloudPlatform.CreateAndSaveDevices);
 
 		// Update data regularly according to pollingInterval
 		const jobInterval = gthis.config.pollingInterval * 60000; // polling interval in milliseconds
 		pollingJob = setInterval(async function () {
-			CloudPlatform.GetContextKey(CloudPlatform.SaveDevices);
+			CloudPlatform.GetContextKey(CloudPlatform.CreateAndSaveDevices);
 		}, jobInterval);
 	}
 
@@ -221,64 +221,60 @@ class Melcloud extends utils.Adapter {
 				return;
 			}
 
-			// listen for changes at "devices.XXX.control" --> device settings/modes are changed
-			if (id.startsWith(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices) && id.includes("." + commonDefines.AdapterDatapointIDs.Control + ".")) {
+			if (this.deviceObjects == [] || this.deviceObjects.length == 0) {
+				this.log.error("No objects for MELCloud devices constructed yet. Try again in a few seconds...");
+				return;
+			}
 
-				if(this.deviceObjects == [] || this.deviceObjects.length == 0) {
-					this.log.error("No objects for MELCloud devices constructed yet. Try again in a few seconds...");
-					return;
-				}
+			// Only states under "devices.XXX.control" are subscribed --> device settings/modes are changed
+			let deviceId = id.replace(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".", "");
+			deviceId = deviceId.substring(0, deviceId.indexOf("."));
 
-				let deviceId = id.replace(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".", "");
-				deviceId = deviceId.substring(0, deviceId.indexOf("."));
+			// Get the device object that should be changed
+			this.log.debug("Trying to get device object with id " + deviceId + "...");
+			const device = this.deviceObjects.find(obj => {
+				return obj.id === parseInt(deviceId);
+			});
 
-				// Get the device object that should be changed
-				this.log.debug("Trying to get device object with id " + deviceId + "...");
-				const device = this.deviceObjects.find(obj => {
-					return obj.id === parseInt(deviceId);
-				});
+			if (device == null) {
+				let knownIds = "";
+				this.deviceObjects.forEach(obj => knownIds += obj.id + ", ");
+				this.log.error("Failed to get device object. Known object IDs: " + knownIds);
+				this.log.error("This should not happen - report this to the developer!");
+				return;
+			}
+			this.log.debug("Processing change for device object with id " + device.id + " (" + device.name + ")...");
 
-				if(device == null) {
-					let knownIds = "";
-					this.deviceObjects.forEach(obj => knownIds += obj.id + ", ");
-					this.log.error("Failed to get device object. Known object IDs: " + knownIds);
-					this.log.error("This should not happen - report this to the developer!");
-					return;
-				}
-				this.log.debug("Processing change for device object with id " + device.id + " (" + device.name + ")...");
-
-				const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
-				switch (controlOption) {
-					case (commonDefines.AdapterStateIDs.Power):
-						if (state.val) {
-							// switch on using current operation mode
-							device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.ON);
-						}
-						else {
-							// switch off
-							device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.OFF);
-						}
-						break;
-					case (commonDefines.AdapterStateIDs.Mode):
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, this.mapDeviceOperationMode(state.val));
-						break;
-					case (commonDefines.AdapterStateIDs.TargetTemp):
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetTemperature, state.val);
-						break;
-					case (commonDefines.AdapterStateIDs.FanSpeedManual):
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.FanSpeed, state.val);
-						break;
-					case (commonDefines.AdapterStateIDs.VaneVerticalDirection):
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneVerticalDirection, state.val);
-						break;
-					case (commonDefines.AdapterStateIDs.VaneHorizontalDirection):
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneHorizontalDirection, state.val);
-						break;
-					default:
-						this.log.error("Unsupported control option: " + controlOption + " - Please report this to the developer!");
-						break;
-				}
-
+			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
+			switch (controlOption) {
+				case (commonDefines.AdapterStateIDs.Power):
+					if (state.val) {
+						// switch on using current operation mode
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.ON);
+					}
+					else {
+						// switch off
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.OFF);
+					}
+					break;
+				case (commonDefines.AdapterStateIDs.Mode):
+					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, this.mapDeviceOperationMode(state.val));
+					break;
+				case (commonDefines.AdapterStateIDs.TargetTemp):
+					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetTemperature, state.val);
+					break;
+				case (commonDefines.AdapterStateIDs.FanSpeedManual):
+					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.FanSpeed, state.val);
+					break;
+				case (commonDefines.AdapterStateIDs.VaneVerticalDirection):
+					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneVerticalDirection, state.val);
+					break;
+				case (commonDefines.AdapterStateIDs.VaneHorizontalDirection):
+					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneHorizontalDirection, state.val);
+					break;
+				default:
+					this.log.error("Unsupported control option: " + controlOption + " - Please report this to the developer!");
+					break;
 			}
 		}
 		// The state was deleted 

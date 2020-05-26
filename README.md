@@ -23,6 +23,11 @@ Documentation:
 
 ## Changelog
 
+### 0.0.3-alpha2 26.05.2020
+* (Black-Thunder) optimized performance/reduced DB transactions
+* (Black-Thunder) dynamically adjust min/max limits for 'targetTemp' and 'setFanSpeed'
+* (Black-Thunder) added more documentation
+
 ### 0.0.3 26.05.2020
 * (Black-Thunder) added indicator if device is reachable
 * (Black-Thunder) corrected role of "targetTemp", "power" and "deviceName"

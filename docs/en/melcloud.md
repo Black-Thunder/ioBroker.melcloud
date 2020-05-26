@@ -4,7 +4,7 @@
 
 In order to use this adapter, there are a few things you have to prepare in advance:
 
-* Mitsubishi air conditioning system with Wi-Fi-Adapter MAC-567IF
+* Mitsubishi air conditioning system with Wi-Fi-Adapter MAC-567IF (per device you want to control)
 * MELCloud account at the [official webpage](https://app.melcloud.com/)
 * All devices registered and set-up in your MELCloud account
 
@@ -27,16 +27,36 @@ After successful start of the adapter instance (X) your devices are queried from
 
 ### melcloud.X.device.Y.info
 
-TODO
-
 | id | read | write | comment |
 |--- |--- |--- |--- |
+| actualFanSpeed | X | - | Actual fan speed when fan is set to auto mode |
 | buildingId | X | - | Assigned building ID |
+| canCool | X | - | Ability to cool |
+| canHeat | X | - | Ability to heat |
+| canDry | X | - | Ability to dry |
+| deviceName | X | - | Name of the device |
+| deviceOnline | X | - | Indicates if device is reachable |
+| floorId | X | - | Assigned floor ID |
+| lastCommunication | X | - | Last communication date/time (MELCloud to device) |
+| minTempCoolDry | X | - | Minimal temperature (Cool/Dry) |
+| maxTempCoolDry | X | - | Maximal temperature (Cool/Dry) |
+| minTempHeat | X | - | Minimal temperature (Heat) |
+| maxTempHeat | X | - | Maximal temperature (Heat) |
+| minTempAuto | X | - | Minimal temperature (Auto) |
+| maxTempAuto | X | - | Maximal temperature (Auto) |
+| macAddress | X | - | MAC address of the device |
+| nextCommunication | X | - | Next communication date/time (MELCloud to device) |
+| numberOfFanSpeeds | X | - | Number of available fan speeds |
+| roomTemp | X | - | Current room temperature |
+| serialNumber | X | - | Serial number of the device |
 
 ### melcloud.X.device.Y.control
 
-TODO
-
 | id | read | write | comment |
 |--- |--- |--- |--- |
-| fanSpeed | X | X | Current fan speed of your device (0=auto, 1...'numberOfFanSpeeds'= low to max fan speed) |
+| fanSpeed | X | X | Current fan speed of the device (0=Auto, 1...'numberOfFanSpeeds'= low to max fan speed) |
+| mode | X | X | Operation mode of the device (1=Heat, 2=Dry, 3=Cool, 7=Vent, 8=Auto) |
+| power | X | X | Power switch (turns device on/off) |
+| targetTemp | X | X | Target temperature of the device |
+| vaneHorizontalDirection | X | X | Current horizontal direction of the device's vane (0=Auto, 1...5=min to max, 12=Swing) |
+| vaneVerticalDirection | X | X | Current vertical direction of the device's vane (0=Auto, 1...5=min to max, 7=Swing) |
