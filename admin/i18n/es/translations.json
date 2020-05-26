@@ -1,0 +1,9 @@
+{
+    "Email address": "Dirección de correo electrónico",
+    "Enter your MELCloud email address": "Ingrese su dirección de correo electrónico de MELCloud",
+    "Enter your MELCloud password": "Ingrese su contraseña de MELCloud",
+    "Enter your desired polling interval (in minutes) here to query data from MELCloud": "Ingrese su intervalo de sondeo deseado (en minutos) aquí para consultar datos de MELCloud",
+    "Password": "Contraseña",
+    "Polling interval": "Intervalo de votación",
+    "Select language": "Seleccione el idioma"
+}

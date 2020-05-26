@@ -1,0 +1,9 @@
+{
+    "Email address": "电子邮件地址",
+    "Enter your MELCloud email address": "输入您的MELCloud电子邮件地址",
+    "Enter your MELCloud password": "输入您的MELCloud密码",
+    "Enter your desired polling interval (in minutes) here to query data from MELCloud": "在此处输入所需的轮询间隔（以分钟为单位）以从MELCloud查询数据",
+    "Password": "密码",
+    "Polling interval": "轮询间隔",
+    "Select language": "选择语言"
+}
