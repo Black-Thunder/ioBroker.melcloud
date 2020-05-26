@@ -265,7 +265,7 @@ class Melcloud extends utils.Adapter {
 					case (commonDefines.AdapterStateIDs.TargetTemp):
 						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetTemperature, state.val);
 						break;
-					case (commonDefines.AdapterStateIDs.FanSpeed):
+					case (commonDefines.AdapterStateIDs.FanSpeedManual):
 						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.FanSpeed, state.val);
 						break;
 					case (commonDefines.AdapterStateIDs.VaneVerticalDirection):

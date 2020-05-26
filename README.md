@@ -25,7 +25,8 @@ Documentation:
 
 ### 0.0.3 XX.XX.2020
 * (Black-Thunder) added indicator if device is reachable
-* (Black-Thunder) corrected role of "targetTemp"
+* (Black-Thunder) corrected role of "targetTemp", "power" and "deviceName"
+* (Black-Thunder) added new states "macAddress" and "actualFanSpeed" (indicates fan speed whern running in auto mode)
 
 ### 0.0.2-alpha9 25.05.2020
 * (Black-Thunder) fixed crash when devices are assigned to different floors/areas
