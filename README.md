@@ -1,4 +1,7 @@
 ![Logo](admin/melcloud.png)
+
+*Icon made by [Freepik](https://www.flaticon.com/authors/freepik) from [www.flaticon.com](https://www.flaticon.com/")*
+
 # ioBroker.melcloud
 
 [![NPM version](http://img.shields.io/npm/v/iobroker.melcloud.svg)](https://www.npmjs.com/package/iobroker.melcloud)
