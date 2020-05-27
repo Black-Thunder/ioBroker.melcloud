@@ -72,7 +72,7 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async setAdapterConnectionState(isConnected) {
-		await this.setStateAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
+		await this.setStateAsync(commonDefines.AdapterStateIDs.Connection, isConnected, true);
 	}
 
 	async saveKnownDeviceIDs(callback) {
@@ -119,15 +119,7 @@ class Melcloud extends utils.Adapter {
 	async initObjects() {
 		this.log.debug("Initializing objects...");
 
-		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info, {
-			type: "channel",
-			common: {
-				name: "Adapter information"
-			},
-			native: {}
-		});
-
-		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, {
+		await this.setObjectNotExistsAsync(commonDefines.AdapterStateIDs.Connection, {
 			type: "state",
 			common: {
 				name: "Connection to cloud",
