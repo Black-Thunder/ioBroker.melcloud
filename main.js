@@ -135,10 +135,6 @@ class Melcloud extends utils.Adapter {
 
 	mapDeviceOperationMode(value) {
 		switch (value) {
-			case (commonDefines.DeviceOperationModes.OFF.value):
-				return commonDefines.DeviceOperationModes.OFF;
-			case (commonDefines.DeviceOperationModes.ON.value):
-				return commonDefines.DeviceOperationModes.ON;
 			case (commonDefines.DeviceOperationModes.HEAT.value):
 				return commonDefines.DeviceOperationModes.HEAT;
 			case (commonDefines.DeviceOperationModes.DRY.value):
@@ -242,11 +238,11 @@ class Melcloud extends utils.Adapter {
 				case (commonDefines.AdapterStateIDs.Power):
 					if (state.val) {
 						// switch on using current operation mode
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.ON);
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.PowerState, commonDefines.DevicePowerStates.ON);
 					}
 					else {
 						// switch off
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, commonDefines.DeviceOperationModes.OFF);
+						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.PowerState, commonDefines.DevicePowerStates.OFF);
 					}
 					break;
 				case (commonDefines.AdapterStateIDs.Mode):

@@ -1,7 +1,7 @@
 {
   "common": {
       "name": "melcloud",
-      "version": "0.0.3-alpha3",
+      "version": "0.0.3-alpha4",
       "news": {
           "0.0.3": {
               "en": "added indicator if device is reachable\ncorrected role of 'targetTemp', 'power' and 'deviceName'\nadded new states 'macAddress' and 'actualFanSpeed' (indicates fan speed when running in auto mode)\nadded translations",

@@ -26,6 +26,9 @@ Documentation:
 
 ## Changelog
 
+### 0.0.3-alpha4 27.05.2020
+* (Black-Thunder) technical improvements for setting 'power'
+
 ### 0.0.3-alpha3 27.05.2020
 * (Black-Thunder) parent for each device is now a channel
 * (Black-Thunder) "melcloud.X.info" node removed, state "connection" now directly assigned to "melcloud.X"
