@@ -26,6 +26,10 @@ Documentation:
 
 ## Changelog
 
+### 1.0.0 (first public stable release) 28.05.2020
+* (Black-Thunder) re-added "melcloud.X.info" node as it breaks display of connection state otherwise
+* (Black-Thunder) some refactoring
+
 ### 0.0.3-alpha4 27.05.2020
 * (Black-Thunder) technical improvements for setting 'power'
 

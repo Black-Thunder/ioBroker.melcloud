@@ -1,8 +1,20 @@
 {
   "common": {
       "name": "melcloud",
-      "version": "0.0.3-alpha4",
+      "version": "1.0.0",
       "news": {
+          "1.0.0": {
+            "en": "first stable public release",
+            "de": "erste stabile Veröffentlichung",
+            "ru": "первый стабильный публичный релиз",
+            "pt": "primeiro lançamento público estável",
+            "nl": "eerste stabiele openbare release",
+            "fr": "première version publique stable",
+            "it": "prima uscita pubblica stabile",
+            "es": "primer lanzamiento público estable",
+            "pl": "pierwsze stabilne publiczne wydanie",
+            "zh-cn": "首次稳定公开发布"
+          },
           "0.0.3": {
               "en": "added indicator if device is reachable\ncorrected role of 'targetTemp', 'power' and 'deviceName'\nadded new states 'macAddress' and 'actualFanSpeed' (indicates fan speed when running in auto mode)\nadded translations",
               "de": "Anzeige hinzugefügt, wenn das Gerät erreichbar ist\nkorrigierte Rolle von 'targetTemp', 'power' und 'deviceName'\nneue Zustände 'macAddress' und 'actualFanSpeed' hinzugefügt (zeigt die Lüftergeschwindigkeit im automatischen Modus an)\nÜbersetzungen hinzugefügt",
