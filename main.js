@@ -11,17 +11,8 @@ const utils = require("@iobroker/adapter-core");
 const cloudPlatform = require("./lib/melcloudPlatform");
 const commonDefines = require("./lib/commonDefines");
 
-const currentKnownDeviceIDs = []; // array of all current known device IDs, updated on adapter start
-let pollingJob = null;
-let gthis = null;
-
-function decrypt(key, value) {
-	let result = "";
-	for (let i = 0; i < value.length; ++i) {
-		result += String.fromCharCode(key[i % key.length].charCodeAt(0) ^ value.charCodeAt(i));
-	}
-	return result;
-}
+let pollingJob = null; // runs at user-defined interval to update data from MELCloud
+let gthis = null; // global to 'this' of Melcloud main instance
 
 class Melcloud extends utils.Adapter {
 	/**
@@ -38,15 +29,16 @@ class Melcloud extends utils.Adapter {
 		this.on("unload", this.onUnload.bind(this));
 		gthis = this;
 		this.deviceObjects = []; // array of all device objects
+		this.currentKnownDeviceIDs = []; // array of all current known device IDs
 	}
 
 	async decryptPassword() {
 		const sysConfigObject = (await this.getForeignObjectAsync("system.config"));
 		if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
 			if (sysConfigObject && sysConfigObject.native && sysConfigObject.native.secret) {
-				this.config.melCloudPassword = decrypt(sysConfigObject.native.secret, this.config.melCloudPassword);
+				this.config.melCloudPassword = commonDefines.decrypt(sysConfigObject.native.secret, this.config.melCloudPassword);
 			} else {
-				this.config.melCloudPassword = decrypt("Zgfr56gFe87jJOM", this.config.melCloudPassword);
+				this.config.melCloudPassword = commonDefines.decrypt("Zgfr56gFe87jJOM", this.config.melCloudPassword);
 			}
 		}
 	}
@@ -72,7 +64,7 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async setAdapterConnectionState(isConnected) {
-		await this.setStateAsync(commonDefines.AdapterStateIDs.Connection, isConnected, true);
+		await this.setStateAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
 	}
 
 	async saveKnownDeviceIDs(callback) {
@@ -89,17 +81,17 @@ class Melcloud extends utils.Adapter {
 			const deviceId = parseInt(deviceIdTemp.substring(0, deviceIdTemp.lastIndexOf(".")), 10);
 
 			// Add each device only one time
-			if (!currentKnownDeviceIDs.includes(deviceId)) {
-				currentKnownDeviceIDs.push(deviceId);
+			if (!isNaN(deviceId) && !this.currentKnownDeviceIDs.includes(deviceId)) {
+				this.currentKnownDeviceIDs.push(deviceId);
 				this.log.debug("Found known device: " + deviceId);
 			}
 		}
 
-		callback && callback();
-	}
+		if(this.currentKnownDeviceIDs.length == 0) {
+			this.log.debug("No known devices found.");
+		}
 
-	getCurrentKnownDeviceIDs() {
-		return currentKnownDeviceIDs;
+		callback && callback();
 	}
 
 	async deleteMelDevice(id) {
@@ -119,7 +111,15 @@ class Melcloud extends utils.Adapter {
 	async initObjects() {
 		this.log.debug("Initializing objects...");
 
-		await this.setObjectNotExistsAsync(commonDefines.AdapterStateIDs.Connection, {
+		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info, {
+			type: "channel",
+			common: {
+				name: "Adapter information"
+			},
+			native: {}
+		});
+
+		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, {
 			type: "state",
 			common: {
 				name: "Connection to cloud",
@@ -131,6 +131,7 @@ class Melcloud extends utils.Adapter {
 			},
 			native: {}
 		});
+		this.setAdapterConnectionState(false);
 	}
 
 	mapDeviceOperationMode(value) {
@@ -155,11 +156,10 @@ class Melcloud extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		this.setAdapterConnectionState(false);
 		this.subscribeStates("*devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
-
-		this.checkSettings()
-			.then(() => this.initObjects()
+		
+		this.initObjects()
+			.then(() => this.checkSettings()
 				.then(() => this.saveKnownDeviceIDs(this.connectToCloud)))
 			.catch(err => this.log.error(err));
 	}
