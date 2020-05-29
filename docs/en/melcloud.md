@@ -19,7 +19,7 @@ Apart from that you can configure the time interval when your device data is pol
 
 After successful start of the adapter instance (X) your devices are queried from MELCloud. For each device (Y) there will be a separate node.
 
-### melcoud.X
+### melcoud.X.info
 
 | id | read | write | comment |
 |--- |--- |--- |--- |

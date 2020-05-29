@@ -19,7 +19,7 @@ Zusätzlich wird hier das Intervall (in Minuten) angegeben, wie oft Daten von de
 
 Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die Geräte inklusive Daten aus der MELCloud abgerufen. Für jedes Gerät (Y) wird ein separater Objekt-Knoten angelegt.
 
-### melcoud.X
+### melcoud.X.info
 
 | id | read | write | comment |
 |--- |--- |--- |--- |
