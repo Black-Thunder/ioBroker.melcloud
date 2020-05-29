@@ -26,6 +26,9 @@ Documentation:
 
 ## Changelog
 
+### 1.0.1 29.05.2020
+* (Black-Thunder) fixed bug in device control when two or more devices are present
+
 ### 1.0.0 (first public stable release) 28.05.2020
 * (Black-Thunder) re-added "melcloud.X.info" node as it breaks display of connection state otherwise
 * (Black-Thunder) some refactoring

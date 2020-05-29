@@ -1,8 +1,20 @@
 {
   "common": {
       "name": "melcloud",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "news": {
+          "1.0.1": {
+            "en": "fixed bug in device control when two or more devices are present",
+            "de": "Fehler in der Gerätesteuerung behoben, wenn zwei oder mehr Geräte vorhanden sind",
+            "ru": "исправлена ошибка в управлении устройством при наличии двух или более устройств",
+            "pt": "bug corrigido no controle de dispositivos quando dois ou mais dispositivos estão presentes",
+            "nl": "bug opgelost in apparaatbeheer wanneer twee of meer apparaten aanwezig zijn",
+            "fr": "correction d'un bug dans le contrôle des périphériques lorsque deux périphériques ou plus sont présents",
+            "it": "corretto bug nel controllo dei dispositivi quando erano presenti due o più dispositivi",
+            "es": "error corregido en el control del dispositivo cuando hay dos o más dispositivos presentes",
+            "pl": "naprawiono błąd w kontroli urządzenia, gdy obecne są dwa lub więcej urządzeń",
+            "zh-cn": "修复了存在两个或更多设备时设备控制中的错误"
+          },
           "1.0.0": {
             "en": "first stable public release",
             "de": "erste stabile Veröffentlichung",
