@@ -26,6 +26,11 @@ Documentation:
 
 ## Changelog
 
+### 1.0.2 01.06.2020
+* (Black-Thunder) correctly classify 'pollingInterval' as number
+* (Black-Thunder) corrected max values for states 'vaneHorizontalDirection' and 'vaneVerticalDirection'
+* (Black-Thunder) check 'vaneHorizontalDirection' and 'vaneVerticalDirection' for valid values
+
 ### 1.0.1 29.05.2020
 * (Black-Thunder) fixed bug in device control when two or more devices are present
 

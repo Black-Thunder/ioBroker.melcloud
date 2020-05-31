@@ -1,8 +1,20 @@
 {
   "common": {
       "name": "melcloud",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "news": {
+          "1.0.2": {
+            "en": "corrected sending of 'swing' mode for vertical/horizontal vanes",
+            "de": "Das Senden des 'Swing'-Modus für vertikale / horizontale Flügel wurde korrigiert",
+            "ru": "исправлена отправка режима качания для вертикальных / горизонтальных лопаток",
+            "pt": "envio corrigido do modo 'swing' para palhetas verticais / horizontais",
+            "nl": "gecorrigeerd verzenden van 'swing'-modus voor verticale / horizontale schoepen",
+            "fr": "envoi corrigé du mode «swing» pour les aubes verticales / horizontales",
+            "it": "invio corretto della modalità \"swing\" per palette verticali / orizzontali",
+            "es": "envío corregido del modo 'swing' para paletas verticales / horizontales",
+            "pl": "poprawione wysyłanie trybu „swing” dla łopatek pionowych / poziomych",
+            "zh-cn": "更正了垂直/水平叶片的“摆动”模式的发送"
+          },
           "1.0.1": {
             "en": "fixed bug in device control when two or more devices are present",
             "de": "Fehler in der Gerätesteuerung behoben, wenn zwei oder mehr Geräte vorhanden sind",
