@@ -11,8 +11,8 @@ const utils = require("@iobroker/adapter-core");
 const cloudPlatform = require("./lib/melcloudPlatform");
 const commonDefines = require("./lib/commonDefines");
 
-let pollingJob = null; // runs at user-defined interval to update data from MELCloud
 let gthis = null; // global to 'this' of Melcloud main instance
+let CloudPlatform = null;
 
 class Melcloud extends utils.Adapter {
 	/**
@@ -64,10 +64,10 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async setAdapterConnectionState(isConnected) {
-		await this.setStateAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
+		await this.setStateChangedAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
 	}
 
-	async saveKnownDeviceIDs(callback) {
+	async saveKnownDeviceIDs() {
 		this.log.debug("Getting current known devices...");
 		const prefix = this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".";
 		const objects = await this.getAdapterObjectsAsync();
@@ -87,11 +87,9 @@ class Melcloud extends utils.Adapter {
 			}
 		}
 
-		if(this.currentKnownDeviceIDs.length == 0) {
+		if (this.currentKnownDeviceIDs.length == 0) {
 			this.log.debug("No known devices found.");
 		}
-
-		callback && callback();
 	}
 
 	async deleteMelDevice(id) {
@@ -157,23 +155,22 @@ class Melcloud extends utils.Adapter {
 	 */
 	async onReady() {
 		this.subscribeStates("*devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
-		
+
 		this.initObjects()
 			.then(() => this.checkSettings()
-				.then(() => this.saveKnownDeviceIDs(this.connectToCloud)))
+				.then(() => this.saveKnownDeviceIDs()
+					.then(() => this.connectToCloud())
+				)	
+			)
 			.catch(err => this.log.error(err));
 	}
 
-	connectToCloud() {
-		// Connect to cloud and retrieve/update registered devices initially
-		const CloudPlatform = new cloudPlatform.MelCloudPlatform(gthis);
-		CloudPlatform.GetContextKey(CloudPlatform.CreateAndSaveDevices);
+	async connectToCloud() {
+		gthis.log.info("Connecting initially to MELCloud and retrieving data...");
 
-		// Update data regularly according to pollingInterval
-		const jobInterval = gthis.config.pollingInterval * 60000; // polling interval in milliseconds
-		pollingJob = setInterval(async function () {
-			CloudPlatform.GetContextKey(CloudPlatform.CreateAndSaveDevices);
-		}, jobInterval);
+		// Connect to cloud and retrieve/update registered devices initially
+		CloudPlatform = new cloudPlatform.MelCloudPlatform(gthis);
+		CloudPlatform.GetContextKey(CloudPlatform.CreateAndSaveDevices, CloudPlatform.startPolling);
 	}
 
 	/**
@@ -184,8 +181,8 @@ class Melcloud extends utils.Adapter {
 		try {
 			this.setAdapterConnectionState(false);
 			this.deviceObjects.length = 0;
-			clearInterval(pollingJob);
-
+			if(CloudPlatform != null) CloudPlatform.stopPolling();
+			
 			this.log.info("onUnload(): Cleaned everything up...");
 			callback();
 		} catch (e) {
