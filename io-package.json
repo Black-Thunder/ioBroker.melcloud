@@ -1,8 +1,20 @@
 {
   "common": {
       "name": "melcloud",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "news": {
+          "1.0.3": {
+            "en": "refactored polling logic (react on disconnects) and renamed pre-defined values for vane directions",
+            "de": "Überarbeitete Abfragelogik (Reaktion auf Unterbrechungen) und Umbenennung vordefinierter Werte für Flügelrichtungen",
+            "ru": "изменена логика опроса (реагирует на разъединение) и переименована предварительно определенные значения для направлений движения лопастей",
+            "pt": "lógica de pesquisa refatorada (reagir em desconexões) e renomear valores predefinidos para direções da palheta",
+            "nl": "refactored polling-logica (reageren op verbroken verbindingen) en hernoemde vooraf gedefinieerde waarden voor windrichting",
+            "fr": "logique d'interrogation refactorisée (réagir en cas de déconnexion) et valeurs prédéfinies renommées pour les directions des aubes",
+            "it": "logica di polling refactored (reagire alle disconnessioni) e rinominare i valori predefiniti per le direzioni delle palette",
+            "es": "lógica de sondeo refactorizada (reaccionar en desconexiones) y valores predefinidos renombrados para direcciones de paletas",
+            "pl": "zmieniono logikę odpytywania (reaguje na rozłączenia) i zmieniono nazwy wstępnie zdefiniowanych wartości kierunków łopatek",
+            "zh-cn": "重构的轮询逻辑（在断开连接时起作用）并重命名了叶片方向的预定义值"
+          },
           "1.0.2": {
             "en": "corrected sending of 'swing' mode for vertical/horizontal vanes",
             "de": "Das Senden des 'Swing'-Modus für vertikale / horizontale Flügel wurde korrigiert",

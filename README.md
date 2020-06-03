@@ -26,6 +26,10 @@ Documentation:
 
 ## Changelog
 
+### 1.0.3 03.06.2020
+* (Black-Thunder) renamed pre-defined values for 'vaneHorizontalDirection' and 'vaneVerticalDirection'
+* (Black-Thunder) refactored polling logic: if connection is lost, a maximum of 3 retries are made; if still not successful, the next retry will be made after 1 hour
+
 ### 1.0.2 01.06.2020
 * (Black-Thunder) correctly classify 'pollingInterval' as number
 * (Black-Thunder) corrected max values for states 'vaneHorizontalDirection' and 'vaneVerticalDirection'
