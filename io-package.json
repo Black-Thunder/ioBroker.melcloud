@@ -1,8 +1,20 @@
 {
   "common": {
       "name": "melcloud",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "news": {
+          "1.0.4": {
+            "en": "added new value for 'vaneHorizontalDirection': 50/50 (1 vane left, 1 vane right - only for models with 2 independent horizontal vanes)",
+            "de": "Neuer Wert für 'vaneHorizontalDirection': 50/50 (1 Flügel links, 1 Flügel rechts - nur für Modelle mit 2 unabhängigen horizontalen Flügeln)",
+            "ru": "добавлено новое значение для 'vaneHorizontDirection': 50/50 (1 лопатка слева, 1 лопатка справа - только для моделей с 2 независимыми горизонтальными лопатками)",
+            "pt": "novo valor adicionado para 'vaneHorizontalDirection': 50/50 (1 palheta à esquerda, 1 palheta à direita - apenas para modelos com 2 palhetas horizontais independentes)",
+            "nl": "toegevoegde waarde voor 'vaneHorizontalDirection': 50/50 (1 vane links, 1 vane rechts - alleen voor modellen met 2 onafhankelijke horizontale schoepen)",
+            "fr": "nouvelle valeur ajoutée pour 'vaneHorizontalDirection': 50/50 (1 aube gauche, 1 aube droite - uniquement pour les modèles avec 2 aubes horizontales indépendantes)",
+            "it": "aggiunto nuovo valore per 'vaneHorizontalDirection': 50/50 (1 banderuola a sinistra, 1 banderuola a destra - solo per modelli con 2 palette orizzontali indipendenti)",
+            "es": "nuevo valor agregado para 'vaneHorizontalDirection': 50/50 (1 paleta izquierda, 1 paleta derecha - solo para modelos con 2 paletas horizontales independientes)",
+            "pl": "dodano nową wartość dla „vaneHorizontalDirection”: 50/50 (1 łopatka w lewo, 1 łopatka w prawo - tylko dla modeli z 2 niezależnymi łopatkami poziomymi)",
+            "zh-cn": "为'vaneHorizontalDirection'增加了新值：50/50（左侧1个叶片，右侧1个叶片-仅适用于具有2个独立水平叶片的模型"
+          },
           "1.0.3": {
             "en": "refactored polling logic (react on disconnects) and renamed pre-defined values for vane directions",
             "de": "Überarbeitete Abfragelogik (Reaktion auf Unterbrechungen) und Umbenennung vordefinierter Werte für Flügelrichtungen",

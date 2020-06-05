@@ -26,6 +26,9 @@ Documentation:
 
 ## Changelog
 
+### 1.0.4 05.06.2020
+* (Black-Thunder) added new value for 'vaneHorizontalDirection': 50/50 (1 vane left, 1 vane right - only for models with 2 independent horizontal vanes)
+
 ### 1.0.3 03.06.2020
 * (Black-Thunder) renamed pre-defined values for 'vaneHorizontalDirection' and 'vaneVerticalDirection'
 * (Black-Thunder) refactored polling logic: if connection is lost, a maximum of 3 retries are made; if still not successful, the next retry will be made after 1 hour
