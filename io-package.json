@@ -1,8 +1,20 @@
 {
   "common": {
       "name": "melcloud",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "news": {
+          "1.0.5": {
+            "en": "technical optimizations",
+            "de": "technische Optimierungen",
+            "ru": "технические оптимизации",
+            "pt": "otimizações técnicas",
+            "nl": "technische optimalisaties",
+            "fr": "optimisations techniques",
+            "it": "ottimizzazioni tecniche",
+            "es": "optimizaciones técnicas",
+            "pl": "optymalizacje techniczne",
+            "zh-cn": "技术优化"
+          },
           "1.0.4": {
             "en": "added new value for 'vaneHorizontalDirection': 50/50 (1 vane left, 1 vane right - only for models with 2 independent horizontal vanes)",
             "de": "Neuer Wert für 'vaneHorizontalDirection': 50/50 (1 Flügel links, 1 Flügel rechts - nur für Modelle mit 2 unabhängigen horizontalen Flügeln)",

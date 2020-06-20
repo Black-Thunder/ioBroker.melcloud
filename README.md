@@ -26,6 +26,11 @@ Documentation:
 
 ## Changelog
 
+### 1.0.5 21.06.2020
+* (Black-Thunder) added more checks when processing HTTP response
+* (Black-Thunder) corrected typo in subscribeStates()
+* (Black-Thunder) moved subscribeStates() after init and first successful connection
+
 ### 1.0.4 05.06.2020
 * (Black-Thunder) added new value for 'vaneHorizontalDirection': 50/50 (1 vane left, 1 vane right - only for models with 2 independent horizontal vanes)
 
