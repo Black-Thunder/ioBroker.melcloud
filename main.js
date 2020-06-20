@@ -154,12 +154,14 @@ class Melcloud extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		this.subscribeStates("*devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
-
 		this.initObjects()
 			.then(() => this.checkSettings()
 				.then(() => this.saveKnownDeviceIDs()
-					.then(() => this.connectToCloud())
+					.then(() => 
+					{
+						this.connectToCloud();
+						this.subscribeStates("devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
+					})
 				)	
 			)
 			.catch(err => this.log.error(err));
