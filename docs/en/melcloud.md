@@ -59,5 +59,5 @@ After successful start of the adapter instance (X) your devices are queried from
 | mode | X | X | Operation mode of the device (1=Heat, 2=Dry, 3=Cool, 7=Vent, 8=Auto) |
 | power | X | X | Power switch (turns device on/off) |
 | targetTemp | X | X | Target temperature of the device |
-| vaneHorizontalDirection | X | X | Current horizontal direction of the device's vane (0=Auto, 1...5=min to max, 12=Swing) |
+| vaneHorizontalDirection | X | X | Current horizontal direction of the device's vane (0=Auto, 1...5=min to max, 8=50/50 (only for devices with 2 seperate vanes), 12=Swing) |
 | vaneVerticalDirection | X | X | Current vertical direction of the device's vane (0=Auto, 1...5=min to max, 7=Swing) |
