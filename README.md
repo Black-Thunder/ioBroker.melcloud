@@ -21,6 +21,7 @@ This adapter integrates Mitsubishi air conditioning systems via MELCloud (https:
 
 Documentation:
 
+* [Forum thread](https://forum.iobroker.net/topic/33855/test-adapter-melcloud-v1-0-x-github)
 * [English description](https://github.com/Black-Thunder/ioBroker.melcloud/tree/master/docs/en/melcloud.md)
 * [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.melcloud/tree/master/docs/de/melcloud.md)
 
