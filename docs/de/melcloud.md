@@ -22,14 +22,14 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 
 ### melcoud.X.info
 
-| id | read | write | comment |
-|--- |--- |--- |--- |
+| ID | lesbar | änderbar | Bemerkung |
+|--- | :---: | :---: |--- |
 | connection | X | - | Gibt den Verbindungsstatus zur MELCloud an |
 
 ### melcloud.X.device.Y.info
 
-| id | read | write | comment |
-|--- |--- |--- |--- |
+| ID | lesbar | änderbar | Bemerkung |
+|--- | :---: | :---: |--- |
 | actualFanSpeed | X | - | Tatsächliche Lüfterstufe im Automatikmodus |
 | buildingId | X | - | Zugeordnete Gebäude-ID |
 | canCool | X | - | Fähigkeit zu kühlen |
@@ -53,8 +53,8 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 
 ### melcloud.X.device.Y.control
 
-| id | read | write | comment |
-|--- |--- |--- |--- |
+| ID | lesbar | änderbar | Bemerkung |
+|--- | :---: | :---: |--- |
 | fanSpeed | X | X | Aktuelle Lüfterstufe des Geräts (0=Automatik, 1...'numberOfFanSpeeds'= minimale bis maximale Stufe) |
 | mode | X | X | Betriebsmodus des Geräts (1=Heizen, 2=Entfeuchten, 3=Kühlen, 7=Lüften, 8=Automatik) |
 | power | X | X | Hauptschalter (schaltet Gerät ein bzw. aus) |
