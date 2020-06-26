@@ -23,13 +23,13 @@ After successful start of the adapter instance (X) your devices are queried from
 ### melcoud.X.info
 
 | id | read | write | comment |
-|--- |--- |--- |--- |
+|--- | :---: | :---: |--- |
 | connection | X | - | Indicates the connection to MELCloud |
 
 ### melcloud.X.device.Y.info
 
 | id | read | write | comment |
-|--- |--- |--- |--- |
+|--- | :---: | :---: |--- |
 | actualFanSpeed | X | - | Actual fan speed when fan is set to auto mode |
 | buildingId | X | - | Assigned building ID |
 | canCool | X | - | Ability to cool |
@@ -54,7 +54,7 @@ After successful start of the adapter instance (X) your devices are queried from
 ### melcloud.X.device.Y.control
 
 | id | read | write | comment |
-|--- |--- |--- |--- |
+|--- | :---: | :---: |--- |
 | fanSpeed | X | X | Current fan speed of the device (0=Auto, 1...'numberOfFanSpeeds'= low to max fan speed) |
 | mode | X | X | Operation mode of the device (1=Heat, 2=Dry, 3=Cool, 7=Vent, 8=Auto) |
 | power | X | X | Power switch (turns device on/off) |
