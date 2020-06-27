@@ -1,8 +1,20 @@
 {
   "common": {
       "name": "melcloud",
-      "version": "1.0.6-pre1",
+      "version": "1.0.6",
       "news": {
+          "1.0.6": {
+            "en": "added request queue to improve reliability",
+            "de": "Anforderungswarteschlange hinzugefügt, um die Zuverlässigkeit zu verbessern",
+            "ru": "добавлена очередь запросов для повышения надежности",
+            "pt": "fila de pedidos adicionada para melhorar a confiabilidade",
+            "nl": "verzoekwachtrij toegevoegd om de betrouwbaarheid te verbeteren",
+            "fr": "file d'attente de demandes ajoutée pour améliorer la fiabilité",
+            "it": "aggiunta coda di richieste per migliorare l'affidabilità",
+            "es": "cola de solicitud agregada para mejorar la confiabilidad",
+            "pl": "dodano kolejkę żądań, aby poprawić niezawodność",
+            "zh-cn": "添加了请求队列以提高可靠性"
+          },
           "1.0.5": {
             "en": "technical optimizations",
             "de": "technische Optimierungen",

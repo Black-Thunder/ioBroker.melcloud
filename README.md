@@ -27,7 +27,7 @@ Documentation:
 
 ## Changelog
 
-### 1.0.6-pre1 27.06.2020
+### 1.0.6 28.06.2020
 * (Black-Thunder) implemented queue mechanism for sending requests to cloud
 * (Black-Thunder) disabled adapter autostart after installation
 
