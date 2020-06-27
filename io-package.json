@@ -152,7 +152,7 @@
       "platform": "Javascript/Node.js",
       "main": "main.js",
       "icon": "melcloud.png",
-      "enabled": true,
+      "enabled": false,
       "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
       "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
       "loglevel": "info",
