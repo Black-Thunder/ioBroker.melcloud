@@ -27,6 +27,9 @@ Documentation:
 
 ## Changelog
 
+### 1.0.6-pre1 27.06.2020
+* (Black-Thunder) implement queue mechanism for sending requests to cloud
+
 ### 1.0.5 21.06.2020
 * (Black-Thunder) added more checks when processing HTTP response
 * (Black-Thunder) corrected typo in subscribeStates()
