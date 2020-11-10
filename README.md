@@ -27,6 +27,15 @@ Documentation:
 
 ## Changelog
 
+## Changelog
+<!--
+	Placeholder for the next version (at the beginning of the line):
+	### __WORK IN PROGRESS__
+-->
+
+### __WORK IN PROGRESS__
+* added release-script
+
 ### 1.0.6 28.06.2020
 * (Black-Thunder) implemented queue mechanism for sending requests to cloud
 * (Black-Thunder) disabled adapter autostart after installation
