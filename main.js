@@ -161,7 +161,8 @@ class Melcloud extends utils.Adapter {
 					.then(() => 
 					{
 						this.connectToCloud();
-						this.subscribeStates("devices.*.control.*"); // only subsribe to states changes under "devices.X.control."
+						this.subscribeStates("devices.*.control.*"); // subsribe to states changes under "devices.X.control."
+						this.subscribeStates("devices.*.reports.*"); // subsribe to states changes under "devices.X.reports."
 					})
 				)	
 			)
@@ -214,7 +215,7 @@ class Melcloud extends utils.Adapter {
 				return;
 			}
 
-			// Only states under "devices.XXX.control" are subscribed --> device settings/modes are changed
+			// Only states under "devices.XXX.control" and "devices.XXX.reports" are subscribed
 			let deviceId = id.replace(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".", "");
 			deviceId = deviceId.substring(0, deviceId.indexOf("."));
 
@@ -231,9 +232,10 @@ class Melcloud extends utils.Adapter {
 				this.log.error("This should not happen - report this to the developer!");
 				return;
 			}
-			this.log.debug("Processing change for device object with id " + device.id + " (" + device.name + ")...");
 
 			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
+			this.log.debug("Processing command '" + controlOption + "' for device object with id " + device.id + " (" + device.name + ")...");
+
 			switch (controlOption) {
 				case (commonDefines.AdapterStateIDs.Power):
 					if (state.val) {
@@ -259,6 +261,13 @@ class Melcloud extends utils.Adapter {
 					break;
 				case (commonDefines.AdapterStateIDs.VaneHorizontalDirection):
 					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneHorizontalDirection, state.val);
+					break;
+				case (commonDefines.AdapterStateIDs.GetPowerConsumptionReport):
+					device.getPowerConsumptionReport();
+					break;
+				case (commonDefines.AdapterStateIDs.ReportStartDate):
+				case (commonDefines.AdapterStateIDs.ReportEndDate):
+					// ignore these as they're just necessary for report request and shouldn't trigger any actions themselves
 					break;
 				default:
 					this.log.error("Unsupported control option: " + controlOption + " - Please report this to the developer!");
