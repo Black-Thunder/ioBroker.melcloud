@@ -61,3 +61,15 @@ After successful start of the adapter instance (X) your devices are queried from
 | targetTemp | X | X | Target temperature of the device |
 | vaneHorizontalDirection | X | X | Current horizontal direction of the device's vane (0=Auto, 1...5=leftmost to rightmost, 8=50/50 (only for devices with 2 seperate vanes), 12=Swing) |
 | vaneVerticalDirection | X | X | Current vertical direction of the device's vane (0=Auto, 1...5=topmost to bottommost, 7=Swing) |
+
+### melcloud.X.device.Y.reports
+
+| id | read | write | comment |
+|--- | :---: | :---: |--- |
+| startDate | X | X | Start date for the consumption report (format: YYYY-MM-DD, e.g. 2020-05-31) |
+| endDate | X | X | End date for the consumption report (format: YYYY-MM-DD, e.g. 2021-01-08) |
+| getPowerConsumptionReport | - | X | Button to trigger retrieving the power consumption reports |
+| reportedMonths | X | - | Array containing all months with measurements (1 = January, ..., 12 = December) |
+| totalMinutes | X | - | Total measurement time  (in minutes) |
+| totalPowerConsumption*OperatioMode* | X | - | Total consumption in operation mode *OperatioMode* (in kWh) - created for each operation mode |
+| totalPowerConsumption*OperatioMode* *Month* | X | - | Total consumption in operation mode *OperatioMode* for month *Month* (in kWh) - created for each operation mode and month |
