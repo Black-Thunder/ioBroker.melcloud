@@ -34,8 +34,7 @@ Documentation:
 ### __WORK IN PROGRESS__
 * (Black-Thunder) new functionality: retrieve power consumption reports
 * (Black-Thunder) adapter connection state now correctly set accordingly to the cloud connection
-* (Black-Thunder) added release-script and Dependabot
-* (Black-Thunder) updated dependecies
+* (Black-Thunder) added release-script and Dependabot, updated dependecies
 
 ### 1.0.6 28.06.2020
 * (Black-Thunder) implemented queue mechanism for sending requests to cloud

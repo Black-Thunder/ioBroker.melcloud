@@ -64,6 +64,9 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 
 ### melcloud.X.device.Y.reports
 
+Um Berichte abrufen zu können, müssen zunächst Start- ("startDate") und Endzeitpunkt ("endDate") korrekt festgelegt werden. Dabei ist das Format JJJJ-MM-TT zu beachten! Zur eigentlichen Durchführung des Abrufs muss der Datenpunkt "getPowerConsumptionReport" getriggert werden.
+Kurz darauf werden die entsprechenden Datenpunkte mit den Werten aus der Cloud befüllt.
+
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
 | startDate | X | X | Beginn des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2020-05-31) |

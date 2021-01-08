@@ -64,6 +64,9 @@ After successful start of the adapter instance (X) your devices are queried from
 
 ### melcloud.X.device.Y.reports
 
+Before retrieving the power consumption reports you have to set the start ("startDate") and end date ("endDate") correctly. Please pay attention to the correct date format YYYY-MM-DD! Once these are set trigger the state "getPowerConsumptionReport".
+Shortly afterwards the corresponding states are filled with the report data from the cloud.
+
 | id | read | write | comment |
 |--- | :---: | :---: |--- |
 | startDate | X | X | Start date for the consumption report (format: YYYY-MM-DD, e.g. 2020-05-31) |
