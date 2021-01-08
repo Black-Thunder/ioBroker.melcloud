@@ -31,7 +31,7 @@ Documentation:
 	### __WORK IN PROGRESS__
 -->
 
-### __WORK IN PROGRESS__
+### 1.1.0 (2021-01-08)
 * (Black-Thunder) new functionality: retrieve power consumption reports
 * (Black-Thunder) adapter connection state now correctly set accordingly to the cloud connection
 * (Black-Thunder) added release-script and Dependabot, updated dependecies

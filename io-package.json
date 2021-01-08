@@ -1,192 +1,204 @@
 {
-  "common": {
-      "name": "melcloud",
-      "version": "1.0.6",
-      "news": {
-          "1.0.6": {
-            "en": "added request queue to improve reliability",
-            "de": "Anforderungswarteschlange hinzugefügt, um die Zuverlässigkeit zu verbessern",
-            "ru": "добавлена очередь запросов для повышения надежности",
-            "pt": "fila de pedidos adicionada para melhorar a confiabilidade",
-            "nl": "verzoekwachtrij toegevoegd om de betrouwbaarheid te verbeteren",
-            "fr": "file d'attente de demandes ajoutée pour améliorer la fiabilité",
-            "it": "aggiunta coda di richieste per migliorare l'affidabilità",
-            "es": "cola de solicitud agregada para mejorar la confiabilidad",
-            "pl": "dodano kolejkę żądań, aby poprawić niezawodność",
-            "zh-cn": "添加了请求队列以提高可靠性"
-          },
-          "1.0.5": {
-            "en": "technical optimizations",
-            "de": "technische Optimierungen",
-            "ru": "технические оптимизации",
-            "pt": "otimizações técnicas",
-            "nl": "technische optimalisaties",
-            "fr": "optimisations techniques",
-            "it": "ottimizzazioni tecniche",
-            "es": "optimizaciones técnicas",
-            "pl": "optymalizacje techniczne",
-            "zh-cn": "技术优化"
-          },
-          "1.0.4": {
-            "en": "added new value for 'vaneHorizontalDirection': 50/50 (1 vane left, 1 vane right - only for models with 2 independent horizontal vanes)",
-            "de": "Neuer Wert für 'vaneHorizontalDirection': 50/50 (1 Flügel links, 1 Flügel rechts - nur für Modelle mit 2 unabhängigen horizontalen Flügeln)",
-            "ru": "добавлено новое значение для 'vaneHorizontDirection': 50/50 (1 лопатка слева, 1 лопатка справа - только для моделей с 2 независимыми горизонтальными лопатками)",
-            "pt": "novo valor adicionado para 'vaneHorizontalDirection': 50/50 (1 palheta à esquerda, 1 palheta à direita - apenas para modelos com 2 palhetas horizontais independentes)",
-            "nl": "toegevoegde waarde voor 'vaneHorizontalDirection': 50/50 (1 vane links, 1 vane rechts - alleen voor modellen met 2 onafhankelijke horizontale schoepen)",
-            "fr": "nouvelle valeur ajoutée pour 'vaneHorizontalDirection': 50/50 (1 aube gauche, 1 aube droite - uniquement pour les modèles avec 2 aubes horizontales indépendantes)",
-            "it": "aggiunto nuovo valore per 'vaneHorizontalDirection': 50/50 (1 banderuola a sinistra, 1 banderuola a destra - solo per modelli con 2 palette orizzontali indipendenti)",
-            "es": "nuevo valor agregado para 'vaneHorizontalDirection': 50/50 (1 paleta izquierda, 1 paleta derecha - solo para modelos con 2 paletas horizontales independientes)",
-            "pl": "dodano nową wartość dla „vaneHorizontalDirection”: 50/50 (1 łopatka w lewo, 1 łopatka w prawo - tylko dla modeli z 2 niezależnymi łopatkami poziomymi)",
-            "zh-cn": "为'vaneHorizontalDirection'增加了新值：50/50（左侧1个叶片，右侧1个叶片-仅适用于具有2个独立水平叶片的模型"
-          },
-          "1.0.3": {
-            "en": "refactored polling logic (react on disconnects) and renamed pre-defined values for vane directions",
-            "de": "Überarbeitete Abfragelogik (Reaktion auf Unterbrechungen) und Umbenennung vordefinierter Werte für Flügelrichtungen",
-            "ru": "изменена логика опроса (реагирует на разъединение) и переименована предварительно определенные значения для направлений движения лопастей",
-            "pt": "lógica de pesquisa refatorada (reagir em desconexões) e renomear valores predefinidos para direções da palheta",
-            "nl": "refactored polling-logica (reageren op verbroken verbindingen) en hernoemde vooraf gedefinieerde waarden voor windrichting",
-            "fr": "logique d'interrogation refactorisée (réagir en cas de déconnexion) et valeurs prédéfinies renommées pour les directions des aubes",
-            "it": "logica di polling refactored (reagire alle disconnessioni) e rinominare i valori predefiniti per le direzioni delle palette",
-            "es": "lógica de sondeo refactorizada (reaccionar en desconexiones) y valores predefinidos renombrados para direcciones de paletas",
-            "pl": "zmieniono logikę odpytywania (reaguje na rozłączenia) i zmieniono nazwy wstępnie zdefiniowanych wartości kierunków łopatek",
-            "zh-cn": "重构的轮询逻辑（在断开连接时起作用）并重命名了叶片方向的预定义值"
-          },
-          "1.0.2": {
-            "en": "corrected sending of 'swing' mode for vertical/horizontal vanes",
-            "de": "Das Senden des 'Swing'-Modus für vertikale / horizontale Flügel wurde korrigiert",
-            "ru": "исправлена отправка режима качания для вертикальных / горизонтальных лопаток",
-            "pt": "envio corrigido do modo 'swing' para palhetas verticais / horizontais",
-            "nl": "gecorrigeerd verzenden van 'swing'-modus voor verticale / horizontale schoepen",
-            "fr": "envoi corrigé du mode «swing» pour les aubes verticales / horizontales",
-            "it": "invio corretto della modalità \"swing\" per palette verticali / orizzontali",
-            "es": "envío corregido del modo 'swing' para paletas verticales / horizontales",
-            "pl": "poprawione wysyłanie trybu „swing” dla łopatek pionowych / poziomych",
-            "zh-cn": "更正了垂直/水平叶片的“摆动”模式的发送"
-          },
-          "1.0.1": {
-            "en": "fixed bug in device control when two or more devices are present",
-            "de": "Fehler in der Gerätesteuerung behoben, wenn zwei oder mehr Geräte vorhanden sind",
-            "ru": "исправлена ошибка в управлении устройством при наличии двух или более устройств",
-            "pt": "bug corrigido no controle de dispositivos quando dois ou mais dispositivos estão presentes",
-            "nl": "bug opgelost in apparaatbeheer wanneer twee of meer apparaten aanwezig zijn",
-            "fr": "correction d'un bug dans le contrôle des périphériques lorsque deux périphériques ou plus sont présents",
-            "it": "corretto bug nel controllo dei dispositivi quando erano presenti due o più dispositivi",
-            "es": "error corregido en el control del dispositivo cuando hay dos o más dispositivos presentes",
-            "pl": "naprawiono błąd w kontroli urządzenia, gdy obecne są dwa lub więcej urządzeń",
-            "zh-cn": "修复了存在两个或更多设备时设备控制中的错误"
-          },
-          "1.0.0": {
-            "en": "first stable public release",
-            "de": "erste stabile Veröffentlichung",
-            "ru": "первый стабильный публичный релиз",
-            "pt": "primeiro lançamento público estável",
-            "nl": "eerste stabiele openbare release",
-            "fr": "première version publique stable",
-            "it": "prima uscita pubblica stabile",
-            "es": "primer lanzamiento público estable",
-            "pl": "pierwsze stabilne publiczne wydanie",
-            "zh-cn": "首次稳定公开发布"
-          },
-          "0.0.3": {
-              "en": "added indicator if device is reachable\ncorrected role of 'targetTemp', 'power' and 'deviceName'\nadded new states 'macAddress' and 'actualFanSpeed' (indicates fan speed when running in auto mode)\nadded translations",
-              "de": "Anzeige hinzugefügt, wenn das Gerät erreichbar ist\nkorrigierte Rolle von 'targetTemp', 'power' und 'deviceName'\nneue Zustände 'macAddress' und 'actualFanSpeed' hinzugefügt (zeigt die Lüftergeschwindigkeit im automatischen Modus an)\nÜbersetzungen hinzugefügt",
-              "ru": "добавлен индикатор доступности устройства\nисправлены роли «targetTemp», «power» и «deviceName», добавлены новые состояния «macAddress» и «actualFanSpeed» (указывает скорость вращения вентилятора при работе в автоматическом режиме)\nдобавлены переводы",
-              "pt": "indicador adicionado se o dispositivo estiver acessível\nfunção corrigida de 'targetTemp', 'power' e 'deviceName'\nnovos estados adicionados 'macAddress' e 'actualFanSpeed' (indica a velocidade do ventilador ao executar no modo automático)\ntraduções adicionadas",
-              "nl": "indicator toegevoegd als het apparaat bereikbaar is\ngecorrigeerde rol van 'targetTemp', 'power' en 'deviceName'\nnieuwe staten toegevoegd 'macAddress' en 'actualFanSpeed' (geeft de ventilatorsnelheid aan in de automatische modus)\nvertalingen toegevoegd",
-              "fr": "indicateur ajouté si l'appareil est accessible\nrôle corrigé de 'targetTemp', 'power' et 'deviceName'\najout de nouveaux états 'macAddress' et 'actualFanSpeed' (indique la vitesse du ventilateur lors de l'exécution en mode automatique)\ntraductions ajoutées",
-              "it": "aggiunto indicatore se il dispositivo è raggiungibile\nruolo corretto di 'targetTemp', 'power' e 'deviceName'\naggiunti nuovi stati 'macAddress' e 'actualFanSpeed' (indica la velocità della ventola quando si esegue in modalità automatica)\naggiunte traduzioni",
-              "es": "indicador agregado si el dispositivo es accesible\nfunción corregida de 'targetTemp', 'power' y 'deviceName'\nnuevos estados agregados 'macAddress' y 'actualFanSpeed' (indica la velocidad del ventilador cuando se ejecuta en modo automático)\ntraducciones agregadas",
-              "pl": "dodano wskaźnik, czy urządzenie jest osiągalne\npoprawiono rolę „targetTemp”, „power” i „deviceName”\ndodano nowe stany „macAddress” i „actualFanSpeed” (wskazuje prędkość wentylatora podczas pracy w trybie automatycznym)\ndodano tłumaczenia",
-              "zh-cn": "添加了设备是否可访问的指示器；纠正了“ targetTemp”，“ power”和“ deviceName”的角色；添加了新状态“ macAddress”和“ actualFanSpeed”（指示在自动模式下运行时的风扇速度）；添加了翻译"
-          },
-          "0.0.2": {
-              "en": "first implementation of device control\nadded more device options\nextended and optimized logging (e.g. when logging into MelCloud)\nimplemented polling of cloud data",
-              "de": "erste Implementierung der Gerätesteuerung\nHinzufügen weiterer Geräteoptionen\nerweiterte und optimierte Protokollierung (z. B. beim Anmelden bei MelCloud)\nimplementiertes Abrufen von Cloud-Daten",
-              "ru": "первая реализация управления устройством\nдобавлено больше опций устройства\nрасширенное и оптимизированное ведение журнала (например, при входе в MelCloud)\nреализован опрос облачных данных",
-              "pt": "primeira implementação do controle de dispositivo\nadicionadas mais opções de dispositivo\nregistro estendido e otimizado (por exemplo, ao fazer login no MelCloud)\npesquisa implementada de dados na nuvem",
-              "nl": "eerste implementatie van apparaatcontrole\nmeer apparaatopties toegevoegd\nuitgebreide en geoptimaliseerde logging (bijv. bij inloggen op MelCloud)\ngeïmplementeerde polling van cloudgegevens",
-              "fr": "première mise en œuvre du contrôle des appareils\najout de plus d'options d'appareils\njournalisation étendue et optimisée (par exemple lors de la connexion à MelCloud)\nimplémentation de l'interrogation des données cloud",
-              "it": "prima implementazione del controllo del dispositivo\naggiunta di più opzioni del dispositivo\nregistrazione estesa e ottimizzata (ad es. durante l'accesso a MelCloud)\npolling implementato dei dati cloud",
-              "es": "primera implementación del control del dispositivo\nse agregaron más opciones de dispositivo\nregistro extendido y optimizado (por ejemplo, al iniciar sesión en MelCloud)\nencuesta implementada de datos en la nube",
-              "pl": "pierwsza implementacja kontroli urządzenia\ndodano więcej opcji urządzenia\nrozszerzone i zoptymalizowane rejestrowanie (np. podczas logowania do MelCloud)\nzaimplementowane odpytywanie danych w chmurze",
-              "zh-cn": "首次实现设备控制\n添加了更多设备选项\n扩展和优化了日志记录（例如登录MelCloud时）\n实现了对云数据的轮询"
-          },
-          "0.0.1": {
-              "en": "initial release",
-              "de": "Erstveröffentlichung",
-              "ru": "Начальная версия",
-              "pt": "lançamento inicial",
-              "nl": "Eerste uitgave",
-              "fr": "Première version",
-              "it": "Versione iniziale",
-              "es": "Versión inicial",
-              "pl": "Pierwsze wydanie",
-              "zh-cn": "首次出版"
-          }
-      },
-      "title": "MELCloud",
-      "titleLang": {
-          "en": "MELCloud",
-          "de": "MELCloud",
-          "ru": "MELCloud",
-          "pt": "MELCloud",
-          "nl": "MELCloud",
-          "fr": "MELCloud",
-          "it": "MELCloud",
-          "es": "MELCloud",
-          "pl": "MELCloud",
-          "zh-cn": "MEL云"
-      },
-      "desc": {
-          "en": "The adapter integrates Mitsubishi air conditioning systems via MELCloud into ioBroker.",
-          "de": "Der Adapter integriert Klimaanlagen von Mitsubishi mittels MELCloud in ioBroker.",
-          "ru": "Адаптер интегрирует системы кондиционирования воздуха Mitsubishi в ioBroker с помощью MELCloud.",
-          "pt": "O adaptador integra os sistemas de ar condicionado Mitsubishi ao ioBroker usando MELCloud.",
-          "nl": "De adapter integreert Mitsubishi-airconditioningsystemen in ioBroker met behulp van MELCloud.",
-          "fr": "L'adaptateur intègre les systèmes de climatisation Mitsubishi dans ioBroker à l'aide de MELCloud.",
-          "it": "L'adattatore integra i sistemi di climatizzazione Mitsubishi in ioBroker utilizzando MELCloud.",
-          "es": "El adaptador integra sistemas de aire acondicionado Mitsubishi en ioBroker usando MELCloud.",
-          "pl": "Adapter integruje systemy klimatyzacji Mitsubishi z ioBroker za pomocą MELCloud.",
-          "zh-cn": "该适配器使用MELCloud将三菱空调系统集成到ioBroker中。"
-      },
-      "authors": [
-          "Black-Thunder <glwars@aol.de>"
-      ],
-      "keywords": [
-          "ioBroker",
-          "Smart Home",
-          "home automation",
-          "MELCloud",
-          "Mitsubishi",
-          "airconditioning"
-      ],
-      "license": "MIT",
-      "platform": "Javascript/Node.js",
-      "main": "main.js",
-      "icon": "melcloud.png",
-      "enabled": false,
-      "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
-      "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
-      "loglevel": "info",
-      "mode": "daemon",
-      "type": "climate-control",
-      "compact": true,
-      "connectionType": "cloud",
-      "dataSource": "poll",
-      "materialize": true,
-      "dependencies": [
-          {
-              "js-controller": ">=1.4.2",
-              "admin": ">=3.0.0"
-          }
-      ]
-  },
-  "native": {
-      "melCloudEmail": "",
-      "melCloudPassword": "",
-      "melCloudLanguage": 4,
-      "pollingInterval": 5
-  },
-  "objects": [],
-  "instanceObjects": []
+    "common": {
+        "name": "melcloud",
+        "version": "1.1.0",
+        "news": {
+            "1.1.0": {
+                "en": "new functionality: retrieve power consumption reports\nadapter connection state now correctly set accordingly to the cloud connection\nadded release-script and Dependabot, updated dependecies",
+                "de": "Neue Funktionalität: Abrufen von Stromverbrauchsberichten\nDer Adapterverbindungsstatus ist jetzt korrekt auf die Cloud-Verbindung eingestellt\nRelease-Skript und Dependabot hinzugefügt, Abhängigkeiten aktualisiert",
+                "ru": "новая функциональность: получение отчетов о потреблении энергии\nсостояние подключения адаптера теперь правильно настроено в соответствии с подключением к облаку\nдобавлены релиз-скрипт и Dependabot, обновлены зависимости",
+                "pt": "nova funcionalidade: recuperar relatórios de consumo de energia\nestado de conexão do adaptador agora configurado corretamente de acordo com a conexão em nuvem\nadicionado release-script e Dependabot, dependências atualizadas",
+                "nl": "nieuwe functionaliteit: rapporten over energieverbruik opvragen\nde verbindingsstatus van de adapter is nu correct ingesteld overeenkomstig de cloudverbinding\nrelease-script en Dependabot toegevoegd, bijgewerkte afhankelijkheden",
+                "fr": "nouvelle fonctionnalité: récupérer les rapports de consommation d'énergie\nl'état de connexion de l'adaptateur est désormais correctement défini en fonction de la connexion au cloud\najout de release-script et Dependabot, mise à jour des dépendances",
+                "it": "nuova funzionalità: recuperare i rapporti sul consumo energetico\nlo stato di connessione dell'adattatore ora è impostato correttamente in base alla connessione cloud\naggiunto release-script e Dependabot, dipendenze aggiornate",
+                "es": "nueva funcionalidad: recuperar informes de consumo de energía\nEl estado de conexión del adaptador ahora está configurado correctamente de acuerdo con la conexión a la nube\nSe agregó un script de lanzamiento y Dependabot, dependencias actualizadas",
+                "pl": "nowa funkcjonalność: pobieranie raportów zużycia energii\nStan połączenia adaptera jest teraz poprawnie ustawiony zgodnie z połączeniem z chmurą\ndodano skrypt wydania i Dependabot, zaktualizowane zależności",
+                "zh-cn": "新功能：检索功耗报告\n适配器连接状态现在已正确设置为云连接\n添加了发行脚本和Dependabot，更新了依存关系"
+            },
+            "1.0.6": {
+                "en": "added request queue to improve reliability",
+                "de": "Anforderungswarteschlange hinzugefügt, um die Zuverlässigkeit zu verbessern",
+                "ru": "добавлена очередь запросов для повышения надежности",
+                "pt": "fila de pedidos adicionada para melhorar a confiabilidade",
+                "nl": "verzoekwachtrij toegevoegd om de betrouwbaarheid te verbeteren",
+                "fr": "file d'attente de demandes ajoutée pour améliorer la fiabilité",
+                "it": "aggiunta coda di richieste per migliorare l'affidabilità",
+                "es": "cola de solicitud agregada para mejorar la confiabilidad",
+                "pl": "dodano kolejkę żądań, aby poprawić niezawodność",
+                "zh-cn": "添加了请求队列以提高可靠性"
+            },
+            "1.0.5": {
+                "en": "technical optimizations",
+                "de": "technische Optimierungen",
+                "ru": "технические оптимизации",
+                "pt": "otimizações técnicas",
+                "nl": "technische optimalisaties",
+                "fr": "optimisations techniques",
+                "it": "ottimizzazioni tecniche",
+                "es": "optimizaciones técnicas",
+                "pl": "optymalizacje techniczne",
+                "zh-cn": "技术优化"
+            },
+            "1.0.4": {
+                "en": "added new value for 'vaneHorizontalDirection': 50/50 (1 vane left, 1 vane right - only for models with 2 independent horizontal vanes)",
+                "de": "Neuer Wert für 'vaneHorizontalDirection': 50/50 (1 Flügel links, 1 Flügel rechts - nur für Modelle mit 2 unabhängigen horizontalen Flügeln)",
+                "ru": "добавлено новое значение для 'vaneHorizontDirection': 50/50 (1 лопатка слева, 1 лопатка справа - только для моделей с 2 независимыми горизонтальными лопатками)",
+                "pt": "novo valor adicionado para 'vaneHorizontalDirection': 50/50 (1 palheta à esquerda, 1 palheta à direita - apenas para modelos com 2 palhetas horizontais independentes)",
+                "nl": "toegevoegde waarde voor 'vaneHorizontalDirection': 50/50 (1 vane links, 1 vane rechts - alleen voor modellen met 2 onafhankelijke horizontale schoepen)",
+                "fr": "nouvelle valeur ajoutée pour 'vaneHorizontalDirection': 50/50 (1 aube gauche, 1 aube droite - uniquement pour les modèles avec 2 aubes horizontales indépendantes)",
+                "it": "aggiunto nuovo valore per 'vaneHorizontalDirection': 50/50 (1 banderuola a sinistra, 1 banderuola a destra - solo per modelli con 2 palette orizzontali indipendenti)",
+                "es": "nuevo valor agregado para 'vaneHorizontalDirection': 50/50 (1 paleta izquierda, 1 paleta derecha - solo para modelos con 2 paletas horizontales independientes)",
+                "pl": "dodano nową wartość dla „vaneHorizontalDirection”: 50/50 (1 łopatka w lewo, 1 łopatka w prawo - tylko dla modeli z 2 niezależnymi łopatkami poziomymi)",
+                "zh-cn": "为'vaneHorizontalDirection'增加了新值：50/50（左侧1个叶片，右侧1个叶片-仅适用于具有2个独立水平叶片的模型"
+            },
+            "1.0.3": {
+                "en": "refactored polling logic (react on disconnects) and renamed pre-defined values for vane directions",
+                "de": "Überarbeitete Abfragelogik (Reaktion auf Unterbrechungen) und Umbenennung vordefinierter Werte für Flügelrichtungen",
+                "ru": "изменена логика опроса (реагирует на разъединение) и переименована предварительно определенные значения для направлений движения лопастей",
+                "pt": "lógica de pesquisa refatorada (reagir em desconexões) e renomear valores predefinidos para direções da palheta",
+                "nl": "refactored polling-logica (reageren op verbroken verbindingen) en hernoemde vooraf gedefinieerde waarden voor windrichting",
+                "fr": "logique d'interrogation refactorisée (réagir en cas de déconnexion) et valeurs prédéfinies renommées pour les directions des aubes",
+                "it": "logica di polling refactored (reagire alle disconnessioni) e rinominare i valori predefiniti per le direzioni delle palette",
+                "es": "lógica de sondeo refactorizada (reaccionar en desconexiones) y valores predefinidos renombrados para direcciones de paletas",
+                "pl": "zmieniono logikę odpytywania (reaguje na rozłączenia) i zmieniono nazwy wstępnie zdefiniowanych wartości kierunków łopatek",
+                "zh-cn": "重构的轮询逻辑（在断开连接时起作用）并重命名了叶片方向的预定义值"
+            },
+            "1.0.2": {
+                "en": "corrected sending of 'swing' mode for vertical/horizontal vanes",
+                "de": "Das Senden des 'Swing'-Modus für vertikale / horizontale Flügel wurde korrigiert",
+                "ru": "исправлена отправка режима качания для вертикальных / горизонтальных лопаток",
+                "pt": "envio corrigido do modo 'swing' para palhetas verticais / horizontais",
+                "nl": "gecorrigeerd verzenden van 'swing'-modus voor verticale / horizontale schoepen",
+                "fr": "envoi corrigé du mode «swing» pour les aubes verticales / horizontales",
+                "it": "invio corretto della modalità \"swing\" per palette verticali / orizzontali",
+                "es": "envío corregido del modo 'swing' para paletas verticales / horizontales",
+                "pl": "poprawione wysyłanie trybu „swing” dla łopatek pionowych / poziomych",
+                "zh-cn": "更正了垂直/水平叶片的“摆动”模式的发送"
+            },
+            "1.0.1": {
+                "en": "fixed bug in device control when two or more devices are present",
+                "de": "Fehler in der Gerätesteuerung behoben, wenn zwei oder mehr Geräte vorhanden sind",
+                "ru": "исправлена ошибка в управлении устройством при наличии двух или более устройств",
+                "pt": "bug corrigido no controle de dispositivos quando dois ou mais dispositivos estão presentes",
+                "nl": "bug opgelost in apparaatbeheer wanneer twee of meer apparaten aanwezig zijn",
+                "fr": "correction d'un bug dans le contrôle des périphériques lorsque deux périphériques ou plus sont présents",
+                "it": "corretto bug nel controllo dei dispositivi quando erano presenti due o più dispositivi",
+                "es": "error corregido en el control del dispositivo cuando hay dos o más dispositivos presentes",
+                "pl": "naprawiono błąd w kontroli urządzenia, gdy obecne są dwa lub więcej urządzeń",
+                "zh-cn": "修复了存在两个或更多设备时设备控制中的错误"
+            },
+            "1.0.0": {
+                "en": "first stable public release",
+                "de": "erste stabile Veröffentlichung",
+                "ru": "первый стабильный публичный релиз",
+                "pt": "primeiro lançamento público estável",
+                "nl": "eerste stabiele openbare release",
+                "fr": "première version publique stable",
+                "it": "prima uscita pubblica stabile",
+                "es": "primer lanzamiento público estable",
+                "pl": "pierwsze stabilne publiczne wydanie",
+                "zh-cn": "首次稳定公开发布"
+            },
+            "0.0.3": {
+                "en": "added indicator if device is reachable\ncorrected role of 'targetTemp', 'power' and 'deviceName'\nadded new states 'macAddress' and 'actualFanSpeed' (indicates fan speed when running in auto mode)\nadded translations",
+                "de": "Anzeige hinzugefügt, wenn das Gerät erreichbar ist\nkorrigierte Rolle von 'targetTemp', 'power' und 'deviceName'\nneue Zustände 'macAddress' und 'actualFanSpeed' hinzugefügt (zeigt die Lüftergeschwindigkeit im automatischen Modus an)\nÜbersetzungen hinzugefügt",
+                "ru": "добавлен индикатор доступности устройства\nисправлены роли «targetTemp», «power» и «deviceName», добавлены новые состояния «macAddress» и «actualFanSpeed» (указывает скорость вращения вентилятора при работе в автоматическом режиме)\nдобавлены переводы",
+                "pt": "indicador adicionado se o dispositivo estiver acessível\nfunção corrigida de 'targetTemp', 'power' e 'deviceName'\nnovos estados adicionados 'macAddress' e 'actualFanSpeed' (indica a velocidade do ventilador ao executar no modo automático)\ntraduções adicionadas",
+                "nl": "indicator toegevoegd als het apparaat bereikbaar is\ngecorrigeerde rol van 'targetTemp', 'power' en 'deviceName'\nnieuwe staten toegevoegd 'macAddress' en 'actualFanSpeed' (geeft de ventilatorsnelheid aan in de automatische modus)\nvertalingen toegevoegd",
+                "fr": "indicateur ajouté si l'appareil est accessible\nrôle corrigé de 'targetTemp', 'power' et 'deviceName'\najout de nouveaux états 'macAddress' et 'actualFanSpeed' (indique la vitesse du ventilateur lors de l'exécution en mode automatique)\ntraductions ajoutées",
+                "it": "aggiunto indicatore se il dispositivo è raggiungibile\nruolo corretto di 'targetTemp', 'power' e 'deviceName'\naggiunti nuovi stati 'macAddress' e 'actualFanSpeed' (indica la velocità della ventola quando si esegue in modalità automatica)\naggiunte traduzioni",
+                "es": "indicador agregado si el dispositivo es accesible\nfunción corregida de 'targetTemp', 'power' y 'deviceName'\nnuevos estados agregados 'macAddress' y 'actualFanSpeed' (indica la velocidad del ventilador cuando se ejecuta en modo automático)\ntraducciones agregadas",
+                "pl": "dodano wskaźnik, czy urządzenie jest osiągalne\npoprawiono rolę „targetTemp”, „power” i „deviceName”\ndodano nowe stany „macAddress” i „actualFanSpeed” (wskazuje prędkość wentylatora podczas pracy w trybie automatycznym)\ndodano tłumaczenia",
+                "zh-cn": "添加了设备是否可访问的指示器；纠正了“ targetTemp”，“ power”和“ deviceName”的角色；添加了新状态“ macAddress”和“ actualFanSpeed”（指示在自动模式下运行时的风扇速度）；添加了翻译"
+            },
+            "0.0.2": {
+                "en": "first implementation of device control\nadded more device options\nextended and optimized logging (e.g. when logging into MelCloud)\nimplemented polling of cloud data",
+                "de": "erste Implementierung der Gerätesteuerung\nHinzufügen weiterer Geräteoptionen\nerweiterte und optimierte Protokollierung (z. B. beim Anmelden bei MelCloud)\nimplementiertes Abrufen von Cloud-Daten",
+                "ru": "первая реализация управления устройством\nдобавлено больше опций устройства\nрасширенное и оптимизированное ведение журнала (например, при входе в MelCloud)\nреализован опрос облачных данных",
+                "pt": "primeira implementação do controle de dispositivo\nadicionadas mais opções de dispositivo\nregistro estendido e otimizado (por exemplo, ao fazer login no MelCloud)\npesquisa implementada de dados na nuvem",
+                "nl": "eerste implementatie van apparaatcontrole\nmeer apparaatopties toegevoegd\nuitgebreide en geoptimaliseerde logging (bijv. bij inloggen op MelCloud)\ngeïmplementeerde polling van cloudgegevens",
+                "fr": "première mise en œuvre du contrôle des appareils\najout de plus d'options d'appareils\njournalisation étendue et optimisée (par exemple lors de la connexion à MelCloud)\nimplémentation de l'interrogation des données cloud",
+                "it": "prima implementazione del controllo del dispositivo\naggiunta di più opzioni del dispositivo\nregistrazione estesa e ottimizzata (ad es. durante l'accesso a MelCloud)\npolling implementato dei dati cloud",
+                "es": "primera implementación del control del dispositivo\nse agregaron más opciones de dispositivo\nregistro extendido y optimizado (por ejemplo, al iniciar sesión en MelCloud)\nencuesta implementada de datos en la nube",
+                "pl": "pierwsza implementacja kontroli urządzenia\ndodano więcej opcji urządzenia\nrozszerzone i zoptymalizowane rejestrowanie (np. podczas logowania do MelCloud)\nzaimplementowane odpytywanie danych w chmurze",
+                "zh-cn": "首次实现设备控制\n添加了更多设备选项\n扩展和优化了日志记录（例如登录MelCloud时）\n实现了对云数据的轮询"
+            },
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "MELCloud",
+        "titleLang": {
+            "en": "MELCloud",
+            "de": "MELCloud",
+            "ru": "MELCloud",
+            "pt": "MELCloud",
+            "nl": "MELCloud",
+            "fr": "MELCloud",
+            "it": "MELCloud",
+            "es": "MELCloud",
+            "pl": "MELCloud",
+            "zh-cn": "MEL云"
+        },
+        "desc": {
+            "en": "The adapter integrates Mitsubishi air conditioning systems via MELCloud into ioBroker.",
+            "de": "Der Adapter integriert Klimaanlagen von Mitsubishi mittels MELCloud in ioBroker.",
+            "ru": "Адаптер интегрирует системы кондиционирования воздуха Mitsubishi в ioBroker с помощью MELCloud.",
+            "pt": "O adaptador integra os sistemas de ar condicionado Mitsubishi ao ioBroker usando MELCloud.",
+            "nl": "De adapter integreert Mitsubishi-airconditioningsystemen in ioBroker met behulp van MELCloud.",
+            "fr": "L'adaptateur intègre les systèmes de climatisation Mitsubishi dans ioBroker à l'aide de MELCloud.",
+            "it": "L'adattatore integra i sistemi di climatizzazione Mitsubishi in ioBroker utilizzando MELCloud.",
+            "es": "El adaptador integra sistemas de aire acondicionado Mitsubishi en ioBroker usando MELCloud.",
+            "pl": "Adapter integruje systemy klimatyzacji Mitsubishi z ioBroker za pomocą MELCloud.",
+            "zh-cn": "该适配器使用MELCloud将三菱空调系统集成到ioBroker中。"
+        },
+        "authors": [
+            "Black-Thunder <glwars@aol.de>"
+        ],
+        "keywords": [
+            "ioBroker",
+            "Smart Home",
+            "home automation",
+            "MELCloud",
+            "Mitsubishi",
+            "airconditioning"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "melcloud.png",
+        "enabled": false,
+        "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
+        "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "climate-control",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=1.4.2",
+                "admin": ">=3.0.0"
+            }
+        ]
+    },
+    "native": {
+        "melCloudEmail": "",
+        "melCloudPassword": "",
+        "melCloudLanguage": 4,
+        "pollingInterval": 5
+    },
+    "objects": [],
+    "instanceObjects": []
 }
