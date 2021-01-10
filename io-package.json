@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "melcloud",
-        "version": "1.1.0",
+        "version": "1.1.1",
         "news": {
+            "1.1.1": {
+                "en": "*Attention: With this version you must reenter your password in the adaper settings and save again! Otherwise login will fail.**\nfix: correctly use auto decryption handling for password \npolling interval in adapter settings is now limited to values greater than 0",
+                "de": "* Achtung: Bei dieser Version müssen Sie Ihr Passwort in den Adaper-Einstellungen erneut eingeben und erneut speichern! Andernfalls schlägt die Anmeldung fehl. **\nFix: Verwenden Sie die automatische Entschlüsselungsbehandlung für das Passwort korrekt\nDas Abfrageintervall in den Adaptereinstellungen ist jetzt auf Werte größer als 0 begrenzt",
+                "ru": "* Внимание: с этой версией вы должны повторно ввести пароль в настройках приложения и снова сохранить! В противном случае войти не удастся. **\nfix: правильно использовать автоматическую расшифровку пароля\nинтервал опроса в настройках адаптера теперь ограничен значениями больше 0",
+                "pt": "* Atenção: Com esta versão você deve reinserir sua senha nas configurações do adaper e salvar novamente! Caso contrário, o login falhará. **\ncorreção: use corretamente o tratamento de decodificação automática para senha\no intervalo de sondagem nas configurações do adaptador agora está limitado a valores maiores que 0",
+                "nl": "* Let op: bij deze versie moet u uw wachtwoord opnieuw invoeren in de adaper-instellingen en opnieuw opslaan! Anders mislukt het inloggen. **\nfix: gebruik de automatische decodering correct voor het wachtwoord\npolling-interval in adapterinstellingen is nu beperkt tot waarden groter dan 0",
+                "fr": "* Attention: Avec cette version, vous devez ressaisir votre mot de passe dans les paramètres de l'adaper et enregistrer à nouveau! Sinon, la connexion échouera. **\ncorrection: utiliser correctement la gestion du décryptage automatique pour le mot de passe\nl'intervalle d'interrogation dans les paramètres de l'adaptateur est désormais limité aux valeurs supérieures à 0",
+                "it": "* Attenzione: con questa versione è necessario reinserire la password nelle impostazioni dell'adaper e salvare di nuovo! In caso contrario, l'accesso fallirà. **\ncorrezione: utilizzare correttamente la gestione della decrittografia automatica per la password\nl'intervallo di polling nelle impostazioni dell'adattatore è ora limitato a valori maggiori di 0",
+                "es": "* Atención: ¡Con esta versión debe volver a ingresar su contraseña en la configuración adecuada y guardar nuevamente! De lo contrario, el inicio de sesión fallará. **\ncorrección: use correctamente el manejo de descifrado automático para la contraseña\nEl intervalo de sondeo en la configuración del adaptador ahora está limitado a valores superiores a 0",
+                "pl": "* Uwaga: w tej wersji musisz ponownie wprowadzić hasło w ustawieniach adaper i ponownie zapisać! W przeciwnym razie logowanie nie powiedzie się. **\npoprawka: poprawnie używaj automatycznego odszyfrowywania hasła\ninterwał odpytywania w ustawieniach adaptera jest teraz ograniczony do wartości większych niż 0",
+                "zh-cn": "*注意：使用此版本时，必须在适配器设置中重新输入密码，然后再次保存！否则登录将失败。**\n修复：正确使用密码的自动解密处理\n适配器设置中的轮询间隔现在限制为大于0的值"
+            },
             "1.1.0": {
                 "en": "new functionality: retrieve power consumption reports\nadapter connection state now correctly set accordingly to the cloud connection\nadded release-script and Dependabot, updated dependecies",
                 "de": "Neue Funktionalität: Abrufen von Stromverbrauchsberichten\nDer Adapterverbindungsstatus ist jetzt korrekt auf die Cloud-Verbindung eingestellt\nRelease-Skript und Dependabot hinzugefügt, Abhängigkeiten aktualisiert",
