@@ -13,7 +13,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.melcloud.png?downloads=true)](https://nodei.co/npm/iobroker.melcloud/)
 
-**Tests:**: [![Build Status](https://travis-ci.com/Black-Thunder/ioBroker.melcloud.svg?branch=master)](https://travis-ci.com/Black-Thunder/ioBroker.melcloud)
+**Tests:** [![Build Status](https://travis-ci.com/Black-Thunder/ioBroker.melcloud.svg?branch=master)](https://travis-ci.com/Black-Thunder/ioBroker.melcloud)
 
 ## melcloud adapter for ioBroker
 
@@ -30,6 +30,10 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+
+### __WORK IN PROGRESS__
+**Attention: With this version you must reenter your password in the adaper settings and save again! Otherwise login will fail.**
+* (Black-Thunder) fix: correctly use auto decryption handling for password 
 
 ### 1.1.0 (2021-01-08)
 * (Black-Thunder) new functionality: retrieve power consumption reports
