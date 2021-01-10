@@ -193,6 +193,12 @@
             }
         ]
     },
+    "encryptedNative": [
+        "melCloudPassword"
+    ],
+    "protectedNative": [
+        "melCloudPassword"
+    ],
     "native": {
         "melCloudEmail": "",
         "melCloudPassword": "",
