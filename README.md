@@ -32,7 +32,7 @@ Documentation:
 -->
 
 ### 1.1.1 (2021-01-10)
-**Attention: With this version you must reenter your password in the adaper settings and save again! Otherwise login will fail.**
+**Attention: With this version you must reenter your password in the adapter settings and save again! Otherwise login will fail.**
 * (Black-Thunder) fix: correctly use auto decryption handling for password 
 * (Black-Thunder) polling interval in adapter settings is now limited to values greater than 0
 
