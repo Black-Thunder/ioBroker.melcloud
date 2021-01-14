@@ -12,9 +12,9 @@ In order to use this adapter, there are a few things you have to prepare in adva
 
 ![Adapter settings](img/adapter_settings.png)
 
-Here you can configure your adapter instance. Mandatory for the adapter to work are your MELCloud credentials (email address and password). Additionally you need to specify your account region.
+Here you can configure your adapter instance. Mandatory for the adapter to work are your MELCloud credentials (email address and password). Additionally, you need to specify your account region.
 
-Apart from that you can configure the time interval when your device data is polled and updated from MELCloud (minimum 1 minute). If at any time the connection to MELCloud should fail (e.g. server problem, internet connection issues), the adapter tries at a maximum of three times to reconnect. Should there be still no connection after these retries, the next retry will take place after one hour.
+Apart from that you can configure the time interval when your device data is polled and updated from MELCloud (minimum 1 minute). If at any time the connection to MELCloud should fail (e.g., server problem, internet connection issues), the adapter tries at a maximum of three times to reconnect. Should there be still no connection after these retries, the next retry will take place after one hour.
 
 ## Objects
 
@@ -59,7 +59,7 @@ After successful start of the adapter instance (X) your devices are queried from
 | mode | X | X | Operation mode of the device (1=Heat, 2=Dry, 3=Cool, 7=Vent, 8=Auto) |
 | power | X | X | Power switch (turns device on/off) |
 | targetTemp | X | X | Target temperature of the device |
-| vaneHorizontalDirection | X | X | Current horizontal direction of the device's vane (0=Auto, 1...5=leftmost to rightmost, 8=50/50 (only for devices with 2 seperate vanes), 12=Swing) |
+| vaneHorizontalDirection | X | X | Current horizontal direction of the device's vane (0=Auto, 1...5=leftmost to rightmost, 8=50/50 (only for devices with 2 separate vanes), 12=Swing) |
 | vaneVerticalDirection | X | X | Current vertical direction of the device's vane (0=Auto, 1...5=topmost to bottommost, 7=Swing) |
 
 ### melcloud.X.device.Y.reports
@@ -69,10 +69,10 @@ Shortly afterwards the corresponding states are filled with the report data from
 
 | id | read | write | comment |
 |--- | :---: | :---: |--- |
-| startDate | X | X | Start date for the consumption report (format: YYYY-MM-DD, e.g. 2020-05-31) |
-| endDate | X | X | End date for the consumption report (format: YYYY-MM-DD, e.g. 2021-01-08) |
+| startDate | X | X | Start date for the consumption report (format: YYYY-MM-DD, e.g., 2020-05-31) |
+| endDate | X | X | End date for the consumption report (format: YYYY-MM-DD, e.g., 2021-01-08) |
 | getPowerConsumptionReport | - | X | Button to trigger retrieving the power consumption reports |
 | reportedMonths | X | - | Array containing all months with measurements (1 = January, ..., 12 = December) |
 | totalMinutes | X | - | Total measurement time  (in minutes) |
-| totalPowerConsumption*OperatioMode* | X | - | Total consumption in operation mode *OperatioMode* (in kWh) - created for each operation mode |
-| totalPowerConsumption*OperatioMode* *Month* | X | - | Total consumption in operation mode *OperatioMode* for month *Month* (in kWh) - created for each operation mode and month |
+| totalPowerConsumption*OperationMode* | X | - | Total consumption in operation mode *OperationMode* (in kWh) - created for each operation mode |
+| totalPowerConsumption*OperationMode* *Month* | X | - | Total consumption in operation mode *OperationMode* for month *Month* (in kWh) - created for each operation mode and month |
