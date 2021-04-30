@@ -31,7 +31,7 @@ Documentation:
 	### __WORK IN PROGRESS__
 -->
 
-### **WORK IN PROGRESS**
+### __WORK IN PROGRESS__
 * (Black-Thunder) added compability with js-controller >= v3.3.1
 * (Black-Thunder) updated dependencies
 
