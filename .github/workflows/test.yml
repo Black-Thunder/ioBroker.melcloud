@@ -1,7 +1,7 @@
 # This is a composition of lint and test scripts
 # Make sure to update this file along with the others
 
-name: Test and Release
+name: Test
 
 # Run this job on all pushes and pull requests
 # as well as tags with a semantic version
