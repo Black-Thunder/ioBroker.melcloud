@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "melcloud",
-        "version": "1.1.1",
+        "version": "1.1.2",
         "news": {
+            "1.1.2": {
+                "en": "added compability with js-controller >= v3.3.1\nupdated dependencies",
+                "de": "Kompatibilität mit js-controller> = v3.3.1 hinzugefügt\naktualisierte Abhängigkeiten",
+                "ru": "добавлена совместимость с js-controller> = v3.3.1\nобновленные зависимости",
+                "pt": "adicionado compatibilidade com js-controller> = v3.3.1\ndependências atualizadas",
+                "nl": "compatibiliteit toegevoegd met js-controller> = v3.3.1\nbijgewerkte afhankelijkheden",
+                "fr": "compatibilité ajoutée avec js-controller> = v3.3.1\ndépendances mises à jour",
+                "it": "aggiunta compatibilità con js-controller> = v3.3.1\ndipendenze aggiornate",
+                "es": "compatibilidad añadida con js-controller> = v3.3.1\ndependencias actualizadas",
+                "pl": "dodana kompatybilność z js-controller> = v3.3.1\nzaktualizowane zależności",
+                "zh-cn": "增加了与js-controller> = v3.3.1的兼容性\n更新的依赖关系"
+            },
             "1.1.1": {
                 "en": "Attention: With this version you must reenter your password in the adapter settings and save again! Otherwise login will fail.\nfix: correctly use auto decryption handling for password \npolling interval in adapter settings is now limited to values greater than 0",
                 "de": "Achtung: Bei dieser Version müssen Sie Ihr Passwort in den Adapter-Einstellungen erneut eingeben und erneut speichern! Andernfalls schlägt die Anmeldung fehl.\nFix: Verwenden Sie die automatische Entschlüsselungsbehandlung für das Passwort korrekt\nDas Abfrageintervall in den Adaptereinstellungen ist jetzt auf Werte größer als 0 begrenzt",
