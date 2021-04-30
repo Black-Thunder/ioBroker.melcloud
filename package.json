@@ -54,7 +54,8 @@
     "test:unit": "mocha test/unit --exit",
     "test:integration": "mocha test/integration --exit",
     "test": "npm run test:js && npm run test:package",
-    "lint": "eslint",
+    "lint": "eslint",,
+    "build": "node node_modules/gulp/bin/gulp.js",
     "release": "release-script"
   },
   "bugs": {
