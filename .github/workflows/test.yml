@@ -90,4 +90,4 @@ jobs:
 
         - name: Run integration tests (windows only)
           if: startsWith(runner.OS, 'windows')
-            run: set DEBUG=testing:* & npm run test:integration
+          run: set DEBUG=testing:* & npm run test:integration
