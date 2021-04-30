@@ -65,7 +65,7 @@ class Melcloud extends utils.Adapter {
 
 	async setAdapterConnectionState(isConnected) {
 		await this.setStateChangedAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
-		await this.setForeignState("system.adapter." + this.namespace + ".connected", isConnected);
+		await this.setForeignState("system.adapter." + this.namespace + ".connected", isConnected, true);
 	}
 
 	async saveKnownDeviceIDs() {
