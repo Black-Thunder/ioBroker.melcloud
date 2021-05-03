@@ -56,7 +56,7 @@ class Melcloud extends utils.Adapter {
 			throw new Error("MELCloud password empty! Check settings.");
 		}
 
-		// if pollingInterval <= 0 than set to 1 
+		// if pollingInterval <= 0 than set to 1
 		if (this.config.pollingInterval <= 0) {
 			this.config.pollingInterval = 1;
 			this.log.warn("Polling interval was set to less than 1 minute. Now set to 1 minute.");
@@ -158,13 +158,13 @@ class Melcloud extends utils.Adapter {
 		this.initObjects()
 			.then(() => this.checkSettings()
 				.then(() => this.saveKnownDeviceIDs()
-					.then(() => 
+					.then(() =>
 					{
 						this.connectToCloud();
 						this.subscribeStates("devices.*.control.*"); // subsribe to states changes under "devices.X.control."
 						this.subscribeStates("devices.*.reports.*"); // subsribe to states changes under "devices.X.reports."
 					})
-				)	
+				)
 			)
 			.catch(err => this.log.error(err));
 	}
@@ -186,9 +186,10 @@ class Melcloud extends utils.Adapter {
 			this.setAdapterConnectionState(false);
 			this.deviceObjects.length = 0;
 			if(CloudPlatform != null) CloudPlatform.stopPolling();
-			
+
 			this.log.info("onUnload(): Cleaned everything up...");
 			callback();
+		// eslint-disable-next-line no-unused-vars
 		} catch (e) {
 			callback();
 		}
@@ -274,7 +275,7 @@ class Melcloud extends utils.Adapter {
 					break;
 			}
 		}
-		// The state was deleted 
+		// The state was deleted
 		else {
 			this.log.silly(`state ${id} deleted`);
 		}

@@ -1,0 +1,41 @@
+{
+	"root": true,
+	"env": {
+		"es6": true,
+		"node": true,
+		"mocha": true
+	},
+	"extends": [
+		"eslint:recommended"
+	],
+	"plugins": [],
+	"rules": {
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"no-unused-vars": ["error", { "argsIgnorePattern": "^_", "caughtErrors": "all" }],
+		"no-console": "off",
+		"no-var": "error",
+		"no-trailing-spaces": "error",
+		"prefer-const": "error",
+		"quotes": [
+			"error",
+			"double",
+			{
+				"avoidEscape": true,
+				"allowTemplateLiterals": true
+			}
+		],
+		"semi": [
+			"error",
+			"always"
+		]
+	},
+	"parserOptions": {
+		"ecmaVersion": 2019
+	}
+}
