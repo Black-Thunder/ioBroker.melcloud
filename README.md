@@ -13,7 +13,7 @@
 
 [![NPM](https://nodei.co/npm/iobroker.melcloud.png?downloads=true)](https://nodei.co/npm/iobroker.melcloud/)
 
-**Tests:** [![Build Status](https://travis-ci.com/Black-Thunder/ioBroker.melcloud.svg?branch=master)](https://travis-ci.com/Black-Thunder/ioBroker.melcloud)
+**Tests:** [![Test](https://github.com/Black-Thunder/ioBroker.melcloud/actions/workflows/test.yml/badge.svg)](https://github.com/Black-Thunder/ioBroker.melcloud/actions/workflows/test.yml)
 
 ## melcloud adapter for ioBroker
 
