@@ -147,7 +147,7 @@ Documentation:
 ## License
 MIT License
 
-Copyright (c) 2020 Black-Thunder <glwars@aol.de>
+Copyright (c) 2021 Black-Thunder <glwars@aol.de>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
