@@ -212,10 +212,11 @@
         "materialize": true,
         "dependencies": [
             {
-                "js-controller": ">=1.4.2",
+                "js-controller": ">=3.1.0",
                 "admin": ">=3.0.0"
             }
-        ]
+        ],
+        "tier": 2
     },
     "encryptedNative": [
         "melCloudPassword"

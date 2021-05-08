@@ -13,6 +13,7 @@ const commonDefines = require("./lib/commonDefines");
 
 let gthis = null; // global to 'this' of Melcloud main instance
 let CloudPlatform = null;
+const stateValueCache = {}; // used to store all adapter state values to check for unchanged values
 
 class Melcloud extends utils.Adapter {
 	/**
@@ -203,6 +204,13 @@ class Melcloud extends utils.Adapter {
 	onStateChange(id, state) {
 		// The state was changed
 		if (state) {
+			if(stateValueCache[id] && stateValueCache[id] == state.val) {
+				this.log.silly(`state ${id} unchanged: ${state.val} (ack = ${state.ack})`);
+				return;
+			}
+
+			stateValueCache[id] = state.val;
+
 			this.log.silly(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
 
 			// ack is true when state was updated by MELCloud --> in this case, we don't need to send it again
@@ -278,6 +286,10 @@ class Melcloud extends utils.Adapter {
 		// The state was deleted
 		else {
 			this.log.silly(`state ${id} deleted`);
+
+			if(stateValueCache[id]) {
+				delete stateValueCache[id];
+			}
 		}
 	}
 }
