@@ -44,6 +44,10 @@ class Melcloud extends utils.Adapter {
 		}
 	}
 
+	getStateValueCache() {
+		return stateValueCache;
+	}
+
 	async checkSettings() {
 		this.log.debug("Checking adapter settings...");
 
