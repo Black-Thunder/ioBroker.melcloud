@@ -204,7 +204,7 @@ class Melcloud extends utils.Adapter {
 	onStateChange(id, state) {
 		// The state was changed
 		if (state) {
-			if(stateValueCache[id] && stateValueCache[id] == state.val) {
+			if(stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
 				this.log.silly(`state ${id} unchanged: ${state.val} (ack = ${state.ack})`);
 				return;
 			}
