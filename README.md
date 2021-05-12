@@ -31,7 +31,7 @@ Documentation:
 	### __WORK IN PROGRESS__
 -->
 
-### __WORK IN PROGRESS__
+### 1.1.3 (2021-05-12)
 * (Black-Thunder) IMPORTANT: The adapter now requires js-controller 3.1 at least
 * (Black-Thunder) ignore unchanged state values to decrease network traffic
 * (Black-Thunder) only update state values if they are really changed

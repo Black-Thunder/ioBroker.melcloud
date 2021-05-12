@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "melcloud",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "news": {
+            "1.1.3": {
+                "en": "IMPORTANT: The adapter now requires js-controller 3.1 at least\nignore unchanged state values to decrease network traffic\nonly update state values if they are really changed\nextend existing objects to ensure compability with js-controller >= v3.2\nonly allow values with 0.5 steps for \"targetTemp\"",
+                "de": "WICHTIG: Der Adapter benötigt jetzt mindestens js-controller 3.1\nIgnorieren Sie unveränderte Statuswerte, um den Netzwerkverkehr zu verringern\nAktualisieren Sie Statuswerte nur, wenn sie wirklich geändert wurden\nErweitern Sie vorhandene Objekte, um die Kompatibilität mit js-controller> = v3.2 sicherzustellen\nErlaube nur Werte mit 0,5 Schritten für \"targetTemp\"",
+                "ru": "ВАЖНО: для адаптера теперь требуется js-controller не ниже версии 3.1.\nигнорировать неизмененные значения состояния, чтобы уменьшить сетевой трафик\nобновлять значения состояния только в том случае, если они действительно изменены\nрасширить существующие объекты для обеспечения совместимости с js-controller> = v3.2\nдопустимы только значения с шагом 0,5 для \"targetTemp\"",
+                "pt": "IMPORTANTE: O adaptador agora requer js-controller 3.1 pelo menos\nignore os valores de estado inalterados para diminuir o tráfego da rede\nsó atualiza os valores de estado se eles forem realmente alterados\nestenda os objetos existentes para garantir compatibilidade com js-controller> = v3.2\nsó permite valores com 0,5 passos para \"targetTemp\"",
+                "nl": "BELANGRIJK: De adapter vereist nu minimaal js-controller 3.1\nnegeer ongewijzigde statuswaarden om het netwerkverkeer te verminderen\nWerk alleen statuswaarden bij als ze echt zijn veranderd\nbestaande objecten uitbreiden om compatibiliteit met js-controller> = v3.2 te garanderen\nalleen waarden met 0,5 stappen toestaan voor \"targetTemp\"",
+                "fr": "IMPORTANT: l'adaptateur nécessite maintenant au moins js-controller 3.1\nignorer les valeurs d'état inchangées pour réduire le trafic réseau\nne met à jour les valeurs d'état que si elles sont vraiment modifiées\nétendre les objets existants pour assurer la compatibilité avec js-controller> = v3.2\nautoriser uniquement les valeurs avec 0,5 pas pour \"targetTemp\"",
+                "it": "IMPORTANTE: l'adattatore ora richiede almeno js-controller 3.1\nignorare i valori di stato invariati per diminuire il traffico di rete\naggiorna i valori di stato solo se sono realmente cambiati\nestendere gli oggetti esistenti per garantire la compatibilità con js-controller> = v3.2\nconsentire solo valori con 0,5 passaggi per \"targetTemp\"",
+                "es": "IMPORTANTE: el adaptador ahora requiere js-controller 3.1 al menos\nignorar los valores de estado sin cambios para disminuir el tráfico de la red\nsolo actualice los valores de estado si realmente se cambian\nextender los objetos existentes para garantizar la compatibilidad con js-controller> = v3.2\nsolo permite valores con 0,5 pasos para \"targetTemp\"",
+                "pl": "WAŻNE: Adapter wymaga teraz co najmniej kontrolera js 3.1\nignoruj niezmienione wartości stanu, aby zmniejszyć ruch w sieci\naktualizuj wartości stanu tylko wtedy, gdy są naprawdę zmienione\nrozszerz istniejące obiekty, aby zapewnić zgodność z js-controller> = v3.2\nzezwalaj tylko na wartości z krokiem 0,5 dla „targetTemp”",
+                "zh-cn": "重要说明：适配器现在至少需要js-controller 3.1\n忽略不变的状态值以减少网络流量\n仅在状态值确实发生更改时更新状态值\n扩展现有对象以确保与js-controller> = v3.2的兼容性\n只允许“ targetTemp”的步长为0.5的值"
+            },
             "1.1.2": {
                 "en": "added compability with js-controller >= v3.3.1\nupdated dependencies",
                 "de": "Kompatibilität mit js-controller> = v3.3.1 hinzugefügt\naktualisierte Abhängigkeiten",
