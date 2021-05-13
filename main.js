@@ -247,7 +247,7 @@ class Melcloud extends utils.Adapter {
 			}
 
 			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
-			this.log.debug("Processing command '" + controlOption + "' for device object with id " + device.id + " (" + device.name + ")...");
+			this.log.debug("Processing command '" + controlOption + "' with value '" + state.val + "' for device object with id " + device.id + " (" + device.name + ")...");
 
 			switch (controlOption) {
 				case (commonDefines.AdapterStateIDs.Power):
