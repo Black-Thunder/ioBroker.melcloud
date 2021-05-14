@@ -31,6 +31,9 @@ Documentation:
 	### __WORK IN PROGRESS__
 -->
 
+### __WORK IN PROGRESS__
+* (Black-Thunder) implemented separate queue for sending device commands to improve robustness when sending multiple commands
+
 ### 1.1.3 (2021-05-12)
 * (Black-Thunder) IMPORTANT: The adapter now requires js-controller 3.1 at least
 * (Black-Thunder) ignore unchanged state values to decrease network traffic
