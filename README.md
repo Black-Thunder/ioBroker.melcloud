@@ -33,6 +33,7 @@ Documentation:
 
 ### __WORK IN PROGRESS__
 * (Black-Thunder) implemented separate queue for sending device commands to improve robustness when sending multiple commands
+* (Black-Thunder) only update "control" state values with ack=true when it was requested by user before
 
 ### 1.1.3 (2021-05-12)
 * (Black-Thunder) IMPORTANT: The adapter now requires js-controller 3.1 at least
