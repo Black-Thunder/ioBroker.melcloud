@@ -162,8 +162,8 @@ class Melcloud extends utils.Adapter {
 					.then(() =>
 					{
 						this.connectToCloud();
-						this.subscribeStates("devices.*.control.*"); // subsribe to states changes under "devices.X.control."
-						this.subscribeStates("devices.*.reports.*"); // subsribe to states changes under "devices.X.reports."
+						this.subscribeStates("devices.*.control.*"); // subscribe to states changes under "devices.X.control."
+						this.subscribeStates("devices.*.reports.*"); // subscribe to states changes under "devices.X.reports."
 					})
 				)
 			)
