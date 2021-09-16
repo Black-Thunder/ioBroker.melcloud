@@ -27,7 +27,7 @@
     "http-status-codes": "^2.1.4"
   },
   "devDependencies": {
-    "@alcalzone/release-script": "^2.2.1",
+    "@alcalzone/release-script": "^3.1.0",
     "@iobroker/testing": "^2.5.1",
     "@types/chai": "^4.2.21",
     "@types/chai-as-promised": "^7.1.4",
