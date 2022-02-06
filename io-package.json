@@ -3,7 +3,7 @@
         "name": "melcloud",
         "version": "1.1.5",
         "news": {
-            "5": {
+            "1.1.5": {
                 "en": "replaced deprecated package \"request\" with \"axios\"\nfix warnings for js-controller v4\nupdated dependencies",
                 "de": "veraltetes Paket „request“ durch „axios“ ersetzt\nWarnungen für js-controller v4 behoben\nabhängigkeiten aktualisiert",
                 "ru": "заменен устаревший пакет request на axios\nисправить предупреждения для js-controller v4\nобновлены зависимости",
