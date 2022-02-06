@@ -30,7 +30,11 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-### 1.1.6 (2022-02-06)
+
+### __WORK IN PROGRESS__
+* (Black-Thunder) fixed warnings
+
+### 1.1.5 (2022-02-06)
 * (Black-Thunder) replaced deprecated package "request" with "axios"
 * (Black-Thunder) fix warnings for js-controller v4
 * (Black-Thunder) updated dependencies
