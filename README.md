@@ -30,8 +30,7 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### __WORK IN PROGRESS__
+### 1.1.5 (2022-02-06)
 * (Black-Thunder) replaced deprecated package "request" with "axios"
 * (Black-Thunder) fix warnings for js-controller v4
 * (Black-Thunder) updated dependencies
@@ -45,7 +44,7 @@ Documentation:
 * (Black-Thunder) ignore unchanged state values to decrease network traffic
 * (Black-Thunder) only update state values if they are really changed
 * (Black-Thunder) extend existing objects to ensure compatibility with js-controller >= v3.2
-* (Black-Thunder) only allow values with 0.5 steps for "targetTemp" 
+* (Black-Thunder) only allow values with 0.5 steps for "targetTemp"
 
 ### 1.1.2 (2021-04-30)
 * (Black-Thunder) added compatibility with js-controller >= v3.2
