@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "melcloud",
-        "version": "1.1.4",
+        "version": "1.1.5",
         "news": {
+            "1.1.5": {
+                "en": "replaced deprecated package \"request\" with \"axios\"\nfix warnings for js-controller v4\nupdated dependencies",
+                "de": "veraltetes Paket „request“ durch „axios“ ersetzt\nWarnungen für js-controller v4 behoben\nabhängigkeiten aktualisiert",
+                "ru": "заменен устаревший пакет request на axios\nисправить предупреждения для js-controller v4\nобновлены зависимости",
+                "pt": "substituiu o pacote obsoleto \"request\" por \"axios\"\nfix warnings for js-controller v4\nupdated dependencies",
+                "nl": "verouderd pakket \"request\" vervangen door \"axios\"\nfix-waarschuwingen voor js-controller v4\nbijgewerkte afhankelijkheden",
+                "fr": "remplacement du package obsolète \"request\" par \"axios\"\ncorrection des avertissements pour js-controller v4\ndépendances mises à jour",
+                "it": "sostituito il pacchetto deprecato \"richiesta\" con \"axios\"\ncorreggi gli avvisi per js-controller v4\ndipendenze aggiornate",
+                "es": "se reemplazó la \"solicitud\" del paquete obsoleto con \"axios\"\narreglar advertencias para js-controller v4\ndependencias actualizadas",
+                "pl": "zamieniono przestarzały pakiet \"request\" na \"axios\"\npoprawka ostrzeżeń dla js-controller v4\nzaktualizowane zależności",
+                "zh-cn": "用“axios”替换了已弃用的包“request”\n修复了 js-controller v4 的警告\n更新了依赖项"
+            },
             "1.1.4": {
                 "en": "implemented separate queue for sending device commands to improve robustness when sending multiple commands\nonly update \"control\" state values with ack=true when it was requested by user before",
                 "de": "Es wurde eine separate Warteschlange zum Senden von Gerätebefehlen implementiert, um die Robustheit beim Senden mehrerer Befehle zu verbessern\nAktualisieren Sie die Statuswerte \"control\" nur mit ack = true, wenn dies zuvor vom Benutzer angefordert wurde",
