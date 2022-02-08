@@ -262,21 +262,21 @@ class Melcloud extends utils.Adapter {
 		}
 	}
 
-	mapAtwDeviceOperationMode(value) {
+	mapAtwDeviceZoneOperationMode(value) {
 		switch (value) {
-			case (commonDefines.AtwDeviceOperationModes.HEATTHERMOSTAT.value):
-				return commonDefines.AtwDeviceOperationModes.HEATTHERMOSTAT;
-			case (commonDefines.AtwDeviceOperationModes.HEATFLOW.value):
-				return commonDefines.AtwDeviceOperationModes.HEATFLOW;
-			case (commonDefines.AtwDeviceOperationModes.CURVE.value):
-				return commonDefines.AtwDeviceOperationModes.CURVE;
-			case (commonDefines.AtwDeviceOperationModes.COOLTHERMOSTAT.value):
-				return commonDefines.AtwDeviceOperationModes.COOLTHERMOSTAT;
-			case (commonDefines.AtwDeviceOperationModes.COOLFLOW.value):
-				return commonDefines.AtwDeviceOperationModes.COOLFLOW;
+			case (commonDefines.AtwDeviceZoneOperationModes.HEATTHERMOSTAT.value):
+				return commonDefines.AtwDeviceZoneOperationModes.HEATTHERMOSTAT;
+			case (commonDefines.AtwDeviceZoneOperationModes.HEATFLOW.value):
+				return commonDefines.AtwDeviceZoneOperationModes.HEATFLOW;
+			case (commonDefines.AtwDeviceZoneOperationModes.CURVE.value):
+				return commonDefines.AtwDeviceZoneOperationModes.CURVE;
+			case (commonDefines.AtwDeviceZoneOperationModes.COOLTHERMOSTAT.value):
+				return commonDefines.AtwDeviceZoneOperationModes.COOLTHERMOSTAT;
+			case (commonDefines.AtwDeviceZoneOperationModes.COOLFLOW.value):
+				return commonDefines.AtwDeviceZoneOperationModes.COOLFLOW;
 			default:
-				this.log.error("Unsupported ATW operation mode: '" + value + "' - Please report this to the developer!");
-				return commonDefines.AtwDeviceOperationModes.UNDEF;
+				this.log.error("Unsupported ATW zone operation mode: '" + value + "' - Please report this to the developer!");
+				return commonDefines.AtwDeviceZoneOperationModes.UNDEF;
 		}
 	}
 
@@ -332,8 +332,14 @@ class Melcloud extends utils.Adapter {
 					device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.PowerState, commonDefines.DevicePowerStates.OFF);
 				}
 				break;
-			case (commonDefines.AtwDeviceStateIDs.Mode):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationMode, this.mapAtwDeviceOperationMode(state.value));
+			case (commonDefines.AtwDeviceStateIDs.ForcedHotWaterMode):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.ForcedHotWaterMode, state.value);
+				break;
+			case (commonDefines.AtwDeviceStateIDs.OperationModeZone1):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationModeZone1, this.mapAtwDeviceZoneOperationMode(state.value));
+				break;
+			case (commonDefines.AtwDeviceStateIDs.OperationModeZone2):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationModeZone2, this.mapAtwDeviceZoneOperationMode(state.value));
 				break;
 			default:
 				this.log.error("Unsupported ATW control option: " + controlOption + " - Please report this to the developer!");
