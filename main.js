@@ -134,24 +134,6 @@ class Melcloud extends utils.Adapter {
 		this.setAdapterConnectionState(false);
 	}
 
-	mapDeviceOperationMode(value) {
-		switch (value) {
-			case (commonDefines.DeviceOperationModes.HEAT.value):
-				return commonDefines.DeviceOperationModes.HEAT;
-			case (commonDefines.DeviceOperationModes.DRY.value):
-				return commonDefines.DeviceOperationModes.DRY;
-			case (commonDefines.DeviceOperationModes.COOL.value):
-				return commonDefines.DeviceOperationModes.COOL;
-			case (commonDefines.DeviceOperationModes.VENT.value):
-				return commonDefines.DeviceOperationModes.VENT;
-			case (commonDefines.DeviceOperationModes.AUTO.value):
-				return commonDefines.DeviceOperationModes.AUTO;
-			default:
-				this.log.error("Unsupported operation mode: " + value + " - Please report this to the developer!");
-				return commonDefines.DeviceOperationModes.UNDEF;
-		}
-	}
-
 	/**
 	 * Is called when databases are connected and adapter received configuration.
 	 */
@@ -159,8 +141,7 @@ class Melcloud extends utils.Adapter {
 		this.initObjects()
 			.then(() => this.checkSettings()
 				.then(() => this.saveKnownDeviceIDs()
-					.then(() =>
-					{
+					.then(() => {
 						this.connectToCloud();
 						this.subscribeStates("devices.*.control.*"); // subscribe to states changes under "devices.X.control."
 						this.subscribeStates("devices.*.reports.*"); // subscribe to states changes under "devices.X.reports."
@@ -186,11 +167,11 @@ class Melcloud extends utils.Adapter {
 		try {
 			this.setAdapterConnectionState(false);
 			this.deviceObjects.length = 0;
-			if(CloudPlatform != null) CloudPlatform.stopPolling();
+			if (CloudPlatform != null) CloudPlatform.stopPolling();
 
 			this.log.info("onUnload(): Cleaned everything up...");
 			callback();
-		// eslint-disable-next-line no-unused-vars
+			// eslint-disable-next-line no-unused-vars
 		} catch (e) {
 			callback();
 		}
@@ -204,7 +185,7 @@ class Melcloud extends utils.Adapter {
 	onStateChange(id, state) {
 		// The state was changed
 		if (state) {
-			if(stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
+			if (stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
 				this.log.silly(`state ${id} unchanged: ${state.val} (ack = ${state.ack})`);
 				return;
 			}
@@ -245,51 +226,118 @@ class Melcloud extends utils.Adapter {
 			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
 			this.log.debug("Processing command '" + controlOption + "' with value '" + state.val + "' for device object with id " + device.id + " (" + device.name + ")...");
 
-			switch (controlOption) {
-				case (commonDefines.AdapterStateIDs.Power):
-					if (state.val) {
-						// switch on using current operation mode
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.PowerState, commonDefines.DevicePowerStates.ON);
-					}
-					else {
-						// switch off
-						device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.PowerState, commonDefines.DevicePowerStates.OFF);
-					}
-					break;
-				case (commonDefines.AdapterStateIDs.Mode):
-					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetHeatingCoolingState, this.mapDeviceOperationMode(state.val));
-					break;
-				case (commonDefines.AdapterStateIDs.TargetTemp):
-					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.TargetTemperature, state.val);
-					break;
-				case (commonDefines.AdapterStateIDs.FanSpeedManual):
-					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.FanSpeed, state.val);
-					break;
-				case (commonDefines.AdapterStateIDs.VaneVerticalDirection):
-					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneVerticalDirection, state.val);
-					break;
-				case (commonDefines.AdapterStateIDs.VaneHorizontalDirection):
-					device.getDeviceInfo(device.setDevice, commonDefines.DeviceOptions.VaneHorizontalDirection, state.val);
-					break;
-				case (commonDefines.AdapterStateIDs.GetPowerConsumptionReport):
-					device.getPowerConsumptionReport();
-					break;
-				case (commonDefines.AdapterStateIDs.ReportStartDate):
-				case (commonDefines.AdapterStateIDs.ReportEndDate):
-					// ignore these as they're just necessary for report request and shouldn't trigger any actions themselves
-					break;
-				default:
-					this.log.error("Unsupported control option: " + controlOption + " - Please report this to the developer!");
-					break;
+			const type = device.deviceType;
+
+			switch (type) {
+				case commonDefines.DeviceTypes.AirToAir: this.processAtaDeviceCommand(controlOption, state, device); break;
+				case commonDefines.DeviceTypes.AirToWater: this.processAtwDeviceCommand(controlOption, state, device); break;
+				default: this.log.error("Unsupported device type: '" + type + "' - Please report this to the developer!"); break;
 			}
 		}
 		// The state was deleted
 		else {
 			this.log.silly(`state ${id} deleted`);
 
-			if(stateValueCache[id]) {
+			if (stateValueCache[id]) {
 				delete stateValueCache[id];
 			}
+		}
+	}
+
+	mapAtaDeviceOperationMode(value) {
+		switch (value) {
+			case (commonDefines.AtaDeviceOperationModes.HEAT.value):
+				return commonDefines.AtaDeviceOperationModes.HEAT;
+			case (commonDefines.AtaDeviceOperationModes.DRY.value):
+				return commonDefines.AtaDeviceOperationModes.DRY;
+			case (commonDefines.AtaDeviceOperationModes.COOL.value):
+				return commonDefines.AtaDeviceOperationModes.COOL;
+			case (commonDefines.AtaDeviceOperationModes.VENT.value):
+				return commonDefines.AtaDeviceOperationModes.VENT;
+			case (commonDefines.AtaDeviceOperationModes.AUTO.value):
+				return commonDefines.AtaDeviceOperationModes.AUTO;
+			default:
+				this.log.error("Unsupported ATA operation mode: '" + value + "' - Please report this to the developer!");
+				return commonDefines.AtaDeviceOperationModes.UNDEF;
+		}
+	}
+
+	mapAtwDeviceOperationMode(value) {
+		switch (value) {
+			case (commonDefines.AtwDeviceOperationModes.HEATTHERMOSTAT.value):
+				return commonDefines.AtwDeviceOperationModes.HEATTHERMOSTAT;
+			case (commonDefines.AtwDeviceOperationModes.HEATFLOW.value):
+				return commonDefines.AtwDeviceOperationModes.HEATFLOW;
+			case (commonDefines.AtwDeviceOperationModes.CURVE.value):
+				return commonDefines.AtwDeviceOperationModes.CURVE;
+			case (commonDefines.AtwDeviceOperationModes.COOLTHERMOSTAT.value):
+				return commonDefines.AtwDeviceOperationModes.COOLTHERMOSTAT;
+			case (commonDefines.AtwDeviceOperationModes.COOLFLOW.value):
+				return commonDefines.AtwDeviceOperationModes.COOLFLOW;
+			default:
+				this.log.error("Unsupported ATW operation mode: '" + value + "' - Please report this to the developer!");
+				return commonDefines.AtwDeviceOperationModes.UNDEF;
+		}
+	}
+
+	processAtaDeviceCommand(controlOption, state, device) {
+		switch (controlOption) {
+			case (commonDefines.AtaDeviceStateIDs.Power):
+				if (state.val) {
+					// switch on using current operation mode
+					device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.PowerState, commonDefines.DevicePowerStates.ON);
+				}
+				else {
+					// switch off
+					device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.PowerState, commonDefines.DevicePowerStates.OFF);
+				}
+				break;
+			case (commonDefines.AtaDeviceStateIDs.Mode):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.TargetHeatingCoolingState, this.mapAtaDeviceOperationMode(state.value));
+				break;
+			case (commonDefines.AtaDeviceStateIDs.TargetTemp):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.TargetTemperature, state.val);
+				break;
+			case (commonDefines.AtaDeviceStateIDs.FanSpeedManual):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.FanSpeed, state.val);
+				break;
+			case (commonDefines.AtaDeviceStateIDs.VaneVerticalDirection):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.VaneVerticalDirection, state.val);
+				break;
+			case (commonDefines.AtaDeviceStateIDs.VaneHorizontalDirection):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.VaneHorizontalDirection, state.val);
+				break;
+			case (commonDefines.AtaDeviceStateIDs.GetPowerConsumptionReport):
+				device.getPowerConsumptionReport();
+				break;
+			case (commonDefines.AtaDeviceStateIDs.ReportStartDate):
+			case (commonDefines.AtaDeviceStateIDs.ReportEndDate):
+				// ignore these as they're just necessary for report request and shouldn't trigger any actions themselves
+				break;
+			default:
+				this.log.error("Unsupported ATA control option: " + controlOption + " - Please report this to the developer!");
+				break;
+		}
+	}
+
+	processAtwDeviceCommand(controlOption, state, device) {
+		switch (controlOption) {
+			case (commonDefines.AtwDeviceStateIDs.Power):
+				if (state.val) {
+					// switch on using current operation mode
+					device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.PowerState, commonDefines.DevicePowerStates.ON);
+				}
+				else {
+					// switch off
+					device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.PowerState, commonDefines.DevicePowerStates.OFF);
+				}
+				break;
+			case (commonDefines.AtwDeviceStateIDs.Mode):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationMode, this.mapAtwDeviceOperationMode(state.value));
+				break;
+			default:
+				this.log.error("Unsupported ATW control option: " + controlOption + " - Please report this to the developer!");
+				break;
 		}
 	}
 }
