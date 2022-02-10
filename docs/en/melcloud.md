@@ -117,3 +117,5 @@ Shortly afterwards the corresponding states are filled with the report data from
 | operationModeZone1 | X | X | Operation mode of zone 1 (0=HEATTHERMOSTAT, 1=HEATFLOW, 2=CURVE, 3=COOLTHERMOSTAT, 4=COOLFLOW) |
 | operationModeZone2 | X | X | Operation mode of zone 2, if present (0=HEATTHERMOSTAT, 1=HEATFLOW, 2=CURVE, 3=COOLTHERMOSTAT, 4=COOLFLOW) |
 | power | X | X | Power switch (turns device on/off) |
+| setTemperatureZone1 | X | X | Target temperature of zone 1 |
+| setTemperatureZone2 | X | X | Target temperature of zone 2 (if present) |
