@@ -101,9 +101,8 @@ class Melcloud extends utils.Adapter {
 		for (const id of Object.keys(objects)) {
 			if (id.startsWith(prefix)) {
 				const objID = id.replace(this.namespace + ".", "");
-				this.log.debug("Trying to delete device: " + objID);
+				this.log.debug("Deleting state '" + objID + "'");
 				await this.delObjectAsync(objID);
-				this.log.debug("Deleted device!");
 			}
 		}
 	}
