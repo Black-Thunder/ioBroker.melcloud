@@ -118,5 +118,9 @@ Kurz darauf werden die entsprechenden Datenpunkte mit den Werten aus der Cloud b
 | operationModeZone2 | X | X | Betriebsmodus des zweiten Kreislaufs, falls vorhanden (0=HEATTHERMOSTAT, 1=HEATFLOW, 2=CURVE, 3=COOLTHERMOSTAT, 4=COOLFLOW) |
 | power | X | X | Hauptschalter (schaltet Gerät ein bzw. aus) |
 | setTankWaterTemperature | X | X | Zieltemperatur des Wasserspeichers |
+| setCoolFlowTemperatureZone1 | X | X | Zieltemperatur des ersten Kühlvorlaufes |
+| setCoolFlowTemperatureZone2 | X | X | Zieltemperatur des zweiten Kühlvorlaufes (falls vorhanden) |
+| setHeatFlowTemperatureZone1 | X | X | Zieltemperatur des ersten Heizvorlaufes |
+| setHeatFlowTemperatureZone2 | X | X | Zieltemperatur des zweiten Heizvorlaufes (falls vorhanden) |
 | setTemperatureZone1 | X | X | Zieltemperatur des ersten Kreislaufs |
 | setTemperatureZone2 | X | X | Zieltemperatur des zweiten Kreislaufs (falls vorhanden) |

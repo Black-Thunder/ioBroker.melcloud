@@ -350,6 +350,18 @@ class Melcloud extends utils.Adapter {
 			case (commonDefines.AtwDeviceStateIDs.SetTemperatureZone2):
 				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTemperatureZone2, state.value);
 				break;
+			case (commonDefines.AtwDeviceStateIDs.SetHeatFlowTemperatureZone1):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetHeatFlowTemperatureZone1, state.value);
+				break;
+			case (commonDefines.AtwDeviceStateIDs.SetHeatFlowTemperatureZone2):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetHeatFlowTemperatureZone2, state.value);
+				break;
+			case (commonDefines.AtwDeviceStateIDs.SetCoolFlowTemperatureZone1):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone1, state.value);
+				break;
+			case (commonDefines.AtwDeviceStateIDs.SetCoolFlowTemperatureZone2):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone2, state.value);
+				break;
 			default:
 				this.log.error("Unsupported ATW control option: " + controlOption + " - Please report this to the developer!");
 				break;

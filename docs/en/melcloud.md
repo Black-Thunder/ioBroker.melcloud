@@ -117,6 +117,10 @@ Shortly afterwards the corresponding states are filled with the report data from
 | operationModeZone1 | X | X | Operation mode of zone 1 (0=HEATTHERMOSTAT, 1=HEATFLOW, 2=CURVE, 3=COOLTHERMOSTAT, 4=COOLFLOW) |
 | operationModeZone2 | X | X | Operation mode of zone 2, if present (0=HEATTHERMOSTAT, 1=HEATFLOW, 2=CURVE, 3=COOLTHERMOSTAT, 4=COOLFLOW) |
 | power | X | X | Power switch (turns device on/off) |
+| setCoolFlowTemperatureZone1 | X | X | Target temperature of cool flow zone 1 |
+| setCoolFlowTemperatureZone2 | X | X | Target temperature of cool flow zone 2 (if present) |
+| setHeatFlowTemperatureZone1 | X | X | Target temperature of heat flow zone 1|
+| setHeatFlowTemperatureZone2 | X | X | Target temperature of heat flow zone 2 (if present) |
 | setTankWaterTemperature | X | X | Target temperature of the water tank |
 | setTemperatureZone1 | X | X | Target temperature of zone 1 |
 | setTemperatureZone2 | X | X | Target temperature of zone 2 (if present) |
