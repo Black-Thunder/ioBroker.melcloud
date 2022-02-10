@@ -4,9 +4,9 @@
 
 Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen getroffen werden:
 
-* Mitsubishi Klimaanlage mit einem Wi-Fi-Adapter MAC-567IF (pro zu steuerndem Gerät einer nötig)
+* Mitsubishi-Gerät mit Wi-Fi-Adapter
 * MELCloud-Account unter der [offiziellen Website](https://app.melcloud.com/) angelegt
-* Alle Klimageräte wurden im Account registriert und vollständig eingerichtet
+* Gerät wurde im Account registriert und vollständig eingerichtet
 
 ## Konfiguration
 
@@ -26,7 +26,8 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 |--- | :---: | :---: |--- |
 | connection | X | - | Gibt den Verbindungsstatus zur MELCloud an |
 
-### melcloud.X.device.Y.info
+### Luft-Luft-Wärmepumpen (Klimageräte)
+#### melcloud.X.device.Y.info
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
@@ -51,7 +52,7 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | roomTemp | X | - | Aktuelle Raumtemperatur |
 | serialNumber | X | - | Seriennummer des Geräts |
 
-### melcloud.X.device.Y.control
+#### melcloud.X.device.Y.control
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
@@ -62,7 +63,7 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | vaneHorizontalDirection | X | X | Aktuelle horizontale Ausrichtung des Luftauslasses (0=Automatik, 1...5=ganz links bis ganz rechts, 8=50/50 (nur bei Geräten mit 2 getrennten Luftauslässen), 12=Swing) |
 | vaneVerticalDirection | X | X | Aktuelle vertikale Ausrichtung des Luftauslasses (0=Automatik, 1...5=ganz oben bis ganz unten, 7=Swing) |
 
-### melcloud.X.device.Y.reports
+#### melcloud.X.device.Y.reports
 
 Um Berichte abrufen zu können, müssen zunächst Start- ("startDate") und Endzeitpunkt ("endDate") korrekt festgelegt werden. Dabei ist das Format JJJJ-MM-TT zu beachten! Zur eigentlichen Durchführung des Abrufs muss der Datenpunkt "getPowerConsumptionReport" getriggert werden.
 Kurz darauf werden die entsprechenden Datenpunkte mit den Werten aus der Cloud befüllt.
@@ -76,3 +77,43 @@ Kurz darauf werden die entsprechenden Datenpunkte mit den Werten aus der Cloud b
 | totalMinutes | X | - | Zeitraum des gemessenen Verbrauchs (in Minuten) |
 | totalPowerConsumption*Betriebsmodus* | X | - | Gesamtverbrauch im Modus *Betriebsmodus* (in kWh) - wird für jeden Betriebsmodus angelegt |
 | totalPowerConsumption*Betriebsmodus* *Monat* | X | - | Gesamtverbrauch im Modus *Betriebsmodus* und im jeweiligen *Monat* (in kWh) - wird für jeden Betriebsmodus und Monat angelegt |
+
+### Luft-Wasser-Wärmepumpen -- Adapter-Version 1.2.0 oder höher erforderlich
+#### melcloud.X.device.Y.info
+
+| ID | lesbar | änderbar | Bemerkung |
+|--- | :---: | :---: |--- |
+| buildingId | X | - | Zugeordnete Gebäude-ID |
+| canCool | X | - | Fähigkeit zu kühlen |
+| canHeat | X | - | Fähigkeit zu heizen |
+| condensingTemperature | X | - | Kondensationstemperatur 
+| deviceName | X | - | Name des Geräts |
+| deviceOnline | X | - | Gibt an, ob das Gerät erreichbar ist |
+| floorId | X | - | Zugeordnete Etagen-ID |
+| flowTemperature | X | - | Vorlauftemperatur 
+| flowTemperatureBoiler | X | - | Vorlauftemperatur des Boilers
+| flowTemperatureZone1 | X | - | Vorlauftemperatur Zone 1 
+| flowTemperatureZone2 | X | - | Vorlauftemperatur Zone 2 (falls vorhanden)
+| hasZone2 | X | - | Flag, ob das Gerät einen zweiten Kreislauf hat |
+| lastCommunication | X | - | Zeitstempel der letzten Kommunikation (MELCloud -> Gerät) |
+| macAddress | X | - | MAC-Adresse des Geräts |
+| mixingTankWaterTemperature | X | - | Temperatur des Mischwassertanks
+| nextCommunication | X | - | Zeitstempel der nächsten Kommunikation (MELCloud -> Gerät) |
+| outdoorTemperature | X | - | Außentemperatur 
+| returnTemperature | X | - | Rücklauftemperatur 
+| returnTemperatureBoiler | X | - | Rücklauftemperatur des Boilers
+| returnTemperatureZone2 | X | - | Rücklauftemperatur Zone 1 
+| returnTemperature | X | - | Rücklauftemperatur Zone 2 (falls vorhanden)
+| roomTemperatureZone1 | X | - | Raumtemperatur des ersten Kreislaufs
+| roomTemperatureZone2 | X | - | Raumtemperatur des zweiten Kreislaufs (falls vorhanden)
+| serialNumber | X | - | Seriennummer des Geräts |
+| tankWaterTemperature | X | - | Temperatur des Wasserspeichers
+
+#### melcloud.X.device.Y.control
+
+| ID | lesbar | änderbar | Bemerkung |
+|--- | :---: | :---: |--- |
+| forcedHotWaterMode | X | X | Betriebsmodus Warmwasser (false=Automatisch, true=WW-Vorrang) |
+| operationModeZone1 | X | X | Betriebsmodus des ersten Kreislaufs (0=HEATTHERMOSTAT, 1=HEATFLOW, 2=CURVE, 3=COOLTHERMOSTAT, 4=COOLFLOW) |
+| operationModeZone2 | X | X | Betriebsmodus des zweiten Kreislaufs, falls vorhanden (0=HEATTHERMOSTAT, 1=HEATFLOW, 2=CURVE, 3=COOLTHERMOSTAT, 4=COOLFLOW) |
+| power | X | X | Hauptschalter (schaltet Gerät ein bzw. aus) |
