@@ -293,7 +293,7 @@ class Melcloud extends utils.Adapter {
 				}
 				break;
 			case (commonDefines.AtaDeviceStateIDs.Mode):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.TargetHeatingCoolingState, this.mapAtaDeviceOperationMode(state.value));
+				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.TargetHeatingCoolingState, this.mapAtaDeviceOperationMode(state.val));
 				break;
 			case (commonDefines.AtaDeviceStateIDs.TargetTemp):
 				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.TargetTemperature, state.val);
@@ -333,34 +333,34 @@ class Melcloud extends utils.Adapter {
 				}
 				break;
 			case (commonDefines.AtwDeviceStateIDs.ForcedHotWaterMode):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.ForcedHotWaterMode, state.value);
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.ForcedHotWaterMode, state.val);
 				break;
 			case (commonDefines.AtwDeviceStateIDs.OperationModeZone1):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationModeZone1, this.mapAtwDeviceZoneOperationMode(state.value));
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationModeZone1, this.mapAtwDeviceZoneOperationMode(state.val));
 				break;
 			case (commonDefines.AtwDeviceStateIDs.OperationModeZone2):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationModeZone2, this.mapAtwDeviceZoneOperationMode(state.value));
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationModeZone2, this.mapAtwDeviceZoneOperationMode(state.val));
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetTankWaterTemperature):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTankWaterTemperature, state.value);
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTankWaterTemperature, state.val);
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetTemperatureZone1):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTemperatureZone1, state.value);
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTemperatureZone1, state.val);
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetTemperatureZone2):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTemperatureZone2, state.value);
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTemperatureZone2, state.val);
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetHeatFlowTemperatureZone1):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetHeatFlowTemperatureZone1, state.value);
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetHeatFlowTemperatureZone1, state.val);
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetHeatFlowTemperatureZone2):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetHeatFlowTemperatureZone2, state.value);
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetHeatFlowTemperatureZone2, state.val);
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetCoolFlowTemperatureZone1):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone1, state.value);
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone1, state.val);
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetCoolFlowTemperatureZone2):
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone2, state.value);
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone2, state.val);
 				break;
 			default:
 				this.log.error("Unsupported ATW control option: " + controlOption + " - Please report this to the developer!");
