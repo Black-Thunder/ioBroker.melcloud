@@ -341,6 +341,9 @@ class Melcloud extends utils.Adapter {
 			case (commonDefines.AtwDeviceStateIDs.OperationModeZone2):
 				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.OperationModeZone2, this.mapAtwDeviceZoneOperationMode(state.value));
 				break;
+			case (commonDefines.AtwDeviceStateIDs.SetTankWaterTemperature):
+				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTankWaterTemperature, state.value);
+				break;
 			default:
 				this.log.error("Unsupported ATW control option: " + controlOption + " - Please report this to the developer!");
 				break;
