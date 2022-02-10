@@ -88,6 +88,7 @@ Kurz darauf werden die entsprechenden Datenpunkte mit den Werten aus der Cloud b
 | canHeat | X | - | Fähigkeit zu heizen |
 | condensingTemperature | X | - | Kondensationstemperatur 
 | deviceName | X | - | Name des Geräts |
+| deviceType | X | - | Gerätetyp (0=Luft-Luft-Wärmepumpe / Klimaanlage, 1=Luft-Wasser-Wärmepumpe) |
 | deviceOnline | X | - | Gibt an, ob das Gerät erreichbar ist |
 | floorId | X | - | Zugeordnete Etagen-ID |
 | flowTemperature | X | - | Vorlauftemperatur 
@@ -102,8 +103,8 @@ Kurz darauf werden die entsprechenden Datenpunkte mit den Werten aus der Cloud b
 | outdoorTemperature | X | - | Außentemperatur 
 | returnTemperature | X | - | Rücklauftemperatur 
 | returnTemperatureBoiler | X | - | Rücklauftemperatur des Boilers
-| returnTemperatureZone2 | X | - | Rücklauftemperatur Zone 1 
-| returnTemperature | X | - | Rücklauftemperatur Zone 2 (falls vorhanden)
+| returnTemperatureZone1 | X | - | Rücklauftemperatur Zone 1 
+| returnTemperatureZone2 | X | - | Rücklauftemperatur Zone 2 (falls vorhanden)
 | roomTemperatureZone1 | X | - | Raumtemperatur des ersten Kreislaufs
 | roomTemperatureZone2 | X | - | Raumtemperatur des zweiten Kreislaufs (falls vorhanden)
 | serialNumber | X | - | Seriennummer des Geräts |

@@ -88,6 +88,7 @@ Shortly afterwards the corresponding states are filled with the report data from
 | canHeat | X | - | Ability to heat |
 | condensingTemperature | X | - | Condensing temperature 
 | deviceName | X | - | Name of the device |
+| deviceType | X | - | Type of device (0=Air to air heat pump / air conditioner, 1=Air to water heat pump) |
 | deviceOnline | X | - | Indicates if device is reachable |
 | floorId | X | - | Assigned floor ID |
 | flowTemperature | X | - | Flow temperature 
@@ -102,8 +103,8 @@ Shortly afterwards the corresponding states are filled with the report data from
 | outdoorTemperature | X | - | Outdoor temperature
 | returnTemperature | X | - | Return temperature
 | returnTemperatureBoiler | X | - | Return temperature of the boiler
-| returnTemperatureZone2 | X | - | Return temperature of zone 1 
-| returnTemperature | X | - | Return temperature of zone 2 (if present)
+| returnTemperatureZone1 | X | - | Return temperature of zone 1 
+| returnTemperatureZone2 | X | - | Return temperature of zone 2 (if present)
 | roomTemperatureZone1 | X | - | Room temperature of zone 1
 | roomTemperatureZone2 | X | - | Room temperature of zone 1 (if present)
 | serialNumber | X | - | Serial number of the device |
@@ -119,7 +120,7 @@ Shortly afterwards the corresponding states are filled with the report data from
 | power | X | X | Power switch (turns device on/off) |
 | setCoolFlowTemperatureZone1 | X | X | Target temperature of cool flow zone 1 |
 | setCoolFlowTemperatureZone2 | X | X | Target temperature of cool flow zone 2 (if present) |
-| setHeatFlowTemperatureZone1 | X | X | Target temperature of heat flow zone 1|
+| setHeatFlowTemperatureZone1 | X | X | Target temperature of heat flow zone 1 |
 | setHeatFlowTemperatureZone2 | X | X | Target temperature of heat flow zone 2 (if present) |
 | setTankWaterTemperature | X | X | Target temperature of the water tank |
 | setTemperatureZone1 | X | X | Target temperature of zone 1 |
