@@ -65,13 +65,13 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async setAdapterConnectionState(isConnected) {
-		await this.setStateChangedAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, isConnected, true);
-		await this.setForeignState("system.adapter." + this.namespace + ".connected", isConnected, true);
+		await this.setStateChangedAsync(`${commonDefines.AdapterDatapointIDs.Info}.${commonDefines.AdapterStateIDs.Connection}`, isConnected, true);
+		await this.setForeignState(`system.adapter.${this.namespace}.connected`, isConnected, true);
 	}
 
 	async saveKnownDeviceIDs() {
 		this.log.debug("Getting current known devices...");
-		const prefix = this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".";
+		const prefix = `${this.namespace}.${commonDefines.AdapterDatapointIDs.Devices}.`;
 		const objects = await this.getAdapterObjectsAsync();
 
 		for (const id of Object.keys(objects)) {
@@ -85,7 +85,7 @@ class Melcloud extends utils.Adapter {
 			// Add each device only one time
 			if (!isNaN(deviceId) && !this.currentKnownDeviceIDs.includes(deviceId)) {
 				this.currentKnownDeviceIDs.push(deviceId);
-				this.log.debug("Found known device: " + deviceId);
+				this.log.debug(`Found known device: ${deviceId}`);
 			}
 		}
 
@@ -95,13 +95,13 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async deleteMelDevice(id) {
-		const prefix = this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + "." + id;
+		const prefix = `${this.namespace}.${commonDefines.AdapterDatapointIDs.Devices}.${id}`;
 		const objects = await this.getAdapterObjectsAsync();
 
 		for (const id of Object.keys(objects)) {
 			if (id.startsWith(prefix)) {
-				const objID = id.replace(this.namespace + ".", "");
-				this.log.debug("Deleting state '" + objID + "'");
+				const objID = id.replace(`${this.namespace}.`, "");
+				this.log.debug(`Deleting state '${objID}'`);
 				await this.delObjectAsync(objID);
 			}
 		}
@@ -118,7 +118,7 @@ class Melcloud extends utils.Adapter {
 			native: {}
 		});
 
-		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info + "." + commonDefines.AdapterStateIDs.Connection, {
+		await this.setObjectNotExistsAsync(`${commonDefines.AdapterDatapointIDs.Info}.${commonDefines.AdapterStateIDs.Connection}`, {
 			type: "state",
 			common: {
 				name: "Connection to cloud",
@@ -205,32 +205,32 @@ class Melcloud extends utils.Adapter {
 			}
 
 			// Only states under "devices.XXX.control" and "devices.XXX.reports" are subscribed
-			let deviceId = id.replace(this.namespace + "." + commonDefines.AdapterDatapointIDs.Devices + ".", "");
+			let deviceId = id.replace(`${this.namespace}.${commonDefines.AdapterDatapointIDs.Devices}.`, "");
 			deviceId = deviceId.substring(0, deviceId.indexOf("."));
 
 			// Get the device object that should be changed
-			this.log.debug("Trying to get device object with id " + deviceId + "...");
+			this.log.debug(`Trying to get device object with id ${deviceId}...`);
 			const device = this.deviceObjects.find(obj => {
 				return obj.id === parseInt(deviceId);
 			});
 
 			if (device == null) {
 				let knownIds = "";
-				this.deviceObjects.forEach(obj => knownIds += obj.id + ", ");
-				this.log.error("Failed to get device object. Known object IDs: " + knownIds);
+				this.deviceObjects.forEach(obj => knownIds += `${obj.id}, `);
+				this.log.error(`Failed to get device object. Known object IDs: ${knownIds}`);
 				this.log.error("This should not happen - report this to the developer!");
 				return;
 			}
 
 			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
-			this.log.debug("Processing command '" + controlOption + "' with value '" + state.val + "' for device object with id " + device.id + " (" + device.name + ")...");
+			this.log.debug(`Processing command '${controlOption}' with value '${state.val}' for device object with id ${device.id} (${device.name})...`);
 
 			const type = device.deviceType;
 
 			switch (type) {
 				case commonDefines.DeviceTypes.AirToAir: this.processAtaDeviceCommand(controlOption, state, device); break;
 				case commonDefines.DeviceTypes.AirToWater: this.processAtwDeviceCommand(controlOption, state, device); break;
-				default: this.log.error("Unsupported device type: '" + type + "' - Please report this to the developer!"); break;
+				default: this.log.error(`Unsupported device type: '${type}' - Please report this to the developer!`); break;
 			}
 		}
 		// The state was deleted
@@ -256,7 +256,7 @@ class Melcloud extends utils.Adapter {
 			case (commonDefines.AtaDeviceOperationModes.AUTO.value):
 				return commonDefines.AtaDeviceOperationModes.AUTO;
 			default:
-				this.log.error("Unsupported ATA operation mode: '" + value + "' - Please report this to the developer!");
+				this.log.error(`Unsupported ATA operation mode: '${value}' - Please report this to the developer!`);
 				return commonDefines.AtaDeviceOperationModes.UNDEF;
 		}
 	}
@@ -274,7 +274,7 @@ class Melcloud extends utils.Adapter {
 			case (commonDefines.AtwDeviceZoneOperationModes.COOLFLOW.value):
 				return commonDefines.AtwDeviceZoneOperationModes.COOLFLOW;
 			default:
-				this.log.error("Unsupported ATW zone operation mode: '" + value + "' - Please report this to the developer!");
+				this.log.error(`Unsupported ATW zone operation mode: '${value}' - Please report this to the developer!`);
 				return commonDefines.AtwDeviceZoneOperationModes.UNDEF;
 		}
 	}
@@ -314,7 +314,7 @@ class Melcloud extends utils.Adapter {
 				// ignore these as they're just necessary for report request and shouldn't trigger any actions themselves
 				break;
 			default:
-				this.log.error("Unsupported ATA control option: " + controlOption + " - Please report this to the developer!");
+				this.log.error(`Unsupported ATA control option: ${controlOption} - Please report this to the developer!`);
 				break;
 		}
 	}
@@ -362,7 +362,7 @@ class Melcloud extends utils.Adapter {
 				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone2, state.val);
 				break;
 			default:
-				this.log.error("Unsupported ATW control option: " + controlOption + " - Please report this to the developer!");
+				this.log.error(`Unsupported ATW control option: ${controlOption} - Please report this to the developer!`);
 				break;
 		}
 	}
