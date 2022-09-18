@@ -143,7 +143,7 @@ class Melcloud extends utils.Adapter {
 					.then(() => {
 						this.connectToCloud();
 						this.subscribeStates("devices.*.control.*"); // subscribe to states changes under "devices.X.control."
-						this.subscribeStates("devices.*.reports.*"); // subscribe to states changes under "devices.X.reports."
+						this.subscribeStates("devices.*.reports.getPowerConsumptionReport"); // subscribe to state changes under "devices.X.reports.getPowerConsumptionReport"
 					})
 				)
 			)
@@ -205,7 +205,7 @@ class Melcloud extends utils.Adapter {
 				return;
 			}
 
-			// Only states under "devices.XXX.control" and "devices.XXX.reports" are subscribed
+			// Only states under "devices.XXX.control" and "devices.XXX.reports.getPowerConsumptionReport" are subscribed
 			let deviceId = id.replace(`${this.namespace}.${commonDefines.AdapterDatapointIDs.Devices}.`, "");
 			deviceId = deviceId.substring(0, deviceId.indexOf("."));
 
@@ -309,10 +309,6 @@ class Melcloud extends utils.Adapter {
 				break;
 			case (commonDefines.AtaDeviceStateIDs.GetPowerConsumptionReport):
 				device.getPowerConsumptionReport();
-				break;
-			case (commonDefines.AtaDeviceStateIDs.ReportStartDate):
-			case (commonDefines.AtaDeviceStateIDs.ReportEndDate):
-				// ignore these as they're just necessary for report request and shouldn't trigger any actions themselves
 				break;
 			default:
 				this.log.error(`Unsupported ATA control option: ${controlOption} - Please report this to the developer!`);
