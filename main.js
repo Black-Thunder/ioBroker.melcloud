@@ -184,7 +184,8 @@ class Melcloud extends utils.Adapter {
 	onStateChange(id, state) {
 		// The state was changed
 		if (state) {
-			if (stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
+			// always trigger on "GetPowerConsumptionReport" ignoring if the value has changed or not
+			if (!id.includes(commonDefines.AtaDeviceStateIDs.GetPowerConsumptionReport) && stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
 				this.log.silly(`state ${id} unchanged: ${state.val} (ack = ${state.ack})`);
 				return;
 			}
