@@ -8,7 +8,6 @@
 [![Downloads](https://img.shields.io/npm/dm/iobroker.melcloud.svg)](https://www.npmjs.com/package/iobroker.melcloud)
 ![Number of Installations (latest)](http://iobroker.live/badges/melcloud-installed.svg)
 ![Number of Installations (stable)](http://iobroker.live/badges/melcloud-stable.svg)
-[![Dependency Status](https://img.shields.io/david/Black-Thunder/iobroker.melcloud.svg)](https://david-dm.org/Black-Thunder/iobroker.melcloud)
 [![Known Vulnerabilities](https://snyk.io/test/github/Black-Thunder/ioBroker.melcloud/badge.svg)](https://snyk.io/test/github/Black-Thunder/ioBroker.melcloud)
 
 [![NPM](https://nodei.co/npm/iobroker.melcloud.png?downloads=true)](https://nodei.co/npm/iobroker.melcloud/)
