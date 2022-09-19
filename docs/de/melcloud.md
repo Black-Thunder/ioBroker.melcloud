@@ -66,17 +66,24 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 #### melcloud.X.device.Y.reports
 
 Um Berichte abrufen zu können, müssen zunächst Start- ("startDate") und Endzeitpunkt ("endDate") korrekt festgelegt werden. Dabei ist das Format JJJJ-MM-TT zu beachten! Zur eigentlichen Durchführung des Abrufs muss der Datenpunkt "getPowerConsumptionReport" getriggert werden.
-Kurz darauf werden die entsprechenden Datenpunkte mit den Werten aus der Cloud befüllt.
+Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData" mit den Werten aus der Cloud befüllt.
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
 | startDate | X | X | Beginn des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2020-05-31) |
 | endDate | X | X | Ende des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2021-01-08) |
 | getPowerConsumptionReport | - | X | Schalter, um das Abrufen der Berichte anzustoßen |
-| reportedMonths | X | - | Array aller Monate, die abgerufen wurden (1 = Januar, ..., 12 = Dezember) |
+
+##### melcloud.X.device.Y.reports.lastReportData -- Adapter-Version 1.2.0 oder höher erforderlich
+
+Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
+
+| ID | lesbar | änderbar | Bemerkung |
+|--- | :---: | :---: |--- |
 | totalMinutes | X | - | Zeitraum des gemessenen Verbrauchs (in Minuten) |
+| totalPowerConsumption | X | - | Gesamtverbrauch aller Modi (in kWh) |
 | totalPowerConsumption*Betriebsmodus* | X | - | Gesamtverbrauch im Modus *Betriebsmodus* (in kWh) - wird für jeden Betriebsmodus angelegt |
-| totalPowerConsumption*Betriebsmodus* *Monat* | X | - | Gesamtverbrauch im Modus *Betriebsmodus* und im jeweiligen *Monat* (in kWh) - wird für jeden Betriebsmodus und Monat angelegt |
+| rawPowerConsumptionData | X | - | Unverarbeite Rohantwort der MELCloud (als JSON) zur eigenen Verarbeitung |
 
 ### Luft-Wasser-Wärmepumpen -- Adapter-Version 1.2.0 oder höher erforderlich
 #### melcloud.X.device.Y.info
