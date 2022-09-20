@@ -142,7 +142,7 @@ Shortly afterwards the corresponding states in the subchannel "lastReportData" a
 |--- | :---: | :---: |--- |
 | startDate | X | X | Start date for the consumption report (format: YYYY-MM-DD, e.g., 2020-05-31) |
 | endDate | X | X | End date for the consumption report (format: YYYY-MM-DD, e.g., 2021-01-08) |
-| getPowerConsumptionReport | - | X | Button to trigger retrieving the power consumption reports |
+| getCumulatedPowerConsumptionReport | - | X | Button to trigger retrieving the power consumption reports |
 
 #### melcloud.X.reports.lastReportData -- adapter version v1.2.0 or greater needed
 
