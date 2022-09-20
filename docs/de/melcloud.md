@@ -144,7 +144,7 @@ Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData"
 | endDate | X | X | Ende des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2021-01-08) |
 | getPowerConsumptionReport | - | X | Schalter, um das Abrufen der Berichte anzustoßen |
 
-##### melcloud.X.reports.lastReportData -- Adapter-Version 1.2.0 oder höher erforderlich
+#### melcloud.X.reports.lastReportData -- Adapter-Version 1.2.0 oder höher erforderlich
 
 Hier werden die aggregierten Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
 

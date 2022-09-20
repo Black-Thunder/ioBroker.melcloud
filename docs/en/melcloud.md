@@ -144,7 +144,7 @@ Shortly afterwards the corresponding states in the subchannel "lastReportData" a
 | endDate | X | X | End date for the consumption report (format: YYYY-MM-DD, e.g., 2021-01-08) |
 | getPowerConsumptionReport | - | X | Button to trigger retrieving the power consumption reports |
 
-##### melcloud.X.reports.lastReportData -- adapter version v1.2.0 or greater needed
+#### melcloud.X.reports.lastReportData -- adapter version v1.2.0 or greater needed
 
 Here are the actual aggregated power consumption values for the selected period of time stored.
 
