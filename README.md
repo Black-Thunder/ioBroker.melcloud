@@ -30,7 +30,7 @@ Documentation:
 	### __WORK IN PROGRESS__
 -->
 ### __WORK IN PROGRESS__
-* (Black-Thunder) Added support for air to water devices (e.g. heatpumps)
+* (Black-Thunder) Added support for air to water devices (e.g., heat pumps)
 * (Black-Thunder) Added new device-independent channel "reports" fur cumulative reports across all devices (see documentation for new structure)
 * (Black-Thunder) Restructured device-specific channel "reports" and added new sub-channel "lastReportData" (see documentation for new structure)
 * (Black-Thunder) Fix: always trigger on "getPowerConsumptionReport" ignoring the state value
