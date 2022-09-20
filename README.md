@@ -29,7 +29,7 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-### __WORK IN PROGRESS__
+### 1.2.0 (2022-09-20)
 * (Black-Thunder) Added support for air to water devices (e.g., heat pumps)
 * (Black-Thunder) Added new device-independent channel "reports" fur cumulative reports across all devices (see documentation for new structure)
 * (Black-Thunder) Restructured device-specific channel "reports" and added new sub-channel "lastReportData" (see documentation for new structure)
