@@ -31,9 +31,10 @@ Documentation:
 -->
 ### __WORK IN PROGRESS__
 * (Black-Thunder) Added support for air to water devices (e.g. heatpumps)
-* (Black-Thunder) restructured "reports" channel and added new sub-channel "lastReportData" (see documentation for new structure)
-* (Black-Thunder) fix: always trigger on "getPowerConsumptionReport" ignoring the state value
-* (Black-Thunder) fixed js-controller warnings
+* (Black-Thunder) Added new device-independent channel "reports" fur cumulative reports across all devices (see documentation for new structure)
+* (Black-Thunder) Restructured device-specific channel "reports" and added new sub-channel "lastReportData" (see documentation for new structure)
+* (Black-Thunder) Fix: always trigger on "getPowerConsumptionReport" ignoring the state value
+* (Black-Thunder) Fixed js-controller warnings
 
 ### 1.1.6 (2022-02-06)
 * (Black-Thunder) fixed warnings

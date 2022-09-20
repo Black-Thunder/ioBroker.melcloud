@@ -110,6 +110,7 @@ class Melcloud extends utils.Adapter {
 	async initObjects() {
 		this.log.debug("Initializing objects...");
 
+		//#region INFO
 		await this.setObjectNotExistsAsync(commonDefines.AdapterDatapointIDs.Info, {
 			type: "channel",
 			common: {
@@ -131,6 +132,123 @@ class Melcloud extends utils.Adapter {
 			native: {}
 		});
 		this.setAdapterConnectionState(false);
+		//#endregion
+
+		//#region REPORTS (cumulated for all supported devices)
+		let reportsPrefix = `${commonDefines.AdapterDatapointIDs.Reports}`;
+
+		await this.setObjectNotExistsAsync(reportsPrefix, {
+			type: "channel",
+			common: {
+				name: "Cumulated report for all supported devices"
+			},
+			native: {}
+		});
+
+		reportsPrefix += ".";
+
+		await this.setObjectNotExistsAsync(reportsPrefix + commonDefines.AtaDeviceStateIDs.PowerConsumptionReportStartDate, {
+			type: "state",
+			common: {
+				name: "Report start date (format: YYYY-MM-DD)",
+				type: "string",
+				role: "date",
+				read: true,
+				write: true,
+				desc: "Report data will be collected starting at this date"
+			},
+			native: {}
+		});
+
+		await this.setObjectNotExistsAsync(reportsPrefix + commonDefines.AtaDeviceStateIDs.PowerConsumptionReportEndDate, {
+			type: "state",
+			common: {
+				name: "Report end date (format: YYYY-MM-DD)",
+				type: "string",
+				role: "date",
+				read: true,
+				write: true,
+				desc: "Report data will be collected until this date"
+			},
+			native: {}
+		});
+
+		await this.setObjectNotExistsAsync(reportsPrefix + commonDefines.CommonDeviceStateIDs.GetCumulatedPowerConsumptionReport, {
+			type: "state",
+			common: {
+				name: "Get current power consumption report for all supported devices",
+				type: "boolean",
+				role: "button",
+				read: false,
+				write: true,
+				def: false,
+				desc: "Get current power consumption report for all supported devices"
+			},
+			native: {}
+		});
+
+		let lastReportDataPrefix = `${commonDefines.AdapterDatapointIDs.Reports}.${commonDefines.AdapterDatapointIDs.LastReportData}`;
+		await this.setObjectNotExistsAsync(lastReportDataPrefix, {
+			type: "channel",
+			common: {
+				name: "Last report data for all supported devices"
+			},
+			native: {}
+		});
+
+		lastReportDataPrefix += ".";
+		const operationModes = [commonDefines.AtaDeviceOperationModes.HEAT.id, commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.AtaDeviceOperationModes.AUTO.id, commonDefines.AtaDeviceOperationModes.VENT.id, commonDefines.AtaDeviceOperationModes.DRY.id];
+
+		operationModes.forEach(mode => {
+			this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + mode, {
+				type: "state",
+				common: {
+					name: `Total power consumption for mode '${mode}'`,
+					type: "number",
+					role: "value.power.consumption",
+					min: 0,
+					read: true,
+					write: false,
+					unit: "kWh",
+					def: 0,
+					desc: `Total power consumption for mode '${mode}'`
+				},
+				native: {}
+			});
+		});
+
+		await this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix, {
+			type: "state",
+			common: {
+				name: "Total power consumption for all modes",
+				type: "number",
+				role: "value.power.consumption",
+				min: 0,
+				read: true,
+				write: false,
+				unit: "kWh",
+				def: 0,
+				desc: "Total power consumption for all modes"
+			},
+			native: {}
+		});
+
+		await this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalReportedMinutes, {
+			type: "state",
+			common: {
+				name: "Total power consumption minutes",
+				type: "number",
+				role: "value",
+				min: 0,
+				read: true,
+				write: false,
+				unit: "min",
+				def: 0,
+				desc: "Total operation time"
+			},
+			native: {}
+		});
+		//#endregion
 	}
 
 	/**
@@ -143,7 +261,8 @@ class Melcloud extends utils.Adapter {
 					.then(() => {
 						this.connectToCloud();
 						this.subscribeStates("devices.*.control.*"); // subscribe to states changes under "devices.X.control."
-						this.subscribeStates("devices.*.reports.getPowerConsumptionReport"); // subscribe to state changes under "devices.X.reports.getPowerConsumptionReport"
+						this.subscribeStates("devices.*.reports.getPowerConsumptionReport"); // subscribe to state "devices.X.reports.getPowerConsumptionReport"
+						this.subscribeStates("reports.getCumulatedPowerConsumptionReport"); // subscribe to state "reports.getCumulatedPowerConsumptionReport"
 					})
 				)
 			)
@@ -184,8 +303,8 @@ class Melcloud extends utils.Adapter {
 	onStateChange(id, state) {
 		// The state was changed
 		if (state) {
-			// always trigger on "GetPowerConsumptionReport" ignoring if the value has changed or not
-			if (!id.includes(commonDefines.AtaDeviceStateIDs.GetPowerConsumptionReport) && stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
+			// always trigger on "getPowerConsumptionReport" and "getCumulatedPowerConsumptionReport" ignoring if the value has changed or not
+			if (!id.includes(commonDefines.AtaDeviceStateIDs.GetPowerConsumptionReport) && !id.includes(commonDefines.CommonDeviceStateIDs.GetCumulatedPowerConsumptionReport) && stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
 				this.log.silly(`state ${id} unchanged: ${state.val} (ack = ${state.ack})`);
 				return;
 			}
@@ -205,33 +324,40 @@ class Melcloud extends utils.Adapter {
 				return;
 			}
 
-			// Only states under "devices.XXX.control" and "devices.XXX.reports.getPowerConsumptionReport" are subscribed
-			let deviceId = id.replace(`${this.namespace}.${commonDefines.AdapterDatapointIDs.Devices}.`, "");
-			deviceId = deviceId.substring(0, deviceId.indexOf("."));
-
-			// Get the device object that should be changed
-			this.log.debug(`Trying to get device object with id ${deviceId}...`);
-			const device = this.deviceObjects.find(obj => {
-				return obj.id === parseInt(deviceId);
-			});
-
-			if (device == null) {
-				let knownIds = "";
-				this.deviceObjects.forEach(obj => knownIds += `${obj.id}, `);
-				this.log.error(`Failed to get device object. Known object IDs: ${knownIds}`);
-				this.log.error("This should not happen - report this to the developer!");
-				return;
+			// "reports.getCumulatedPowerConsumptionReport"
+			if (id.includes(commonDefines.CommonDeviceStateIDs.GetCumulatedPowerConsumptionReport)) {
+				this.log.debug(`Processing command '${commonDefines.CommonDeviceStateIDs.GetCumulatedPowerConsumptionReport}' with value '${state.val}' for all devices...`);
+				this.GetCumulatedReport();
 			}
+			// "devices.XXX.control.*" and "devices.XXX.reports.getPowerConsumptionReport"
+			else {
+				let deviceId = id.replace(`${this.namespace}.${commonDefines.AdapterDatapointIDs.Devices}.`, "");
+				deviceId = deviceId.substring(0, deviceId.indexOf("."));
 
-			const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
-			this.log.debug(`Processing command '${controlOption}' with value '${state.val}' for device object with id ${device.id} (${device.name})...`);
+				// Get the device object that should be changed
+				this.log.debug(`Trying to get device object with id ${deviceId}...`);
+				const device = this.deviceObjects.find(obj => {
+					return obj.id === parseInt(deviceId);
+				});
 
-			const type = device.deviceType;
+				if (device == null) {
+					let knownIds = "";
+					this.deviceObjects.forEach(obj => knownIds += `${obj.id}, `);
+					this.log.error(`Failed to get device object. Known object IDs: ${knownIds}`);
+					this.log.error("This should not happen - report this to the developer!");
+					return;
+				}
 
-			switch (type) {
-				case commonDefines.DeviceTypes.AirToAir: this.processAtaDeviceCommand(controlOption, state, device); break;
-				case commonDefines.DeviceTypes.AirToWater: this.processAtwDeviceCommand(controlOption, state, device); break;
-				default: this.log.error(`Unsupported device type: '${type}' - Please report this to the developer!`); break;
+				const controlOption = id.substring(id.lastIndexOf(".") + 1, id.length);
+				this.log.debug(`Processing command '${controlOption}' with value '${state.val}' for device object with id ${device.id} (${device.name})...`);
+
+				const type = device.deviceType;
+
+				switch (type) {
+					case commonDefines.DeviceTypes.AirToAir: this.processAtaDeviceCommand(controlOption, state, device); break;
+					case commonDefines.DeviceTypes.AirToWater: this.processAtwDeviceCommand(controlOption, state, device); break;
+					default: this.log.error(`Unsupported device type: '${type}' - Please report this to the developer!`); break;
+				}
 			}
 		}
 		// The state was deleted
@@ -242,6 +368,51 @@ class Melcloud extends utils.Adapter {
 				delete stateValueCache[id];
 			}
 		}
+	}
+
+	async GetCumulatedReport() {
+		const promises = [];
+
+		for (const obj of this.deviceObjects) {
+			if (obj.deviceType != commonDefines.DeviceTypes.AirToAir) return; // only ATA-devices are supported at the moment
+
+			promises.push(obj.getPowerConsumptionReport(true));
+		}
+
+		if (promises == []) {
+			this.log.warn("");
+			return;
+		}
+
+		Promise.all(promises).then(() => {
+			this.UpdateCumulatedReportData(this.deviceObjects);
+		});
+	}
+
+	async UpdateCumulatedReportData(deviceObjs) {
+		const cumulatedLastReportDataPrefix = `${commonDefines.AdapterDatapointIDs.Reports}.${commonDefines.AdapterDatapointIDs.LastReportData}.`;
+		let totalConsumption = 0, totalConsumptionCool = 0, totalConsumptionHeat = 0, totalConsumptionDry = 0, totalConsumptionVent = 0, totalConsumptionAuto = 0, totalConsumptionMinutes = 0;
+
+		for (const obj of deviceObjs) {
+			totalConsumptionCool += obj.totalPowerConsumptionCooling;
+			totalConsumptionHeat += obj.totalPowerConsumptionHeating;
+			totalConsumptionAuto += obj.totalPowerConsumptionAuto;
+			totalConsumptionDry += obj.totalPowerConsumptionDry;
+			totalConsumptionVent += obj.totalPowerConsumptionVent;
+			totalConsumptionMinutes = obj.totalPowerConsumptionMinutes; // same for all devices
+
+			totalConsumption += totalConsumptionCool + totalConsumptionHeat + totalConsumptionAuto + totalConsumptionDry + totalConsumptionVent;
+		}
+
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.roundValue(totalConsumptionCool, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.HEAT.id, commonDefines.roundValue(totalConsumptionHeat, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.AUTO.id, commonDefines.roundValue(totalConsumptionAuto, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.DRY.id, commonDefines.roundValue(totalConsumptionDry, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.VENT.id, commonDefines.roundValue(totalConsumptionVent, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix, commonDefines.roundValue(totalConsumption, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalReportedMinutes, totalConsumptionMinutes, true);
+
+		this.log.debug(`Updated cumulated report data for all devices`);
 	}
 
 	mapAtaDeviceOperationMode(value) {
