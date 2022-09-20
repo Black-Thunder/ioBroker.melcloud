@@ -392,16 +392,49 @@ class Melcloud extends utils.Adapter {
 	async UpdateCumulatedReportData(deviceObjs) {
 		const cumulatedLastReportDataPrefix = `${commonDefines.AdapterDatapointIDs.Reports}.${commonDefines.AdapterDatapointIDs.LastReportData}.`;
 		let totalConsumption = 0, totalConsumptionCool = 0, totalConsumptionHeat = 0, totalConsumptionDry = 0, totalConsumptionVent = 0, totalConsumptionAuto = 0, totalConsumptionMinutes = 0;
+		const aggregatedDeviceGroups = [];
 
 		for (const obj of deviceObjs) {
-			totalConsumptionCool += obj.totalPowerConsumptionCooling;
-			totalConsumptionHeat += obj.totalPowerConsumptionHeating;
-			totalConsumptionAuto += obj.totalPowerConsumptionAuto;
-			totalConsumptionDry += obj.totalPowerConsumptionDry;
-			totalConsumptionVent += obj.totalPowerConsumptionVent;
-			totalConsumptionMinutes = obj.totalPowerConsumptionMinutes; // same for all devices
+			if (obj.deviceType != commonDefines.DeviceTypes.AirToAir) continue; // only ATA-devices are supported at the moment
 
-			totalConsumption += totalConsumptionCool + totalConsumptionHeat + totalConsumptionAuto + totalConsumptionDry + totalConsumptionVent;
+			// Check if device is already part of aggregation group to exclude duplicated values
+			if (obj.linkedDevicesIncludedInArregateEnergyReport && obj.linkedDevicesIncludedInArregateEnergyReport != "") {
+				if (aggregatedDeviceGroups.length == 0) aggregatedDeviceGroups.push({ groupName: obj.linkedDevicesIncludedInArregateEnergyReport, alreadyProcessed: false });
+				let isKnownGroup = false;
+
+				for (let i = 0; i < aggregatedDeviceGroups.length; i++) {
+					const aggregatedGroup = aggregatedDeviceGroups[i];
+
+					if (aggregatedGroup.groupName.includes(obj.name) && !aggregatedGroup.alreadyProcessed) {
+						this.log.debug(`Device '${obj.name}' is part of the aggregated group '${aggregatedGroup.groupName}'. Excluding the other devices from this group for cumulated reports.`);
+						totalConsumptionCool += obj.totalPowerConsumptionCooling;
+						totalConsumptionHeat += obj.totalPowerConsumptionHeating;
+						totalConsumptionAuto += obj.totalPowerConsumptionAuto;
+						totalConsumptionDry += obj.totalPowerConsumptionDry;
+						totalConsumptionVent += obj.totalPowerConsumptionVent;
+						totalConsumptionMinutes = obj.totalPowerConsumptionMinutes; // same for all devices
+
+						totalConsumption += totalConsumptionCool + totalConsumptionHeat + totalConsumptionAuto + totalConsumptionDry + totalConsumptionVent;
+
+						aggregatedGroup.alreadyProcessed = true;
+						isKnownGroup = true;
+						break;
+					}
+				}
+
+				if (!isKnownGroup) aggregatedDeviceGroups.push({ groupName: obj.linkedDevicesIncludedInArregateEnergyReport, alreadyProcessed: false });
+			}
+			// Device is not part of any aggregation group, just take thhe values as they are
+			else {
+				totalConsumptionCool += obj.totalPowerConsumptionCooling;
+				totalConsumptionHeat += obj.totalPowerConsumptionHeating;
+				totalConsumptionAuto += obj.totalPowerConsumptionAuto;
+				totalConsumptionDry += obj.totalPowerConsumptionDry;
+				totalConsumptionVent += obj.totalPowerConsumptionVent;
+				totalConsumptionMinutes += obj.totalPowerConsumptionMinutes;
+
+				totalConsumption += totalConsumptionCool + totalConsumptionHeat + totalConsumptionAuto + totalConsumptionDry + totalConsumptionVent;
+			}
 		}
 
 		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.roundValue(totalConsumptionCool, 3), true);
