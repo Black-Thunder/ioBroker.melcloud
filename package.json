@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "@iobroker/adapter-core": "^2.6.6",
-    "axios": "^0.27.2",
+    "axios": "^1.1.0",
     "form-data": "^4.0.0",
     "http-status-codes": "^2.2.0"
   },
