@@ -147,7 +147,7 @@ class Melcloud extends utils.Adapter {
 
 		reportsPrefix += ".";
 
-		await this.setObjectNotExistsAsync(reportsPrefix + commonDefines.AtaDeviceStateIDs.PowerConsumptionReportStartDate, {
+		await this.setObjectNotExistsAsync(reportsPrefix + commonDefines.CommonDeviceStateIDs.PowerConsumptionReportStartDate, {
 			type: "state",
 			common: {
 				name: "Report start date (format: YYYY-MM-DD)",
@@ -160,7 +160,7 @@ class Melcloud extends utils.Adapter {
 			native: {}
 		});
 
-		await this.setObjectNotExistsAsync(reportsPrefix + commonDefines.AtaDeviceStateIDs.PowerConsumptionReportEndDate, {
+		await this.setObjectNotExistsAsync(reportsPrefix + commonDefines.CommonDeviceStateIDs.PowerConsumptionReportEndDate, {
 			type: "state",
 			common: {
 				name: "Report end date (format: YYYY-MM-DD)",
@@ -197,10 +197,10 @@ class Melcloud extends utils.Adapter {
 		});
 
 		lastReportDataPrefix += ".";
-		const operationModes = [commonDefines.AtaDeviceOperationModes.HEAT.id, commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.AtaDeviceOperationModes.AUTO.id, commonDefines.AtaDeviceOperationModes.VENT.id, commonDefines.AtaDeviceOperationModes.DRY.id];
+		const operationModes = [commonDefines.AtaDeviceOperationModes.HEAT.id, commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.AtaDeviceOperationModes.AUTO.id, commonDefines.AtaDeviceOperationModes.VENT.id, commonDefines.AtaDeviceOperationModes.DRY.id, commonDefines.AtwDeviceOperationModes.FORCEDHOTWATERMODE.id];
 
 		operationModes.forEach(mode => {
-			this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + mode, {
+			this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix + mode, {
 				type: "state",
 				common: {
 					name: `Total power consumption for mode '${mode}'`,
@@ -217,7 +217,7 @@ class Melcloud extends utils.Adapter {
 			});
 		});
 
-		await this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix, {
+		await this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix, {
 			type: "state",
 			common: {
 				name: "Total power consumption for all modes",
@@ -233,7 +233,7 @@ class Melcloud extends utils.Adapter {
 			native: {}
 		});
 
-		await this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalReportedMinutes, {
+		await this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalReportedMinutes, {
 			type: "state",
 			common: {
 				name: "Total power consumption minutes",
@@ -304,7 +304,8 @@ class Melcloud extends utils.Adapter {
 		// The state was changed
 		if (state) {
 			// always trigger on "getPowerConsumptionReport" and "getCumulatedPowerConsumptionReport" ignoring if the value has changed or not
-			if (!id.includes(commonDefines.AtaDeviceStateIDs.GetPowerConsumptionReport) && !id.includes(commonDefines.CommonDeviceStateIDs.GetCumulatedPowerConsumptionReport) && stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
+			if (!id.includes(commonDefines.CommonDeviceStateIDs.GetPowerConsumptionReport) && !id.includes(commonDefines.CommonDeviceStateIDs.GetCumulatedPowerConsumptionReport)
+				&& stateValueCache[id] != undefined && stateValueCache[id] != null && stateValueCache[id] == state.val) {
 				this.log.silly(`state ${id} unchanged: ${state.val} (ack = ${state.ack})`);
 				return;
 			}
@@ -319,7 +320,7 @@ class Melcloud extends utils.Adapter {
 				return;
 			}
 
-			if (this.deviceObjects == [] || this.deviceObjects.length == 0) {
+			if (this.deviceObjects.length == 0) {
 				this.log.error("No objects for MELCloud devices constructed yet. Try again in a few seconds...");
 				return;
 			}
@@ -374,14 +375,7 @@ class Melcloud extends utils.Adapter {
 		const promises = [];
 
 		for (const obj of this.deviceObjects) {
-			if (obj.deviceType != commonDefines.DeviceTypes.AirToAir) return; // only ATA-devices are supported at the moment
-
 			promises.push(obj.getPowerConsumptionReport(true));
-		}
-
-		if (promises == []) {
-			this.log.warn("");
-			return;
 		}
 
 		Promise.all(promises).then(() => {
@@ -395,8 +389,6 @@ class Melcloud extends utils.Adapter {
 		const aggregatedDeviceGroups = [];
 
 		for (const obj of deviceObjs) {
-			if (obj.deviceType != commonDefines.DeviceTypes.AirToAir) continue; // only ATA-devices are supported at the moment
-
 			// Check if device is already part of aggregation group to exclude duplicated values
 			if (obj.linkedDevicesIncludedInArregateEnergyReport && obj.linkedDevicesIncludedInArregateEnergyReport != "") {
 				if (aggregatedDeviceGroups.length == 0) aggregatedDeviceGroups.push({ groupName: obj.linkedDevicesIncludedInArregateEnergyReport, alreadyProcessed: false });
@@ -437,13 +429,13 @@ class Melcloud extends utils.Adapter {
 			}
 		}
 
-		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.roundValue(totalConsumptionCool, 3), true);
-		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.HEAT.id, commonDefines.roundValue(totalConsumptionHeat, 3), true);
-		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.AUTO.id, commonDefines.roundValue(totalConsumptionAuto, 3), true);
-		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.DRY.id, commonDefines.roundValue(totalConsumptionDry, 3), true);
-		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.VENT.id, commonDefines.roundValue(totalConsumptionVent, 3), true);
-		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalPowerConsumptionPrefix, commonDefines.roundValue(totalConsumption, 3), true);
-		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.AtaDeviceStateIDs.TotalReportedMinutes, totalConsumptionMinutes, true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.roundValue(totalConsumptionCool, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.HEAT.id, commonDefines.roundValue(totalConsumptionHeat, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.AUTO.id, commonDefines.roundValue(totalConsumptionAuto, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.DRY.id, commonDefines.roundValue(totalConsumptionDry, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix + commonDefines.AtaDeviceOperationModes.VENT.id, commonDefines.roundValue(totalConsumptionVent, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix, commonDefines.roundValue(totalConsumption, 3), true);
+		await this.setStateChangedAsync(cumulatedLastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalReportedMinutes, totalConsumptionMinutes, true);
 
 		this.log.debug(`Updated cumulated report data for all devices`);
 	}
@@ -511,7 +503,7 @@ class Melcloud extends utils.Adapter {
 			case (commonDefines.AtaDeviceStateIDs.VaneHorizontalDirection):
 				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.VaneHorizontalDirection, state.val);
 				break;
-			case (commonDefines.AtaDeviceStateIDs.GetPowerConsumptionReport):
+			case (commonDefines.CommonDeviceStateIDs.GetPowerConsumptionReport):
 				device.getPowerConsumptionReport();
 				break;
 			default:
@@ -561,6 +553,9 @@ class Melcloud extends utils.Adapter {
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetCoolFlowTemperatureZone2):
 				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone2, state.val);
+				break;
+			case (commonDefines.CommonDeviceStateIDs.GetPowerConsumptionReport):
+				device.getPowerConsumptionReport();
 				break;
 			default:
 				this.log.error(`Unsupported ATW control option: ${controlOption} - Please report this to the developer!`);
