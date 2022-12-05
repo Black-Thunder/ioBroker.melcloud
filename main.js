@@ -197,9 +197,9 @@ class Melcloud extends utils.Adapter {
 		});
 
 		lastReportDataPrefix += ".";
-		const operationModes = [commonDefines.AtaDeviceOperationModes.HEAT.id, commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.AtaDeviceOperationModes.AUTO.id, commonDefines.AtaDeviceOperationModes.VENT.id, commonDefines.AtaDeviceOperationModes.DRY.id, commonDefines.AtwDeviceOperationModes.FORCEDHOTWATERMODE.id];
+		const reportModes = [commonDefines.AtaDeviceOperationModes.HEAT.id, commonDefines.AtaDeviceOperationModes.COOL.id, commonDefines.AtaDeviceOperationModes.AUTO.id, commonDefines.AtaDeviceOperationModes.VENT.id, commonDefines.AtaDeviceOperationModes.DRY.id, "HotWater"];
 
-		operationModes.forEach(mode => {
+		reportModes.forEach(mode => {
 			this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix + mode, {
 				type: "state",
 				common: {
@@ -212,6 +212,24 @@ class Melcloud extends utils.Adapter {
 					unit: "kWh",
 					def: 0,
 					desc: `Total power consumption for mode '${mode}'`
+				},
+				native: {}
+			});
+
+			if (mode == commonDefines.AtaDeviceOperationModes.AUTO.id || mode == commonDefines.AtaDeviceOperationModes.DRY.id || mode == commonDefines.AtaDeviceOperationModes.VENT.id) return;
+
+			this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerProductionPrefix + mode, {
+				type: "state",
+				common: {
+					name: `Total power production for mode '${mode}'`,
+					type: "number",
+					role: "value.power.consumption",
+					min: 0,
+					read: true,
+					write: false,
+					unit: "kWh",
+					def: 0,
+					desc: `Total power production for mode '${mode}'`
 				},
 				native: {}
 			});
@@ -229,6 +247,22 @@ class Melcloud extends utils.Adapter {
 				unit: "kWh",
 				def: 0,
 				desc: "Total power consumption for all modes"
+			},
+			native: {}
+		});
+
+		await this.setObjectNotExistsAsync(lastReportDataPrefix + commonDefines.CommonDeviceStateIDs.TotalPowerProductionPrefix, {
+			type: "state",
+			common: {
+				name: "Total power production for all modes",
+				type: "number",
+				role: "value.power.consumption",
+				min: 0,
+				read: true,
+				write: false,
+				unit: "kWh",
+				def: 0,
+				desc: "Total power production for all modes"
 			},
 			native: {}
 		});
