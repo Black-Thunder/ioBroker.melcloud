@@ -133,7 +133,20 @@ Here are the actual power consumption values for the selected period of time sto
 | setTemperatureZone1 | X | X | Target temperature of zone 1 |
 | setTemperatureZone2 | X | X | Target temperature of zone 2 (if present) |
 
-### melcoud.X.reports -- adapter version v1.2.0 or greater needed
+##### melcloud.X.device.Y.reports.lastReportData -- adapter version v1.2.1 or greater needed
+
+Here are the actual power consumption values for the selected period of time stored.
+
+| id | read | write | comment |
+|--- | :---: | :---: |--- |
+| totalMinutes | X | - | Total measurement time (in minutes) |
+| totalPowerConsumption | X | - | Total consumption for all operation modes (in kWh) |
+| totalPowerConsumption*OperationMode* | X | - | Total consumption for operation mode *OperationMode* (in kWh) - created for each operation mode |
+| totalPowerProduction | X | - | Total production for all operation modes (in kWh) |
+| totalPowerProduction*OperationMode* | X | - | Total production for operation mode *OperationMode* (in kWh) - created for each operation mode |
+| rawPowerConsumptionData | X | - | Unprocessed raw report data from the MELCloud (as JSON) |
+
+### melcloud.X.reports -- adapter version v1.2.1 or greater needed
 
 Similiar to the device-specific reports here you can retrieve aggregated reports for all supported devices. Before retrieving the power consumption reports you again have to set the start ("startDate") and end date ("endDate") correctly. Please pay attention to the correct date format YYYY-MM-DD! Once these are set trigger the state "getCumulatedPowerConsumptionReport".
 Shortly afterwards the corresponding states in the subchannel "lastReportData" are filled with the aggregated report data from the cloud.
@@ -144,7 +157,7 @@ Shortly afterwards the corresponding states in the subchannel "lastReportData" a
 | endDate | X | X | End date for the consumption report (format: YYYY-MM-DD, e.g., 2021-01-08) |
 | getCumulatedPowerConsumptionReport | - | X | Button to trigger retrieving the power consumption reports |
 
-#### melcloud.X.reports.lastReportData -- adapter version v1.2.0 or greater needed
+#### melcloud.X.reports.lastReportData -- adapter version v1.2.1 or greater needed
 
 Here are the actual aggregated power consumption values for the selected period of time stored.
 
@@ -153,3 +166,5 @@ Here are the actual aggregated power consumption values for the selected period 
 | totalMinutes | X | - | Aggregated total measurement time (in minutes) |
 | totalPowerConsumption | X | - | Aggregated total consumption for all operation modes (in kWh) |
 | totalPowerConsumption*OperationMode* | X | - | Aggregated total consumption for operation mode *OperationMode* (in kWh) - created for each operation mode |
+| totalPowerProduction | X | - | Aggregated total production for all operation modes (in kWh) |
+| totalPowerProduction*OperationMode* | X | - | Aggregated total production for operation mode *OperationMode* (in kWh) - created for each operation mode |
