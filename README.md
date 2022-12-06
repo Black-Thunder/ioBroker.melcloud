@@ -29,7 +29,7 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-### __WORK IN PROGRESS__
+### 1.2.1 (2022-12-06)
 * (Black-Thunder) added consumption reports for air to water devices
 
 ### 1.2.0 (2022-09-20)
