@@ -8,6 +8,12 @@ Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen 
 * MELCloud-Account unter der [offiziellen Website](https://app.melcloud.com/) angelegt
 * Gerät wurde im Account registriert und vollständig eingerichtet
 
+## Hinweise
+
+* Ab v1.1.1 wurde die Ver-/Entschlüsselung des Passworts geändert. Daher muss bei einem Upgrade einmalig das Passwort erneut in den Adapter-Einstellungen eingeben werden. Ansonsten schlägt die Anmeldung fehl und der Adapter bleibt auf rot.
+* Ab v1.1.3 muss js-controller mindestens in der Version 3.1 installiert sein.
+* Bei einem Upgrade auf v1.2.0 (oder höher) bitte einmalig die Objektstrukturen unter "melcloud.X.devices.YYYYY.reports" komplett löschen und den Adapter neustarten, damit diese neu angelegt werden können. Die neue Struktur ist weiter unten beschrieben.
+
 ## Konfiguration
 
 ![Einstellungen des Adapters](img/adapter_settings.png)

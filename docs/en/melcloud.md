@@ -8,6 +8,12 @@ In order to use this adapter, there are a few things you have to prepare in adva
 * MELCloud account at the [official webpage](https://app.melcloud.com/)
 * Device registered and set-up in your MELCloud account
 
+## Upgrade notes
+
+* In v1.1.1 password de-/encryption was changes. If you are upgrading from a lower version you have to enter your password one more time in  the adapter settings. Otherwise login will fail and the adapter won't connect to the cloud.
+* Starting with v1.1.3 js-controller has to be installed in v3.1 or greater.
+* If you are upgrading to v1.2.0 (or higher) you have to delete all objects under "melcloud.X.devices.YYYYY.reports" completly. Afterwards restart the adapter, so that the new object structure can be created correctly. The new structure is documented below.
+
 ## Configuration
 
 ![Adapter settings](img/adapter_settings.png)
