@@ -12,7 +12,7 @@ Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen 
 
 * Ab v1.1.1 wurde die Ver-/Entschlüsselung des Passworts geändert. Daher muss bei einem Upgrade einmalig das Passwort erneut in den Adapter-Einstellungen eingeben werden. Ansonsten schlägt die Anmeldung fehl und der Adapter bleibt auf rot.
 * Ab v1.1.3 muss js-controller mindestens in der Version 3.1 installiert sein.
-* Bei einem Upgrade auf v1.2.0 (oder höher) bitte einmalig die Objektstrukturen unter "melcloud.X.devices.YYYYY.reports" komplett löschen und den Adapter neustarten, damit diese neu angelegt werden können. Die neue Struktur ist weiter unten beschrieben.
+* Bei einem Upgrade auf v1.2.0 (oder höher) bitte einmalig die Objektstrukturen unter "melcloud.X.devices.Y.reports" komplett löschen und den Adapter neustarten, damit diese neu angelegt werden können. Die neue Struktur ist weiter unten beschrieben.
 
 ## Konfiguration
 
@@ -33,7 +33,7 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | connection | X | - | Gibt den Verbindungsstatus zur MELCloud an |
 
 ### Luft-Luft-Wärmepumpen (Klimageräte)
-#### melcloud.X.device.Y.info
+#### melcloud.X.devices.Y.info
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
@@ -58,7 +58,7 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | roomTemp | X | - | Aktuelle Raumtemperatur |
 | serialNumber | X | - | Seriennummer des Geräts |
 
-#### melcloud.X.device.Y.control
+#### melcloud.X.devices.Y.control
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
@@ -69,7 +69,7 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | vaneHorizontalDirection | X | X | Aktuelle horizontale Ausrichtung des Luftauslasses (0=Automatik, 1...5=ganz links bis ganz rechts, 8=50/50 (nur bei Geräten mit 2 getrennten Luftauslässen), 12=Swing) |
 | vaneVerticalDirection | X | X | Aktuelle vertikale Ausrichtung des Luftauslasses (0=Automatik, 1...5=ganz oben bis ganz unten, 7=Swing) |
 
-#### melcloud.X.device.Y.reports
+#### melcloud.X.devices.Y.reports
 
 Um Berichte abrufen zu können, müssen zunächst Start- ("startDate") und Endzeitpunkt ("endDate") korrekt festgelegt werden. Dabei ist das Format JJJJ-MM-TT zu beachten! Zur eigentlichen Durchführung des Abrufs muss der Datenpunkt "getPowerConsumptionReport" getriggert werden.
 Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData" mit den Werten aus der Cloud befüllt.
@@ -80,7 +80,7 @@ Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData"
 | endDate | X | X | Ende des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2021-01-08) |
 | getPowerConsumptionReport | - | X | Schalter, um das Abrufen der Berichte anzustoßen |
 
-##### melcloud.X.device.Y.reports.lastReportData -- Adapter-Version 1.2.0 oder höher erforderlich
+##### melcloud.X.devices.Y.reports.lastReportData -- Adapter-Version 1.2.0 oder höher erforderlich
 
 Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
 
@@ -92,7 +92,7 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | rawPowerConsumptionData | X | - | Unverarbeite Rohantwort der MELCloud (als JSON) zur eigenen Verarbeitung |
 
 ### Luft-Wasser-Wärmepumpen -- Adapter-Version 1.2.0 oder höher erforderlich
-#### melcloud.X.device.Y.info
+#### melcloud.X.devices.Y.info
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
@@ -123,7 +123,7 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | serialNumber | X | - | Seriennummer des Geräts |
 | tankWaterTemperature | X | - | Temperatur des Wasserspeichers
 
-#### melcloud.X.device.Y.control
+#### melcloud.X.devices.Y.control
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
@@ -139,7 +139,7 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | setTemperatureZone1 | X | X | Zieltemperatur des ersten Kreislaufs |
 | setTemperatureZone2 | X | X | Zieltemperatur des zweiten Kreislaufs (falls vorhanden) |
 
-##### melcloud.X.device.Y.reports.lastReportData -- Adapter-Version 1.2.1 oder höher erforderlich
+##### melcloud.X.devices.Y.reports.lastReportData -- Adapter-Version 1.2.1 oder höher erforderlich
 
 Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
 

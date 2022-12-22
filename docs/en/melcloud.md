@@ -12,7 +12,7 @@ In order to use this adapter, there are a few things you have to prepare in adva
 
 * In v1.1.1 password de-/encryption was changes. If you are upgrading from a lower version you have to enter your password one more time in  the adapter settings. Otherwise login will fail and the adapter won't connect to the cloud.
 * Starting with v1.1.3 js-controller has to be installed in v3.1 or greater.
-* If you are upgrading to v1.2.0 (or higher) you have to delete all objects under "melcloud.X.devices.YYYYY.reports" completly. Afterwards restart the adapter, so that the new object structure can be created correctly. The new structure is documented below.
+* If you are upgrading to v1.2.0 (or higher) you have to delete all objects under "melcloud.X.devices.Y.reports" completly. Afterwards restart the adapter, so that the new object structure can be created correctly. The new structure is documented below.
 
 ## Configuration
 
@@ -33,7 +33,7 @@ After successful start of the adapter instance (X) your devices are queried from
 | connection | X | - | Indicates the connection to MELCloud |
 
 ### Air to air devices (air conditioning)
-#### melcloud.X.device.Y.info
+#### melcloud.X.devices.Y.info
 
 | id | read | write | comment |
 |--- | :---: | :---: |--- |
@@ -58,7 +58,7 @@ After successful start of the adapter instance (X) your devices are queried from
 | roomTemp | X | - | Current room temperature |
 | serialNumber | X | - | Serial number of the device |
 
-#### melcloud.X.device.Y.control
+#### melcloud.X.devices.Y.control
 
 | id | read | write | comment |
 |--- | :---: | :---: |--- |
@@ -69,7 +69,7 @@ After successful start of the adapter instance (X) your devices are queried from
 | vaneHorizontalDirection | X | X | Current horizontal direction of the device's vane (0=Auto, 1...5=leftmost to rightmost, 8=50/50 (only for devices with 2 separate vanes), 12=Swing) |
 | vaneVerticalDirection | X | X | Current vertical direction of the device's vane (0=Auto, 1...5=topmost to bottommost, 7=Swing) |
 
-#### melcloud.X.device.Y.reports
+#### melcloud.X.devices.Y.reports
 
 Before retrieving the power consumption reports you have to set the start ("startDate") and end date ("endDate") correctly. Please pay attention to the correct date format YYYY-MM-DD! Once these are set trigger the state "getPowerConsumptionReport".
 Shortly afterwards the corresponding states in the subchannel "lastReportData" are filled with the report data from the cloud.
@@ -80,7 +80,7 @@ Shortly afterwards the corresponding states in the subchannel "lastReportData" a
 | endDate | X | X | End date for the consumption report (format: YYYY-MM-DD, e.g., 2021-01-08) |
 | getPowerConsumptionReport | - | X | Button to trigger retrieving the power consumption reports |
 
-##### melcloud.X.device.Y.reports.lastReportData -- adapter version v1.2.0 or greater needed
+##### melcloud.X.devices.Y.reports.lastReportData -- adapter version v1.2.0 or greater needed
 
 Here are the actual power consumption values for the selected period of time stored.
 
@@ -92,7 +92,7 @@ Here are the actual power consumption values for the selected period of time sto
 | rawPowerConsumptionData | X | - | Unprocessed raw report data from the MELCloud (as JSON) |
 
 ### Air to water devices (heatpumps) -- adapter version v1.2.0 or greater needed
-#### melcloud.X.device.Y.info
+#### melcloud.X.devices.Y.info
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
@@ -123,7 +123,7 @@ Here are the actual power consumption values for the selected period of time sto
 | serialNumber | X | - | Serial number of the device |
 | tankWaterTemperature | X | - | Temperature of the water tank
 
-#### melcloud.X.device.Y.control
+#### melcloud.X.devices.Y.control
 
 | ID | lesbar | änderbar | Bemerkung |
 |--- | :---: | :---: |--- |
@@ -139,7 +139,7 @@ Here are the actual power consumption values for the selected period of time sto
 | setTemperatureZone1 | X | X | Target temperature of zone 1 |
 | setTemperatureZone2 | X | X | Target temperature of zone 2 (if present) |
 
-##### melcloud.X.device.Y.reports.lastReportData -- adapter version v1.2.1 or greater needed
+##### melcloud.X.devices.Y.reports.lastReportData -- adapter version v1.2.1 or greater needed
 
 Here are the actual power consumption values for the selected period of time stored.
 
