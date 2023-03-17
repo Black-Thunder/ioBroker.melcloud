@@ -44,7 +44,10 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | canDry | X | - | Fähigkeit zu entfeuchten |
 | deviceName | X | - | Name des Geräts |
 | deviceOnline | X | - | Gibt an, ob das Gerät erreichbar ist |
+| errorMessages | X | - | Enthält die aktuellen Fehlermeldungen des Geräts (falls vorhanden) |
+| errorCode | X | - | Enthält den aktuellen Fehlercode des Geräts (8000 = Kein Fehler) |
 | floorId | X | - | Zugeordnete Etagen-ID |
+| hasError | X | - | Gibt an, ob das Gerät einen Fehler aufweist |
 | lastCommunication | X | - | Zeitstempel der letzten Kommunikation (MELCloud -> Gerät) |
 | minTempCoolDry | X | - | Minimale Temperatur (Kühlen/Entfeuchten) |
 | maxTempCoolDry | X | - | Maximale Temperatur (Kühlen/Entfeuchten) |
@@ -66,9 +69,9 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | mode | X | X | Betriebsmodus des Geräts (1=Heizen, 2=Entfeuchten, 3=Kühlen, 7=Lüften, 8=Automatik) |
 | power | X | X | Hauptschalter (schaltet Gerät ein bzw. aus) |
 | targetTemp | X | X | Zieltemperatur des Geräts |
+| timerToggle | X | X | Schalter, um den Timer für das Gerät ein- (true) bzw. auszuschalten (false) |
 | vaneHorizontalDirection | X | X | Aktuelle horizontale Ausrichtung des Luftauslasses (0=Automatik, 1...5=ganz links bis ganz rechts, 8=50/50 (nur bei Geräten mit 2 getrennten Luftauslässen), 12=Swing) |
 | vaneVerticalDirection | X | X | Aktuelle vertikale Ausrichtung des Luftauslasses (0=Automatik, 1...5=ganz oben bis ganz unten, 7=Swing) |
-| timerToggle | X | X | Schalter, um den Timer für das Gerät ein- (true) bzw. auszuschalten (false) |
 
 #### melcloud.X.devices.Y.reports
 
@@ -104,12 +107,15 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | deviceName | X | - | Name des Geräts |
 | deviceType | X | - | Gerätetyp (0=Luft-Luft-Wärmepumpe / Klimaanlage, 1=Luft-Wasser-Wärmepumpe) |
 | deviceOnline | X | - | Gibt an, ob das Gerät erreichbar ist |
+| errorMessages | X | - | Enthält die aktuellen Fehlermeldungen des Geräts (falls vorhanden) |
+| errorCode | X | - | Enthält den aktuellen Fehlercode des Geräts (8000 = Kein Fehler) |
 | floorId | X | - | Zugeordnete Etagen-ID |
 | flowTemperature | X | - | Vorlauftemperatur 
 | flowTemperatureBoiler | X | - | Vorlauftemperatur des Boilers
 | flowTemperatureZone1 | X | - | Vorlauftemperatur Zone 1 
 | flowTemperatureZone2 | X | - | Vorlauftemperatur Zone 2 (falls vorhanden)
-| hasZone2 | X | - | Flag, ob das Gerät einen zweiten Kreislauf hat |
+| hasError | X | - | Gibt an, ob das Gerät einen Fehler aufweist |
+| hasZone2 | X | - | Gibt an, ob das Gerät einen zweiten Kreislauf hat |
 | lastCommunication | X | - | Zeitstempel der letzten Kommunikation (MELCloud -> Gerät) |
 | macAddress | X | - | MAC-Adresse des Geräts |
 | mixingTankWaterTemperature | X | - | Temperatur des Mischwassertanks

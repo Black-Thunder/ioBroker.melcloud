@@ -44,7 +44,10 @@ After successful start of the adapter instance (X) your devices are queried from
 | canDry | X | - | Ability to dry |
 | deviceName | X | - | Name of the device |
 | deviceOnline | X | - | Indicates if device is reachable |
+| errorMessages | X | - | Contains the current error messages of the device (if any) |
+| errorCode | X | - | Contains the current error code of the device (8000 = No error) |
 | floorId | X | - | Assigned floor ID |
+| hasError | X | - | Indiciates if the device is in error state |
 | lastCommunication | X | - | Last communication date/time (MELCloud to device) |
 | minTempCoolDry | X | - | Minimal temperature (Cool/Dry) |
 | maxTempCoolDry | X | - | Maximal temperature (Cool/Dry) |
@@ -66,9 +69,9 @@ After successful start of the adapter instance (X) your devices are queried from
 | mode | X | X | Operation mode of the device (1=Heat, 2=Dry, 3=Cool, 7=Vent, 8=Auto) |
 | power | X | X | Power switch (turns device on/off) |
 | targetTemp | X | X | Target temperature of the device |
+| timerToggle | X | X | Switch used to enable (true) or disable (false) the device's timer |
 | vaneHorizontalDirection | X | X | Current horizontal direction of the device's vane (0=Auto, 1...5=leftmost to rightmost, 8=50/50 (only for devices with 2 separate vanes), 12=Swing) |
 | vaneVerticalDirection | X | X | Current vertical direction of the device's vane (0=Auto, 1...5=topmost to bottommost, 7=Swing) |
-| timerToggle | X | X | Switch used to enable (true) or disable (false) the device's timer |
 
 #### melcloud.X.devices.Y.reports
 
@@ -104,11 +107,14 @@ Here are the actual power consumption values for the selected period of time sto
 | deviceName | X | - | Name of the device |
 | deviceType | X | - | Type of device (0=Air to air heat pump / air conditioner, 1=Air to water heat pump) |
 | deviceOnline | X | - | Indicates if device is reachable |
+| errorMessages | X | - | Contains the current error messages of the device (if any) |
+| errorCode | X | - | Contains the current error code of the device (8000 = No error) |
 | floorId | X | - | Assigned floor ID |
 | flowTemperature | X | - | Flow temperature 
 | flowTemperatureBoiler | X | - | Flow temperature of the boiler
 | flowTemperatureZone1 | X | - | Flow temperature of zone 1 
 | flowTemperatureZone2 | X | - | Flow temperature of zone 2 (if present)
+| hasError | X | - | Indiciates if the device is in error state |
 | hasZone2 | X | - | Flag, if zone 2 is present |
 | lastCommunication | X | - | Last communication date/time (MELCloud to device) |
 | macAddress | X | - | MAC address of the device |
