@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "1.2.1",
+    "version": "1.3.0",
     "news": {
+      "1.3.0": {
+        "en": "added online status to each device (visible in admin object tree)\nadded error status to each device (visible in admin object tree)\nadded error code and messages to device info\nadded new command \"timerToggle\" to enable/disable device timers",
+        "de": "den online-status zu jedem gerät hinzugefügt (sichtbar in admin-objektbaum)\nhinzugefügt fehlerstatus zu jedem gerät (sichtbar in admin-objektbaum)\nfehlercode und nachrichten zu geräteinformationen hinzugefügt\nneuen Befehl Timer Toggle, um Geräte-Timer zu aktivieren / zu deaktivieren",
+        "ru": "добавлен онлайн статус на каждое устройство (видимо в админ объект дерево)\nдобавлен статус ошибки для каждого устройства (видимый в админ объект дерево)\nдобавлен код ошибки и сообщения к информации о устройстве\nдобавлен новый командный таймер Toggle для включения/отключить таймеры устройства",
+        "pt": "adicionado status on-line para cada dispositivo (visível em árvore de objeto admin)\nstatus de erro adicionado a cada dispositivo (visível na árvore de objeto admin)\nadicionado código de erro e mensagens para a informação do dispositivo\nadicionado novo temporizador de comando Alternar para ativar/desativar temporizadores de dispositivo",
+        "nl": "voegde online status toe aan elk apparaat (visible in admin object boom)\nerror status toegevoegd aan elk apparaat\nvoegde foutcode toe en berichten om info te apparaat\nvertaling: Toggle toverbaar/disable apparatuur timers",
+        "fr": "statut en ligne ajouté à chaque appareil (visible dans l'objet administrateur)\nstatut d'erreur ajouté à chaque appareil (visible dans l'objet administrateur)\ncode d'erreur et messages ajoutés à l'info de périphérique\nnouvelle commande timer Toggle to enable/disable device timers",
+        "it": "stato aggiunto online a ogni dispositivo (visibile nell'albero degli oggetti di amministrazione)\nstato di errore aggiunto a ogni dispositivo (visibile nell'albero degli oggetti di amministrazione)\ncodice di errore aggiunto e messaggi alle informazioni del dispositivo\naggiunto nuovo timer di comando Toggle per attivare/disattivare timer del dispositivo",
+        "es": "estado en línea añadido a cada dispositivo (visible en árbol de objeto admin)\nestado de error añadido a cada dispositivo (visible en el árbol de objeto admin)\nañadido código de error y mensajes a la información del dispositivo\nnuevo temporizador de comando Toggle para activar/desactivar los temporizadores de dispositivo",
+        "pl": "dodano status internetowy każdej urządzenie (widoczne w drzewie obiektowym)\ndodano status błędu dla każdego urządzenia (widoczny w drzewie adminowym)\ndodał kod błędu i wiadomości do urządzenie info\ndodał nowy czas dowodzenia. Umożliwia udostępnienie lub rozbieżne czasowniki",
+        "uk": "додано статус онлайн до кожного пристрою (невидимий у дереві об'єкта адміністратора)\nдодано статус помилки до кожного пристрою (невидимий у дереві об'єкта адміністратора)\nдодано код помилки та повідомлення до інформації про пристрій\nдодано новий таймер команд Увімкнути / вимкнути таймери пристроїв",
+        "zh-cn": "每个装置的在线地位(目标树中的)\n每个装置的错误地位(目标树中的)\n添加错误编码和电器的信息\n增加新的指挥时间 D. 设法使/可以区分的装置时间"
+      },
       "1.2.1": {
         "en": "added consumption reports for air to water devices",
         "de": "zusätzliche verbrauchsberichte für luft zu wassergeräten",
@@ -75,18 +88,6 @@
         "es": "IMPORTANTE: el adaptador ahora requiere js-controller 3.1 al menos\nignorar los valores de estado sin cambios para disminuir el tráfico de la red\nsolo actualice los valores de estado si realmente se cambian\nextender los objetos existentes para garantizar la compatibilidad con js-controller> = v3.2\nsolo permite valores con 0,5 pasos para \"targetTemp\"",
         "pl": "WAŻNE: Adapter wymaga teraz co najmniej kontrolera js 3.1\nignoruj niezmienione wartości stanu, aby zmniejszyć ruch w sieci\naktualizuj wartości stanu tylko wtedy, gdy są naprawdę zmienione\nrozszerz istniejące obiekty, aby zapewnić zgodność z js-controller> = v3.2\nzezwalaj tylko na wartości z krokiem 0,5 dla „targetTemp”",
         "zh-cn": "重要说明：适配器现在至少需要js-controller 3.1\n忽略不变的状态值以减少网络流量\n仅在状态值确实发生更改时更新状态值\n扩展现有对象以确保与js-controller> = v3.2的兼容性\n只允许“ targetTemp”的步长为0.5的值"
-      },
-      "1.1.2": {
-        "en": "added compability with js-controller >= v3.3.1\nupdated dependencies",
-        "de": "Kompatibilität mit js-controller> = v3.3.1 hinzugefügt\naktualisierte Abhängigkeiten",
-        "ru": "добавлена совместимость с js-controller> = v3.3.1\nобновленные зависимости",
-        "pt": "adicionado compatibilidade com js-controller> = v3.3.1\ndependências atualizadas",
-        "nl": "compatibiliteit toegevoegd met js-controller> = v3.3.1\nbijgewerkte afhankelijkheden",
-        "fr": "compatibilité ajoutée avec js-controller> = v3.3.1\ndépendances mises à jour",
-        "it": "aggiunta compatibilità con js-controller> = v3.3.1\ndipendenze aggiornate",
-        "es": "compatibilidad añadida con js-controller> = v3.3.1\ndependencias actualizadas",
-        "pl": "dodana kompatybilność z js-controller> = v3.3.1\nzaktualizowane zależności",
-        "zh-cn": "增加了与js-controller> = v3.3.1的兼容性\n更新的依赖关系"
       }
     },
     "title": "MELCloud",

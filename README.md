@@ -29,12 +29,11 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### __WORK IN PROGRESS__
+### 1.3.0 (2023-03-17)
 * (Black-Thunder) added online status to each device (visible in admin object tree)
 * (Black-Thunder) added error status to each device (visible in admin object tree)
 * (Black-Thunder) added error code and messages to device info
-* (Black-Thunder) added new command "timerToggle" to enable/disable device timers 
+* (Black-Thunder) added new command "timerToggle" to enable/disable device timers
 
 ### 1.2.1 (2022-12-06)
 * (Black-Thunder) added consumption reports for air to water devices
