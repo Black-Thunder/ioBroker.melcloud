@@ -68,6 +68,7 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | targetTemp | X | X | Zieltemperatur des Geräts |
 | vaneHorizontalDirection | X | X | Aktuelle horizontale Ausrichtung des Luftauslasses (0=Automatik, 1...5=ganz links bis ganz rechts, 8=50/50 (nur bei Geräten mit 2 getrennten Luftauslässen), 12=Swing) |
 | vaneVerticalDirection | X | X | Aktuelle vertikale Ausrichtung des Luftauslasses (0=Automatik, 1...5=ganz oben bis ganz unten, 7=Swing) |
+| timerToggle | X | X | Schalter, um den Timer für das Gerät ein- (true) bzw. auszuschalten (false) |
 
 #### melcloud.X.devices.Y.reports
 
@@ -80,7 +81,7 @@ Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData"
 | endDate | X | X | Ende des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2021-01-08) |
 | getPowerConsumptionReport | - | X | Schalter, um das Abrufen der Berichte anzustoßen |
 
-##### melcloud.X.devices.Y.reports.lastReportData -- Adapter-Version 1.2.0 oder höher erforderlich
+##### melcloud.X.devices.Y.reports.lastReportData
 
 Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
 
@@ -91,7 +92,7 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | totalPowerConsumption*Betriebsmodus* | X | - | Gesamtverbrauch im Modus *Betriebsmodus* (in kWh) - wird für jeden Betriebsmodus angelegt |
 | rawPowerConsumptionData | X | - | Unverarbeite Rohantwort der MELCloud (als JSON) zur eigenen Verarbeitung |
 
-### Luft-Wasser-Wärmepumpen -- Adapter-Version 1.2.0 oder höher erforderlich
+### Luft-Wasser-Wärmepumpen
 #### melcloud.X.devices.Y.info
 
 | ID | lesbar | änderbar | Bemerkung |
@@ -138,8 +139,9 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | setHeatFlowTemperatureZone2 | X | X | Zieltemperatur des zweiten Heizvorlaufes (falls vorhanden) |
 | setTemperatureZone1 | X | X | Zieltemperatur des ersten Kreislaufs |
 | setTemperatureZone2 | X | X | Zieltemperatur des zweiten Kreislaufs (falls vorhanden) |
+| timerToggle | X | X | Schalter, um den Timer für das Gerät ein- (true) bzw. auszuschalten (false) |
 
-##### melcloud.X.devices.Y.reports.lastReportData -- Adapter-Version 1.2.1 oder höher erforderlich
+##### melcloud.X.devices.Y.reports.lastReportData
 
 Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
 
@@ -152,7 +154,7 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | totalPowerProduction*Betriebsmodus* | X | - | Gesamtverzeugung im Modus *Betriebsmodus* (in kWh) - wird für jeden Betriebsmodus angelegt |
 | rawPowerConsumptionData | X | - | Unverarbeite Rohantwort der MELCloud (als JSON) zur eigenen Verarbeitung |
 
-### melcloud.X.reports -- Adapter-Version 1.2.1 oder höher erforderlich
+### melcloud.X.reports
 
 Analog zu den gerätespezifischen Berichten können hier aggregierte Berichte über alle unterstützen Geräte abgerungen werden. Um Berichte abrufen zu können, müssen zunächst ebenso Start- ("startDate") und Endzeitpunkt ("endDate") korrekt festgelegt werden. Dabei ist das Format JJJJ-MM-TT zu beachten! Zur eigentlichen Durchführung des Abrufs muss der Datenpunkt "getCumulatedPowerConsumptionReport" getriggert werden.
 Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData" mit den aggregierten Werten aus der Cloud befüllt.
@@ -163,7 +165,7 @@ Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData"
 | endDate | X | X | Ende des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2021-01-08) |
 | getCumulatedPowerConsumptionReport | - | X | Schalter, um das Abrufen der Berichte anzustoßen |
 
-#### melcloud.X.reports.lastReportData -- Adapter-Version 1.2.1 oder höher erforderlich
+#### melcloud.X.reports.lastReportData
 
 Hier werden die aggregierten Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
 

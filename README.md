@@ -34,6 +34,7 @@ Documentation:
 * (Black-Thunder) added online status to each device (visible in admin object tree)
 * (Black-Thunder) added error status to each device (visible in admin object tree)
 * (Black-Thunder) added error code and messages to device info
+* (Black-Thunder) added new command "timerToggle" to enable/disable device timers 
 
 ### 1.2.1 (2022-12-06)
 * (Black-Thunder) added consumption reports for air to water devices

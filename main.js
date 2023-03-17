@@ -545,6 +545,9 @@ class Melcloud extends utils.Adapter {
 			case (commonDefines.AtaDeviceStateIDs.VaneHorizontalDirection):
 				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.VaneHorizontalDirection, state.val);
 				break;
+			case (commonDefines.AtaDeviceStateIDs.TimerToogle):
+				device.toggleTimerState(state.val);
+				break;
 			case (commonDefines.CommonDeviceStateIDs.GetPowerConsumptionReport):
 				device.getPowerConsumptionReport();
 				break;
@@ -595,6 +598,9 @@ class Melcloud extends utils.Adapter {
 				break;
 			case (commonDefines.AtwDeviceStateIDs.SetCoolFlowTemperatureZone2):
 				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone2, state.val);
+				break;
+			case (commonDefines.AtwDeviceStateIDs.TimerToogle):
+				device.toggleTimerState(state.val);
 				break;
 			case (commonDefines.CommonDeviceStateIDs.GetPowerConsumptionReport):
 				device.getPowerConsumptionReport();
