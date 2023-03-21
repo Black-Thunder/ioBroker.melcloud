@@ -29,6 +29,10 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+
+### __WORK IN PROGRESS__
+* (Black-Thunder) fixed "undefined is not a valid state value" log messages
+
 ### 1.3.0 (2023-03-17)
 * (Black-Thunder) added online status to each device (visible in admin object tree)
 * (Black-Thunder) added error status to each device (visible in admin object tree)
