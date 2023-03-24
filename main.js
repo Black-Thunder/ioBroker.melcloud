@@ -33,21 +33,8 @@ class Melcloud extends utils.Adapter {
 		this.currentKnownDeviceIDs = []; // array of all current known device IDs
 	}
 
-	async decryptPassword() {
-		const sysConfigObject = (await this.getForeignObjectAsync("system.config"));
-		if (!this.supportsFeature || !this.supportsFeature("ADAPTER_AUTO_DECRYPT_NATIVE")) {
-			if (sysConfigObject && sysConfigObject.native && sysConfigObject.native.secret) {
-				this.config.melCloudPassword = commonDefines.decrypt(sysConfigObject.native.secret, this.config.melCloudPassword);
-			} else {
-				this.config.melCloudPassword = commonDefines.decrypt("Zgfr56gFe87jJOM", this.config.melCloudPassword);
-			}
-		}
-	}
-
 	async checkSettings() {
 		this.log.debug("Checking adapter settings...");
-
-		this.decryptPassword();
 
 		if (this.config.melCloudEmail == null || this.config.melCloudEmail == "") {
 			throw new Error("MELCloud username empty! Check settings.");

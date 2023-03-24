@@ -13,11 +13,11 @@
 			"label": "Password",
 			"newLine": false,
 			"tooltip": "Enter your MELCloud password",
-			"visible ": true
+			"visible": true
 		},
 		"melCloudLanguage": {
 			"type": "select",
-			"label": "melCloudLanguage",
+			"label": "Select language",
 			"options": [
 				{
 					"label": "en-English",
@@ -28,12 +28,12 @@
 					"value": "4"
 				}
 			],
-			"newLine": false
+			"newLine": true
 		},
 		"pollingInterval": {
 			"type": "number",
 			"label": "Polling interval",
-			"newLine": true,
+			"newLine": false,
 			"min": 1,
 			"step": 1,
 			"tooltip": "Enter your desired polling interval (in minutes) here to query data from MELCloud"
