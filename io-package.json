@@ -164,7 +164,6 @@
   ],
   "native": {
     "melCloudEmail": "",
-    "melCloudPassword": "",
     "melCloudLanguage": 4,
     "pollingInterval": 5
   },

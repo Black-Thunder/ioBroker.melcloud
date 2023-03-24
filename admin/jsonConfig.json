@@ -9,12 +9,13 @@
 			"tooltip": "Enter your MELCloud email address"
 		},
 		"melCloudPassword": {
-			"type": "text",
+			"type": "password",
 			"label": "Password",
 			"newLine": false,
-			"tooltip": "Enter your MELCloud password"
+			"tooltip": "Enter your MELCloud password",
+			"visible ": true
 		},
-		"option3melCloudLanguage": {
+		"melCloudLanguage": {
 			"type": "select",
 			"label": "melCloudLanguage",
 			"options": [
