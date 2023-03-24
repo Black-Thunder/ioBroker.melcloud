@@ -32,6 +32,7 @@ Documentation:
 
 ### __WORK IN PROGRESS__
 * (Black-Thunder) fixed "undefined is not a valid state value" log messages
+* (Black-Thunder) fixed crash after connection is lost (e.g. due to missing internet connection)
 
 ### 1.3.0 (2023-03-17)
 * (Black-Thunder) added online status to each device (visible in admin object tree)
