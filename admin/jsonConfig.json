@@ -1,0 +1,41 @@
+{
+	"i18n": true,
+	"type": "panel",
+	"items": {
+		"melCloudEmail": {
+			"type": "text",
+			"label": "Email address",
+			"newLine": false,
+			"tooltip": "Enter your MELCloud email address"
+		},
+		"melCloudPassword": {
+			"type": "text",
+			"label": "Password",
+			"newLine": false,
+			"tooltip": "Enter your MELCloud password"
+		},
+		"option3melCloudLanguage": {
+			"type": "select",
+			"label": "melCloudLanguage",
+			"options": [
+				{
+					"label": "en-English",
+					"value": "0"
+				},
+				{
+					"label": "de-Deutsch",
+					"value": "4"
+				}
+			],
+			"newLine": false
+		},
+		"pollingInterval": {
+			"type": "number",
+			"label": "Polling interval",
+			"newLine": true,
+			"min": 1,
+			"step": 1,
+			"tooltip": "Enter your desired polling interval (in minutes) here to query data from MELCloud"
+		}
+	}
+}
