@@ -39,7 +39,8 @@
         "it": "Aggiunto supporto per l'aria a dispositivi di acqua (ad esempio, pompe di calore)\nAggiunto nuovo dispositivo-indipendente canale relazioni fur cumulative rapporti su tutti i dispositivi (vedi documentazione per la nuova struttura)\nRapporti di canale specifici per dispositivi ristrutturati e ha aggiunto il nuovo sottocanale ultimoReportData (vedi documentazione per la nuova struttura)\nFisso: attivare sempre su getPowerConsumReport ignorando il valore di stato\nAvvertenze js-controller fissi",
         "es": "Apoyo adicional para dispositivos de aire a agua (por ejemplo, bombas de calor)\nNuevos informes de canal independiente de dispositivo reportan informes acumulativos de piel en todos los dispositivos (ver documentación para nueva estructura)\nInformes de canal reestructurados y nuevos subcanales añadidos últimoReportData (ver documentación para nueva estructura)\nFijación: siempre dispara en getPowerConsumptionReport ignorando el valor del estado\nAdvertencias fijas js-controller",
         "pl": "Wspieranie powietrza dla urządzeń wodnych (np. pomp ciepła)\nDodany nowy kanał niezależny dostarcza raportów dotyczących włókien we wszystkich urządzeniach (zobacz dokumentacja dla nowej struktury)\nRestrukturyzacja specyficznych kanałów i dodała nowe podkanałowe ostatnie ReportData (patrz dokumentacja dla nowej struktury)\nFix: zawsze sprowadza się do PowerConsumptionReport ignorując wartość państwa\nŚmiały js-kontrolator ostrzega o twierdzeniu",
-        "zh-cn": "增加对水器的空中支助(例如热泵)\n增加新的以装置为基础的渠道报告,对所有装置的累积报告(见新结构的文件)\n重组的特定装置的渠道报告,并增加新的次要报告Data(见新结构的文件)\nFix:一向触动获取大国消费报告,无视国家价值\n固定的手卫警告"
+        "zh-cn": "增加对水器的空中支助(例如热泵)\n增加新的以装置为基础的渠道报告,对所有装置的累积报告(见新结构的文件)\n重组的特定装置的渠道报告,并增加新的次要报告Data(见新结构的文件)\nFix:一向触动获取大国消费报告,无视国家价值\n固定的手卫警告",
+        "uk": "Додано підтримку пристроїв повітря-вода (наприклад, теплових насосів)\nДодано новий незалежний від пристрою канал «звіти» з сукупними звітами на всіх пристроях (нову структуру див. у документації)\nЗмінено структуру «звітів» каналу для певного пристрою та додано новий підканал «lastReportData» (нову структуру див. у документації)\nВиправлення: завжди запускати «getPowerConsumptionReport», ігноруючи значення стану\nВиправлено попередження js-контролера"
       },
       "1.1.6": {
         "en": "fixed warnings",
@@ -51,7 +52,8 @@
         "it": "avvisi fissi",
         "es": "advertencias fijas",
         "pl": "poprawione ostrzeżenia",
-        "zh-cn": "固定警告"
+        "zh-cn": "固定警告",
+        "uk": "виправлені попередження"
       },
       "1.1.5": {
         "en": "replaced deprecated package \"request\" with \"axios\"\nfix warnings for js-controller v4\nupdated dependencies",
@@ -63,7 +65,8 @@
         "it": "sostituito il pacchetto deprecato \"richiesta\" con \"axios\"\ncorreggi gli avvisi per js-controller v4\ndipendenze aggiornate",
         "es": "se reemplazó la \"solicitud\" del paquete obsoleto con \"axios\"\narreglar advertencias para js-controller v4\ndependencias actualizadas",
         "pl": "zamieniono przestarzały pakiet \"request\" na \"axios\"\npoprawka ostrzeżeń dla js-controller v4\nzaktualizowane zależności",
-        "zh-cn": "用“axios”替换了已弃用的包“request”\n修复了 js-controller v4 的警告\n更新了依赖项"
+        "zh-cn": "用“axios”替换了已弃用的包“request”\n修复了 js-controller v4 的警告\n更新了依赖项",
+        "uk": "замінено застарілий пакет \"request\" на \"axios\"\nвиправлено попередження для js-контролера v4\nоновлені залежності"
       },
       "1.1.4": {
         "en": "implemented separate queue for sending device commands to improve robustness when sending multiple commands\nonly update \"control\" state values with ack=true when it was requested by user before",
@@ -75,7 +78,8 @@
         "it": "implementata una coda separata per l'invio di comandi del dispositivo per migliorare la robustezza quando si inviano più comandi\naggiorna solo i valori dello stato di \"controllo\" con ack = true quando è stato richiesto dall'utente in precedenza",
         "es": "implementó una cola separada para enviar comandos de dispositivo para mejorar la solidez al enviar múltiples comandos\nsolo actualice los valores de estado de \"control\" con ack = true cuando el usuario lo solicitó antes",
         "pl": "zaimplementowano oddzielną kolejkę do wysyłania poleceń urządzenia, aby poprawić niezawodność podczas wysyłania wielu poleceń\naktualizuj tylko wartości stanu „kontroli” za pomocą parametru ACK = true, gdy wcześniej zażądał tego użytkownik",
-        "zh-cn": "实现了用于发送设备命令的单独队列，以提高发送多个命令时的鲁棒性\n仅在用户之前请求ack = true时更新“ control”状态值"
+        "zh-cn": "实现了用于发送设备命令的单独队列，以提高发送多个命令时的鲁棒性\n仅在用户之前请求ack = true时更新“ control”状态值",
+        "uk": "реалізовано окрему чергу для надсилання команд пристрою для підвищення надійності під час надсилання кількох команд\nоновлювати значення стану \"control\" за допомогою ack=true лише тоді, коли користувач запитував це раніше"
       },
       "1.1.3": {
         "en": "IMPORTANT: The adapter now requires js-controller 3.1 at least\nignore unchanged state values to decrease network traffic\nonly update state values if they are really changed\nextend existing objects to ensure compability with js-controller >= v3.2\nonly allow values with 0.5 steps for \"targetTemp\"",
@@ -87,10 +91,10 @@
         "it": "IMPORTANTE: l'adattatore ora richiede almeno js-controller 3.1\nignorare i valori di stato invariati per diminuire il traffico di rete\naggiorna i valori di stato solo se sono realmente cambiati\nestendere gli oggetti esistenti per garantire la compatibilità con js-controller> = v3.2\nconsentire solo valori con 0,5 passaggi per \"targetTemp\"",
         "es": "IMPORTANTE: el adaptador ahora requiere js-controller 3.1 al menos\nignorar los valores de estado sin cambios para disminuir el tráfico de la red\nsolo actualice los valores de estado si realmente se cambian\nextender los objetos existentes para garantizar la compatibilidad con js-controller> = v3.2\nsolo permite valores con 0,5 pasos para \"targetTemp\"",
         "pl": "WAŻNE: Adapter wymaga teraz co najmniej kontrolera js 3.1\nignoruj niezmienione wartości stanu, aby zmniejszyć ruch w sieci\naktualizuj wartości stanu tylko wtedy, gdy są naprawdę zmienione\nrozszerz istniejące obiekty, aby zapewnić zgodność z js-controller> = v3.2\nzezwalaj tylko na wartości z krokiem 0,5 dla „targetTemp”",
-        "zh-cn": "重要说明：适配器现在至少需要js-controller 3.1\n忽略不变的状态值以减少网络流量\n仅在状态值确实发生更改时更新状态值\n扩展现有对象以确保与js-controller> = v3.2的兼容性\n只允许“ targetTemp”的步长为0.5的值"
+        "zh-cn": "重要说明：适配器现在至少需要js-controller 3.1\n忽略不变的状态值以减少网络流量\n仅在状态值确实发生更改时更新状态值\n扩展现有对象以确保与js-controller> = v3.2的兼容性\n只允许“ targetTemp”的步长为0.5的值",
+        "uk": "ВАЖЛИВО: для адаптера тепер потрібен js-controller принаймні 3.1\nігнорувати незмінні значення стану, щоб зменшити мережевий трафік\nоновлюйте лише значення стану, якщо вони дійсно змінені\nрозширити існуючі об’єкти для забезпечення сумісності з js-controller >= v3.2\nдопускати лише значення з кроком 0,5 для \"targetTemp\""
       }
     },
-    "title": "MELCloud",
     "titleLang": {
       "en": "MELCloud",
       "de": "MELCloud",
@@ -101,7 +105,8 @@
       "it": "MELCloud",
       "es": "MELCloud",
       "pl": "MELCloud",
-      "zh-cn": "MEL云"
+      "zh-cn": "MEL云",
+      "uk": "MELCloud"
     },
     "desc": {
       "en": "The adapter integrates Mitsubishi air conditioning systems via MELCloud into ioBroker.",
@@ -113,14 +118,13 @@
       "it": "L'adattatore integra i sistemi di climatizzazione Mitsubishi in ioBroker utilizzando MELCloud.",
       "es": "El adaptador integra sistemas de aire acondicionado Mitsubishi en ioBroker usando MELCloud.",
       "pl": "Adapter integruje systemy klimatyzacji Mitsubishi z ioBroker za pomocą MELCloud.",
-      "zh-cn": "该适配器使用MELCloud将三菱空调系统集成到ioBroker中。"
+      "zh-cn": "该适配器使用MELCloud将三菱空调系统集成到ioBroker中。",
+      "uk": "Адаптер інтегрує системи кондиціонування Mitsubishi через MELCloud в ioBroker."
     },
     "authors": [
       "Black-Thunder <glwars@aol.de>"
     ],
     "keywords": [
-      "ioBroker",
-      "Smart Home",
       "home automation",
       "MELCloud",
       "Mitsubishi",
@@ -139,11 +143,17 @@
     "compact": true,
     "connectionType": "cloud",
     "dataSource": "poll",
-    "materialize": true,
+    "adminUI": {
+      "config": "json"
+    },
     "dependencies": [
       {
-        "js-controller": ">=3.1.0",
-        "admin": ">=3.0.0"
+        "js-controller": ">=3.3.22"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=5.1.13"
       }
     ],
     "tier": 2
@@ -156,7 +166,6 @@
   ],
   "native": {
     "melCloudEmail": "",
-    "melCloudPassword": "",
     "melCloudLanguage": 4,
     "pollingInterval": 5
   },
