@@ -135,6 +135,7 @@ class Melcloud extends utils.Adapter {
 				role: "indicator.connected",
 				read: true,
 				write: false,
+				def: false,
 				desc: "Indicates if connection to MELCloud was successful or not"
 			},
 			native: {}
