@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "1.3.0",
+    "version": "1.3.1",
     "news": {
+      "1.3.1": {
+        "en": "fixed \"undefined is not a valid state value\" log messages\nfixed crash after connection is lost (e.g. due to missing internet connection)\nupdated admin UI and translations\nfixed a lot of adapter checker issues and warnings",
+        "de": "feste \"undefiniert ist kein gültiger zustandswert\"-log-nachrichten\nfester absturz nach der verbindung verloren (z.b. durch fehlende internetverbindung)\naktualisierung von admin UI und Übersetzungen\nviele adapter-checker probleme und warnungen behoben",
+        "ru": "фиксированные \"undefined не является действительным государственным значением\" лог-сообщения\nфиксированная авария после подключения теряется (например, из-за отсутствия интернет-соединения)\nобновленный admin UI и переводы\nисправили множество вопросов и предупреждений адаптера",
+        "pt": "fixo \"indefinido não é um valor de estado válido\" mensagens de log\nacidente fixo após a conexão é perdida (por exemplo, devido à falta de conexão à internet)\nuI administrador atualizado e traduções\ncorrigiu um monte de problemas do verificador do adaptador e avisos",
+        "nl": "\"gefinancierd is geen geldige staatswaarde\"\nvertaling:\nvertaling:\nveel adapter controleerproblemen en waarschuwingen",
+        "fr": "fixe \"non défini n'est pas une valeur d'état valide\" messages journal\ncrash fixe après la connexion est perdu (par exemple en raison de connexion internet manquante)\nmise à jour de l'interface utilisateur et des traductions\nfixe beaucoup de problèmes de contrôle de l'adaptateur et des avertissements",
+        "it": "fisso \"non definito non è un valore di stato valido\" messaggi di registro\ncrash fisso dopo la connessione è perso (ad esempio a causa della connessione internet mancante)\naggiornato l'interfaccia utente e le traduzioni\nfisso un sacco di problemi e avvisi dell'adattatore",
+        "es": "fijo \"undefinido no es un valor de estado válido\" mensajes de registro\naccidente fijo después de la conexión se pierde (por ejemplo, debido a la falta de conexión a internet)\nadministración actualizada UI y traducciones\nfijo un montón de problemas de control de adaptador y advertencias",
+        "pl": "\"nie określone\" nie jest prawidłową wartością stanu (ang.)\nstała katastrofa po rozpadzie związku (np. ze względu na brak połączenia internetowego)\nuaktualnianie UI i tłumaczenia\nustalono wiele problemów z dostosowywaniem i ostrzeżeniem",
+        "uk": "виправлено \"невизначено не дійсне значення стану\"\nвиправлена аварійна аварія після з'єднання втрачається (наприклад, через відсутність підключення до інтернету)\nоновлено адмін UI і переклади\nвиправлено багато питань перевірки адаптерів та попередження",
+        "zh-cn": "固定的“未确定为有效国家价值”的逻辑信息\n连接后固定坠落(例如由于内联网联系缺失)\n最新附录UI和翻译\n固定许多适应检查员问题和警告"
+      },
       "1.3.0": {
         "en": "added online status to each device (visible in admin object tree)\nadded error status to each device (visible in admin object tree)\nadded error code and messages to device info\nadded new command \"timerToggle\" to enable/disable device timers",
         "de": "den online-status zu jedem gerät hinzugefügt (sichtbar in admin-objektbaum)\nhinzugefügt fehlerstatus zu jedem gerät (sichtbar in admin-objektbaum)\nfehlercode und nachrichten zu geräteinformationen hinzugefügt\nneuen Befehl Timer Toggle, um Geräte-Timer zu aktivieren / zu deaktivieren",
@@ -80,19 +93,6 @@
         "pl": "zaimplementowano oddzielną kolejkę do wysyłania poleceń urządzenia, aby poprawić niezawodność podczas wysyłania wielu poleceń\naktualizuj tylko wartości stanu „kontroli” za pomocą parametru ACK = true, gdy wcześniej zażądał tego użytkownik",
         "zh-cn": "实现了用于发送设备命令的单独队列，以提高发送多个命令时的鲁棒性\n仅在用户之前请求ack = true时更新“ control”状态值",
         "uk": "реалізовано окрему чергу для надсилання команд пристрою для підвищення надійності під час надсилання кількох команд\nоновлювати значення стану \"control\" за допомогою ack=true лише тоді, коли користувач запитував це раніше"
-      },
-      "1.1.3": {
-        "en": "IMPORTANT: The adapter now requires js-controller 3.1 at least\nignore unchanged state values to decrease network traffic\nonly update state values if they are really changed\nextend existing objects to ensure compability with js-controller >= v3.2\nonly allow values with 0.5 steps for \"targetTemp\"",
-        "de": "WICHTIG: Der Adapter benötigt jetzt mindestens js-controller 3.1\nIgnorieren Sie unveränderte Statuswerte, um den Netzwerkverkehr zu verringern\nAktualisieren Sie Statuswerte nur, wenn sie wirklich geändert wurden\nErweitern Sie vorhandene Objekte, um die Kompatibilität mit js-controller> = v3.2 sicherzustellen\nErlaube nur Werte mit 0,5 Schritten für \"targetTemp\"",
-        "ru": "ВАЖНО: для адаптера теперь требуется js-controller не ниже версии 3.1.\nигнорировать неизмененные значения состояния, чтобы уменьшить сетевой трафик\nобновлять значения состояния только в том случае, если они действительно изменены\nрасширить существующие объекты для обеспечения совместимости с js-controller> = v3.2\nдопустимы только значения с шагом 0,5 для \"targetTemp\"",
-        "pt": "IMPORTANTE: O adaptador agora requer js-controller 3.1 pelo menos\nignore os valores de estado inalterados para diminuir o tráfego da rede\nsó atualiza os valores de estado se eles forem realmente alterados\nestenda os objetos existentes para garantir compatibilidade com js-controller> = v3.2\nsó permite valores com 0,5 passos para \"targetTemp\"",
-        "nl": "BELANGRIJK: De adapter vereist nu minimaal js-controller 3.1\nnegeer ongewijzigde statuswaarden om het netwerkverkeer te verminderen\nWerk alleen statuswaarden bij als ze echt zijn veranderd\nbestaande objecten uitbreiden om compatibiliteit met js-controller> = v3.2 te garanderen\nalleen waarden met 0,5 stappen toestaan voor \"targetTemp\"",
-        "fr": "IMPORTANT: l'adaptateur nécessite maintenant au moins js-controller 3.1\nignorer les valeurs d'état inchangées pour réduire le trafic réseau\nne met à jour les valeurs d'état que si elles sont vraiment modifiées\nétendre les objets existants pour assurer la compatibilité avec js-controller> = v3.2\nautoriser uniquement les valeurs avec 0,5 pas pour \"targetTemp\"",
-        "it": "IMPORTANTE: l'adattatore ora richiede almeno js-controller 3.1\nignorare i valori di stato invariati per diminuire il traffico di rete\naggiorna i valori di stato solo se sono realmente cambiati\nestendere gli oggetti esistenti per garantire la compatibilità con js-controller> = v3.2\nconsentire solo valori con 0,5 passaggi per \"targetTemp\"",
-        "es": "IMPORTANTE: el adaptador ahora requiere js-controller 3.1 al menos\nignorar los valores de estado sin cambios para disminuir el tráfico de la red\nsolo actualice los valores de estado si realmente se cambian\nextender los objetos existentes para garantizar la compatibilidad con js-controller> = v3.2\nsolo permite valores con 0,5 pasos para \"targetTemp\"",
-        "pl": "WAŻNE: Adapter wymaga teraz co najmniej kontrolera js 3.1\nignoruj niezmienione wartości stanu, aby zmniejszyć ruch w sieci\naktualizuj wartości stanu tylko wtedy, gdy są naprawdę zmienione\nrozszerz istniejące obiekty, aby zapewnić zgodność z js-controller> = v3.2\nzezwalaj tylko na wartości z krokiem 0,5 dla „targetTemp”",
-        "zh-cn": "重要说明：适配器现在至少需要js-controller 3.1\n忽略不变的状态值以减少网络流量\n仅在状态值确实发生更改时更新状态值\n扩展现有对象以确保与js-controller> = v3.2的兼容性\n只允许“ targetTemp”的步长为0.5的值",
-        "uk": "ВАЖЛИВО: для адаптера тепер потрібен js-controller принаймні 3.1\nігнорувати незмінні значення стану, щоб зменшити мережевий трафік\nоновлюйте лише значення стану, якщо вони дійсно змінені\nрозширити існуючі об’єкти для забезпечення сумісності з js-controller >= v3.2\nдопускати лише значення з кроком 0,5 для \"targetTemp\""
       }
     },
     "titleLang": {

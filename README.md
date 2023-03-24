@@ -29,8 +29,7 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### __WORK IN PROGRESS__
+### 1.3.1 (2023-03-24)
 * (Black-Thunder) fixed "undefined is not a valid state value" log messages
 * (Black-Thunder) fixed crash after connection is lost (e.g. due to missing internet connection)
 * (Black-Thunder) updated admin UI and translations
