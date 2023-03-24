@@ -20,12 +20,108 @@
 			"label": "Select language",
 			"options": [
 				{
-					"label": "en-English",
+					"label": "English",
 					"value": "0"
 				},
 				{
-					"label": "de-Deutsch",
+					"label": "Български",
+					"value": "1"
+				},
+				{
+					"label": "Čeština",
+					"value": "2"
+				},
+				{
+					"label": "Dansk",
+					"value": "3"
+				},
+				{
+					"label": "Deutsch",
 					"value": "4"
+				},
+				{
+					"label": "Eesti",
+					"value": "5"
+				},
+				{
+					"label": "Español",
+					"value": "6"
+				},
+				{
+					"label": "Français",
+					"value": "7"
+				},
+				{
+					"label": "Հայերեն",
+					"value": "8"
+				},
+				{
+					"label": "Latviešu",
+					"value": "9"
+				},
+				{
+					"label": "Lietuvių",
+					"value": "10"
+				},
+				{
+					"label": "Magyar",
+					"value": "11"
+				},
+				{
+					"label": "Nederlands",
+					"value": "12"
+				},
+				{
+					"label": "Norwegian",
+					"value": "13"
+				},
+				{
+					"label": "Polski",
+					"value": "14"
+				},
+				{
+					"label": "Português",
+					"value": "15"
+				},
+				{
+					"label": "Русский",
+					"value": "16"
+				},
+				{
+					"label": "Suomi",
+					"value": "17"
+				},
+				{
+					"label": "Svenska",
+					"value": "18"
+				},
+				{
+					"label": "Italiano",
+					"value": "19"
+				},
+				{
+					"label": "Українська",
+					"value": "20"
+				},
+				{
+					"label": "Türkçe",
+					"value": "21"
+				},
+				{
+					"label": "Ελληνικά",
+					"value": "22"
+				},
+				{
+					"label": "Hrvatski",
+					"value": "23"
+				},
+				{
+					"label": "Română",
+					"value": "24"
+				},
+				{
+					"label": "Slovenščina",
+					"value": "25"
 				}
 			],
 			"newLine": true
