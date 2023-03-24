@@ -30,6 +30,7 @@
     "@alcalzone/release-script": "^3.5.9",
     "@alcalzone/release-script-plugin-iobroker": "^3.5.9",
     "@alcalzone/release-script-plugin-license": "^3.5.9",
+    "@iobroker/adapter-dev": "^1.2.0",
     "@iobroker/testing": "^4.1.0",
     "@types/chai": "^4.3.4",
     "@types/chai-as-promised": "^7.1.5",
@@ -59,7 +60,8 @@
     "check": "tsc --noEmit -p tsconfig.check.json",
     "lint": "eslint",
     "build": "node node_modules/gulp/bin/gulp.js",
-    "release": "release-script"
+    "release": "release-script",
+    "translate": "translate-adapter"
   },
   "bugs": {
     "url": "https://github.com/Black-Thunder/ioBroker.melcloud/issues"
