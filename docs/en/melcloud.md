@@ -122,7 +122,7 @@ Here are the actual power consumption values for the selected period of time sto
 | macAddress | X | - | MAC address of the device |
 | mixingTankWaterTemperature | X | - | Water temperature of the mixing tank
 | nextCommunication | X | - | Next communication date/time (MELCloud to device) |
-| operationState | X | X | Current operation state |
+| operationState | X | - | Current operation state |
 | outdoorTemperature | X | - | Outdoor temperature
 | returnTemperature | X | - | Return temperature
 | returnTemperatureBoiler | X | - | Return temperature of the boiler
