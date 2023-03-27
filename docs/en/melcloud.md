@@ -117,6 +117,7 @@ Here are the actual power consumption values for the selected period of time sto
 | flowTemperatureZone2 | X | - | Flow temperature of zone 2 (if present)
 | hasError | X | - | Indiciates if the device is in error state |
 | hasZone2 | X | - | Flag, if zone 2 is present |
+| heatPumpFrequency | X | - | Heat pump frequency |
 | lastCommunication | X | - | Last communication date/time (MELCloud to device) |
 | macAddress | X | - | MAC address of the device |
 | mixingTankWaterTemperature | X | - | Water temperature of the mixing tank

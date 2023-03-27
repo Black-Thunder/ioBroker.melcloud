@@ -117,6 +117,7 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | flowTemperatureZone2 | X | - | Vorlauftemperatur Zone 2 (falls vorhanden)
 | hasError | X | - | Gibt an, ob das Gerät einen Fehler aufweist |
 | hasZone2 | X | - | Gibt an, ob das Gerät einen zweiten Kreislauf hat |
+| heatPumpFrequency | X | - | Frequenz der Wärmepumpe |
 | lastCommunication | X | - | Zeitstempel der letzten Kommunikation (MELCloud -> Gerät) |
 | macAddress | X | - | MAC-Adresse des Geräts |
 | mixingTankWaterTemperature | X | - | Temperatur des Mischwassertanks
