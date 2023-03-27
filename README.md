@@ -33,7 +33,9 @@ Documentation:
 ### __WORK IN PROGRESS__
 * (Black-Thunder) Handling of error data from cloud was improved
 * (Black-Thunder) Admin UI has been updated
-* (Black-Thunder) New state "heatPumpFrequency" for ATW devices added
+* (Black-Thunder) ATW devices: New state "heatPumpFrequency" added
+* (Black-Thunder) ATW devices: New state "operationState" added
+* (Black-Thunder) ATW devices: Commands "operationModeZone1" and "operationModeZone2" fixed
 
 ### 1.3.1 (2023-03-24)
 * (Black-Thunder) fixed "undefined is not a valid state value" log messages

@@ -122,6 +122,7 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | macAddress | X | - | MAC-Adresse des Geräts |
 | mixingTankWaterTemperature | X | - | Temperatur des Mischwassertanks
 | nextCommunication | X | - | Zeitstempel der nächsten Kommunikation (MELCloud -> Gerät) |
+| operationState | X | X | Aktueller Betriebsmodus des Wärmepumpe |
 | outdoorTemperature | X | - | Außentemperatur 
 | returnTemperature | X | - | Rücklauftemperatur 
 | returnTemperatureBoiler | X | - | Rücklauftemperatur des Boilers
