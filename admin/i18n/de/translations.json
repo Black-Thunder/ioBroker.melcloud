@@ -3,6 +3,8 @@
     "Enter your MELCloud email address": "Geben Sie Ihre MELCloud-E-Mail-Adresse ein",
     "Enter your MELCloud password": "Geben Sie Ihr MELCloud-Passwort ein",
     "Enter your desired polling interval (in minutes) here to query data from MELCloud": "Geben Sie hier Ihr gewünschtes Abfrageintervall (in Minuten) ein, um Daten von MELCloud abzufragen",
+    "Login details": "Login-Daten",
+    "Options": "Optionen",
     "Password": "Passwort",
     "Polling interval": "Abrufintervall",
     "Select language": "Sprache auswählen"

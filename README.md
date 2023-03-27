@@ -31,7 +31,8 @@ Documentation:
 -->
 
 ### __WORK IN PROGRESS__
-* (Black-Thunder) improved handling of error data from cloud
+* (Black-Thunder) Handling of error data from cloud was improved
+* (Black-Thunder) Admin UI has been updated
 
 ### 1.3.1 (2023-03-24)
 * (Black-Thunder) fixed "undefined is not a valid state value" log messages

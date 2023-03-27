@@ -1,174 +1,174 @@
 {
-  "common": {
-    "name": "melcloud",
-    "version": "1.3.1",
-    "news": {
-      "1.3.1": {
-        "en": "fixed \"undefined is not a valid state value\" log messages\nfixed crash after connection is lost (e.g. due to missing internet connection)\nupdated admin UI and translations\nfixed a lot of adapter checker issues and warnings",
-        "de": "feste \"undefiniert ist kein gültiger zustandswert\"-log-nachrichten\nfester absturz nach der verbindung verloren (z.b. durch fehlende internetverbindung)\naktualisierung von admin UI und Übersetzungen\nviele adapter-checker probleme und warnungen behoben",
-        "ru": "фиксированные \"undefined не является действительным государственным значением\" лог-сообщения\nфиксированная авария после подключения теряется (например, из-за отсутствия интернет-соединения)\nобновленный admin UI и переводы\nисправили множество вопросов и предупреждений адаптера",
-        "pt": "fixo \"indefinido não é um valor de estado válido\" mensagens de log\nacidente fixo após a conexão é perdida (por exemplo, devido à falta de conexão à internet)\nuI administrador atualizado e traduções\ncorrigiu um monte de problemas do verificador do adaptador e avisos",
-        "nl": "\"gefinancierd is geen geldige staatswaarde\"\nvertaling:\nvertaling:\nveel adapter controleerproblemen en waarschuwingen",
-        "fr": "fixe \"non défini n'est pas une valeur d'état valide\" messages journal\ncrash fixe après la connexion est perdu (par exemple en raison de connexion internet manquante)\nmise à jour de l'interface utilisateur et des traductions\nfixe beaucoup de problèmes de contrôle de l'adaptateur et des avertissements",
-        "it": "fisso \"non definito non è un valore di stato valido\" messaggi di registro\ncrash fisso dopo la connessione è perso (ad esempio a causa della connessione internet mancante)\naggiornato l'interfaccia utente e le traduzioni\nfisso un sacco di problemi e avvisi dell'adattatore",
-        "es": "fijo \"undefinido no es un valor de estado válido\" mensajes de registro\naccidente fijo después de la conexión se pierde (por ejemplo, debido a la falta de conexión a internet)\nadministración actualizada UI y traducciones\nfijo un montón de problemas de control de adaptador y advertencias",
-        "pl": "\"nie określone\" nie jest prawidłową wartością stanu (ang.)\nstała katastrofa po rozpadzie związku (np. ze względu na brak połączenia internetowego)\nuaktualnianie UI i tłumaczenia\nustalono wiele problemów z dostosowywaniem i ostrzeżeniem",
-        "uk": "виправлено \"невизначено не дійсне значення стану\"\nвиправлена аварійна аварія після з'єднання втрачається (наприклад, через відсутність підключення до інтернету)\nоновлено адмін UI і переклади\nвиправлено багато питань перевірки адаптерів та попередження",
-        "zh-cn": "固定的“未确定为有效国家价值”的逻辑信息\n连接后固定坠落(例如由于内联网联系缺失)\n最新附录UI和翻译\n固定许多适应检查员问题和警告"
-      },
-      "1.3.0": {
-        "en": "added online status to each device (visible in admin object tree)\nadded error status to each device (visible in admin object tree)\nadded error code and messages to device info\nadded new command \"timerToggle\" to enable/disable device timers",
-        "de": "den online-status zu jedem gerät hinzugefügt (sichtbar in admin-objektbaum)\nhinzugefügt fehlerstatus zu jedem gerät (sichtbar in admin-objektbaum)\nfehlercode und nachrichten zu geräteinformationen hinzugefügt\nneuen Befehl Timer Toggle, um Geräte-Timer zu aktivieren / zu deaktivieren",
-        "ru": "добавлен онлайн статус на каждое устройство (видимо в админ объект дерево)\nдобавлен статус ошибки для каждого устройства (видимый в админ объект дерево)\nдобавлен код ошибки и сообщения к информации о устройстве\nдобавлен новый командный таймер Toggle для включения/отключить таймеры устройства",
-        "pt": "adicionado status on-line para cada dispositivo (visível em árvore de objeto admin)\nstatus de erro adicionado a cada dispositivo (visível na árvore de objeto admin)\nadicionado código de erro e mensagens para a informação do dispositivo\nadicionado novo temporizador de comando Alternar para ativar/desativar temporizadores de dispositivo",
-        "nl": "voegde online status toe aan elk apparaat (visible in admin object boom)\nerror status toegevoegd aan elk apparaat\nvoegde foutcode toe en berichten om info te apparaat\nvertaling: Toggle toverbaar/disable apparatuur timers",
-        "fr": "statut en ligne ajouté à chaque appareil (visible dans l'objet administrateur)\nstatut d'erreur ajouté à chaque appareil (visible dans l'objet administrateur)\ncode d'erreur et messages ajoutés à l'info de périphérique\nnouvelle commande timer Toggle to enable/disable device timers",
-        "it": "stato aggiunto online a ogni dispositivo (visibile nell'albero degli oggetti di amministrazione)\nstato di errore aggiunto a ogni dispositivo (visibile nell'albero degli oggetti di amministrazione)\ncodice di errore aggiunto e messaggi alle informazioni del dispositivo\naggiunto nuovo timer di comando Toggle per attivare/disattivare timer del dispositivo",
-        "es": "estado en línea añadido a cada dispositivo (visible en árbol de objeto admin)\nestado de error añadido a cada dispositivo (visible en el árbol de objeto admin)\nañadido código de error y mensajes a la información del dispositivo\nnuevo temporizador de comando Toggle para activar/desactivar los temporizadores de dispositivo",
-        "pl": "dodano status internetowy każdej urządzenie (widoczne w drzewie obiektowym)\ndodano status błędu dla każdego urządzenia (widoczny w drzewie adminowym)\ndodał kod błędu i wiadomości do urządzenie info\ndodał nowy czas dowodzenia. Umożliwia udostępnienie lub rozbieżne czasowniki",
-        "uk": "додано статус онлайн до кожного пристрою (невидимий у дереві об'єкта адміністратора)\nдодано статус помилки до кожного пристрою (невидимий у дереві об'єкта адміністратора)\nдодано код помилки та повідомлення до інформації про пристрій\nдодано новий таймер команд Увімкнути / вимкнути таймери пристроїв",
-        "zh-cn": "每个装置的在线地位(目标树中的)\n每个装置的错误地位(目标树中的)\n添加错误编码和电器的信息\n增加新的指挥时间 D. 设法使/可以区分的装置时间"
-      },
-      "1.2.1": {
-        "en": "added consumption reports for air to water devices",
-        "de": "zusätzliche verbrauchsberichte für luft zu wassergeräten",
-        "ru": "добавлены отчеты о потреблении воздуха к водным устройствам",
-        "pt": "relatórios de consumo adicionados para dispositivos de ar para água",
-        "nl": "voegde consumptierapporten toe voor lucht naar water apparaten",
-        "fr": "rapports de consommation ajoutés pour les appareils à air",
-        "it": "rapporti di consumo aggiunti per dispositivi d'acqua",
-        "es": "informes de consumo añadidos para dispositivos de aire a agua",
-        "pl": "dostarczenie informacji o użytkowaniu powietrza do urządzeń wodnych",
-        "uk": "додано звіт про споживання повітря до водних пристроїв",
-        "zh-cn": "水用设备的消耗报告"
-      },
-      "1.2.0": {
-        "en": "Added support for air to water devices (e.g., heat pumps)\nAdded new device-independent channel \"reports\" fur cumulative reports across all devices (see documentation for new structure)\nRestructured device-specific channel \"reports\" and added new sub-channel \"lastReportData\" (see documentation for new structure)\nFix: always trigger on \"getPowerConsumptionReport\" ignoring the state value\nFixed js-controller warnings",
-        "de": "Unterstützung für Luft zu Wassergeräten (z.B. Wärmepumpen)\nNeue geräteunabhängige Kanalberichte für kumulative Berichte über alle Geräte hinzugefügt (siehe Dokumentation für neue Struktur)\nRestrukturierte gerätespezifische Kanalberichte und neue Sub-Channel lastReportData (siehe Dokumentation für neue Struktur)\nFix: immer Trigger auf getPowerConsumptionReport ignorieren den Zustandswert\nFeste js-Controller Warnungen",
-        "ru": "Добавлена поддержка воздуха к водным устройствам (например, тепловые насосы)\nДобавлены новые устройства независимого канала сообщает мех кумулятивные отчеты по всем устройствам (см. документацию для новой структуры)\nРеструктуризированные отчеты о специальном устройстве и добавлены новые субканалы lastReportData (см. документацию для новой структуры)\nИсправление: всегда триггер на getPowerConsumptionReport ignoring the state value\nФиксированные js-контроллерные предупреждения",
-        "pt": "Adicionado suporte para dispositivos de ar para água (por exemplo, bombas de calor)\nAdicionado novo dispositivo-independent canal relatórios fur cumulative relatórios em todos os dispositivos (veja documentação para nova estrutura)\nRelatórios de canal específicos do dispositivo reestruturado e adicionado novo sub-canal lastReportData (veja documentação para nova estrutura)\nFix: sempre gatilho no getPowerConsumptionReport ignorando o valor do estado\nAvisos fixos js-controller",
-        "nl": "Vervoegde ondersteuning voor lucht naar water toe\nVermeldde nieuwe apparaat-onafhankelijke kanaalrapporten over alle apparaten (ziene documentatie voor nieuwe structuur)\nHerstructureerde apparaat-specific kanaalrapporten en voegde nieuwe sub-channel laatsteReport data (zee documentatie voor nieuwe structuur)\nVertaling:\nVertaling:",
-        "fr": "Ajout d'un support pour les dispositifs d'air à eau (p. ex. pompes à chaleur)\nAjout de nouveaux rapports cumulatifs des fourrures sur tous les appareils (voir documentation pour la nouvelle structure)\nRapports de canaux restructurés spécifiques aux appareils et ajout de nouvelles données de sous-canal (voir documentation pour la nouvelle structure)\nFix: toujours déclencheur sur getPowerConsomptionReport ignorant la valeur de l'état\nAvertissements de contrôle de js fixes",
-        "it": "Aggiunto supporto per l'aria a dispositivi di acqua (ad esempio, pompe di calore)\nAggiunto nuovo dispositivo-indipendente canale relazioni fur cumulative rapporti su tutti i dispositivi (vedi documentazione per la nuova struttura)\nRapporti di canale specifici per dispositivi ristrutturati e ha aggiunto il nuovo sottocanale ultimoReportData (vedi documentazione per la nuova struttura)\nFisso: attivare sempre su getPowerConsumReport ignorando il valore di stato\nAvvertenze js-controller fissi",
-        "es": "Apoyo adicional para dispositivos de aire a agua (por ejemplo, bombas de calor)\nNuevos informes de canal independiente de dispositivo reportan informes acumulativos de piel en todos los dispositivos (ver documentación para nueva estructura)\nInformes de canal reestructurados y nuevos subcanales añadidos últimoReportData (ver documentación para nueva estructura)\nFijación: siempre dispara en getPowerConsumptionReport ignorando el valor del estado\nAdvertencias fijas js-controller",
-        "pl": "Wspieranie powietrza dla urządzeń wodnych (np. pomp ciepła)\nDodany nowy kanał niezależny dostarcza raportów dotyczących włókien we wszystkich urządzeniach (zobacz dokumentacja dla nowej struktury)\nRestrukturyzacja specyficznych kanałów i dodała nowe podkanałowe ostatnie ReportData (patrz dokumentacja dla nowej struktury)\nFix: zawsze sprowadza się do PowerConsumptionReport ignorując wartość państwa\nŚmiały js-kontrolator ostrzega o twierdzeniu",
-        "zh-cn": "增加对水器的空中支助(例如热泵)\n增加新的以装置为基础的渠道报告,对所有装置的累积报告(见新结构的文件)\n重组的特定装置的渠道报告,并增加新的次要报告Data(见新结构的文件)\nFix:一向触动获取大国消费报告,无视国家价值\n固定的手卫警告",
-        "uk": "Додано підтримку пристроїв повітря-вода (наприклад, теплових насосів)\nДодано новий незалежний від пристрою канал «звіти» з сукупними звітами на всіх пристроях (нову структуру див. у документації)\nЗмінено структуру «звітів» каналу для певного пристрою та додано новий підканал «lastReportData» (нову структуру див. у документації)\nВиправлення: завжди запускати «getPowerConsumptionReport», ігноруючи значення стану\nВиправлено попередження js-контролера"
-      },
-      "1.1.6": {
-        "en": "fixed warnings",
-        "de": "feste Warnungen",
-        "ru": "фиксированные предупреждения",
-        "pt": "avisos fixos",
-        "nl": "vaste waarschuwingen",
-        "fr": "avertissements fixes",
-        "it": "avvisi fissi",
-        "es": "advertencias fijas",
-        "pl": "poprawione ostrzeżenia",
-        "zh-cn": "固定警告",
-        "uk": "виправлені попередження"
-      },
-      "1.1.5": {
-        "en": "replaced deprecated package \"request\" with \"axios\"\nfix warnings for js-controller v4\nupdated dependencies",
-        "de": "veraltetes Paket „request“ durch „axios“ ersetzt\nWarnungen für js-controller v4 behoben\nabhängigkeiten aktualisiert",
-        "ru": "заменен устаревший пакет request на axios\nисправить предупреждения для js-controller v4\nобновлены зависимости",
-        "pt": "substituiu o pacote obsoleto \"request\" por \"axios\"\nfix warnings for js-controller v4\nupdated dependencies",
-        "nl": "verouderd pakket \"request\" vervangen door \"axios\"\nfix-waarschuwingen voor js-controller v4\nbijgewerkte afhankelijkheden",
-        "fr": "remplacement du package obsolète \"request\" par \"axios\"\ncorrection des avertissements pour js-controller v4\ndépendances mises à jour",
-        "it": "sostituito il pacchetto deprecato \"richiesta\" con \"axios\"\ncorreggi gli avvisi per js-controller v4\ndipendenze aggiornate",
-        "es": "se reemplazó la \"solicitud\" del paquete obsoleto con \"axios\"\narreglar advertencias para js-controller v4\ndependencias actualizadas",
-        "pl": "zamieniono przestarzały pakiet \"request\" na \"axios\"\npoprawka ostrzeżeń dla js-controller v4\nzaktualizowane zależności",
-        "zh-cn": "用“axios”替换了已弃用的包“request”\n修复了 js-controller v4 的警告\n更新了依赖项",
-        "uk": "замінено застарілий пакет \"request\" на \"axios\"\nвиправлено попередження для js-контролера v4\nоновлені залежності"
-      },
-      "1.1.4": {
-        "en": "implemented separate queue for sending device commands to improve robustness when sending multiple commands\nonly update \"control\" state values with ack=true when it was requested by user before",
-        "de": "Es wurde eine separate Warteschlange zum Senden von Gerätebefehlen implementiert, um die Robustheit beim Senden mehrerer Befehle zu verbessern\nAktualisieren Sie die Statuswerte \"control\" nur mit ack = true, wenn dies zuvor vom Benutzer angefordert wurde",
-        "ru": "реализована отдельная очередь для отправки команд устройства для повышения надежности при отправке нескольких команд\nобновлять значения состояния \"control\" с ack = true только тогда, когда это было запрошено пользователем ранее",
-        "pt": "implementou fila separada para enviar comandos do dispositivo para melhorar a robustez ao enviar vários comandos\napenas atualize os valores do estado de \"controle\" com ack = true quando solicitado pelo usuário antes",
-        "nl": "een aparte wachtrij geïmplementeerd voor het verzenden van apparaatopdrachten om de robuustheid te verbeteren bij het verzenden van meerdere opdrachten\nupdate alleen de statuswaarden van \"controle\" met ack = true wanneer dit eerder door de gebruiker is aangevraagd",
-        "fr": "mise en œuvre d'une file d'attente séparée pour l'envoi de commandes de périphérique afin d'améliorer la robustesse lors de l'envoi de plusieurs commandes\nmettre à jour uniquement les valeurs d'état de \"contrôle\" avec ack = true lorsque l'utilisateur l'a demandé auparavant",
-        "it": "implementata una coda separata per l'invio di comandi del dispositivo per migliorare la robustezza quando si inviano più comandi\naggiorna solo i valori dello stato di \"controllo\" con ack = true quando è stato richiesto dall'utente in precedenza",
-        "es": "implementó una cola separada para enviar comandos de dispositivo para mejorar la solidez al enviar múltiples comandos\nsolo actualice los valores de estado de \"control\" con ack = true cuando el usuario lo solicitó antes",
-        "pl": "zaimplementowano oddzielną kolejkę do wysyłania poleceń urządzenia, aby poprawić niezawodność podczas wysyłania wielu poleceń\naktualizuj tylko wartości stanu „kontroli” za pomocą parametru ACK = true, gdy wcześniej zażądał tego użytkownik",
-        "zh-cn": "实现了用于发送设备命令的单独队列，以提高发送多个命令时的鲁棒性\n仅在用户之前请求ack = true时更新“ control”状态值",
-        "uk": "реалізовано окрему чергу для надсилання команд пристрою для підвищення надійності під час надсилання кількох команд\nоновлювати значення стану \"control\" за допомогою ack=true лише тоді, коли користувач запитував це раніше"
-      }
+    "common": {
+        "name": "melcloud",
+        "version": "1.3.1",
+        "news": {
+            "1.3.1": {
+                "en": "fixed \"undefined is not a valid state value\" log messages\nfixed crash after connection is lost (e.g. due to missing internet connection)\nupdated admin UI and translations\nfixed a lot of adapter checker issues and warnings",
+                "de": "feste \"undefiniert ist kein gültiger zustandswert\"-log-nachrichten\nfester absturz nach der verbindung verloren (z.b. durch fehlende internetverbindung)\naktualisierung von admin UI und Übersetzungen\nviele adapter-checker probleme und warnungen behoben",
+                "ru": "фиксированные \"undefined не является действительным государственным значением\" лог-сообщения\nфиксированная авария после подключения теряется (например, из-за отсутствия интернет-соединения)\nобновленный admin UI и переводы\nисправили множество вопросов и предупреждений адаптера",
+                "pt": "fixo \"indefinido não é um valor de estado válido\" mensagens de log\nacidente fixo após a conexão é perdida (por exemplo, devido à falta de conexão à internet)\nuI administrador atualizado e traduções\ncorrigiu um monte de problemas do verificador do adaptador e avisos",
+                "nl": "\"gefinancierd is geen geldige staatswaarde\"\nvertaling:\nvertaling:\nveel adapter controleerproblemen en waarschuwingen",
+                "fr": "fixe \"non défini n'est pas une valeur d'état valide\" messages journal\ncrash fixe après la connexion est perdu (par exemple en raison de connexion internet manquante)\nmise à jour de l'interface utilisateur et des traductions\nfixe beaucoup de problèmes de contrôle de l'adaptateur et des avertissements",
+                "it": "fisso \"non definito non è un valore di stato valido\" messaggi di registro\ncrash fisso dopo la connessione è perso (ad esempio a causa della connessione internet mancante)\naggiornato l'interfaccia utente e le traduzioni\nfisso un sacco di problemi e avvisi dell'adattatore",
+                "es": "fijo \"undefinido no es un valor de estado válido\" mensajes de registro\naccidente fijo después de la conexión se pierde (por ejemplo, debido a la falta de conexión a internet)\nadministración actualizada UI y traducciones\nfijo un montón de problemas de control de adaptador y advertencias",
+                "pl": "\"nie określone\" nie jest prawidłową wartością stanu (ang.)\nstała katastrofa po rozpadzie związku (np. ze względu na brak połączenia internetowego)\nuaktualnianie UI i tłumaczenia\nustalono wiele problemów z dostosowywaniem i ostrzeżeniem",
+                "uk": "виправлено \"невизначено не дійсне значення стану\"\nвиправлена аварійна аварія після з'єднання втрачається (наприклад, через відсутність підключення до інтернету)\nоновлено адмін UI і переклади\nвиправлено багато питань перевірки адаптерів та попередження",
+                "zh-cn": "固定的“未确定为有效国家价值”的逻辑信息\n连接后固定坠落(例如由于内联网联系缺失)\n最新附录UI和翻译\n固定许多适应检查员问题和警告"
+            },
+            "1.3.0": {
+                "en": "added online status to each device (visible in admin object tree)\nadded error status to each device (visible in admin object tree)\nadded error code and messages to device info\nadded new command \"timerToggle\" to enable/disable device timers",
+                "de": "den online-status zu jedem gerät hinzugefügt (sichtbar in admin-objektbaum)\nhinzugefügt fehlerstatus zu jedem gerät (sichtbar in admin-objektbaum)\nfehlercode und nachrichten zu geräteinformationen hinzugefügt\nneuen Befehl Timer Toggle, um Geräte-Timer zu aktivieren / zu deaktivieren",
+                "ru": "добавлен онлайн статус на каждое устройство (видимо в админ объект дерево)\nдобавлен статус ошибки для каждого устройства (видимый в админ объект дерево)\nдобавлен код ошибки и сообщения к информации о устройстве\nдобавлен новый командный таймер Toggle для включения/отключить таймеры устройства",
+                "pt": "adicionado status on-line para cada dispositivo (visível em árvore de objeto admin)\nstatus de erro adicionado a cada dispositivo (visível na árvore de objeto admin)\nadicionado código de erro e mensagens para a informação do dispositivo\nadicionado novo temporizador de comando Alternar para ativar/desativar temporizadores de dispositivo",
+                "nl": "voegde online status toe aan elk apparaat (visible in admin object boom)\nerror status toegevoegd aan elk apparaat\nvoegde foutcode toe en berichten om info te apparaat\nvertaling: Toggle toverbaar/disable apparatuur timers",
+                "fr": "statut en ligne ajouté à chaque appareil (visible dans l'objet administrateur)\nstatut d'erreur ajouté à chaque appareil (visible dans l'objet administrateur)\ncode d'erreur et messages ajoutés à l'info de périphérique\nnouvelle commande timer Toggle to enable/disable device timers",
+                "it": "stato aggiunto online a ogni dispositivo (visibile nell'albero degli oggetti di amministrazione)\nstato di errore aggiunto a ogni dispositivo (visibile nell'albero degli oggetti di amministrazione)\ncodice di errore aggiunto e messaggi alle informazioni del dispositivo\naggiunto nuovo timer di comando Toggle per attivare/disattivare timer del dispositivo",
+                "es": "estado en línea añadido a cada dispositivo (visible en árbol de objeto admin)\nestado de error añadido a cada dispositivo (visible en el árbol de objeto admin)\nañadido código de error y mensajes a la información del dispositivo\nnuevo temporizador de comando Toggle para activar/desactivar los temporizadores de dispositivo",
+                "pl": "dodano status internetowy każdej urządzenie (widoczne w drzewie obiektowym)\ndodano status błędu dla każdego urządzenia (widoczny w drzewie adminowym)\ndodał kod błędu i wiadomości do urządzenie info\ndodał nowy czas dowodzenia. Umożliwia udostępnienie lub rozbieżne czasowniki",
+                "uk": "додано статус онлайн до кожного пристрою (невидимий у дереві об'єкта адміністратора)\nдодано статус помилки до кожного пристрою (невидимий у дереві об'єкта адміністратора)\nдодано код помилки та повідомлення до інформації про пристрій\nдодано новий таймер команд Увімкнути / вимкнути таймери пристроїв",
+                "zh-cn": "每个装置的在线地位(目标树中的)\n每个装置的错误地位(目标树中的)\n添加错误编码和电器的信息\n增加新的指挥时间 D. 设法使/可以区分的装置时间"
+            },
+            "1.2.1": {
+                "en": "added consumption reports for air to water devices",
+                "de": "zusätzliche verbrauchsberichte für luft zu wassergeräten",
+                "ru": "добавлены отчеты о потреблении воздуха к водным устройствам",
+                "pt": "relatórios de consumo adicionados para dispositivos de ar para água",
+                "nl": "voegde consumptierapporten toe voor lucht naar water apparaten",
+                "fr": "rapports de consommation ajoutés pour les appareils à air",
+                "it": "rapporti di consumo aggiunti per dispositivi d'acqua",
+                "es": "informes de consumo añadidos para dispositivos de aire a agua",
+                "pl": "dostarczenie informacji o użytkowaniu powietrza do urządzeń wodnych",
+                "uk": "додано звіт про споживання повітря до водних пристроїв",
+                "zh-cn": "水用设备的消耗报告"
+            },
+            "1.2.0": {
+                "en": "Added support for air to water devices (e.g., heat pumps)\nAdded new device-independent channel \"reports\" fur cumulative reports across all devices (see documentation for new structure)\nRestructured device-specific channel \"reports\" and added new sub-channel \"lastReportData\" (see documentation for new structure)\nFix: always trigger on \"getPowerConsumptionReport\" ignoring the state value\nFixed js-controller warnings",
+                "de": "Unterstützung für Luft zu Wassergeräten (z.B. Wärmepumpen)\nNeue geräteunabhängige Kanalberichte für kumulative Berichte über alle Geräte hinzugefügt (siehe Dokumentation für neue Struktur)\nRestrukturierte gerätespezifische Kanalberichte und neue Sub-Channel lastReportData (siehe Dokumentation für neue Struktur)\nFix: immer Trigger auf getPowerConsumptionReport ignorieren den Zustandswert\nFeste js-Controller Warnungen",
+                "ru": "Добавлена поддержка воздуха к водным устройствам (например, тепловые насосы)\nДобавлены новые устройства независимого канала сообщает мех кумулятивные отчеты по всем устройствам (см. документацию для новой структуры)\nРеструктуризированные отчеты о специальном устройстве и добавлены новые субканалы lastReportData (см. документацию для новой структуры)\nИсправление: всегда триггер на getPowerConsumptionReport ignoring the state value\nФиксированные js-контроллерные предупреждения",
+                "pt": "Adicionado suporte para dispositivos de ar para água (por exemplo, bombas de calor)\nAdicionado novo dispositivo-independent canal relatórios fur cumulative relatórios em todos os dispositivos (veja documentação para nova estrutura)\nRelatórios de canal específicos do dispositivo reestruturado e adicionado novo sub-canal lastReportData (veja documentação para nova estrutura)\nFix: sempre gatilho no getPowerConsumptionReport ignorando o valor do estado\nAvisos fixos js-controller",
+                "nl": "Vervoegde ondersteuning voor lucht naar water toe\nVermeldde nieuwe apparaat-onafhankelijke kanaalrapporten over alle apparaten (ziene documentatie voor nieuwe structuur)\nHerstructureerde apparaat-specific kanaalrapporten en voegde nieuwe sub-channel laatsteReport data (zee documentatie voor nieuwe structuur)\nVertaling:\nVertaling:",
+                "fr": "Ajout d'un support pour les dispositifs d'air à eau (p. ex. pompes à chaleur)\nAjout de nouveaux rapports cumulatifs des fourrures sur tous les appareils (voir documentation pour la nouvelle structure)\nRapports de canaux restructurés spécifiques aux appareils et ajout de nouvelles données de sous-canal (voir documentation pour la nouvelle structure)\nFix: toujours déclencheur sur getPowerConsomptionReport ignorant la valeur de l'état\nAvertissements de contrôle de js fixes",
+                "it": "Aggiunto supporto per l'aria a dispositivi di acqua (ad esempio, pompe di calore)\nAggiunto nuovo dispositivo-indipendente canale relazioni fur cumulative rapporti su tutti i dispositivi (vedi documentazione per la nuova struttura)\nRapporti di canale specifici per dispositivi ristrutturati e ha aggiunto il nuovo sottocanale ultimoReportData (vedi documentazione per la nuova struttura)\nFisso: attivare sempre su getPowerConsumReport ignorando il valore di stato\nAvvertenze js-controller fissi",
+                "es": "Apoyo adicional para dispositivos de aire a agua (por ejemplo, bombas de calor)\nNuevos informes de canal independiente de dispositivo reportan informes acumulativos de piel en todos los dispositivos (ver documentación para nueva estructura)\nInformes de canal reestructurados y nuevos subcanales añadidos últimoReportData (ver documentación para nueva estructura)\nFijación: siempre dispara en getPowerConsumptionReport ignorando el valor del estado\nAdvertencias fijas js-controller",
+                "pl": "Wspieranie powietrza dla urządzeń wodnych (np. pomp ciepła)\nDodany nowy kanał niezależny dostarcza raportów dotyczących włókien we wszystkich urządzeniach (zobacz dokumentacja dla nowej struktury)\nRestrukturyzacja specyficznych kanałów i dodała nowe podkanałowe ostatnie ReportData (patrz dokumentacja dla nowej struktury)\nFix: zawsze sprowadza się do PowerConsumptionReport ignorując wartość państwa\nŚmiały js-kontrolator ostrzega o twierdzeniu",
+                "zh-cn": "增加对水器的空中支助(例如热泵)\n增加新的以装置为基础的渠道报告,对所有装置的累积报告(见新结构的文件)\n重组的特定装置的渠道报告,并增加新的次要报告Data(见新结构的文件)\nFix:一向触动获取大国消费报告,无视国家价值\n固定的手卫警告",
+                "uk": "Додано підтримку пристроїв повітря-вода (наприклад, теплових насосів)\nДодано новий незалежний від пристрою канал «звіти» з сукупними звітами на всіх пристроях (нову структуру див. у документації)\nЗмінено структуру «звітів» каналу для певного пристрою та додано новий підканал «lastReportData» (нову структуру див. у документації)\nВиправлення: завжди запускати «getPowerConsumptionReport», ігноруючи значення стану\nВиправлено попередження js-контролера"
+            },
+            "1.1.6": {
+                "en": "fixed warnings",
+                "de": "feste Warnungen",
+                "ru": "фиксированные предупреждения",
+                "pt": "avisos fixos",
+                "nl": "vaste waarschuwingen",
+                "fr": "avertissements fixes",
+                "it": "avvisi fissi",
+                "es": "advertencias fijas",
+                "pl": "poprawione ostrzeżenia",
+                "zh-cn": "固定警告",
+                "uk": "виправлені попередження"
+            },
+            "1.1.5": {
+                "en": "replaced deprecated package \"request\" with \"axios\"\nfix warnings for js-controller v4\nupdated dependencies",
+                "de": "veraltetes Paket „request“ durch „axios“ ersetzt\nWarnungen für js-controller v4 behoben\nabhängigkeiten aktualisiert",
+                "ru": "заменен устаревший пакет request на axios\nисправить предупреждения для js-controller v4\nобновлены зависимости",
+                "pt": "substituiu o pacote obsoleto \"request\" por \"axios\"\nfix warnings for js-controller v4\nupdated dependencies",
+                "nl": "verouderd pakket \"request\" vervangen door \"axios\"\nfix-waarschuwingen voor js-controller v4\nbijgewerkte afhankelijkheden",
+                "fr": "remplacement du package obsolète \"request\" par \"axios\"\ncorrection des avertissements pour js-controller v4\ndépendances mises à jour",
+                "it": "sostituito il pacchetto deprecato \"richiesta\" con \"axios\"\ncorreggi gli avvisi per js-controller v4\ndipendenze aggiornate",
+                "es": "se reemplazó la \"solicitud\" del paquete obsoleto con \"axios\"\narreglar advertencias para js-controller v4\ndependencias actualizadas",
+                "pl": "zamieniono przestarzały pakiet \"request\" na \"axios\"\npoprawka ostrzeżeń dla js-controller v4\nzaktualizowane zależności",
+                "zh-cn": "用“axios”替换了已弃用的包“request”\n修复了 js-controller v4 的警告\n更新了依赖项",
+                "uk": "замінено застарілий пакет \"request\" на \"axios\"\nвиправлено попередження для js-контролера v4\nоновлені залежності"
+            },
+            "1.1.4": {
+                "en": "implemented separate queue for sending device commands to improve robustness when sending multiple commands\nonly update \"control\" state values with ack=true when it was requested by user before",
+                "de": "Es wurde eine separate Warteschlange zum Senden von Gerätebefehlen implementiert, um die Robustheit beim Senden mehrerer Befehle zu verbessern\nAktualisieren Sie die Statuswerte \"control\" nur mit ack = true, wenn dies zuvor vom Benutzer angefordert wurde",
+                "ru": "реализована отдельная очередь для отправки команд устройства для повышения надежности при отправке нескольких команд\nобновлять значения состояния \"control\" с ack = true только тогда, когда это было запрошено пользователем ранее",
+                "pt": "implementou fila separada para enviar comandos do dispositivo para melhorar a robustez ao enviar vários comandos\napenas atualize os valores do estado de \"controle\" com ack = true quando solicitado pelo usuário antes",
+                "nl": "een aparte wachtrij geïmplementeerd voor het verzenden van apparaatopdrachten om de robuustheid te verbeteren bij het verzenden van meerdere opdrachten\nupdate alleen de statuswaarden van \"controle\" met ack = true wanneer dit eerder door de gebruiker is aangevraagd",
+                "fr": "mise en œuvre d'une file d'attente séparée pour l'envoi de commandes de périphérique afin d'améliorer la robustesse lors de l'envoi de plusieurs commandes\nmettre à jour uniquement les valeurs d'état de \"contrôle\" avec ack = true lorsque l'utilisateur l'a demandé auparavant",
+                "it": "implementata una coda separata per l'invio di comandi del dispositivo per migliorare la robustezza quando si inviano più comandi\naggiorna solo i valori dello stato di \"controllo\" con ack = true quando è stato richiesto dall'utente in precedenza",
+                "es": "implementó una cola separada para enviar comandos de dispositivo para mejorar la solidez al enviar múltiples comandos\nsolo actualice los valores de estado de \"control\" con ack = true cuando el usuario lo solicitó antes",
+                "pl": "zaimplementowano oddzielną kolejkę do wysyłania poleceń urządzenia, aby poprawić niezawodność podczas wysyłania wielu poleceń\naktualizuj tylko wartości stanu „kontroli” za pomocą parametru ACK = true, gdy wcześniej zażądał tego użytkownik",
+                "zh-cn": "实现了用于发送设备命令的单独队列，以提高发送多个命令时的鲁棒性\n仅在用户之前请求ack = true时更新“ control”状态值",
+                "uk": "реалізовано окрему чергу для надсилання команд пристрою для підвищення надійності під час надсилання кількох команд\nоновлювати значення стану \"control\" за допомогою ack=true лише тоді, коли користувач запитував це раніше"
+            }
+        },
+        "titleLang": {
+            "en": "MELCloud",
+            "de": "MELCloud",
+            "ru": "MELCloud",
+            "pt": "MELCloud",
+            "nl": "MELCloud",
+            "fr": "MELCloud",
+            "it": "MELCloud",
+            "es": "MELCloud",
+            "pl": "MELCloud",
+            "zh-cn": "MEL云",
+            "uk": "MELCloud"
+        },
+        "desc": {
+            "en": "The adapter integrates Mitsubishi air conditioning systems via MELCloud into ioBroker.",
+            "de": "Der Adapter integriert Klimaanlagen von Mitsubishi mittels MELCloud in ioBroker.",
+            "ru": "Адаптер интегрирует системы кондиционирования воздуха Mitsubishi в ioBroker с помощью MELCloud.",
+            "pt": "O adaptador integra os sistemas de ar condicionado Mitsubishi ao ioBroker usando MELCloud.",
+            "nl": "De adapter integreert Mitsubishi-airconditioningsystemen in ioBroker met behulp van MELCloud.",
+            "fr": "L'adaptateur intègre les systèmes de climatisation Mitsubishi dans ioBroker à l'aide de MELCloud.",
+            "it": "L'adattatore integra i sistemi di climatizzazione Mitsubishi in ioBroker utilizzando MELCloud.",
+            "es": "El adaptador integra sistemas de aire acondicionado Mitsubishi en ioBroker usando MELCloud.",
+            "pl": "Adapter integruje systemy klimatyzacji Mitsubishi z ioBroker za pomocą MELCloud.",
+            "zh-cn": "该适配器使用MELCloud将三菱空调系统集成到ioBroker中。",
+            "uk": "Адаптер інтегрує системи кондиціонування Mitsubishi через MELCloud в ioBroker."
+        },
+        "authors": [
+            "Black-Thunder <glwars@aol.de>"
+        ],
+        "keywords": [
+            "home automation",
+            "MELCloud",
+            "Mitsubishi",
+            "airconditioning"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "melcloud.png",
+        "enabled": false,
+        "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
+        "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "climate-control",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=3.3.22"
+            }
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.13"
+            }
+        ],
+        "tier": 2
     },
-    "titleLang": {
-      "en": "MELCloud",
-      "de": "MELCloud",
-      "ru": "MELCloud",
-      "pt": "MELCloud",
-      "nl": "MELCloud",
-      "fr": "MELCloud",
-      "it": "MELCloud",
-      "es": "MELCloud",
-      "pl": "MELCloud",
-      "zh-cn": "MEL云",
-      "uk": "MELCloud"
+    "encryptedNative": [
+        "melCloudPassword"
+    ],
+    "protectedNative": [
+        "melCloudPassword"
+    ],
+    "native": {
+        "melCloudEmail": "",
+        "melCloudLanguage": 4,
+        "pollingInterval": 5
     },
-    "desc": {
-      "en": "The adapter integrates Mitsubishi air conditioning systems via MELCloud into ioBroker.",
-      "de": "Der Adapter integriert Klimaanlagen von Mitsubishi mittels MELCloud in ioBroker.",
-      "ru": "Адаптер интегрирует системы кондиционирования воздуха Mitsubishi в ioBroker с помощью MELCloud.",
-      "pt": "O adaptador integra os sistemas de ar condicionado Mitsubishi ao ioBroker usando MELCloud.",
-      "nl": "De adapter integreert Mitsubishi-airconditioningsystemen in ioBroker met behulp van MELCloud.",
-      "fr": "L'adaptateur intègre les systèmes de climatisation Mitsubishi dans ioBroker à l'aide de MELCloud.",
-      "it": "L'adattatore integra i sistemi di climatizzazione Mitsubishi in ioBroker utilizzando MELCloud.",
-      "es": "El adaptador integra sistemas de aire acondicionado Mitsubishi en ioBroker usando MELCloud.",
-      "pl": "Adapter integruje systemy klimatyzacji Mitsubishi z ioBroker za pomocą MELCloud.",
-      "zh-cn": "该适配器使用MELCloud将三菱空调系统集成到ioBroker中。",
-      "uk": "Адаптер інтегрує системи кондиціонування Mitsubishi через MELCloud в ioBroker."
-    },
-    "authors": [
-      "Black-Thunder <glwars@aol.de>"
-    ],
-    "keywords": [
-      "home automation",
-      "MELCloud",
-      "Mitsubishi",
-      "airconditioning"
-    ],
-    "license": "MIT",
-    "platform": "Javascript/Node.js",
-    "main": "main.js",
-    "icon": "melcloud.png",
-    "enabled": false,
-    "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
-    "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
-    "loglevel": "info",
-    "mode": "daemon",
-    "type": "climate-control",
-    "compact": true,
-    "connectionType": "cloud",
-    "dataSource": "poll",
-    "adminUI": {
-      "config": "json"
-    },
-    "dependencies": [
-      {
-        "js-controller": ">=3.3.22"
-      }
-    ],
-    "globalDependencies": [
-      {
-        "admin": ">=5.1.13"
-      }
-    ],
-    "tier": 2
-  },
-  "encryptedNative": [
-    "melCloudPassword"
-  ],
-  "protectedNative": [
-    "melCloudPassword"
-  ],
-  "native": {
-    "melCloudEmail": "",
-    "melCloudLanguage": 4,
-    "pollingInterval": 5
-  },
-  "objects": [],
-  "instanceObjects": []
+    "objects": [],
+    "instanceObjects": []
 }

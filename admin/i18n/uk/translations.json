@@ -3,6 +3,8 @@
     "Enter your MELCloud email address": "Введіть адресу електронної пошти MELCloud",
     "Enter your MELCloud password": "Введіть свій пароль MELCloud",
     "Enter your desired polling interval (in minutes) here to query data from MELCloud": "Введіть тут бажаний інтервал опитування (у хвилинах), щоб запитувати дані з MELCloud",
+    "Login details": "Деталі входу",
+    "Options": "Опції",
     "Password": "Пароль",
     "Polling interval": "Інтервал опитування",
     "Select language": "Оберіть мову"
