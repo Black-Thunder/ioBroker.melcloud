@@ -16,19 +16,6 @@
         "uk": "Удосконалено обробку даних помилок з хмари\nAdmin UI було оновлено\nПристрої ATW: Додана нова державна теплова системаPumpFrequency\nПристрої ATW: Нова державна операція додано\nПристрої ATW: Команди роботиModeZone1 і операція ModeZone2 фіксований",
         "zh-cn": "处理云雾错误数据的情况有所改善\n附录一\nATW装置: 新州热餐会\nATW装置: 新的国家行动 国家加入\nATW装置: 指挥部业务ModeZone1和操作 ModeZone2 固定"
       },
-      "1.3.2": {
-        "en": "Handling of error data from cloud was improved\nAdmin UI has been updated\nATW devices: New state \"heatPumpFrequency\" added\nATW devices: New state \"operationState\" added\nATW devices: Commands \"operationModeZone1\" and \"operationModeZone2\" fixed",
-        "de": "Die Handhabung von Fehlerdaten aus der Cloud wurde verbessert\nAdmin UI wurde aktualisiert\nATW-Geräte: Neue ZustandswärmePumpFrequenz hinzugefügt\nATW-Geräte: Neuer Zustandsbetrieb Staat hinzugefügt\nATW-Geräte: Befehle OperationModeZone1 und Betrieb ModeZone2 fixiert",
-        "ru": "Улучшена обработка данных об ошибках из облака\nAdmin UI обновлен\nATW устройства: Новый государственный теплаPumpFrequency добавил\nATW устройства: Новая государственная операция Государство добавлено\nATW устройства: Команды операцияModeZone1 и операция ModeZone2 фиксированный",
-        "pt": "A manipulação de dados de erro da nuvem foi melhorada\nAdmin UI foi atualizado\nDispositivos ATW: Novo estado heatPumpFrequency adicionado\nDispositivos ATW: Nova operação estatal Estado adicionado\nDispositivos ATW: Operação de comandoModeZone1 e operação ModeZone2 fixo",
-        "nl": "Het verwerken van fout gegevens uit de wolk werd verbeterd\nAdmin UI is op de hoogte\nATW apparaten: Nieuwe staat hittePumpFrequentie toegevoegd\nATW apparaten: Nieuwe staatsoperatie Staat toegevoegd\nATW apparaten: Commando's operation ModeZone1 en operationele ModeZone2 gerepareerd",
-        "fr": "La manipulation des données d'erreur du cloud a été améliorée\nAdmin UI a été mis à jour\nDispositifs ATW: Nouvelle chaleur étatPumpFrequency ajouté\nDispositifs ATW: Nouvelle opération étatique État ajouté\nDispositifs ATW: Opération des commandesModeZone1 et opération ModeZone2 fixe",
-        "it": "La gestione dei dati di errore da cloud è stata migliorata\nAdmin UI è stato aggiornato\nDispositivi ATW: Nuovo stato di calorePumpFrequenza aggiunto\nDispositivi ATW: Nuova operazione di stato Stato aggiunto\nDispositivi ATW: Funzionamento comandiModeZone1 e funzionamento ModeZone2 fisso",
-        "es": "Se mejoró el manejo de datos de error de la nube\nAdmin UI ha sido actualizado\nDispositivos ATW: Nuevo calor del estadoPumpFrequency añadido\nDispositivos ATW: Nueva operación estatal Estado añadido\nDispositivos ATW: Operación ComandosModeZone1 y operación ModeZone2 fijo",
-        "pl": "Użycie danych z chmur zostało poprawione\nAdminowy interfejs użytkownika został zaktualizowany\nUrządzenia ATW: Nowy stan ciepłowności\nUrządzenia ATW: Nowa operacja państwowa Państwo\nUrządzenia ATW: Operacja ModeZone1 i operacja ModeZone2",
-        "uk": "Удосконалено обробку даних помилок з хмари\nAdmin UI було оновлено\nПристрої ATW: Додана нова державна теплова системаPumpFrequency\nПристрої ATW: Нова державна операція додано\nПристрої ATW: Команди роботиModeZone1 і операція ModeZone2 фіксований",
-        "zh-cn": "处理云雾错误数据的情况有所改善\n附录一\nATW装置: 新州热餐会\nATW装置: 新的国家行动 国家加入\nATW装置: 指挥部业务ModeZone1和操作 ModeZone2 固定"
-      },
       "1.3.1": {
         "en": "fixed \"undefined is not a valid state value\" log messages\nfixed crash after connection is lost (e.g. due to missing internet connection)\nupdated admin UI and translations\nfixed a lot of adapter checker issues and warnings",
         "de": "feste \"undefiniert ist kein gültiger zustandswert\"-log-nachrichten\nfester absturz nach der verbindung verloren (z.b. durch fehlende internetverbindung)\naktualisierung von admin UI und Übersetzungen\nviele adapter-checker probleme und warnungen behoben",
