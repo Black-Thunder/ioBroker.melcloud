@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "1.3.3",
+    "version": "1.3.4",
     "news": {
+      "1.3.4": {
+        "en": "Certificate issues were fixed (e.g. \"Error: unable to verify the first certificate\")",
+        "de": "Zertifikate wurden behoben (z.B. \"Fehler: nicht in der Lage, das erste Zertifikat zu überprüfen\")",
+        "ru": "Исправлены проблемы с сертификатом (например, \"Error: не удалось проверить первый сертификат\")",
+        "pt": "Foram corrigidos problemas de certificado (por exemplo, \"Error: incapaz de verificar o primeiro certificado\")",
+        "nl": "Bepaalde kwesties werden gerepareerd (e.g \"Error: niet in staat om het eerste certificaat te bevestigen\"",
+        "fr": "Les questions de certificat ont été corrigées (p. ex. \"Error: incapable de vérifier le premier certificat\")",
+        "it": "I problemi del certificato sono stati risolti (ad esempio \"Errore: incapace di verificare il primo certificato\")",
+        "es": "Los números de certificado fueron fijos (por ejemplo \"Error: incapaz de verificar el primer certificado\")",
+        "pl": "Zamknięto dokumenty (np. Eror: nie mogąc zweryfikować pierwszego certyfikatu)",
+        "uk": "Питання довідки були виправлені (наприклад, \"Особливості: не вдалося перевірити перший сертифікат\")",
+        "zh-cn": "核证问题是固定的(例如“签证:无法核实第一次证书”)"
+      },
       "1.3.3": {
         "en": "Handling of error data from cloud was improved\nAdmin UI has been updated\nATW devices: New state \"heatPumpFrequency\" added\nATW devices: New state \"operationState\" added\nATW devices: Commands \"operationModeZone1\" and \"operationModeZone2\" fixed",
         "de": "Die Handhabung von Fehlerdaten aus der Cloud wurde verbessert\nAdmin UI wurde aktualisiert\nATW-Geräte: Neue ZustandswärmePumpFrequenz hinzugefügt\nATW-Geräte: Neuer Zustandsbetrieb Staat hinzugefügt\nATW-Geräte: Befehle OperationModeZone1 und Betrieb ModeZone2 fixiert",
