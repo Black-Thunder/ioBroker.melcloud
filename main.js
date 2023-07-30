@@ -10,10 +10,6 @@ const utils = require("@iobroker/adapter-core");
 // Needed modules
 const cloudPlatform = require("./lib/melcloudPlatform");
 const commonDefines = require("./lib/commonDefines");
-const Axios = require("axios").default;
-const Https = require("https");
-const RootCas = require("ssl-root-cas").create();
-const Path = require("path");
 
 let gthis = null; // global to 'this' of Melcloud main instance
 let CloudPlatform = null;
@@ -35,12 +31,6 @@ class Melcloud extends utils.Adapter {
 		gthis = this;
 		this.deviceObjects = []; // array of all device objects
 		this.currentKnownDeviceIDs = []; // array of all current known device IDs
-
-		// MELCloud intermediate certificate, needed as otherwise requests will fail with "Unable to verify the first certificate"
-		RootCas.addFile(Path.resolve(__dirname, "lib/melcloud_intermediate.pem"));
-		this.mainAxiosInstance = Axios.create({
-			httpsAgent: new Https.Agent({ ca: RootCas })
-		});
 	}
 
 	async checkSettings() {
