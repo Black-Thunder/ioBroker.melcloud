@@ -29,6 +29,11 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
+### __WORK IN PROGRESS__
+* (Black-Thunder) Minimal node version was raised to 16
+* (Black-Thunder) Support for ventilation (ERV) devices was added
+* (Black-Thunder) Some incorrect state decriptions were fixed
+
 ### 1.3.5 (2023-08-01)
 * (Black-Thunder) Memory leak was fixed
 
