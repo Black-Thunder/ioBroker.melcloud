@@ -387,6 +387,7 @@ class Melcloud extends utils.Adapter {
 				switch (type) {
 					case commonDefines.DeviceTypes.AirToAir: this.processAtaDeviceCommand(controlOption, state, device); break;
 					case commonDefines.DeviceTypes.AirToWater: this.processAtwDeviceCommand(controlOption, state, device); break;
+					case commonDefines.DeviceTypes.EnergyRecoveryVentilation: this.processErvDeviceCommand(controlOption, state, device); break;
 					default: this.log.error(`Unsupported device type: '${type}' - Please report this to the developer!`); break;
 				}
 			}
@@ -506,6 +507,20 @@ class Melcloud extends utils.Adapter {
 		}
 	}
 
+	mapERVDeviceOperationMode(value) {
+		switch (value) {
+			case (commonDefines.ErvDeviceOperationModes.RECOVERY.value):
+				return commonDefines.ErvDeviceOperationModes.RECOVERY;
+			case (commonDefines.ErvDeviceOperationModes.BYPASS.value):
+				return commonDefines.ErvDeviceOperationModes.BYPASS;
+			case (commonDefines.ErvDeviceOperationModes.AUTO.value):
+				return commonDefines.ErvDeviceOperationModes.AUTO;
+			default:
+				this.log.error(`Unsupported ERV operation mode: '${value}' - Please report this to the developer!`);
+				return commonDefines.ErvDeviceOperationModes.UNDEF;
+		}
+	}
+
 	processAtaDeviceCommand(controlOption, state, device) {
 		switch (controlOption) {
 			case (commonDefines.AtaDeviceStateIDs.Power):
@@ -595,6 +610,30 @@ class Melcloud extends utils.Adapter {
 				break;
 			default:
 				this.log.error(`Unsupported ATW control option: ${controlOption} - Please report this to the developer!`);
+				break;
+		}
+	}
+
+	processErvDeviceCommand(controlOption, state, device) {
+		switch (controlOption) {
+			case (commonDefines.ErvDeviceStateIDs.Power):
+				if (state.val) {
+					// switch on using current operation mode
+					device.getDeviceInfo(device.setDevice, commonDefines.ErvDeviceOptions.PowerState, commonDefines.DevicePowerStates.ON);
+				}
+				else {
+					// switch off
+					device.getDeviceInfo(device.setDevice, commonDefines.ErvDeviceOptions.PowerState, commonDefines.DevicePowerStates.OFF);
+				}
+				break;
+			case (commonDefines.ErvDeviceStateIDs.Mode):
+				device.getDeviceInfo(device.setDevice, commonDefines.ErvDeviceOptions.OperationMode, this.mapERVDeviceOperationMode(state.val));
+				break;
+			case (commonDefines.ErvDeviceStateIDs.FanSpeed):
+				device.getDeviceInfo(device.setDevice, commonDefines.ErvDeviceOptions.FanSpeed, state.val);
+				break;
+			default:
+				this.log.error(`Unsupported ERV control option: ${controlOption} - Please report this to the developer!`);
 				break;
 		}
 	}
