@@ -24,7 +24,7 @@
     "node": ">= 16"
   },
   "dependencies": {
-    "@iobroker/adapter-core": "^3.0.3",
+    "@iobroker/adapter-core": "^3.0.4",
     "axios": "^1.5.1",
     "form-data": "^4.0.0",
     "http-status-codes": "^2.3.0"
