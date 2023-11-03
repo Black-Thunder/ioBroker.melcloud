@@ -29,7 +29,7 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-### __WORK IN PROGRESS__
+### 1.3.6 (2023-11-03)
 * (Black-Thunder) Minimum Node.js Version was raised to 16
 * (Black-Thunder) Dependencies were updated
 

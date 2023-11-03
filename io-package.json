@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "1.3.5",
+    "version": "1.3.6",
     "news": {
+      "1.3.6": {
+        "en": "Minimum Node.js Version was raised to 16\nDependencies were updated",
+        "de": "Minimum Node.js Version wurde auf 16 erhöht\nAbhängigkeiten wurden aktualisiert",
+        "ru": "Минимальная версия Node.js была поднята до 16\nВ зависимости были обновлены",
+        "pt": "A versão mínima do Node.js foi aumentada para 16\nAs dependências foram atualizadas",
+        "nl": "Minimum Node\nDe afhankelijkheid werd bijgewerkt",
+        "fr": "Version minimale Node.js a été portée à 16\nLes dépendances ont été mises à jour",
+        "it": "Versione minima Node.js è stato sollevato a 16\nLe dipendenze sono state aggiornate",
+        "es": "Versión mínima Node.js se crió a 16\nSe actualizaron las dependencias",
+        "pl": "Wersja Minimum Node została podniesiona do 16\nZależności były aktualizowane",
+        "uk": "До 16\nЗалежність оновлено",
+        "zh-cn": "最低工资提高到16个。\n已更新了属地"
+      },
       "1.3.5": {
         "en": "Memory leak was fixed",
         "de": "Speicherleck wurde fixiert",
@@ -80,19 +93,6 @@
         "pl": "dostarczenie informacji o użytkowaniu powietrza do urządzeń wodnych",
         "uk": "додано звіт про споживання повітря до водних пристроїв",
         "zh-cn": "水用设备的消耗报告"
-      },
-      "1.2.0": {
-        "en": "Added support for air to water devices (e.g., heat pumps)\nAdded new device-independent channel \"reports\" fur cumulative reports across all devices (see documentation for new structure)\nRestructured device-specific channel \"reports\" and added new sub-channel \"lastReportData\" (see documentation for new structure)\nFix: always trigger on \"getPowerConsumptionReport\" ignoring the state value\nFixed js-controller warnings",
-        "de": "Unterstützung für Luft zu Wassergeräten (z.B. Wärmepumpen)\nNeue geräteunabhängige Kanalberichte für kumulative Berichte über alle Geräte hinzugefügt (siehe Dokumentation für neue Struktur)\nRestrukturierte gerätespezifische Kanalberichte und neue Sub-Channel lastReportData (siehe Dokumentation für neue Struktur)\nFix: immer Trigger auf getPowerConsumptionReport ignorieren den Zustandswert\nFeste js-Controller Warnungen",
-        "ru": "Добавлена поддержка воздуха к водным устройствам (например, тепловые насосы)\nДобавлены новые устройства независимого канала сообщает мех кумулятивные отчеты по всем устройствам (см. документацию для новой структуры)\nРеструктуризированные отчеты о специальном устройстве и добавлены новые субканалы lastReportData (см. документацию для новой структуры)\nИсправление: всегда триггер на getPowerConsumptionReport ignoring the state value\nФиксированные js-контроллерные предупреждения",
-        "pt": "Adicionado suporte para dispositivos de ar para água (por exemplo, bombas de calor)\nAdicionado novo dispositivo-independent canal relatórios fur cumulative relatórios em todos os dispositivos (veja documentação para nova estrutura)\nRelatórios de canal específicos do dispositivo reestruturado e adicionado novo sub-canal lastReportData (veja documentação para nova estrutura)\nFix: sempre gatilho no getPowerConsumptionReport ignorando o valor do estado\nAvisos fixos js-controller",
-        "nl": "Vervoegde ondersteuning voor lucht naar water toe\nVermeldde nieuwe apparaat-onafhankelijke kanaalrapporten over alle apparaten (ziene documentatie voor nieuwe structuur)\nHerstructureerde apparaat-specific kanaalrapporten en voegde nieuwe sub-channel laatsteReport data (zee documentatie voor nieuwe structuur)\nVertaling:\nVertaling:",
-        "fr": "Ajout d'un support pour les dispositifs d'air à eau (p. ex. pompes à chaleur)\nAjout de nouveaux rapports cumulatifs des fourrures sur tous les appareils (voir documentation pour la nouvelle structure)\nRapports de canaux restructurés spécifiques aux appareils et ajout de nouvelles données de sous-canal (voir documentation pour la nouvelle structure)\nFix: toujours déclencheur sur getPowerConsomptionReport ignorant la valeur de l'état\nAvertissements de contrôle de js fixes",
-        "it": "Aggiunto supporto per l'aria a dispositivi di acqua (ad esempio, pompe di calore)\nAggiunto nuovo dispositivo-indipendente canale relazioni fur cumulative rapporti su tutti i dispositivi (vedi documentazione per la nuova struttura)\nRapporti di canale specifici per dispositivi ristrutturati e ha aggiunto il nuovo sottocanale ultimoReportData (vedi documentazione per la nuova struttura)\nFisso: attivare sempre su getPowerConsumReport ignorando il valore di stato\nAvvertenze js-controller fissi",
-        "es": "Apoyo adicional para dispositivos de aire a agua (por ejemplo, bombas de calor)\nNuevos informes de canal independiente de dispositivo reportan informes acumulativos de piel en todos los dispositivos (ver documentación para nueva estructura)\nInformes de canal reestructurados y nuevos subcanales añadidos últimoReportData (ver documentación para nueva estructura)\nFijación: siempre dispara en getPowerConsumptionReport ignorando el valor del estado\nAdvertencias fijas js-controller",
-        "pl": "Wspieranie powietrza dla urządzeń wodnych (np. pomp ciepła)\nDodany nowy kanał niezależny dostarcza raportów dotyczących włókien we wszystkich urządzeniach (zobacz dokumentacja dla nowej struktury)\nRestrukturyzacja specyficznych kanałów i dodała nowe podkanałowe ostatnie ReportData (patrz dokumentacja dla nowej struktury)\nFix: zawsze sprowadza się do PowerConsumptionReport ignorując wartość państwa\nŚmiały js-kontrolator ostrzega o twierdzeniu",
-        "zh-cn": "增加对水器的空中支助(例如热泵)\n增加新的以装置为基础的渠道报告,对所有装置的累积报告(见新结构的文件)\n重组的特定装置的渠道报告,并增加新的次要报告Data(见新结构的文件)\nFix:一向触动获取大国消费报告,无视国家价值\n固定的手卫警告",
-        "uk": "Додано підтримку пристроїв повітря-вода (наприклад, теплових насосів)\nДодано новий незалежний від пристрою канал «звіти» з сукупними звітами на всіх пристроях (нову структуру див. у документації)\nЗмінено структуру «звітів» каналу для певного пристрою та додано новий підканал «lastReportData» (нову структуру див. у документації)\nВиправлення: завжди запускати «getPowerConsumptionReport», ігноруючи значення стану\nВиправлено попередження js-контролера"
       }
     },
     "titleLang": {
