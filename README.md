@@ -25,7 +25,7 @@ Documentation:
 * [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.melcloud/tree/master/docs/de/melcloud.md)
 
 > [!IMPORTANT]
-> As of 2023-02-05 Mitsubishi drastically limits the access to their cloud for external application like this adapter. Currently, the only workaround is to increase the polling interval to at least 5 minutes or even higher. Otherwise your MELCloud account might be temporarily blocked.
+> As of 2023-02-05 Mitsubishi drastically limits the access to their cloud for external applications like this adapter. Currently, the only workaround is to increase the polling interval to at least 5 minutes or even higher. Otherwise your MELCloud account might be temporarily blocked.
 
 ## Changelog
 <!--
