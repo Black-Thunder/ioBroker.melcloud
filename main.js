@@ -44,10 +44,10 @@ class Melcloud extends utils.Adapter {
 			throw new Error("MELCloud password empty! Check settings.");
 		}
 
-		// if pollingInterval <= 0 than set to 1
-		if (this.config.pollingInterval <= 0) {
-			this.config.pollingInterval = 1;
-			this.log.warn("Polling interval was set to less than 1 minute. Now set to 1 minute.");
+		// Minimum pollingInterval = 5 to prevent rate limiting
+		if (this.config.pollingInterval < 5) {
+			this.config.pollingInterval = 5;
+			this.log.warn("Polling interval can't be set lower than 5 minutes to avoid rate limiting. Now set to 5 minutes.");
 		}
 	}
 

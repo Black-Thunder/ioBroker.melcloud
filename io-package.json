@@ -167,7 +167,7 @@
   "native": {
     "melCloudEmail": "",
     "melCloudLanguage": 4,
-    "pollingInterval": 5
+    "pollingInterval": 10
   },
   "objects": [],
   "instanceObjects": []
