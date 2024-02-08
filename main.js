@@ -44,10 +44,9 @@ class Melcloud extends utils.Adapter {
 			throw new Error("MELCloud password empty! Check settings.");
 		}
 
-		// Minimum pollingInterval = 5 to prevent rate limiting
-		if (this.config.pollingInterval < 5) {
-			this.config.pollingInterval = 5;
-			this.log.warn("Polling interval can't be set lower than 5 minutes to avoid rate limiting. Now set to 5 minutes.");
+		if (this.config.pollingInterval < 1) {
+			this.config.pollingInterval = 1;
+			this.log.warn("Polling interval can't be set lower than 1 minute. Now set to 1 minute.");
 		}
 	}
 
@@ -315,7 +314,10 @@ class Melcloud extends utils.Adapter {
 		try {
 			this.setAdapterConnectionState(false);
 			this.deviceObjects.length = 0;
-			if (CloudPlatform != null) CloudPlatform.stopPolling();
+			if (CloudPlatform != null) {
+				CloudPlatform.stopPolling();
+				CloudPlatform.stopContextKeyInvalidation();
+			}
 
 			this.log.info("onUnload(): Cleaned everything up...");
 			callback();

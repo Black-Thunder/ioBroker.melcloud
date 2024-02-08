@@ -149,7 +149,7 @@
 					"type": "number",
 					"label": "Polling interval",
 					"newLine": true,
-					"min": 5,
+					"min": 1,
 					"step": 1,
 					"tooltip": "Enter your desired polling interval (in minutes) here to query data from MELCloud",
 					"sm": 12,
