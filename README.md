@@ -34,6 +34,8 @@ Documentation:
 -->
 ### __WORK IN PROGRESS__
 * (Black-Thunder) Login procedure was refactored to reduce number of calls to the MELCloud servers
+* (Black-Thunder) Minimum polling interval was raised to 5 minutes
+* (Black-Thunder) Default polling interval was raised to 10 minutes
 
 ### 1.3.6 (2023-11-03)
 * (Black-Thunder) Minimum Node.js Version was raised to 16

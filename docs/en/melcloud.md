@@ -21,7 +21,7 @@ In order to use this adapter, there are a few things you have to prepare in adva
 
 Here you can configure your adapter instance. Mandatory for the adapter to work are your MELCloud credentials (email address and password). 
 
-On the second tab you need to specify your account region. Apart from that you can configure the time interval when your device data is polled and updated from MELCloud (minimum 1 minute). If at any time the connection to MELCloud should fail (e.g., server problem, internet connection issues), the adapter tries at a maximum of three times to reconnect. Should there be still no connection after these retries, the next retry will take place after one hour.
+On the second tab you need to specify your account region. Apart from that you can configure the time interval when your device data is polled and updated from MELCloud (minimum 5 minutes to avoid being throttled by the MELCloud servers). If at any time the connection to MELCloud should fail (e.g., server problem, internet connection issues), the adapter tries at a maximum of three times to reconnect. Should there be still no connection after these retries, the next retry will take place after one hour.
 
 ## Objects
 
