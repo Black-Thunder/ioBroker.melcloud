@@ -29,7 +29,7 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-### __WORK IN PROGRESS__
+### 1.3.7 (2024-02-09)
 * (Black-Thunder) Login procedure was refactored to reduce number of calls to the MELCloud servers
 * (Black-Thunder) Minimum polling interval was raised to 5 minutes
 * (Black-Thunder) Default polling interval was raised to 10 minutes
