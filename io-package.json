@@ -109,17 +109,17 @@
       "uk": "MELCloud"
     },
     "desc": {
-      "en": "The adapter integrates Mitsubishi air conditioning systems via MELCloud into ioBroker.",
-      "de": "Der Adapter integriert Klimaanlagen von Mitsubishi mittels MELCloud in ioBroker.",
-      "ru": "Адаптер интегрирует системы кондиционирования воздуха Mitsubishi в ioBroker с помощью MELCloud.",
-      "pt": "O adaptador integra os sistemas de ar condicionado Mitsubishi ao ioBroker usando MELCloud.",
-      "nl": "De adapter integreert Mitsubishi-airconditioningsystemen in ioBroker met behulp van MELCloud.",
-      "fr": "L'adaptateur intègre les systèmes de climatisation Mitsubishi dans ioBroker à l'aide de MELCloud.",
-      "it": "L'adattatore integra i sistemi di climatizzazione Mitsubishi in ioBroker utilizzando MELCloud.",
-      "es": "El adaptador integra sistemas de aire acondicionado Mitsubishi en ioBroker usando MELCloud.",
-      "pl": "Adapter integruje systemy klimatyzacji Mitsubishi z ioBroker za pomocą MELCloud.",
-      "zh-cn": "该适配器使用MELCloud将三菱空调系统集成到ioBroker中。",
-      "uk": "Адаптер інтегрує системи кондиціонування Mitsubishi через MELCloud в ioBroker."
+      "en": "This adapter integrates Mitsubishi Electric devices via MELCloud into ioBroker.",
+      "de": "Dieser Adapter integriert Mitsubishi Electric Geräte über MELCloud in ioBroker.",
+      "ru": "Этот адаптер интегрирует Mitsubishi Electric устройства через MELCloud в ioBroker.",
+      "pt": "Este adaptador integra dispositivos Mitsubishi Electric via MELCloud no ioBroker.",
+      "nl": "Deze adapter integreert Mitsubishi Elektrische apparaten via MELCloud in ioBroker.",
+      "fr": "Cet adaptateur intègre les appareils Mitsubishi Electric via MELCloud dans ioBroker.",
+      "it": "Questo adattatore integra i dispositivi Mitsubishi Electric tramite MELCloud in ioBroker.",
+      "es": "Este adaptador integra dispositivos eléctricos Mitsubishi vía MELCloud en ioBroker.",
+      "pl": "Adapter ten integruje urządzenia Mitsubishi Electric za pośrednictwem MELCloud z joBroker.",
+      "uk": "Цей адаптер інтегрує Mitsubishi Electric devices через MELCloud в ioBroker.",
+      "zh-cn": "这个适配器通过MELCloud将三菱电器设备集成到ioBroker中."
     },
     "authors": [
       "Black-Thunder <glwars@aol.de>"
