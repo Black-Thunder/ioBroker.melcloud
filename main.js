@@ -300,7 +300,7 @@ class Melcloud extends utils.Adapter {
 	}
 
 	async connectToCloud() {
-		gthis.log.info("Connecting initially to MELCloud and retrieving data...");
+		gthis.log.info(`Connecting initially to MELCloud and retrieving device data. Polling is ${this.config.enablePolling ? `enabled (interval: ${this.config.pollingInterval} minutes)` : "disabled"}.`);
 
 		// Connect to cloud and retrieve/update registered devices initially
 		CloudPlatform = new cloudPlatform.MelCloudPlatform(gthis);
