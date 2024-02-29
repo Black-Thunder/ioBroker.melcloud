@@ -305,7 +305,7 @@ class Melcloud extends utils.Adapter {
 		// Connect to cloud and retrieve/update registered devices initially
 		CloudPlatform = new cloudPlatform.MelCloudPlatform(gthis);
 
-		if (this.config.pollingInterval) {
+		if (this.config.enablePolling) {
 			CloudPlatform.GetContextKey(CloudPlatform.CreateAndSaveDevices, CloudPlatform.startPolling);
 		}
 		else {
