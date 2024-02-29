@@ -1,175 +1,175 @@
 {
-    "common": {
-        "name": "melcloud",
-        "version": "1.3.7",
-        "news": {
-            "1.3.7": {
-                "en": "Login procedure was refactored to reduce number of calls to the MELCloud servers\nMinimum polling interval was raised to 5 minutes\nDefault polling interval was raised to 10 minutes",
-                "de": "Ein Login-Verfahren wurde neu erstellt, um die Anzahl der Anrufe auf die MELCloud-Server zu reduzieren\nMindestabfrageintervall wurde auf 5 Minuten erhöht\nDefault-Umfrageintervall wurde auf 10 Minuten erhöht",
-                "ru": "Процедура входа была восстановлена, чтобы уменьшить количество звонков на серверы MELCloud\nМинимальный интервал опроса был увеличен до 5 минут\nПериод опроса по умолчанию был увеличен до 10 минут",
-                "pt": "O procedimento de login foi refactored para reduzir o número de chamadas para os servidores MELCloud\nO intervalo mínimo de votação foi aumentado para 5 minutos\nO intervalo de votação padrão foi aumentado para 10 minutos",
-                "nl": "Aanmeldprocedure werd aangepast om het aantal oproepen naar de MELCloud-servers te verminderen\nHet minimale peilingsinterval werd verhoogd tot 5 minuten\nStandaard polling interval werd verhoogd tot 10 minuten",
-                "fr": "La procédure de connexion a été remaniée pour réduire le nombre d'appels vers les serveurs MELCloud\nL'intervalle minimal de scrutin a été porté à 5 minutes\nL'intervalle de vote par défaut a été porté à 10 minutes",
-                "it": "La procedura di accesso è stata rifatto in modo da ridurre il numero di chiamate ai server MELCloud\nL'intervallo minimo di inquinamento è stato sollevato a 5 minuti\nL'intervallo di polling predefinito è stato sollevato a 10 minuti",
-                "es": "El procedimiento de inicio de sesión fue refactorizado para reducir el número de llamadas a los servidores MELCloud\nEl intervalo mínimo de votación fue elevado a 5 minutos\nEl intervalo de votación por defecto se crió a 10 minutos",
-                "pl": "Procedura logowania została zmieniona w celu zmniejszenia liczby połączeń do serwerów MELCloud\nMinimalny odstęp między sondażem został podniesiony do 5 minut\nDomyślny interwał wyborczy został podniesiony do 10 minut",
-                "uk": "Процедура входу була рефакторована для зменшення кількості дзвінків на серверах MELCloud\nМінімальний інтервал опитування до 5 хвилин\nЗа замовчуванням інтервал опитування до 10 хвилин",
-                "zh-cn": "重新设计了登录程序,以减少给MELCloud服务器的通话次数\n最低投票间隔提高到5分钟\n默认投票间隔提高到10分钟"
-            },
-            "1.3.6": {
-                "en": "Minimum Node.js Version was raised to 16\nDependencies were updated",
-                "de": "Minimum Node.js Version wurde auf 16 erhöht\nAbhängigkeiten wurden aktualisiert",
-                "ru": "Минимальная версия Node.js была поднята до 16\nВ зависимости были обновлены",
-                "pt": "A versão mínima do Node.js foi aumentada para 16\nAs dependências foram atualizadas",
-                "nl": "Minimum Node\nDe afhankelijkheid werd bijgewerkt",
-                "fr": "Version minimale Node.js a été portée à 16\nLes dépendances ont été mises à jour",
-                "it": "Versione minima Node.js è stato sollevato a 16\nLe dipendenze sono state aggiornate",
-                "es": "Versión mínima Node.js se crió a 16\nSe actualizaron las dependencias",
-                "pl": "Wersja Minimum Node została podniesiona do 16\nZależności były aktualizowane",
-                "uk": "До 16\nЗалежність оновлено",
-                "zh-cn": "最低工资提高到16个。\n已更新了属地"
-            },
-            "1.3.5": {
-                "en": "Memory leak was fixed",
-                "de": "Speicherleck wurde fixiert",
-                "ru": "Утечка памяти была исправлена",
-                "pt": "Vazamento de memória foi corrigido",
-                "nl": "Memorylek was gerepareerd",
-                "fr": "La fuite de mémoire a été corrigée",
-                "it": "La perdita di memoria è stata fissata",
-                "es": "Se fijó la fuga de memoria",
-                "pl": "Wyciek pamięci został ustalony",
-                "uk": "Витік пам'яті фіксований",
-                "zh-cn": "Mmory leak是固定的。"
-            },
-            "1.3.4": {
-                "en": "Certificate issues were fixed (e.g. \"Error: unable to verify the first certificate\")",
-                "de": "Zertifikate wurden behoben (z.B. \"Fehler: nicht in der Lage, das erste Zertifikat zu überprüfen\")",
-                "ru": "Исправлены проблемы с сертификатом (например, \"Error: не удалось проверить первый сертификат\")",
-                "pt": "Foram corrigidos problemas de certificado (por exemplo, \"Error: incapaz de verificar o primeiro certificado\")",
-                "nl": "Bepaalde kwesties werden gerepareerd (e.g \"Error: niet in staat om het eerste certificaat te bevestigen\"",
-                "fr": "Les questions de certificat ont été corrigées (p. ex. \"Error: incapable de vérifier le premier certificat\")",
-                "it": "I problemi del certificato sono stati risolti (ad esempio \"Errore: incapace di verificare il primo certificato\")",
-                "es": "Los números de certificado fueron fijos (por ejemplo \"Error: incapaz de verificar el primer certificado\")",
-                "pl": "Zamknięto dokumenty (np. Eror: nie mogąc zweryfikować pierwszego certyfikatu)",
-                "uk": "Питання довідки були виправлені (наприклад, \"Особливості: не вдалося перевірити перший сертифікат\")",
-                "zh-cn": "核证问题是固定的(例如“签证:无法核实第一次证书”)"
-            },
-            "1.3.3": {
-                "en": "Handling of error data from cloud was improved\nAdmin UI has been updated\nATW devices: New state \"heatPumpFrequency\" added\nATW devices: New state \"operationState\" added\nATW devices: Commands \"operationModeZone1\" and \"operationModeZone2\" fixed",
-                "de": "Die Handhabung von Fehlerdaten aus der Cloud wurde verbessert\nAdmin UI wurde aktualisiert\nATW-Geräte: Neue ZustandswärmePumpFrequenz hinzugefügt\nATW-Geräte: Neuer Zustandsbetrieb Staat hinzugefügt\nATW-Geräte: Befehle OperationModeZone1 und Betrieb ModeZone2 fixiert",
-                "ru": "Улучшена обработка данных об ошибках из облака\nAdmin UI обновлен\nATW устройства: Новый государственный теплаPumpFrequency добавил\nATW устройства: Новая государственная операция Государство добавлено\nATW устройства: Команды операцияModeZone1 и операция ModeZone2 фиксированный",
-                "pt": "A manipulação de dados de erro da nuvem foi melhorada\nAdmin UI foi atualizado\nDispositivos ATW: Novo estado heatPumpFrequency adicionado\nDispositivos ATW: Nova operação estatal Estado adicionado\nDispositivos ATW: Operação de comandoModeZone1 e operação ModeZone2 fixo",
-                "nl": "Het verwerken van fout gegevens uit de wolk werd verbeterd\nAdmin UI is op de hoogte\nATW apparaten: Nieuwe staat hittePumpFrequentie toegevoegd\nATW apparaten: Nieuwe staatsoperatie Staat toegevoegd\nATW apparaten: Commando's operation ModeZone1 en operationele ModeZone2 gerepareerd",
-                "fr": "La manipulation des données d'erreur du cloud a été améliorée\nAdmin UI a été mis à jour\nDispositifs ATW: Nouvelle chaleur étatPumpFrequency ajouté\nDispositifs ATW: Nouvelle opération étatique État ajouté\nDispositifs ATW: Opération des commandesModeZone1 et opération ModeZone2 fixe",
-                "it": "La gestione dei dati di errore da cloud è stata migliorata\nAdmin UI è stato aggiornato\nDispositivi ATW: Nuovo stato di calorePumpFrequenza aggiunto\nDispositivi ATW: Nuova operazione di stato Stato aggiunto\nDispositivi ATW: Funzionamento comandiModeZone1 e funzionamento ModeZone2 fisso",
-                "es": "Se mejoró el manejo de datos de error de la nube\nAdmin UI ha sido actualizado\nDispositivos ATW: Nuevo calor del estadoPumpFrequency añadido\nDispositivos ATW: Nueva operación estatal Estado añadido\nDispositivos ATW: Operación ComandosModeZone1 y operación ModeZone2 fijo",
-                "pl": "Użycie danych z chmur zostało poprawione\nAdminowy interfejs użytkownika został zaktualizowany\nUrządzenia ATW: Nowy stan ciepłowności\nUrządzenia ATW: Nowa operacja państwowa Państwo\nUrządzenia ATW: Operacja ModeZone1 i operacja ModeZone2",
-                "uk": "Удосконалено обробку даних помилок з хмари\nAdmin UI було оновлено\nПристрої ATW: Додана нова державна теплова системаPumpFrequency\nПристрої ATW: Нова державна операція додано\nПристрої ATW: Команди роботиModeZone1 і операція ModeZone2 фіксований",
-                "zh-cn": "处理云雾错误数据的情况有所改善\n附录一\nATW装置: 新州热餐会\nATW装置: 新的国家行动 国家加入\nATW装置: 指挥部业务ModeZone1和操作 ModeZone2 固定"
-            },
-            "1.3.1": {
-                "en": "fixed \"undefined is not a valid state value\" log messages\nfixed crash after connection is lost (e.g. due to missing internet connection)\nupdated admin UI and translations\nfixed a lot of adapter checker issues and warnings",
-                "de": "feste \"undefiniert ist kein gültiger zustandswert\"-log-nachrichten\nfester absturz nach der verbindung verloren (z.b. durch fehlende internetverbindung)\naktualisierung von admin UI und Übersetzungen\nviele adapter-checker probleme und warnungen behoben",
-                "ru": "фиксированные \"undefined не является действительным государственным значением\" лог-сообщения\nфиксированная авария после подключения теряется (например, из-за отсутствия интернет-соединения)\nобновленный admin UI и переводы\nисправили множество вопросов и предупреждений адаптера",
-                "pt": "fixo \"indefinido não é um valor de estado válido\" mensagens de log\nacidente fixo após a conexão é perdida (por exemplo, devido à falta de conexão à internet)\nuI administrador atualizado e traduções\ncorrigiu um monte de problemas do verificador do adaptador e avisos",
-                "nl": "\"gefinancierd is geen geldige staatswaarde\"\nvertaling:\nvertaling:\nveel adapter controleerproblemen en waarschuwingen",
-                "fr": "fixe \"non défini n'est pas une valeur d'état valide\" messages journal\ncrash fixe après la connexion est perdu (par exemple en raison de connexion internet manquante)\nmise à jour de l'interface utilisateur et des traductions\nfixe beaucoup de problèmes de contrôle de l'adaptateur et des avertissements",
-                "it": "fisso \"non definito non è un valore di stato valido\" messaggi di registro\ncrash fisso dopo la connessione è perso (ad esempio a causa della connessione internet mancante)\naggiornato l'interfaccia utente e le traduzioni\nfisso un sacco di problemi e avvisi dell'adattatore",
-                "es": "fijo \"undefinido no es un valor de estado válido\" mensajes de registro\naccidente fijo después de la conexión se pierde (por ejemplo, debido a la falta de conexión a internet)\nadministración actualizada UI y traducciones\nfijo un montón de problemas de control de adaptador y advertencias",
-                "pl": "\"nie określone\" nie jest prawidłową wartością stanu (ang.)\nstała katastrofa po rozpadzie związku (np. ze względu na brak połączenia internetowego)\nuaktualnianie UI i tłumaczenia\nustalono wiele problemów z dostosowywaniem i ostrzeżeniem",
-                "uk": "виправлено \"невизначено не дійсне значення стану\"\nвиправлена аварійна аварія після з'єднання втрачається (наприклад, через відсутність підключення до інтернету)\nоновлено адмін UI і переклади\nвиправлено багато питань перевірки адаптерів та попередження",
-                "zh-cn": "固定的“未确定为有效国家价值”的逻辑信息\n连接后固定坠落(例如由于内联网联系缺失)\n最新附录UI和翻译\n固定许多适应检查员问题和警告"
-            },
-            "1.3.0": {
-                "en": "added online status to each device (visible in admin object tree)\nadded error status to each device (visible in admin object tree)\nadded error code and messages to device info\nadded new command \"timerToggle\" to enable/disable device timers",
-                "de": "den online-status zu jedem gerät hinzugefügt (sichtbar in admin-objektbaum)\nhinzugefügt fehlerstatus zu jedem gerät (sichtbar in admin-objektbaum)\nfehlercode und nachrichten zu geräteinformationen hinzugefügt\nneuen Befehl Timer Toggle, um Geräte-Timer zu aktivieren / zu deaktivieren",
-                "ru": "добавлен онлайн статус на каждое устройство (видимо в админ объект дерево)\nдобавлен статус ошибки для каждого устройства (видимый в админ объект дерево)\nдобавлен код ошибки и сообщения к информации о устройстве\nдобавлен новый командный таймер Toggle для включения/отключить таймеры устройства",
-                "pt": "adicionado status on-line para cada dispositivo (visível em árvore de objeto admin)\nstatus de erro adicionado a cada dispositivo (visível na árvore de objeto admin)\nadicionado código de erro e mensagens para a informação do dispositivo\nadicionado novo temporizador de comando Alternar para ativar/desativar temporizadores de dispositivo",
-                "nl": "voegde online status toe aan elk apparaat (visible in admin object boom)\nerror status toegevoegd aan elk apparaat\nvoegde foutcode toe en berichten om info te apparaat\nvertaling: Toggle toverbaar/disable apparatuur timers",
-                "fr": "statut en ligne ajouté à chaque appareil (visible dans l'objet administrateur)\nstatut d'erreur ajouté à chaque appareil (visible dans l'objet administrateur)\ncode d'erreur et messages ajoutés à l'info de périphérique\nnouvelle commande timer Toggle to enable/disable device timers",
-                "it": "stato aggiunto online a ogni dispositivo (visibile nell'albero degli oggetti di amministrazione)\nstato di errore aggiunto a ogni dispositivo (visibile nell'albero degli oggetti di amministrazione)\ncodice di errore aggiunto e messaggi alle informazioni del dispositivo\naggiunto nuovo timer di comando Toggle per attivare/disattivare timer del dispositivo",
-                "es": "estado en línea añadido a cada dispositivo (visible en árbol de objeto admin)\nestado de error añadido a cada dispositivo (visible en el árbol de objeto admin)\nañadido código de error y mensajes a la información del dispositivo\nnuevo temporizador de comando Toggle para activar/desactivar los temporizadores de dispositivo",
-                "pl": "dodano status internetowy każdej urządzenie (widoczne w drzewie obiektowym)\ndodano status błędu dla każdego urządzenia (widoczny w drzewie adminowym)\ndodał kod błędu i wiadomości do urządzenie info\ndodał nowy czas dowodzenia. Umożliwia udostępnienie lub rozbieżne czasowniki",
-                "uk": "додано статус онлайн до кожного пристрою (невидимий у дереві об'єкта адміністратора)\nдодано статус помилки до кожного пристрою (невидимий у дереві об'єкта адміністратора)\nдодано код помилки та повідомлення до інформації про пристрій\nдодано новий таймер команд Увімкнути / вимкнути таймери пристроїв",
-                "zh-cn": "每个装置的在线地位(目标树中的)\n每个装置的错误地位(目标树中的)\n添加错误编码和电器的信息\n增加新的指挥时间 D. 设法使/可以区分的装置时间"
-            }
-        },
-        "titleLang": {
-            "en": "MELCloud",
-            "de": "MELCloud",
-            "ru": "MELCloud",
-            "pt": "MELCloud",
-            "nl": "MELCloud",
-            "fr": "MELCloud",
-            "it": "MELCloud",
-            "es": "MELCloud",
-            "pl": "MELCloud",
-            "zh-cn": "MEL云",
-            "uk": "MELCloud"
-        },
-        "desc": {
-            "en": "This adapter integrates Mitsubishi Electric devices via MELCloud into ioBroker.",
-            "de": "Dieser Adapter integriert Mitsubishi Electric Geräte über MELCloud in ioBroker.",
-            "ru": "Этот адаптер интегрирует Mitsubishi Electric устройства через MELCloud в ioBroker.",
-            "pt": "Este adaptador integra dispositivos Mitsubishi Electric via MELCloud no ioBroker.",
-            "nl": "Deze adapter integreert Mitsubishi Elektrische apparaten via MELCloud in ioBroker.",
-            "fr": "Cet adaptateur intègre les appareils Mitsubishi Electric via MELCloud dans ioBroker.",
-            "it": "Questo adattatore integra i dispositivi Mitsubishi Electric tramite MELCloud in ioBroker.",
-            "es": "Este adaptador integra dispositivos eléctricos Mitsubishi vía MELCloud en ioBroker.",
-            "pl": "Adapter ten integruje urządzenia Mitsubishi Electric za pośrednictwem MELCloud z joBroker.",
-            "uk": "Цей адаптер інтегрує Mitsubishi Electric devices через MELCloud в ioBroker.",
-            "zh-cn": "这个适配器通过MELCloud将三菱电器设备集成到ioBroker中."
-        },
-        "authors": [
-            "Black-Thunder <glwars@aol.de>"
-        ],
-        "keywords": [
-            "home automation",
-            "MELCloud",
-            "Mitsubishi",
-            "airconditioning"
-        ],
-        "license": "MIT",
-        "platform": "Javascript/Node.js",
-        "main": "main.js",
-        "icon": "melcloud.png",
-        "enabled": false,
-        "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
-        "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
-        "loglevel": "info",
-        "mode": "daemon",
-        "type": "climate-control",
-        "compact": true,
-        "connectionType": "cloud",
-        "dataSource": "poll",
-        "adminUI": {
-            "config": "json"
-        },
-        "dependencies": [
-            {
-                "js-controller": ">=3.3.22"
-            }
-        ],
-        "globalDependencies": [
-            {
-                "admin": ">=5.1.13"
-            }
-        ],
-        "tier": 2
+  "common": {
+    "name": "melcloud",
+    "version": "1.4.0",
+    "news": {
+      "1.4.0": {
+        "en": "Added new option to completely disable polling",
+        "de": "Neue Option zur völligen Deaktivierung der Abfrage hinzugefügt",
+        "ru": "Добавлена новая опция полностью отключить голосование",
+        "pt": "Adicionada nova opção para desativar completamente a votação",
+        "nl": "Nieuwe optie toegevoegd om polling volledig uit te schakelen",
+        "fr": "Ajout d'une nouvelle option pour désactiver complètement le vote",
+        "it": "Aggiunto nuova opzione per disattivare completamente polling",
+        "es": "Añadido nueva opción para la votación completamente deshabilitada",
+        "pl": "Dodano nową opcję do całkowitego wyłączenia sondażu",
+        "uk": "Додана нова опція повністю відключити опитування",
+        "zh-cn": "添加新选项以完全禁用投票"
+      },
+      "1.3.7": {
+        "en": "Login procedure was refactored to reduce number of calls to the MELCloud servers\nMinimum polling interval was raised to 5 minutes\nDefault polling interval was raised to 10 minutes",
+        "de": "Ein Login-Verfahren wurde neu erstellt, um die Anzahl der Anrufe auf die MELCloud-Server zu reduzieren\nMindestabfrageintervall wurde auf 5 Minuten erhöht\nDefault-Umfrageintervall wurde auf 10 Minuten erhöht",
+        "ru": "Процедура входа была восстановлена, чтобы уменьшить количество звонков на серверы MELCloud\nМинимальный интервал опроса был увеличен до 5 минут\nПериод опроса по умолчанию был увеличен до 10 минут",
+        "pt": "O procedimento de login foi refactored para reduzir o número de chamadas para os servidores MELCloud\nO intervalo mínimo de votação foi aumentado para 5 minutos\nO intervalo de votação padrão foi aumentado para 10 minutos",
+        "nl": "Aanmeldprocedure werd aangepast om het aantal oproepen naar de MELCloud-servers te verminderen\nHet minimale peilingsinterval werd verhoogd tot 5 minuten\nStandaard polling interval werd verhoogd tot 10 minuten",
+        "fr": "La procédure de connexion a été remaniée pour réduire le nombre d'appels vers les serveurs MELCloud\nL'intervalle minimal de scrutin a été porté à 5 minutes\nL'intervalle de vote par défaut a été porté à 10 minutes",
+        "it": "La procedura di accesso è stata rifatto in modo da ridurre il numero di chiamate ai server MELCloud\nL'intervallo minimo di inquinamento è stato sollevato a 5 minuti\nL'intervallo di polling predefinito è stato sollevato a 10 minuti",
+        "es": "El procedimiento de inicio de sesión fue refactorizado para reducir el número de llamadas a los servidores MELCloud\nEl intervalo mínimo de votación fue elevado a 5 minutos\nEl intervalo de votación por defecto se crió a 10 minutos",
+        "pl": "Procedura logowania została zmieniona w celu zmniejszenia liczby połączeń do serwerów MELCloud\nMinimalny odstęp między sondażem został podniesiony do 5 minut\nDomyślny interwał wyborczy został podniesiony do 10 minut",
+        "uk": "Процедура входу була рефакторована для зменшення кількості дзвінків на серверах MELCloud\nМінімальний інтервал опитування до 5 хвилин\nЗа замовчуванням інтервал опитування до 10 хвилин",
+        "zh-cn": "重新设计了登录程序,以减少给MELCloud服务器的通话次数\n最低投票间隔提高到5分钟\n默认投票间隔提高到10分钟"
+      },
+      "1.3.6": {
+        "en": "Minimum Node.js Version was raised to 16\nDependencies were updated",
+        "de": "Minimum Node.js Version wurde auf 16 erhöht\nAbhängigkeiten wurden aktualisiert",
+        "ru": "Минимальная версия Node.js была поднята до 16\nВ зависимости были обновлены",
+        "pt": "A versão mínima do Node.js foi aumentada para 16\nAs dependências foram atualizadas",
+        "nl": "Minimum Node\nDe afhankelijkheid werd bijgewerkt",
+        "fr": "Version minimale Node.js a été portée à 16\nLes dépendances ont été mises à jour",
+        "it": "Versione minima Node.js è stato sollevato a 16\nLe dipendenze sono state aggiornate",
+        "es": "Versión mínima Node.js se crió a 16\nSe actualizaron las dependencias",
+        "pl": "Wersja Minimum Node została podniesiona do 16\nZależności były aktualizowane",
+        "uk": "До 16\nЗалежність оновлено",
+        "zh-cn": "最低工资提高到16个。\n已更新了属地"
+      },
+      "1.3.5": {
+        "en": "Memory leak was fixed",
+        "de": "Speicherleck wurde fixiert",
+        "ru": "Утечка памяти была исправлена",
+        "pt": "Vazamento de memória foi corrigido",
+        "nl": "Memorylek was gerepareerd",
+        "fr": "La fuite de mémoire a été corrigée",
+        "it": "La perdita di memoria è stata fissata",
+        "es": "Se fijó la fuga de memoria",
+        "pl": "Wyciek pamięci został ustalony",
+        "uk": "Витік пам'яті фіксований",
+        "zh-cn": "Mmory leak是固定的。"
+      },
+      "1.3.4": {
+        "en": "Certificate issues were fixed (e.g. \"Error: unable to verify the first certificate\")",
+        "de": "Zertifikate wurden behoben (z.B. \"Fehler: nicht in der Lage, das erste Zertifikat zu überprüfen\")",
+        "ru": "Исправлены проблемы с сертификатом (например, \"Error: не удалось проверить первый сертификат\")",
+        "pt": "Foram corrigidos problemas de certificado (por exemplo, \"Error: incapaz de verificar o primeiro certificado\")",
+        "nl": "Bepaalde kwesties werden gerepareerd (e.g \"Error: niet in staat om het eerste certificaat te bevestigen\"",
+        "fr": "Les questions de certificat ont été corrigées (p. ex. \"Error: incapable de vérifier le premier certificat\")",
+        "it": "I problemi del certificato sono stati risolti (ad esempio \"Errore: incapace di verificare il primo certificato\")",
+        "es": "Los números de certificado fueron fijos (por ejemplo \"Error: incapaz de verificar el primer certificado\")",
+        "pl": "Zamknięto dokumenty (np. Eror: nie mogąc zweryfikować pierwszego certyfikatu)",
+        "uk": "Питання довідки були виправлені (наприклад, \"Особливості: не вдалося перевірити перший сертифікат\")",
+        "zh-cn": "核证问题是固定的(例如“签证:无法核实第一次证书”)"
+      },
+      "1.3.3": {
+        "en": "Handling of error data from cloud was improved\nAdmin UI has been updated\nATW devices: New state \"heatPumpFrequency\" added\nATW devices: New state \"operationState\" added\nATW devices: Commands \"operationModeZone1\" and \"operationModeZone2\" fixed",
+        "de": "Die Handhabung von Fehlerdaten aus der Cloud wurde verbessert\nAdmin UI wurde aktualisiert\nATW-Geräte: Neue ZustandswärmePumpFrequenz hinzugefügt\nATW-Geräte: Neuer Zustandsbetrieb Staat hinzugefügt\nATW-Geräte: Befehle OperationModeZone1 und Betrieb ModeZone2 fixiert",
+        "ru": "Улучшена обработка данных об ошибках из облака\nAdmin UI обновлен\nATW устройства: Новый государственный теплаPumpFrequency добавил\nATW устройства: Новая государственная операция Государство добавлено\nATW устройства: Команды операцияModeZone1 и операция ModeZone2 фиксированный",
+        "pt": "A manipulação de dados de erro da nuvem foi melhorada\nAdmin UI foi atualizado\nDispositivos ATW: Novo estado heatPumpFrequency adicionado\nDispositivos ATW: Nova operação estatal Estado adicionado\nDispositivos ATW: Operação de comandoModeZone1 e operação ModeZone2 fixo",
+        "nl": "Het verwerken van fout gegevens uit de wolk werd verbeterd\nAdmin UI is op de hoogte\nATW apparaten: Nieuwe staat hittePumpFrequentie toegevoegd\nATW apparaten: Nieuwe staatsoperatie Staat toegevoegd\nATW apparaten: Commando's operation ModeZone1 en operationele ModeZone2 gerepareerd",
+        "fr": "La manipulation des données d'erreur du cloud a été améliorée\nAdmin UI a été mis à jour\nDispositifs ATW: Nouvelle chaleur étatPumpFrequency ajouté\nDispositifs ATW: Nouvelle opération étatique État ajouté\nDispositifs ATW: Opération des commandesModeZone1 et opération ModeZone2 fixe",
+        "it": "La gestione dei dati di errore da cloud è stata migliorata\nAdmin UI è stato aggiornato\nDispositivi ATW: Nuovo stato di calorePumpFrequenza aggiunto\nDispositivi ATW: Nuova operazione di stato Stato aggiunto\nDispositivi ATW: Funzionamento comandiModeZone1 e funzionamento ModeZone2 fisso",
+        "es": "Se mejoró el manejo de datos de error de la nube\nAdmin UI ha sido actualizado\nDispositivos ATW: Nuevo calor del estadoPumpFrequency añadido\nDispositivos ATW: Nueva operación estatal Estado añadido\nDispositivos ATW: Operación ComandosModeZone1 y operación ModeZone2 fijo",
+        "pl": "Użycie danych z chmur zostało poprawione\nAdminowy interfejs użytkownika został zaktualizowany\nUrządzenia ATW: Nowy stan ciepłowności\nUrządzenia ATW: Nowa operacja państwowa Państwo\nUrządzenia ATW: Operacja ModeZone1 i operacja ModeZone2",
+        "uk": "Удосконалено обробку даних помилок з хмари\nAdmin UI було оновлено\nПристрої ATW: Додана нова державна теплова системаPumpFrequency\nПристрої ATW: Нова державна операція додано\nПристрої ATW: Команди роботиModeZone1 і операція ModeZone2 фіксований",
+        "zh-cn": "处理云雾错误数据的情况有所改善\n附录一\nATW装置: 新州热餐会\nATW装置: 新的国家行动 国家加入\nATW装置: 指挥部业务ModeZone1和操作 ModeZone2 固定"
+      },
+      "1.3.1": {
+        "en": "fixed \"undefined is not a valid state value\" log messages\nfixed crash after connection is lost (e.g. due to missing internet connection)\nupdated admin UI and translations\nfixed a lot of adapter checker issues and warnings",
+        "de": "feste \"undefiniert ist kein gültiger zustandswert\"-log-nachrichten\nfester absturz nach der verbindung verloren (z.b. durch fehlende internetverbindung)\naktualisierung von admin UI und Übersetzungen\nviele adapter-checker probleme und warnungen behoben",
+        "ru": "фиксированные \"undefined не является действительным государственным значением\" лог-сообщения\nфиксированная авария после подключения теряется (например, из-за отсутствия интернет-соединения)\nобновленный admin UI и переводы\nисправили множество вопросов и предупреждений адаптера",
+        "pt": "fixo \"indefinido não é um valor de estado válido\" mensagens de log\nacidente fixo após a conexão é perdida (por exemplo, devido à falta de conexão à internet)\nuI administrador atualizado e traduções\ncorrigiu um monte de problemas do verificador do adaptador e avisos",
+        "nl": "\"gefinancierd is geen geldige staatswaarde\"\nvertaling:\nvertaling:\nveel adapter controleerproblemen en waarschuwingen",
+        "fr": "fixe \"non défini n'est pas une valeur d'état valide\" messages journal\ncrash fixe après la connexion est perdu (par exemple en raison de connexion internet manquante)\nmise à jour de l'interface utilisateur et des traductions\nfixe beaucoup de problèmes de contrôle de l'adaptateur et des avertissements",
+        "it": "fisso \"non definito non è un valore di stato valido\" messaggi di registro\ncrash fisso dopo la connessione è perso (ad esempio a causa della connessione internet mancante)\naggiornato l'interfaccia utente e le traduzioni\nfisso un sacco di problemi e avvisi dell'adattatore",
+        "es": "fijo \"undefinido no es un valor de estado válido\" mensajes de registro\naccidente fijo después de la conexión se pierde (por ejemplo, debido a la falta de conexión a internet)\nadministración actualizada UI y traducciones\nfijo un montón de problemas de control de adaptador y advertencias",
+        "pl": "\"nie określone\" nie jest prawidłową wartością stanu (ang.)\nstała katastrofa po rozpadzie związku (np. ze względu na brak połączenia internetowego)\nuaktualnianie UI i tłumaczenia\nustalono wiele problemów z dostosowywaniem i ostrzeżeniem",
+        "uk": "виправлено \"невизначено не дійсне значення стану\"\nвиправлена аварійна аварія після з'єднання втрачається (наприклад, через відсутність підключення до інтернету)\nоновлено адмін UI і переклади\nвиправлено багато питань перевірки адаптерів та попередження",
+        "zh-cn": "固定的“未确定为有效国家价值”的逻辑信息\n连接后固定坠落(例如由于内联网联系缺失)\n最新附录UI和翻译\n固定许多适应检查员问题和警告"
+      }
     },
-    "encryptedNative": [
-        "melCloudPassword"
-    ],
-    "protectedNative": [
-        "melCloudPassword"
-    ],
-    "native": {
-        "melCloudEmail": "",
-        "melCloudLanguage": 4,
-        "enablePolling": false,
-        "pollingInterval": 10
+    "titleLang": {
+      "en": "MELCloud",
+      "de": "MELCloud",
+      "ru": "MELCloud",
+      "pt": "MELCloud",
+      "nl": "MELCloud",
+      "fr": "MELCloud",
+      "it": "MELCloud",
+      "es": "MELCloud",
+      "pl": "MELCloud",
+      "zh-cn": "MEL云",
+      "uk": "MELCloud"
     },
-    "objects": [],
-    "instanceObjects": []
+    "desc": {
+      "en": "This adapter integrates Mitsubishi Electric devices via MELCloud into ioBroker.",
+      "de": "Dieser Adapter integriert Mitsubishi Electric Geräte über MELCloud in ioBroker.",
+      "ru": "Этот адаптер интегрирует Mitsubishi Electric устройства через MELCloud в ioBroker.",
+      "pt": "Este adaptador integra dispositivos Mitsubishi Electric via MELCloud no ioBroker.",
+      "nl": "Deze adapter integreert Mitsubishi Elektrische apparaten via MELCloud in ioBroker.",
+      "fr": "Cet adaptateur intègre les appareils Mitsubishi Electric via MELCloud dans ioBroker.",
+      "it": "Questo adattatore integra i dispositivi Mitsubishi Electric tramite MELCloud in ioBroker.",
+      "es": "Este adaptador integra dispositivos eléctricos Mitsubishi vía MELCloud en ioBroker.",
+      "pl": "Adapter ten integruje urządzenia Mitsubishi Electric za pośrednictwem MELCloud z joBroker.",
+      "uk": "Цей адаптер інтегрує Mitsubishi Electric devices через MELCloud в ioBroker.",
+      "zh-cn": "这个适配器通过MELCloud将三菱电器设备集成到ioBroker中."
+    },
+    "authors": [
+      "Black-Thunder <glwars@aol.de>"
+    ],
+    "keywords": [
+      "home automation",
+      "MELCloud",
+      "Mitsubishi",
+      "airconditioning"
+    ],
+    "license": "MIT",
+    "platform": "Javascript/Node.js",
+    "main": "main.js",
+    "icon": "melcloud.png",
+    "enabled": false,
+    "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
+    "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "climate-control",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=3.3.22"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=5.1.13"
+      }
+    ],
+    "tier": 2
+  },
+  "encryptedNative": [
+    "melCloudPassword"
+  ],
+  "protectedNative": [
+    "melCloudPassword"
+  ],
+  "native": {
+    "melCloudEmail": "",
+    "melCloudLanguage": 4,
+    "enablePolling": false,
+    "pollingInterval": 10
+  },
+  "objects": [],
+  "instanceObjects": []
 }

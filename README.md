@@ -29,7 +29,7 @@ Documentation:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-### __WORK IN PROGRESS__
+### 1.4.0 (2024-02-29)
 * (Black-Thunder) Added new option to completely disable polling
 
 ### 1.3.7 (2024-02-09)
