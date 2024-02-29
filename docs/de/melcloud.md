@@ -10,9 +10,12 @@ Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen 
 
 ## Hinweise
 
-* Ab v1.1.1 wurde die Ver-/Entschlüsselung des Passworts geändert. Daher muss bei einem Upgrade einmalig das Passwort erneut in den Adapter-Einstellungen eingeben werden. Ansonsten schlägt die Anmeldung fehl und der Adapter bleibt auf rot.
+* Ab v1.1.1 wurde die Ver-/Entschlüsselung des Passwortes geändert. Daher muss bei einem Upgrade das Passwort in den Adapter-Einstellungen einmalig neu eingegeben werden. Ansonsten schlägt die Anmeldung fehl und der Adapter bleibt rot.
 * Ab v1.1.3 muss js-controller mindestens in der Version 3.1 installiert sein.
-* Bei einem Upgrade auf v1.2.0 (oder höher) bitte einmalig die Objektstrukturen unter "melcloud.X.devices.Y.reports" komplett löschen und den Adapter neustarten, damit diese neu angelegt werden können. Die neue Struktur ist weiter unten beschrieben.
+* Bei einem Upgrade auf v1.2.0 (oder höher) bitte einmalig die Objektstrukturen unter "melcloud.X.devices.YYYYY.reports" komplett löschen und den Adapter neu starten, damit diese neu erstellt werden können. Die neue Struktur ist in der Dokumentation beschrieben.
+* Falls der Fehler "Error: unable to verify the first certificate" auftritt, bitte auf Version 1.3.5 oder höher updaten.
+* Ab v1.3.6 muss mindestens Node.Js 16 verwendet werden.
+* Ab v1.3.7 ist das minimale Abfrageintervall auf 5 Minuten beschränkt.
 
 ## Konfiguration
 
@@ -21,7 +24,8 @@ Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen 
 
 An dieser Stelle kann die jeweilige Adapter-Instanz konfiguriert werden. Zwingend nötig für die Funktionalität sind die Zugangsdaten (E-Mail-Adresse und Passwort) des MELCloud-Accounts.
 
-Auf der zweiten Tabe kann die Region des Accounts angegeben werden. Zusätzlich wird hier das Intervall (in Minuten) angegeben, wie oft Daten von der MELCloud abgerufen und gespeichert werden sollen. Das kleinstmögliche Intervall ist 5 Minuten, um zu verhindern, dass der MELCloud-Account wegen zu häufiger Abfragen temporär gesperrt wird. Sollte es während des Betriebs des Adapters zu Verbindungsproblemen mit der MELCloud (z.B. Serverausfall, Internetabbruch) kommen, so wird höchstens noch dreimal versucht, eine Verbindung herzustellen. Sollte dies dann auch nicht gelingen, so wird der nächste Versuch erst in einer Stunde stattfinden.
+Auf der zweiten Tabe kann die Region des Accounts angegeben werden. Zusätzlich kann hier der regelmäßige Abruf der Daten aus der MELCLoud aktiviert bzw. deaktiviert werden.
+Sollte dies aktiviert sein, kann das Intervall (in Minuten) angegeben werden, wie oft Daten von der MELCloud abgerufen und gespeichert werden sollen. Das kleinstmögliche Intervall beträgt 5 Minuten, um zu verhindern, dass der MELCloud-Account aufgrund zu häufiger Abfragen vorübergehend gesperrt wird. Sollte es während des Betriebs des Adapters zu Verbindungsproblemen mit der MELCloud kommen (z.B. Serverausfall, Internetunterbrechung), wird maximal dreimal versucht, eine Verbindung herzustellen. Gelingt dies auch nicht, wird der nächste Versuch erst in einer Stunde unternommen. 
 
 ## Objekte
 

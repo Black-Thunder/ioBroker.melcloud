@@ -10,9 +10,12 @@ In order to use this adapter, there are a few things you have to prepare in adva
 
 ## Upgrade notes
 
-* In v1.1.1 password de-/encryption was changes. If you are upgrading from a lower version you have to enter your password one more time in  the adapter settings. Otherwise login will fail and the adapter won't connect to the cloud.
-* Starting with v1.1.3 js-controller has to be installed in v3.1 or greater.
-* If you are upgrading to v1.2.0 (or higher) you have to delete all objects under "melcloud.X.devices.Y.reports" completly. Afterwards restart the adapter, so that the new object structure can be created correctly. The new structure is documented below.
+* In v1.1.1 the password decryption/encryption was changed. If you are upgrading from a lower version, you must enter your password again in the adapter settings. Otherwise login will fail and the adapter won't connect to the cloud.
+* Starting with v1.1.3, js-controller must be installed in v3.1 or higher.
+* If you are upgrading to v1.2.0 (or higher), you must completely delete all items under "melcloud.X.devices.Y.reports". Then restart the adapter for the new object structure to be created correctly. The new structure is documented below.
+* If you receive the error message "Error: unable to verify the first certificate", please upgrade to v1.3.5 or higher.
+* Starting with v1.3.6, Node.Js 16 is required.
+* Starting with v1.3.7, the minimum polling interval is limited to 5 minutes.
 
 ## Configuration
 
@@ -21,11 +24,12 @@ In order to use this adapter, there are a few things you have to prepare in adva
 
 Here you can configure your adapter instance. Mandatory for the adapter to work are your MELCloud credentials (email address and password). 
 
-On the second tab you need to specify your account region. Apart from that you can configure the time interval when your device data is polled and updated from MELCloud (minimum 5 minutes to avoid being throttled by the MELCloud servers). If at any time the connection to MELCloud should fail (e.g., server problem, internet connection issues), the adapter tries at a maximum of three times to reconnect. Should there be still no connection after these retries, the next retry will take place after one hour.
+On the second tab you need to specify your account region. In addition, you can enable or disable periodic polling of data from MELCloud.
+If enabled, the time interval when your device data is polled and updated from MELCloud (minimum 5 minutes to avoid being throttled by MELCloud servers). If the connection to MELCloud should fail at any time (e.g. server problem, internet connection problems), the adapter will try to reconnect up to three times. If there is still no connection after these retries, the next retry will take place after one hour.
 
 ## Objects
 
-After successful start of the adapter instance (X) your devices are queried from MELCloud. For each device (Y) there will be a separate node.
+After successful start of the adapter instance (X), your devices are queried by MELCloud. For each device (Y) there will be a separate node.
 
 ### melcoud.X.info
 
