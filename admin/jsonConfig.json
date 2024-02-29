@@ -145,6 +145,12 @@
 					"md": 6,
 					"lg": 2
 				},
+				"enablePolling": {
+					"type": "checkbox",
+					"label": "Enable periodic polling",
+					"newLine": true,
+					"tooltip": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic."
+				},
 				"pollingInterval": {
 					"type": "number",
 					"label": "Polling interval",
@@ -154,7 +160,8 @@
 					"tooltip": "Enter your desired polling interval (in minutes) here to query data from MELCloud",
 					"sm": 12,
 					"md": 6,
-					"lg": 2
+					"lg": 2,
+					"hidden": "data.enablePolling == false"
 				}
 			}
 		}
