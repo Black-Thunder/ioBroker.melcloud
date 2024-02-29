@@ -7,5 +7,7 @@
     "Options": "Параметры",
     "Password": "пароль",
     "Polling interval": "Интервал опроса",
-    "Select language": "Выберите язык"
+    "Select language": "Выберите язык",
+    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Определяет, следует ли периодически получать данные из MELCloud. Отключите, если не требуется, чтобы уменьшить сетевой трафик.",
+    "Enable periodic polling": "Включить периодический опрос"
 }

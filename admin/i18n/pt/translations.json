@@ -7,5 +7,7 @@
     "Options": "Opções",
     "Password": "Senha",
     "Polling interval": "Intervalo de pesquisa",
-    "Select language": "Selecione o idioma"
+    "Select language": "Selecione o idioma",
+    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Define se os dados devem ser recuperados periodicamente do MELCloud. Desative se não for necessário para reduzir o tráfego de rede.",
+    "Enable periodic polling": "Habilitar sondagens periódicas"
 }

@@ -7,5 +7,7 @@
     "Options": "Opties",
     "Password": "Wachtwoord",
     "Polling interval": "Polling-interval",
-    "Select language": "Selecteer taal"
+    "Select language": "Selecteer taal",
+    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Bepaalt of gegevens periodiek uit MELCloud moeten worden opgehaald. Schakel dit uit als dit niet nodig is om het netwerkverkeer te verminderen.",
+    "Enable periodic polling": "Schakel periodieke polling in"
 }
