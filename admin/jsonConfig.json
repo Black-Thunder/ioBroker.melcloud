@@ -160,7 +160,8 @@
 					"tooltip": "Enter your desired polling interval (in minutes) here to query data from MELCloud",
 					"sm": 12,
 					"md": 6,
-					"lg": 2
+					"lg": 2,
+					"hidden": "data.enablePolling == false"
 				}
 			}
 		}
