@@ -168,7 +168,8 @@
     "melCloudEmail": "",
     "melCloudLanguage": 4,
     "enablePolling": false,
-    "pollingInterval": 10
+    "pollingInterval": 10,
+    "ignoreSslErrors": false
   },
   "objects": [],
   "instanceObjects": []

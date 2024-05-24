@@ -154,7 +154,7 @@
 				"pollingInterval": {
 					"type": "number",
 					"label": "Polling interval",
-					"newLine": true,
+					"newLine": false,
 					"min": 5,
 					"step": 1,
 					"tooltip": "Enter your desired polling interval (in minutes) here to query data from MELCloud",
@@ -162,6 +162,12 @@
 					"md": 6,
 					"lg": 2,
 					"hidden": "data.enablePolling == false"
+				},
+				"ignoreSslErrors": {
+					"type": "checkbox",
+					"label": "Ignore SSL errors",
+					"newLine": true,
+					"tooltip": "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means."
 				}
 			}
 		}

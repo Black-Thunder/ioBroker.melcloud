@@ -9,5 +9,7 @@
     "Polling interval": "Intervalle d'interrogation",
     "Select language": "Choisir la langue",
     "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Définit si les données doivent être périodiquement récupérées de MELCloud. Désactivez-le si cela n’est pas nécessaire pour réduire le trafic réseau.",
-    "Enable periodic polling": "Activer l'interrogation périodique"
+    "Enable periodic polling": "Activer l'interrogation périodique",
+    "Ignore SSL errors": "Ignorer les erreurs SSL",
+    "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Définit s'il faut ignorer les erreurs SSL lors de la communication avec le cloud. N'activez que si vous savez ce que cela signifie."
 }

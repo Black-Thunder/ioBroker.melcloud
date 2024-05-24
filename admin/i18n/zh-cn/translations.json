@@ -9,5 +9,7 @@
     "Polling interval": "轮询间隔",
     "Select language": "选择语言",
     "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "定义是否应定期从 MELCloud 检索数据。如果不需要，请禁用以减少网络流量。",
-    "Enable periodic polling": "启用定期轮询"
+    "Enable periodic polling": "启用定期轮询",
+    "Ignore SSL errors": "忽略 SSL 错误",
+    "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "定义与云通信时是否忽略 SSL 错误。仅当您知道其含义时才启用。"
 }

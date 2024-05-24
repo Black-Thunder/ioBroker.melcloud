@@ -49,6 +49,10 @@ class Melcloud extends utils.Adapter {
 			this.config.pollingInterval = 5;
 			this.log.warn("Polling interval can't be set lower than 5 minutes to avoid being throttled by the MELCloud servers. Now set to 5 minutes.");
 		}
+
+		if (this.config.ignoreSslErrors) {
+			this.log.info("SSL errors are ignored when communicating with the cloud. This is potentially insecure!");
+		}
 	}
 
 	async setAdapterConnectionState(isConnected) {

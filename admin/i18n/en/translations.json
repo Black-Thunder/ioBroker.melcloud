@@ -9,5 +9,7 @@
     "Polling interval": "Polling interval",
     "Select language": "Select language",
     "Enable periodic polling": "Enable periodic polling",
-    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic."
+    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.",
+    "Ignore SSL errors": "Ignore SSL errors",
+    "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means." : "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means."
 }
