@@ -25,7 +25,7 @@ Documentation:
 
 Discussion:
 
-- [ioBroker Forum thread](https://forum.iobroker.net/topic/40705/)
+- [ioBroker Forum](https://forum.iobroker.net/topic/40705/)
 
 ## Changelog
 
