@@ -20,9 +20,12 @@ This adapter integrates Mitsubishi Electric devices via MELCloud (https://www.me
 
 Documentation:
 
-- [Forum thread](https://forum.iobroker.net/topic/40705/test-adapter-melcloud-v1-1-x-latest)
 - [English description](https://github.com/Black-Thunder/ioBroker.melcloud/tree/master/docs/en/melcloud.md)
 - [Deutsche Beschreibung](https://github.com/Black-Thunder/ioBroker.melcloud/tree/master/docs/de/melcloud.md)
+
+Discussion:
+
+- [ioBroker Forum thread](https://forum.iobroker.net/topic/40705/test-adapter-melcloud-v1-1-x-latest)
 
 ## Changelog
 
