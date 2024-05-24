@@ -25,7 +25,7 @@ Documentation:
 
 Discussion:
 
-- [ioBroker Forum thread](https://forum.iobroker.net/topic/40705/test-adapter-melcloud-v1-1-x-latest)
+- [ioBroker Forum thread](https://forum.iobroker.net/topic/40705/)
 
 ## Changelog
 
