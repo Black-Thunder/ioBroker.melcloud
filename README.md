@@ -33,8 +33,7 @@ Discussion:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 1.4.1 (2024-05-24)
 
 - (Black-Thunder) Added new option to ignore SSL errors
 

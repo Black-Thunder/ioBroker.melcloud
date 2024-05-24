@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "news": {
+      "1.4.1": {
+        "en": "Added new option to ignore SSL errors",
+        "de": "Neue Option hinzugefügt, um SSL-Fehler zu ignorieren",
+        "ru": "Добавлена новая опция для игнорирования ошибок SSL",
+        "pt": "Adicionada nova opção para ignorar erros SSL",
+        "nl": "Nieuwe optie toegevoegd om SSL-fouten te negeren",
+        "fr": "Ajout de nouvelles options pour ignorer les erreurs SSL",
+        "it": "Aggiunta nuova opzione per ignorare gli errori SSL",
+        "es": "Nueva opción para ignorar errores SSL",
+        "pl": "Dodano nową opcję do ignorowania błędów SSL",
+        "uk": "Додано новий параметр для ігнорування помилок SSL",
+        "zh-cn": "添加新选项以忽略 SSL 错误"
+      },
       "1.4.0": {
         "en": "Added new option to completely disable polling",
         "de": "Neue Option zur völligen Deaktivierung der Abfrage hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "Użycie danych z chmur zostało poprawione\nAdminowy interfejs użytkownika został zaktualizowany\nUrządzenia ATW: Nowy stan ciepłowności\nUrządzenia ATW: Nowa operacja państwowa Państwo\nUrządzenia ATW: Operacja ModeZone1 i operacja ModeZone2",
         "uk": "Удосконалено обробку даних помилок з хмари\nAdmin UI було оновлено\nПристрої ATW: Додана нова державна теплова системаPumpFrequency\nПристрої ATW: Нова державна операція додано\nПристрої ATW: Команди роботиModeZone1 і операція ModeZone2 фіксований",
         "zh-cn": "处理云雾错误数据的情况有所改善\n附录一\nATW装置: 新州热餐会\nATW装置: 新的国家行动 国家加入\nATW装置: 指挥部业务ModeZone1和操作 ModeZone2 固定"
-      },
-      "1.3.1": {
-        "en": "fixed \"undefined is not a valid state value\" log messages\nfixed crash after connection is lost (e.g. due to missing internet connection)\nupdated admin UI and translations\nfixed a lot of adapter checker issues and warnings",
-        "de": "feste \"undefiniert ist kein gültiger zustandswert\"-log-nachrichten\nfester absturz nach der verbindung verloren (z.b. durch fehlende internetverbindung)\naktualisierung von admin UI und Übersetzungen\nviele adapter-checker probleme und warnungen behoben",
-        "ru": "фиксированные \"undefined не является действительным государственным значением\" лог-сообщения\nфиксированная авария после подключения теряется (например, из-за отсутствия интернет-соединения)\nобновленный admin UI и переводы\nисправили множество вопросов и предупреждений адаптера",
-        "pt": "fixo \"indefinido não é um valor de estado válido\" mensagens de log\nacidente fixo após a conexão é perdida (por exemplo, devido à falta de conexão à internet)\nuI administrador atualizado e traduções\ncorrigiu um monte de problemas do verificador do adaptador e avisos",
-        "nl": "\"gefinancierd is geen geldige staatswaarde\"\nvertaling:\nvertaling:\nveel adapter controleerproblemen en waarschuwingen",
-        "fr": "fixe \"non défini n'est pas une valeur d'état valide\" messages journal\ncrash fixe après la connexion est perdu (par exemple en raison de connexion internet manquante)\nmise à jour de l'interface utilisateur et des traductions\nfixe beaucoup de problèmes de contrôle de l'adaptateur et des avertissements",
-        "it": "fisso \"non definito non è un valore di stato valido\" messaggi di registro\ncrash fisso dopo la connessione è perso (ad esempio a causa della connessione internet mancante)\naggiornato l'interfaccia utente e le traduzioni\nfisso un sacco di problemi e avvisi dell'adattatore",
-        "es": "fijo \"undefinido no es un valor de estado válido\" mensajes de registro\naccidente fijo después de la conexión se pierde (por ejemplo, debido a la falta de conexión a internet)\nadministración actualizada UI y traducciones\nfijo un montón de problemas de control de adaptador y advertencias",
-        "pl": "\"nie określone\" nie jest prawidłową wartością stanu (ang.)\nstała katastrofa po rozpadzie związku (np. ze względu na brak połączenia internetowego)\nuaktualnianie UI i tłumaczenia\nustalono wiele problemów z dostosowywaniem i ostrzeżeniem",
-        "uk": "виправлено \"невизначено не дійсне значення стану\"\nвиправлена аварійна аварія після з'єднання втрачається (наприклад, через відсутність підключення до інтернету)\nоновлено адмін UI і переклади\nвиправлено багато питань перевірки адаптерів та попередження",
-        "zh-cn": "固定的“未确定为有效国家价值”的逻辑信息\n连接后固定坠落(例如由于内联网联系缺失)\n最新附录UI和翻译\n固定许多适应检查员问题和警告"
       }
     },
     "titleLang": {
