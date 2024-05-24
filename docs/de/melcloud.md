@@ -13,7 +13,6 @@ Um diesen Adapter korrekt verwenden zu können, müssen folgende Vorbereitungen 
 - Ab v1.1.1 wurde die Ver-/Entschlüsselung des Passwortes geändert. Daher muss bei einem Upgrade das Passwort in den Adapter-Einstellungen einmalig neu eingegeben werden. Ansonsten schlägt die Anmeldung fehl und der Adapter bleibt rot.
 - Ab v1.1.3 muss js-controller mindestens in der Version 3.1 installiert sein.
 - Bei einem Upgrade auf v1.2.0 (oder höher) bitte einmalig die Objektstrukturen unter "melcloud.X.devices.YYYYY.reports" komplett löschen und den Adapter neu starten, damit diese neu erstellt werden können. Die neue Struktur ist in der Dokumentation beschrieben.
-- Falls der Fehler "Error: unable to verify the first certificate" auftritt, bitte auf Version 1.3.5 oder höher updaten.
 - Ab v1.3.6 muss mindestens Node.Js 16 verwendet werden.
 - Ab v1.3.7 ist das minimale Abfrageintervall auf 5 Minuten beschränkt.
 

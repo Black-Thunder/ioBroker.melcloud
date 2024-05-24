@@ -13,7 +13,6 @@ In order to use this adapter, there are a few things you have to prepare in adva
 - In v1.1.1 the password decryption/encryption was changed. If you are upgrading from a lower version, you must enter your password again in the adapter settings. Otherwise login will fail and the adapter won't connect to the cloud.
 - Starting with v1.1.3, js-controller must be installed in v3.1 or higher.
 - If you are upgrading to v1.2.0 (or higher), you must completely delete all items under "melcloud.X.devices.Y.reports". Then restart the adapter for the new object structure to be created correctly. The new structure is documented below.
-- If you receive the error message "Error: unable to verify the first certificate", please upgrade to v1.3.5 or higher.
 - Starting with v1.3.6, Node.Js 16 is required.
 - Starting with v1.3.7, the minimum polling interval is limited to 5 minutes.
 
