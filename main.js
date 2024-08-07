@@ -330,7 +330,7 @@ class Melcloud extends utils.Adapter {
 				CloudPlatform.stopContextKeyInvalidation();
 			}
 
-			this.log.info("onUnload(): Cleaned everything up...");
+			this.log.debug("onUnload(): Cleaned everything up...");
 			callback();
 			// eslint-disable-next-line no-unused-vars
 		} catch (e) {
