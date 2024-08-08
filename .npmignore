@@ -5,7 +5,6 @@ nbproject/
 .vs*/
 *.code-workspace
 Thumbs.db
-gulpfile.js
 
 # CI test files
 test/
