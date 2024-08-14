@@ -33,8 +33,7 @@ Discussion:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 2.0.2 (2024-08-14)
 
 - (Black-Thunder) Dependencies were updated
 
