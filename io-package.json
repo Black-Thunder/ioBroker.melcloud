@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "news": {
+      "2.0.3": {
+        "en": "Responsive design for settings dialog was added",
+        "de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
+        "ru": "Добавлен ответный дизайн для диалога настроек",
+        "pt": "O projeto responsivo para configurações foi adicionado diálogo",
+        "nl": "Responsief ontwerp voor instellingendialoog is toegevoegd",
+        "fr": "La boîte de dialogue des paramètres a été ajoutée",
+        "it": "È stato aggiunto il design responsabile per la finestra di dialogo impostazioni",
+        "es": "Diseño responsable para el diálogo de configuración fue añadido",
+        "pl": "Dodano okno dialogowe odpowiadającego projektu ustawień",
+        "uk": "Додано адаптивний дизайн для діалогу налаштувань",
+        "zh-cn": "添加了设置对话框的响应设计"
+      },
       "2.0.2": {
         "en": "Dependencies were updated",
         "de": "Abhängigkeiten wurden aktualisiert",
@@ -80,19 +93,6 @@
         "pl": "Procedura logowania została zmieniona w celu zmniejszenia liczby połączeń do serwerów MELCloud\nMinimalny odstęp między sondażem został podniesiony do 5 minut\nDomyślny interwał wyborczy został podniesiony do 10 minut",
         "uk": "Процедура входу була рефакторована для зменшення кількості дзвінків на серверах MELCloud\nМінімальний інтервал опитування до 5 хвилин\nЗа замовчуванням інтервал опитування до 10 хвилин",
         "zh-cn": "重新设计了登录程序,以减少给MELCloud服务器的通话次数\n最低投票间隔提高到5分钟\n默认投票间隔提高到10分钟"
-      },
-      "1.3.6": {
-        "en": "Minimum Node.js Version was raised to 16\nDependencies were updated",
-        "de": "Minimum Node.js Version wurde auf 16 erhöht\nAbhängigkeiten wurden aktualisiert",
-        "ru": "Минимальная версия Node.js была поднята до 16\nВ зависимости были обновлены",
-        "pt": "A versão mínima do Node.js foi aumentada para 16\nAs dependências foram atualizadas",
-        "nl": "Minimum Node\nDe afhankelijkheid werd bijgewerkt",
-        "fr": "Version minimale Node.js a été portée à 16\nLes dépendances ont été mises à jour",
-        "it": "Versione minima Node.js è stato sollevato a 16\nLe dipendenze sono state aggiornate",
-        "es": "Versión mínima Node.js se crió a 16\nSe actualizaron las dependencias",
-        "pl": "Wersja Minimum Node została podniesiona do 16\nZależności były aktualizowane",
-        "uk": "До 16\nЗалежність оновлено",
-        "zh-cn": "最低工资提高到16个。\n已更新了属地"
       }
     },
     "titleLang": {

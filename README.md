@@ -33,8 +33,7 @@ Discussion:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 2.0.3 (2024-10-16)
 
 - (Black-Thunder) Responsive design for settings dialog was added
 
