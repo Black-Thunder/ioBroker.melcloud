@@ -1,175 +1,184 @@
 {
-	"type": "tabs",
-	"i18n": true,
-	"items": {
-		"credentialsTab": {
-			"type": "panel",
-			"label": "Login details",
-			"items": {
-				"melCloudEmail": {
-					"type": "text",
-					"label": "Email address",
-					"newLine": true,
-					"tooltip": "Enter your MELCloud email address",
-					"sm": 12,
-					"md": 6,
-					"lg": 2
-				},
-				"melCloudPassword": {
-					"type": "password",
-					"label": "Password",
-					"newLine": true,
-					"tooltip": "Enter your MELCloud password",
-					"visible": true,
-					"sm": 12,
-					"md": 6,
-					"lg": 2
-				}
-			}
-		},
-		"optionsTab": {
-			"type": "panel",
-			"label": "Options",
-			"items": {
-				"melCloudLanguage": {
-					"type": "select",
-					"label": "Select language",
-					"options": [
-						{
-							"label": "English",
-							"value": "0"
-						},
-						{
-							"label": "Български",
-							"value": "1"
-						},
-						{
-							"label": "Čeština",
-							"value": "2"
-						},
-						{
-							"label": "Dansk",
-							"value": "3"
-						},
-						{
-							"label": "Deutsch",
-							"value": "4"
-						},
-						{
-							"label": "Eesti",
-							"value": "5"
-						},
-						{
-							"label": "Español",
-							"value": "6"
-						},
-						{
-							"label": "Français",
-							"value": "7"
-						},
-						{
-							"label": "Հայերեն",
-							"value": "8"
-						},
-						{
-							"label": "Latviešu",
-							"value": "9"
-						},
-						{
-							"label": "Lietuvių",
-							"value": "10"
-						},
-						{
-							"label": "Magyar",
-							"value": "11"
-						},
-						{
-							"label": "Nederlands",
-							"value": "12"
-						},
-						{
-							"label": "Norwegian",
-							"value": "13"
-						},
-						{
-							"label": "Polski",
-							"value": "14"
-						},
-						{
-							"label": "Português",
-							"value": "15"
-						},
-						{
-							"label": "Русский",
-							"value": "16"
-						},
-						{
-							"label": "Suomi",
-							"value": "17"
-						},
-						{
-							"label": "Svenska",
-							"value": "18"
-						},
-						{
-							"label": "Italiano",
-							"value": "19"
-						},
-						{
-							"label": "Українська",
-							"value": "20"
-						},
-						{
-							"label": "Türkçe",
-							"value": "21"
-						},
-						{
-							"label": "Ελληνικά",
-							"value": "22"
-						},
-						{
-							"label": "Hrvatski",
-							"value": "23"
-						},
-						{
-							"label": "Română",
-							"value": "24"
-						},
-						{
-							"label": "Slovenščina",
-							"value": "25"
-						}
-					],
-					"newLine": true,
-					"sm": 12,
-					"md": 6,
-					"lg": 2
-				},
-				"enablePolling": {
-					"type": "checkbox",
-					"label": "Enable periodic polling",
-					"newLine": true,
-					"tooltip": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic."
-				},
-				"pollingInterval": {
-					"type": "number",
-					"label": "Polling interval",
-					"newLine": false,
-					"min": 5,
-					"step": 1,
-					"tooltip": "Enter your desired polling interval (in minutes) here to query data from MELCloud",
-					"sm": 12,
-					"md": 6,
-					"lg": 2,
-					"hidden": "data.enablePolling == false"
-				},
-				"ignoreSslErrors": {
-					"type": "checkbox",
-					"label": "Ignore SSL errors",
-					"newLine": true,
-					"tooltip": "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means."
-				}
-			}
-		}
-	}
+  "type": "tabs",
+  "tabsStyle": {
+    "width": "calc(100% - 100px)"
+  },
+  "i18n": true,
+  "items": {
+    "credentialsTab": {
+      "type": "panel",
+      "label": "Login details",
+      "items": {
+        "melCloudEmail": {
+          "type": "text",
+          "label": "Email address",
+          "newLine": true,
+          "tooltip": "Enter your MELCloud email address",
+          "sm": 12,
+          "md": 6,
+          "lg": 2
+        },
+        "melCloudPassword": {
+          "type": "password",
+          "label": "Password",
+          "newLine": true,
+          "tooltip": "Enter your MELCloud password",
+          "visible": true,
+          "xs": 12,
+          "sm": 12,
+          "md": 6,
+          "lg": 4,
+          "xl": 4
+        }
+      }
+    },
+    "optionsTab": {
+      "type": "panel",
+      "label": "Options",
+      "items": {
+        "melCloudLanguage": {
+          "type": "select",
+          "label": "Select language",
+          "options": [
+            {
+              "label": "English",
+              "value": "0"
+            },
+            {
+              "label": "Български",
+              "value": "1"
+            },
+            {
+              "label": "Čeština",
+              "value": "2"
+            },
+            {
+              "label": "Dansk",
+              "value": "3"
+            },
+            {
+              "label": "Deutsch",
+              "value": "4"
+            },
+            {
+              "label": "Eesti",
+              "value": "5"
+            },
+            {
+              "label": "Español",
+              "value": "6"
+            },
+            {
+              "label": "Français",
+              "value": "7"
+            },
+            {
+              "label": "Հայերեն",
+              "value": "8"
+            },
+            {
+              "label": "Latviešu",
+              "value": "9"
+            },
+            {
+              "label": "Lietuvių",
+              "value": "10"
+            },
+            {
+              "label": "Magyar",
+              "value": "11"
+            },
+            {
+              "label": "Nederlands",
+              "value": "12"
+            },
+            {
+              "label": "Norwegian",
+              "value": "13"
+            },
+            {
+              "label": "Polski",
+              "value": "14"
+            },
+            {
+              "label": "Português",
+              "value": "15"
+            },
+            {
+              "label": "Русский",
+              "value": "16"
+            },
+            {
+              "label": "Suomi",
+              "value": "17"
+            },
+            {
+              "label": "Svenska",
+              "value": "18"
+            },
+            {
+              "label": "Italiano",
+              "value": "19"
+            },
+            {
+              "label": "Українська",
+              "value": "20"
+            },
+            {
+              "label": "Türkçe",
+              "value": "21"
+            },
+            {
+              "label": "Ελληνικά",
+              "value": "22"
+            },
+            {
+              "label": "Hrvatski",
+              "value": "23"
+            },
+            {
+              "label": "Română",
+              "value": "24"
+            },
+            {
+              "label": "Slovenščina",
+              "value": "25"
+            }
+          ],
+          "newLine": true,
+          "xs": 12,
+          "sm": 12,
+          "md": 6,
+          "lg": 4,
+          "xl": 4
+        },
+        "enablePolling": {
+          "type": "checkbox",
+          "label": "Enable periodic polling",
+          "newLine": true,
+          "tooltip": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic."
+        },
+        "pollingInterval": {
+          "type": "number",
+          "label": "Polling interval",
+          "newLine": false,
+          "min": 5,
+          "step": 1,
+          "tooltip": "Enter your desired polling interval (in minutes) here to query data from MELCloud",
+          "xs": 12,
+          "sm": 12,
+          "md": 6,
+          "lg": 4,
+          "xl": 4,
+          "hidden": "data.enablePolling == false"
+        },
+        "ignoreSslErrors": {
+          "type": "checkbox",
+          "label": "Ignore SSL errors",
+          "newLine": true,
+          "tooltip": "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means."
+        }
+      }
+    }
+  }
 }
