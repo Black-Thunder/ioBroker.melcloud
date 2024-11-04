@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "news": {
+      "2.0.4": {
+        "en": "Responsive design for settings dialog was added",
+        "de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
+        "ru": "Добавлен ответный дизайн для диалога настроек",
+        "pt": "O projeto responsivo para configurações foi adicionado diálogo",
+        "nl": "Responsief ontwerp voor instellingendialoog is toegevoegd",
+        "fr": "La boîte de dialogue des paramètres a été ajoutée",
+        "it": "È stato aggiunto il design responsabile per la finestra di dialogo impostazioni",
+        "es": "Diseño responsable para el diálogo de configuración fue añadido",
+        "pl": "Dodano okno dialogowe odpowiadającego projektu ustawień",
+        "uk": "Додано адаптивний дизайн для діалогу налаштувань",
+        "zh-cn": "添加了设置对话框的响应设计"
+      },
       "2.0.3": {
         "en": "Responsive design for settings dialog was added",
         "de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "Dodano nową opcję do całkowitego wyłączenia sondażu",
         "uk": "Додана нова опція повністю відключити опитування",
         "zh-cn": "添加新选项以完全禁用投票"
-      },
-      "1.3.7": {
-        "en": "Login procedure was refactored to reduce number of calls to the MELCloud servers\nMinimum polling interval was raised to 5 minutes\nDefault polling interval was raised to 10 minutes",
-        "de": "Ein Login-Verfahren wurde neu erstellt, um die Anzahl der Anrufe auf die MELCloud-Server zu reduzieren\nMindestabfrageintervall wurde auf 5 Minuten erhöht\nDefault-Umfrageintervall wurde auf 10 Minuten erhöht",
-        "ru": "Процедура входа была восстановлена, чтобы уменьшить количество звонков на серверы MELCloud\nМинимальный интервал опроса был увеличен до 5 минут\nПериод опроса по умолчанию был увеличен до 10 минут",
-        "pt": "O procedimento de login foi refactored para reduzir o número de chamadas para os servidores MELCloud\nO intervalo mínimo de votação foi aumentado para 5 minutos\nO intervalo de votação padrão foi aumentado para 10 minutos",
-        "nl": "Aanmeldprocedure werd aangepast om het aantal oproepen naar de MELCloud-servers te verminderen\nHet minimale peilingsinterval werd verhoogd tot 5 minuten\nStandaard polling interval werd verhoogd tot 10 minuten",
-        "fr": "La procédure de connexion a été remaniée pour réduire le nombre d'appels vers les serveurs MELCloud\nL'intervalle minimal de scrutin a été porté à 5 minutes\nL'intervalle de vote par défaut a été porté à 10 minutes",
-        "it": "La procedura di accesso è stata rifatto in modo da ridurre il numero di chiamate ai server MELCloud\nL'intervallo minimo di inquinamento è stato sollevato a 5 minuti\nL'intervallo di polling predefinito è stato sollevato a 10 minuti",
-        "es": "El procedimiento de inicio de sesión fue refactorizado para reducir el número de llamadas a los servidores MELCloud\nEl intervalo mínimo de votación fue elevado a 5 minutos\nEl intervalo de votación por defecto se crió a 10 minutos",
-        "pl": "Procedura logowania została zmieniona w celu zmniejszenia liczby połączeń do serwerów MELCloud\nMinimalny odstęp między sondażem został podniesiony do 5 minut\nDomyślny interwał wyborczy został podniesiony do 10 minut",
-        "uk": "Процедура входу була рефакторована для зменшення кількості дзвінків на серверах MELCloud\nМінімальний інтервал опитування до 5 хвилин\nЗа замовчуванням інтервал опитування до 10 хвилин",
-        "zh-cn": "重新设计了登录程序,以减少给MELCloud服务器的通话次数\n最低投票间隔提高到5分钟\n默认投票间隔提高到10分钟"
       }
     },
     "titleLang": {
