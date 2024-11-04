@@ -158,7 +158,12 @@
           "type": "checkbox",
           "label": "Enable periodic polling",
           "newLine": true,
-          "tooltip": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic."
+          "tooltip": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.",
+          "xs": 12,
+          "sm": 12,
+          "md": 6,
+          "lg": 4,
+          "xl": 4
         },
         "pollingInterval": {
           "type": "number",
@@ -178,7 +183,12 @@
           "type": "checkbox",
           "label": "Ignore SSL errors",
           "newLine": true,
-          "tooltip": "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means."
+          "tooltip": "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.",
+          "xs": 12,
+          "sm": 12,
+          "md": 6,
+          "lg": 4,
+          "xl": 4
         }
       }
     }
