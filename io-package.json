@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "2.0.4",
+    "version": "2.0.5",
     "news": {
+      "2.0.5": {
+        "en": "Report data for ATW devices was fixed",
+        "de": "Berichtsdaten für ATW-Geräte wurden behoben",
+        "ru": "Данные отчета для устройств ATW были зафиксированы",
+        "pt": "Os dados de relatório para dispositivos ATW foram corrigidos",
+        "nl": "Rapportgegevens voor ATW-apparaten werden vastgesteld",
+        "fr": "Les données de rapport pour les appareils ATW ont été corrigées",
+        "it": "I dati relativi ai dispositivi ATW sono stati fissati",
+        "es": "Datos de informe para dispositivos ATW fueron fijos",
+        "pl": "Dane z raportów dla urządzeń ATW zostały ustalone",
+        "uk": "Зафіксовано дані звіту для пристроїв АТВ",
+        "zh-cn": "ATW设备的报告数据已固定"
+      },
       "2.0.4": {
         "en": "Responsive design for settings dialog was added",
         "de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
@@ -80,19 +93,6 @@
         "pl": "Dodano nową opcję do ignorowania błędów SSL",
         "uk": "Додано новий параметр для ігнорування помилок SSL",
         "zh-cn": "添加新选项以忽略 SSL 错误"
-      },
-      "1.4.0": {
-        "en": "Added new option to completely disable polling",
-        "de": "Neue Option zur völligen Deaktivierung der Abfrage hinzugefügt",
-        "ru": "Добавлена новая опция полностью отключить голосование",
-        "pt": "Adicionada nova opção para desativar completamente a votação",
-        "nl": "Nieuwe optie toegevoegd om polling volledig uit te schakelen",
-        "fr": "Ajout d'une nouvelle option pour désactiver complètement le vote",
-        "it": "Aggiunto nuova opzione per disattivare completamente polling",
-        "es": "Añadido nueva opción para la votación completamente deshabilitada",
-        "pl": "Dodano nową opcję do całkowitego wyłączenia sondażu",
-        "uk": "Додана нова опція повністю відключити опитування",
-        "zh-cn": "添加新选项以完全禁用投票"
       }
     },
     "titleLang": {
