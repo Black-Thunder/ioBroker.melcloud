@@ -2,8 +2,8 @@
 {
 	"compileOnSave": true,
 	// To update the compilation target, install a different version of @tsconfig/node... and reference it here
-	// https://github.com/tsconfig/bases#node-14-tsconfigjson
-	"extends": "@tsconfig/node14/tsconfig.json",
+	// https://github.com/tsconfig/bases#node-18-tsconfigjson
+	"extends": "@tsconfig/node18/tsconfig.json",
 	"compilerOptions": {
 		// do not compile anything, this file is just to configure type checking
 		"noEmit": true,
