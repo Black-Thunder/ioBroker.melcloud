@@ -1,15 +1,15 @@
 {
-    "Email address": "E-Mail-Addresse",
-    "Enter your MELCloud email address": "Geben Sie Ihre MELCloud-E-Mail-Adresse ein",
-    "Enter your MELCloud password": "Geben Sie Ihr MELCloud-Passwort ein",
-    "Enter your desired polling interval (in minutes) here to query data from MELCloud": "Geben Sie hier Ihr gewünschtes Abfrageintervall (in Minuten) ein, um Daten von MELCloud abzufragen",
-    "Login details": "Login-Daten",
-    "Options": "Optionen",
-    "Password": "Passwort",
-    "Polling interval": "Abrufintervall",
-    "Select language": "Sprache auswählen",
-    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Definiert, ob Daten regelmäßig von MELCloud abgerufen werden sollen. Deaktivieren Sie diese Option, wenn sie nicht erforderlich ist, um den Netzwerkverkehr zu reduzieren.",
-    "Enable periodic polling": "Regelmäßige Abfragen aktivieren",
-    "Ignore SSL errors": "SSL-Fehler ignorieren",
-    "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Definiert, ob SSL-Fehler bei der Kommunikation mit der Cloud ignoriert werden sollen. Aktivieren Sie es nur, wenn Sie wissen, was es bedeutet."
+	"Email address": "E-Mail-Addresse",
+	"Enter your MELCloud email address": "Geben Sie Ihre MELCloud-E-Mail-Adresse ein",
+	"Enter your MELCloud password": "Geben Sie Ihr MELCloud-Passwort ein",
+	"Enter your desired polling interval (in minutes) here to query data from MELCloud": "Geben Sie hier Ihr gewünschtes Abfrageintervall (in Minuten) ein, um Daten von MELCloud abzufragen",
+	"Login details": "Login-Daten",
+	"Options": "Optionen",
+	"Password": "Passwort",
+	"Polling interval": "Abrufintervall",
+	"Select language": "Sprache auswählen",
+	"Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Definiert, ob Daten regelmäßig von MELCloud abgerufen werden sollen. Deaktivieren Sie diese Option, wenn sie nicht erforderlich ist, um den Netzwerkverkehr zu reduzieren.",
+	"Enable periodic polling": "Regelmäßige Abfragen aktivieren",
+	"Ignore SSL errors": "SSL-Fehler ignorieren",
+	"Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Definiert, ob SSL-Fehler bei der Kommunikation mit der Cloud ignoriert werden sollen. Aktivieren Sie es nur, wenn Sie wissen, was es bedeutet."
 }

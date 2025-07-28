@@ -1,15 +1,15 @@
 {
-    "Email address": "Адреса електронної пошти",
-    "Enter your MELCloud email address": "Введіть адресу електронної пошти MELCloud",
-    "Enter your MELCloud password": "Введіть свій пароль MELCloud",
-    "Enter your desired polling interval (in minutes) here to query data from MELCloud": "Введіть тут бажаний інтервал опитування (у хвилинах), щоб запитувати дані з MELCloud",
-    "Login details": "Деталі входу",
-    "Options": "Опції",
-    "Password": "Пароль",
-    "Polling interval": "Інтервал опитування",
-    "Select language": "Оберіть мову",
-    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Визначає, чи потрібно періодично отримувати дані з MELCloud. Вимкніть, якщо не потрібно, щоб зменшити мережевий трафік.",
-    "Enable periodic polling": "Увімкнути періодичне опитування",
-    "Ignore SSL errors": "Ігноруйте помилки SSL",
-    "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Визначає, чи ігнорувати помилки SSL під час спілкування з хмарою. Увімкніть, лише якщо ви знаєте, що це означає."
+	"Email address": "Адреса електронної пошти",
+	"Enter your MELCloud email address": "Введіть адресу електронної пошти MELCloud",
+	"Enter your MELCloud password": "Введіть свій пароль MELCloud",
+	"Enter your desired polling interval (in minutes) here to query data from MELCloud": "Введіть тут бажаний інтервал опитування (у хвилинах), щоб запитувати дані з MELCloud",
+	"Login details": "Деталі входу",
+	"Options": "Опції",
+	"Password": "Пароль",
+	"Polling interval": "Інтервал опитування",
+	"Select language": "Оберіть мову",
+	"Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Визначає, чи потрібно періодично отримувати дані з MELCloud. Вимкніть, якщо не потрібно, щоб зменшити мережевий трафік.",
+	"Enable periodic polling": "Увімкнути періодичне опитування",
+	"Ignore SSL errors": "Ігноруйте помилки SSL",
+	"Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Визначає, чи ігнорувати помилки SSL під час спілкування з хмарою. Увімкніть, лише якщо ви знаєте, що це означає."
 }

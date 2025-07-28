@@ -1,15 +1,15 @@
 {
-    "Email address": "Indirizzo email",
-    "Enter your MELCloud email address": "Inserisci il tuo indirizzo email MELCloud",
-    "Enter your MELCloud password": "Inserisci la tua password MELCloud",
-    "Enter your desired polling interval (in minutes) here to query data from MELCloud": "Immettere qui l'intervallo di polling desiderato (in minuti) per eseguire query sui dati da MELCloud",
-    "Login details": "Dettagli del login",
-    "Options": "Opzioni",
-    "Password": "Parola d'ordine",
-    "Polling interval": "Intervallo di polling",
-    "Select language": "Seleziona la lingua",
-    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Definisce se i dati devono essere recuperati periodicamente da MELCloud. Disabilitare se non necessario per ridurre il traffico di rete.",
-    "Enable periodic polling": "Abilita il polling periodico",
-    "Ignore SSL errors": "Ignora gli errori SSL",
-    "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Definisce se ignorare gli errori SSL durante la comunicazione con il cloud. Abilitalo solo se sai cosa significa."
+	"Email address": "Indirizzo email",
+	"Enter your MELCloud email address": "Inserisci il tuo indirizzo email MELCloud",
+	"Enter your MELCloud password": "Inserisci la tua password MELCloud",
+	"Enter your desired polling interval (in minutes) here to query data from MELCloud": "Immettere qui l'intervallo di polling desiderato (in minuti) per eseguire query sui dati da MELCloud",
+	"Login details": "Dettagli del login",
+	"Options": "Opzioni",
+	"Password": "Parola d'ordine",
+	"Polling interval": "Intervallo di polling",
+	"Select language": "Seleziona la lingua",
+	"Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Definisce se i dati devono essere recuperati periodicamente da MELCloud. Disabilitare se non necessario per ridurre il traffico di rete.",
+	"Enable periodic polling": "Abilita il polling periodico",
+	"Ignore SSL errors": "Ignora gli errori SSL",
+	"Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Definisce se ignorare gli errori SSL durante la comunicazione con il cloud. Abilitalo solo se sai cosa significa."
 }
