@@ -1,5 +1,7 @@
 name: Reviewdog
 on: [pull_request, push]
+permissions:
+  contents: read
 jobs:
     eslint:
         name: runner / eslint
