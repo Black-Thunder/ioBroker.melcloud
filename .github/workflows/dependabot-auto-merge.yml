@@ -3,6 +3,10 @@
 
 name: Auto-Merge Dependabot PRs
 
+permissions:
+    contents: read
+    pull-requests: write
+
 on:
     # WARNING: This needs to be run in the PR base, DO NOT build untrusted code in this action
     # details under https://github.blog/changelog/2021-02-19-github-actions-workflows-triggered-by-dependabot-prs-will-run-with-read-only-permissions/
