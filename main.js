@@ -656,14 +656,14 @@ class Melcloud extends utils.Adapter {
 				if (state.val) {
 					// switch on using current operation mode
 					device.getDeviceInfo(
-						device.setDevice,
+						device.setDevice.bind(device),
 						commonDefines.AtaDeviceOptions.PowerState,
 						commonDefines.DevicePowerStates.ON,
 					);
 				} else {
 					// switch off
 					device.getDeviceInfo(
-						device.setDevice,
+						device.setDevice.bind(device),
 						commonDefines.AtaDeviceOptions.PowerState,
 						commonDefines.DevicePowerStates.OFF,
 					);
@@ -671,23 +671,31 @@ class Melcloud extends utils.Adapter {
 				break;
 			case commonDefines.AtaDeviceStateIDs.Mode:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtaDeviceOptions.TargetHeatingCoolingState,
 					this.mapAtaDeviceOperationMode(state.val),
 				);
 				break;
 			case commonDefines.AtaDeviceStateIDs.TargetTemp:
-				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.TargetTemperature, state.val);
+				device.getDeviceInfo(
+					device.setDevice.bind(device),
+					commonDefines.AtaDeviceOptions.TargetTemperature,
+					state.val,
+				);
 				break;
 			case commonDefines.AtaDeviceStateIDs.FanSpeedManual:
-				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.FanSpeed, state.val);
+				device.getDeviceInfo(device.setDevice.bind(device), commonDefines.AtaDeviceOptions.FanSpeed, state.val);
 				break;
 			case commonDefines.AtaDeviceStateIDs.VaneVerticalDirection:
-				device.getDeviceInfo(device.setDevice, commonDefines.AtaDeviceOptions.VaneVerticalDirection, state.val);
+				device.getDeviceInfo(
+					device.setDevice.bind(device),
+					commonDefines.AtaDeviceOptions.VaneVerticalDirection,
+					state.val,
+				);
 				break;
 			case commonDefines.AtaDeviceStateIDs.VaneHorizontalDirection:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtaDeviceOptions.VaneHorizontalDirection,
 					state.val,
 				);
@@ -712,73 +720,85 @@ class Melcloud extends utils.Adapter {
 				if (state.val) {
 					// switch on using current operation mode
 					device.getDeviceInfo(
-						device.setDevice,
+						device.setDevice.bind(device),
 						commonDefines.AtwDeviceOptions.PowerState,
 						commonDefines.DevicePowerStates.ON,
 					);
 				} else {
 					// switch off
 					device.getDeviceInfo(
-						device.setDevice,
+						device.setDevice.bind(device),
 						commonDefines.AtwDeviceOptions.PowerState,
 						commonDefines.DevicePowerStates.OFF,
 					);
 				}
 				break;
 			case commonDefines.AtwDeviceStateIDs.ForcedHotWaterMode:
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.ForcedHotWaterMode, state.val);
+				device.getDeviceInfo(
+					device.setDevice.bind(device),
+					commonDefines.AtwDeviceOptions.ForcedHotWaterMode,
+					state.val,
+				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.OperationModeZone1:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtwDeviceOptions.OperationModeZone1,
 					this.mapAtwDeviceZoneOperationMode(state.val),
 				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.OperationModeZone2:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtwDeviceOptions.OperationModeZone2,
 					this.mapAtwDeviceZoneOperationMode(state.val),
 				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.SetTankWaterTemperature:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtwDeviceOptions.SetTankWaterTemperature,
 					state.val,
 				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.SetTemperatureZone1:
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTemperatureZone1, state.val);
+				device.getDeviceInfo(
+					device.setDevice.bind(device),
+					commonDefines.AtwDeviceOptions.SetTemperatureZone1,
+					state.val,
+				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.SetTemperatureZone2:
-				device.getDeviceInfo(device.setDevice, commonDefines.AtwDeviceOptions.SetTemperatureZone2, state.val);
+				device.getDeviceInfo(
+					device.setDevice.bind(device),
+					commonDefines.AtwDeviceOptions.SetTemperatureZone2,
+					state.val,
+				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.SetHeatFlowTemperatureZone1:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtwDeviceOptions.SetHeatFlowTemperatureZone1,
 					state.val,
 				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.SetHeatFlowTemperatureZone2:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtwDeviceOptions.SetHeatFlowTemperatureZone2,
 					state.val,
 				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.SetCoolFlowTemperatureZone1:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone1,
 					state.val,
 				);
 				break;
 			case commonDefines.AtwDeviceStateIDs.SetCoolFlowTemperatureZone2:
 				device.getDeviceInfo(
-					device.setDevice,
+					device.setDevice.bind(device),
 					commonDefines.AtwDeviceOptions.SetCoolFlowTemperatureZone2,
 					state.val,
 				);
