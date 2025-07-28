@@ -700,7 +700,7 @@ class Melcloud extends utils.Adapter {
 					state.val,
 				);
 				break;
-			case commonDefines.AtaDeviceStateIDs.TimerToogle:
+			case commonDefines.CommonDeviceStateIDs.TimerToogle:
 				device.toggleTimerState(state.val);
 				break;
 			case commonDefines.CommonDeviceStateIDs.GetPowerConsumptionReport:
@@ -803,7 +803,7 @@ class Melcloud extends utils.Adapter {
 					state.val,
 				);
 				break;
-			case commonDefines.AtwDeviceStateIDs.TimerToogle:
+			case commonDefines.CommonDeviceStateIDs.TimerToogle:
 				device.toggleTimerState(state.val);
 				break;
 			case commonDefines.CommonDeviceStateIDs.GetPowerConsumptionReport:
