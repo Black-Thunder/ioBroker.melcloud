@@ -356,9 +356,14 @@ class Melcloud extends utils.Adapter {
 		CloudPlatform = new cloudPlatform.MelCloudPlatform(this);
 
 		if (this.config.enablePolling) {
-			CloudPlatform.GetContextKey(CloudPlatform.CreateAndSaveDevices, CloudPlatform.startPolling);
+			CloudPlatform.GetContextKey(
+				CloudPlatform.CreateAndSaveDevices.bind(CloudPlatform),
+				CloudPlatform.startPolling.bind(CloudPlatform)
+			);
 		} else {
-			CloudPlatform.GetContextKey(CloudPlatform.CreateAndSaveDevices);
+			CloudPlatform.GetContextKey(
+				CloudPlatform.CreateAndSaveDevices.bind(CloudPlatform)
+			);
 		}
 	}
 
@@ -562,36 +567,36 @@ class Melcloud extends utils.Adapter {
 
 		await this.setStateChangedAsync(
 			cumulatedLastReportDataPrefix +
-				commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
-				commonDefines.AtaDeviceOperationModes.COOL.id,
+			commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
+			commonDefines.AtaDeviceOperationModes.COOL.id,
 			commonDefines.roundValue(totalConsumptionCool, 3),
 			true,
 		);
 		await this.setStateChangedAsync(
 			cumulatedLastReportDataPrefix +
-				commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
-				commonDefines.AtaDeviceOperationModes.HEAT.id,
+			commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
+			commonDefines.AtaDeviceOperationModes.HEAT.id,
 			commonDefines.roundValue(totalConsumptionHeat, 3),
 			true,
 		);
 		await this.setStateChangedAsync(
 			cumulatedLastReportDataPrefix +
-				commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
-				commonDefines.AtaDeviceOperationModes.AUTO.id,
+			commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
+			commonDefines.AtaDeviceOperationModes.AUTO.id,
 			commonDefines.roundValue(totalConsumptionAuto, 3),
 			true,
 		);
 		await this.setStateChangedAsync(
 			cumulatedLastReportDataPrefix +
-				commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
-				commonDefines.AtaDeviceOperationModes.DRY.id,
+			commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
+			commonDefines.AtaDeviceOperationModes.DRY.id,
 			commonDefines.roundValue(totalConsumptionDry, 3),
 			true,
 		);
 		await this.setStateChangedAsync(
 			cumulatedLastReportDataPrefix +
-				commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
-				commonDefines.AtaDeviceOperationModes.VENT.id,
+			commonDefines.CommonDeviceStateIDs.TotalPowerConsumptionPrefix +
+			commonDefines.AtaDeviceOperationModes.VENT.id,
 			commonDefines.roundValue(totalConsumptionVent, 3),
 			true,
 		);
