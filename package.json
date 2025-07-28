@@ -1,82 +1,80 @@
 {
-  "name": "iobroker.melcloud",
-  "version": "2.0.5",
-  "description": "melcloud",
-  "author": {
-    "name": "black-thunder",
-    "email": "glwars@aol.de"
-  },
-  "homepage": "https://github.com/Black-Thunder/ioBroker.melcloud",
-  "license": "MIT",
-  "keywords": [
-    "ioBroker",
-    "Smart Home",
-    "home automation",
-    "MELCloud",
-    "Mitsubishi",
-    "airconditioning"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Black-Thunder/ioBroker.melcloud"
-  },
-  "engines": {
-    "node": ">= 20"
-  },
-  "dependencies": {
-    "@iobroker/adapter-core": "^3.2.3",
-    "axios": "^1.11.0",
-    "form-data": "^4.0.4",
-    "http-status-codes": "^2.3.0"
-  },
-  "devDependencies": {
-    "@alcalzone/release-script": "^3.8.0",
-    "@alcalzone/release-script-plugin-iobroker": "^3.7.2",
-    "@alcalzone/release-script-plugin-license": "^3.7.0",
-    "@alcalzone/release-script-plugin-manual-review": "^3.7.0",
-    "@eslint/eslintrc": "^3.2.0",
-    "@eslint/js": "^9.31.0",
-    "@iobroker/adapter-dev": "^1.4.0",
-    "@iobroker/testing": "^5.0.4",
-    "@types/chai": "^5.2.2",
-    "@types/chai-as-promised": "^8.0.2",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^24.1.0",
-    "@types/proxyquire": "^1.3.31",
-    "@types/sinon": "^17.0.4",
-    "@types/sinon-chai": "^4.0.0",
-    "chai": "^5.2.1",
-    "chai-as-promised": "^8.0.1",
-    "eslint": "^9.32.0",
-    "globals": "^16.3.0",
-    "jshint": "^2.13.6",
-    "mocha": "^11.7.1",
-    "proxyquire": "^2.1.3",
-    "sinon": "^21.0.0",
-    "sinon-chai": "^4.0.0"
-  },
-  "main": "main.js",
-  "files": [
-    "admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
-    "admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
-    "lib/",
-    "www/",
-    "io-package.json",
-    "LICENSE",
-    "main.js"
-  ],
-  "scripts": {
-    "test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
-    "test:package": "mocha test/package --exit",
-    "test:integration": "mocha test/integration --exit",
-    "test": "npm run test:js && npm run test:package",
-    "check": "tsc --noEmit -p tsconfig.check.json",
-    "lint": "eslint",
-    "release": "release-script",
-    "translate": "translate-adapter"
-  },
-  "bugs": {
-    "url": "https://github.com/Black-Thunder/ioBroker.melcloud/issues"
-  },
-  "readmeFilename": "README.md"
+	"name": "iobroker.melcloud",
+	"version": "2.0.5",
+	"description": "melcloud",
+	"author": {
+		"name": "black-thunder",
+		"email": "glwars@aol.de"
+	},
+	"homepage": "https://github.com/Black-Thunder/ioBroker.melcloud",
+	"license": "MIT",
+	"keywords": [
+		"ioBroker",
+		"Smart Home",
+		"home automation",
+		"MELCloud",
+		"Mitsubishi",
+		"airconditioning"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Black-Thunder/ioBroker.melcloud"
+	},
+	"engines": {
+		"node": ">= 20"
+	},
+	"dependencies": {
+		"@iobroker/adapter-core": "^3.2.3",
+		"axios": "^1.11.0",
+		"form-data": "^4.0.4",
+		"http-status-codes": "^2.3.0"
+	},
+	"devDependencies": {
+		"@alcalzone/release-script": "^3.8.0",
+		"@alcalzone/release-script-plugin-iobroker": "^3.7.2",
+		"@alcalzone/release-script-plugin-license": "^3.7.0",
+		"@alcalzone/release-script-plugin-manual-review": "^3.7.0",
+		"@iobroker/adapter-dev": "^1.4.0",
+		"@iobroker/eslint-config": "^2.0.2",
+		"@iobroker/testing": "^5.0.4",
+		"@types/chai": "^5.2.2",
+		"@types/chai-as-promised": "^8.0.2",
+		"@types/mocha": "^10.0.10",
+		"@types/node": "^24.1.0",
+		"@types/proxyquire": "^1.3.31",
+		"@types/sinon": "^17.0.4",
+		"@types/sinon-chai": "^4.0.0",
+		"chai": "^5.2.1",
+		"chai-as-promised": "^8.0.1",
+		"globals": "^16.3.0",
+		"jshint": "^2.13.6",
+		"mocha": "^11.7.1",
+		"proxyquire": "^2.1.3",
+		"sinon": "^21.0.0",
+		"sinon-chai": "^4.0.0"
+	},
+	"main": "main.js",
+	"files": [
+		"admin{,/!(src)/**}/!(tsconfig|tsconfig.*|.eslintrc).{json,json5}",
+		"admin{,/!(src)/**}/*.{html,css,png,svg,jpg,js}",
+		"lib/",
+		"www/",
+		"io-package.json",
+		"LICENSE",
+		"main.js"
+	],
+	"scripts": {
+		"test:js": "mocha --config test/mocharc.custom.json \"{!(node_modules|test)/**/*.test.js,*.test.js,test/**/test!(PackageFiles|Startup).js}\"",
+		"test:package": "mocha test/package --exit",
+		"test:integration": "mocha test/integration --exit",
+		"test": "npm run test:js && npm run test:package",
+		"check": "tsc --noEmit -p tsconfig.check.json",
+		"lint": "eslint -c eslint.config.mjs .",
+		"release": "release-script",
+		"translate": "translate-adapter"
+	},
+	"bugs": {
+		"url": "https://github.com/Black-Thunder/ioBroker.melcloud/issues"
+	},
+	"readmeFilename": "README.md"
 }

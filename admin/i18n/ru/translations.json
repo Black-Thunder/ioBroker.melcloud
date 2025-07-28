@@ -1,15 +1,15 @@
 {
-    "Email address": "Адрес электронной почты",
-    "Enter your MELCloud email address": "Введите адрес электронной почты MELCloud",
-    "Enter your MELCloud password": "Введите свой пароль MELCloud",
-    "Enter your desired polling interval (in minutes) here to query data from MELCloud": "Введите желаемый интервал опроса (в минутах), чтобы запросить данные из MELCloud",
-    "Login details": "Данные для входа",
-    "Options": "Параметры",
-    "Password": "пароль",
-    "Polling interval": "Интервал опроса",
-    "Select language": "Выберите язык",
-    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Определяет, следует ли периодически получать данные из MELCloud. Отключите, если не требуется, чтобы уменьшить сетевой трафик.",
-    "Enable periodic polling": "Включить периодический опрос",
-    "Ignore SSL errors": "Игнорировать ошибки SSL",
-    "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Определяет, следует ли игнорировать ошибки SSL при обмене данными с облаком. Включайте только в том случае, если вы знаете, что это значит."
+	"Email address": "Адрес электронной почты",
+	"Enter your MELCloud email address": "Введите адрес электронной почты MELCloud",
+	"Enter your MELCloud password": "Введите свой пароль MELCloud",
+	"Enter your desired polling interval (in minutes) here to query data from MELCloud": "Введите желаемый интервал опроса (в минутах), чтобы запросить данные из MELCloud",
+	"Login details": "Данные для входа",
+	"Options": "Параметры",
+	"Password": "пароль",
+	"Polling interval": "Интервал опроса",
+	"Select language": "Выберите язык",
+	"Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Определяет, следует ли периодически получать данные из MELCloud. Отключите, если не требуется, чтобы уменьшить сетевой трафик.",
+	"Enable periodic polling": "Включить периодический опрос",
+	"Ignore SSL errors": "Игнорировать ошибки SSL",
+	"Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Определяет, следует ли игнорировать ошибки SSL при обмене данными с облаком. Включайте только в том случае, если вы знаете, что это значит."
 }

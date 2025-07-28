@@ -21,14 +21,8 @@
 		"noImplicitAny": false,
 		// "noUnusedLocals": true,
 		// "noUnusedParameters": true,
-		"useUnknownInCatchVariables": false,
+		"useUnknownInCatchVariables": false
 	},
-	"include": [
-		"**/*.js",
-		"**/*.d.ts"
-	],
-	"exclude": [
-		"node_modules/**",
-		"widgets/**"
-	]
+	"include": ["**/*.js", "**/*.d.ts"],
+	"exclude": ["node_modules/**", "widgets/**"]
 }

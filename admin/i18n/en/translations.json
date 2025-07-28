@@ -1,15 +1,15 @@
 {
-    "Email address": "Email address",
-    "Enter your MELCloud email address": "Enter your MELCloud email address",
-    "Enter your MELCloud password": "Enter your MELCloud password",
-    "Enter your desired polling interval (in minutes) here to query data from MELCloud": "Enter your desired polling interval (in minutes) here to query data from MELCloud",
-    "Login details": "Login details",
-    "Options": "Options",
-    "Password": "Password",
-    "Polling interval": "Polling interval",
-    "Select language": "Select language",
-    "Enable periodic polling": "Enable periodic polling",
-    "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.",
-    "Ignore SSL errors": "Ignore SSL errors",
-    "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means." : "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means."
+	"Email address": "Email address",
+	"Enter your MELCloud email address": "Enter your MELCloud email address",
+	"Enter your MELCloud password": "Enter your MELCloud password",
+	"Enter your desired polling interval (in minutes) here to query data from MELCloud": "Enter your desired polling interval (in minutes) here to query data from MELCloud",
+	"Login details": "Login details",
+	"Options": "Options",
+	"Password": "Password",
+	"Polling interval": "Polling interval",
+	"Select language": "Select language",
+	"Enable periodic polling": "Enable periodic polling",
+	"Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.": "Defines whether data should be periodically retrieved from MELCloud. Disable if not needed to reduce network traffic.",
+	"Ignore SSL errors": "Ignore SSL errors",
+	"Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means.": "Defines whether to ignore SSL errors when communicating with the cloud. Only enable if you know what it means."
 }
