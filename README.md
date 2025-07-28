@@ -37,7 +37,7 @@ Discussion:
 ### **WORK IN PROGRESS**
 
 - (Black-Thunder) Adapter requires node.js >= 20 and admin >= 7.4.10 now
-- (Black-Thunder) Dependencies were updated
+- (Black-Thunder) Dependencies were updated and code refactorings applied
 
 ### 2.0.5 (2024-12-11)
 
