@@ -1,168 +1,179 @@
 {
-	"common": {
-		"name": "melcloud",
-		"version": "2.0.5",
-		"news": {
-			"2.0.5": {
-				"en": "Report data for ATW devices was fixed",
-				"de": "Berichtsdaten für ATW-Geräte wurden behoben",
-				"ru": "Данные отчета для устройств ATW были зафиксированы",
-				"pt": "Os dados de relatório para dispositivos ATW foram corrigidos",
-				"nl": "Rapportgegevens voor ATW-apparaten werden vastgesteld",
-				"fr": "Les données de rapport pour les appareils ATW ont été corrigées",
-				"it": "I dati relativi ai dispositivi ATW sono stati fissati",
-				"es": "Datos de informe para dispositivos ATW fueron fijos",
-				"pl": "Dane z raportów dla urządzeń ATW zostały ustalone",
-				"uk": "Зафіксовано дані звіту для пристроїв АТВ",
-				"zh-cn": "ATW设备的报告数据已固定"
-			},
-			"2.0.4": {
-				"en": "Responsive design for settings dialog was added",
-				"de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
-				"ru": "Добавлен ответный дизайн для диалога настроек",
-				"pt": "O projeto responsivo para configurações foi adicionado diálogo",
-				"nl": "Responsief ontwerp voor instellingendialoog is toegevoegd",
-				"fr": "La boîte de dialogue des paramètres a été ajoutée",
-				"it": "È stato aggiunto il design responsabile per la finestra di dialogo impostazioni",
-				"es": "Diseño responsable para el diálogo de configuración fue añadido",
-				"pl": "Dodano okno dialogowe odpowiadającego projektu ustawień",
-				"uk": "Додано адаптивний дизайн для діалогу налаштувань",
-				"zh-cn": "添加了设置对话框的响应设计"
-			},
-			"2.0.3": {
-				"en": "Responsive design for settings dialog was added",
-				"de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
-				"ru": "Добавлен ответный дизайн для диалога настроек",
-				"pt": "O projeto responsivo para configurações foi adicionado diálogo",
-				"nl": "Responsief ontwerp voor instellingendialoog is toegevoegd",
-				"fr": "La boîte de dialogue des paramètres a été ajoutée",
-				"it": "È stato aggiunto il design responsabile per la finestra di dialogo impostazioni",
-				"es": "Diseño responsable para el diálogo de configuración fue añadido",
-				"pl": "Dodano okno dialogowe odpowiadającego projektu ustawień",
-				"uk": "Додано адаптивний дизайн для діалогу налаштувань",
-				"zh-cn": "添加了设置对话框的响应设计"
-			},
-			"2.0.2": {
-				"en": "Dependencies were updated",
-				"de": "Abhängigkeiten wurden aktualisiert",
-				"ru": "Были обновлены зависимости",
-				"pt": "As dependências foram atualizadas",
-				"nl": "Afhankelijkheden werden bijgewerkt",
-				"fr": "Mise à jour des dépendances",
-				"it": "Le dipendenze sono state aggiornate",
-				"es": "Se actualizaron las dependencias",
-				"pl": "Zaktualizowano uzależnienia",
-				"uk": "Залежність оновлено",
-				"zh-cn": "附属关系得到更新"
-			},
-			"2.0.1": {
-				"en": "Dependencies were updated",
-				"de": "Abhängigkeiten wurden aktualisiert",
-				"ru": "Были обновлены зависимости",
-				"pt": "As dependências foram atualizadas",
-				"nl": "Afhankelijkheden werden bijgewerkt",
-				"fr": "Mise à jour des dépendances",
-				"it": "Le dipendenze sono state aggiornate",
-				"es": "Se actualizaron las dependencias",
-				"pl": "Zaktualizowano uzależnienia",
-				"uk": "Залежність оновлено",
-				"zh-cn": "附属关系得到更新"
-			},
-			"2.0.0": {
-				"en": "Adapter requires node.js >= 18, admin >= 6 and js-controller >= 5 now",
-				"de": "Adapter benötigt node.js >= 18, admin >= 6 und js-Controller >= 5 jetzt",
-				"ru": "Адаптер требует node.js >= 18, admin >= 6 и js-контроллер >= 5 сейчас",
-				"pt": "Adapter requer node.js >= 18, admin >= 6 e js-controller >= 5 agora",
-				"nl": "Adapter vereist node.js < 18, admin <= 6 en js-controller Nu 5",
-				"fr": "Adaptateur nécessite node.js >= 18, admin >= 6 et js-contrôleur >= 5 maintenant",
-				"it": "Adattatore richiede node.js >= 18, admin >= 6 e js-controller 5 ora",
-				"es": "Adaptador requiere node.js >= 18, admin 6 y js-controller 5 ahora",
-				"pl": "Adapter wymaga node.js > = 18, admin > = 6 i kontroler js- > = 5 teraz",
-				"uk": "Адаптер вимагає node.js >= 18, admin >= 6 і js-controller >= 5 тепер",
-				"zh-cn": "适配器需要节点.js QQ 18, admin QQ 6和js控制器 QQ 现在5号"
-			},
-			"1.4.1": {
-				"en": "Added new option to ignore SSL errors",
-				"de": "Neue Option hinzugefügt, um SSL-Fehler zu ignorieren",
-				"ru": "Добавлена новая опция для игнорирования ошибок SSL",
-				"pt": "Adicionada nova opção para ignorar erros SSL",
-				"nl": "Nieuwe optie toegevoegd om SSL-fouten te negeren",
-				"fr": "Ajout de nouvelles options pour ignorer les erreurs SSL",
-				"it": "Aggiunta nuova opzione per ignorare gli errori SSL",
-				"es": "Nueva opción para ignorar errores SSL",
-				"pl": "Dodano nową opcję do ignorowania błędów SSL",
-				"uk": "Додано новий параметр для ігнорування помилок SSL",
-				"zh-cn": "添加新选项以忽略 SSL 错误"
-			}
-		},
-		"titleLang": {
-			"en": "MELCloud",
-			"de": "MELCloud",
-			"ru": "MELCloud",
-			"pt": "MELCloud",
-			"nl": "MELCloud",
-			"fr": "MELCloud",
-			"it": "MELCloud",
-			"es": "MELCloud",
-			"pl": "MELCloud",
-			"zh-cn": "MEL云",
-			"uk": "MELCloud"
-		},
-		"desc": {
-			"en": "This adapter integrates Mitsubishi Electric devices via MELCloud into ioBroker.",
-			"de": "Dieser Adapter integriert Mitsubishi Electric Geräte über MELCloud in ioBroker.",
-			"ru": "Этот адаптер интегрирует Mitsubishi Electric устройства через MELCloud в ioBroker.",
-			"pt": "Este adaptador integra dispositivos Mitsubishi Electric via MELCloud no ioBroker.",
-			"nl": "Deze adapter integreert Mitsubishi Elektrische apparaten via MELCloud in ioBroker.",
-			"fr": "Cet adaptateur intègre les appareils Mitsubishi Electric via MELCloud dans ioBroker.",
-			"it": "Questo adattatore integra i dispositivi Mitsubishi Electric tramite MELCloud in ioBroker.",
-			"es": "Este adaptador integra dispositivos eléctricos Mitsubishi vía MELCloud en ioBroker.",
-			"pl": "Adapter ten integruje urządzenia Mitsubishi Electric za pośrednictwem MELCloud z joBroker.",
-			"uk": "Цей адаптер інтегрує Mitsubishi Electric devices через MELCloud в ioBroker.",
-			"zh-cn": "这个适配器通过MELCloud将三菱电器设备集成到ioBroker中."
-		},
-		"authors": ["Black-Thunder <glwars@aol.de>"],
-		"keywords": ["home automation", "MELCloud", "Mitsubishi", "airconditioning"],
-		"licenseInformation": {
-			"license": "MIT",
-			"type": "free"
-		},
-		"platform": "Javascript/Node.js",
-		"icon": "melcloud.png",
-		"enabled": false,
-		"extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
-		"readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
-		"loglevel": "info",
-		"mode": "daemon",
-		"type": "climate-control",
-		"compact": true,
-		"connectionType": "cloud",
-		"dataSource": "poll",
-		"adminUI": {
-			"config": "json"
-		},
-		"dependencies": [
-			{
-				"js-controller": ">=6.0.11"
-			}
-		],
-		"globalDependencies": [
-			{
-				"admin": ">=7.4.10"
-			}
-		],
-		"tier": 2
-	},
-	"encryptedNative": ["melCloudPassword"],
-	"protectedNative": ["melCloudPassword"],
-	"native": {
-		"melCloudEmail": "",
-		"melCloudPassword": "",
-		"melCloudLanguage": 4,
-		"enablePolling": false,
-		"pollingInterval": 10,
-		"ignoreSslErrors": false
-	},
-	"objects": [],
-	"instanceObjects": []
+  "common": {
+    "name": "melcloud",
+    "version": "3.0.0",
+    "news": {
+      "3.0.0": {
+        "en": "Adapter requires node.js >= 20, admin >= 7.4.10 and js-controller >= 6 now\nExperimental support for ERV devices was added\nDependencies were updated and code refactorings applied",
+        "de": "Adapter benötigt node.js >= 20, admin >= 7.4.10 und js-controller >== 6 jetzt\nExperimentelle Unterstützung für ERV-Geräte wurde hinzugefügt\nAbhängigkeiten wurden aktualisiert und Code-Refactorings angewendet",
+        "ru": "Адаптер требует node.js >= 20, admin >= 7.4.10 и js-контроллер >= 6 сейчас\nДобавлена экспериментальная поддержка устройств ERV\nОбновлены зависимости и применены рефакторинг кода",
+        "pt": "Adaptador requer gnodo.js >= 20, administrador >= 7.4.10 e js-controlador >= 6 agora\nFoi adicionado suporte experimental para dispositivos ERV\nDependências foram atualizadas e refatorações de código aplicadas",
+        "nl": "Voor adapter zijn node.js < 20, admin < 7,4.10 en js-controller > 6 nu\nExperimentele ondersteuning voor ERV-apparaten is toegevoegd\nAfhankelijkheden werden bijgewerkt en code refactorings toegepast",
+        "fr": "Adapter nécessite node.js >= 20, admin >= 7.4.10 et js-controller >= 6 maintenant\nUn support expérimental pour les dispositifs ERV a été ajouté\nMise à jour des dépendances et refacturation du code",
+        "it": "Adattatore richiede node.js >= 20, admin >= 7.4.10 e js-controller >= 6 ora\nÈ stato aggiunto il supporto sperimentale per i dispositivi ERV\nLe dipendenze sono state aggiornate e i rifattori di codice applicati",
+        "es": "Adaptador requiere node.js √= 20, admin √= 7.4.10 y js-controller √= 6 ahora\nSe agregó soporte experimental para dispositivos ERV\nSe actualizaron las dependencias y se aplicaron refactorías de código",
+        "pl": "Adapter wymaga node.js > = 20, admin > = 7.4.10 i kontroler js- > = 6 teraz\nDodano eksperymentalne wsparcie dla urządzeń ERV\nZaktualizowano zależności i zastosowano zmiany kodu",
+        "uk": "Адаптер вимагає node.js >= 20, admin >=7.4.10 та js-controller >= 6 тепер\nДодано експериментальну підтримку пристроїв ERV\nЗастосунки були оновлені та кодові рефакторингу",
+        "zh-cn": "适配器需要节点.js >= 20, admin >= 7.4.10和js控制器 >= 现在6个\n增加了对ERV设备的实验支持\n更新了依赖性并采用了代码重构"
+      },
+      "2.0.5": {
+        "en": "Report data for ATW devices was fixed",
+        "de": "Berichtsdaten für ATW-Geräte wurden behoben",
+        "ru": "Данные отчета для устройств ATW были зафиксированы",
+        "pt": "Os dados de relatório para dispositivos ATW foram corrigidos",
+        "nl": "Rapportgegevens voor ATW-apparaten werden vastgesteld",
+        "fr": "Les données de rapport pour les appareils ATW ont été corrigées",
+        "it": "I dati relativi ai dispositivi ATW sono stati fissati",
+        "es": "Datos de informe para dispositivos ATW fueron fijos",
+        "pl": "Dane z raportów dla urządzeń ATW zostały ustalone",
+        "uk": "Зафіксовано дані звіту для пристроїв АТВ",
+        "zh-cn": "ATW设备的报告数据已固定"
+      },
+      "2.0.4": {
+        "en": "Responsive design for settings dialog was added",
+        "de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
+        "ru": "Добавлен ответный дизайн для диалога настроек",
+        "pt": "O projeto responsivo para configurações foi adicionado diálogo",
+        "nl": "Responsief ontwerp voor instellingendialoog is toegevoegd",
+        "fr": "La boîte de dialogue des paramètres a été ajoutée",
+        "it": "È stato aggiunto il design responsabile per la finestra di dialogo impostazioni",
+        "es": "Diseño responsable para el diálogo de configuración fue añadido",
+        "pl": "Dodano okno dialogowe odpowiadającego projektu ustawień",
+        "uk": "Додано адаптивний дизайн для діалогу налаштувань",
+        "zh-cn": "添加了设置对话框的响应设计"
+      },
+      "2.0.3": {
+        "en": "Responsive design for settings dialog was added",
+        "de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
+        "ru": "Добавлен ответный дизайн для диалога настроек",
+        "pt": "O projeto responsivo para configurações foi adicionado diálogo",
+        "nl": "Responsief ontwerp voor instellingendialoog is toegevoegd",
+        "fr": "La boîte de dialogue des paramètres a été ajoutée",
+        "it": "È stato aggiunto il design responsabile per la finestra di dialogo impostazioni",
+        "es": "Diseño responsable para el diálogo de configuración fue añadido",
+        "pl": "Dodano okno dialogowe odpowiadającego projektu ustawień",
+        "uk": "Додано адаптивний дизайн для діалогу налаштувань",
+        "zh-cn": "添加了设置对话框的响应设计"
+      },
+      "2.0.2": {
+        "en": "Dependencies were updated",
+        "de": "Abhängigkeiten wurden aktualisiert",
+        "ru": "Были обновлены зависимости",
+        "pt": "As dependências foram atualizadas",
+        "nl": "Afhankelijkheden werden bijgewerkt",
+        "fr": "Mise à jour des dépendances",
+        "it": "Le dipendenze sono state aggiornate",
+        "es": "Se actualizaron las dependencias",
+        "pl": "Zaktualizowano uzależnienia",
+        "uk": "Залежність оновлено",
+        "zh-cn": "附属关系得到更新"
+      },
+      "2.0.1": {
+        "en": "Dependencies were updated",
+        "de": "Abhängigkeiten wurden aktualisiert",
+        "ru": "Были обновлены зависимости",
+        "pt": "As dependências foram atualizadas",
+        "nl": "Afhankelijkheden werden bijgewerkt",
+        "fr": "Mise à jour des dépendances",
+        "it": "Le dipendenze sono state aggiornate",
+        "es": "Se actualizaron las dependencias",
+        "pl": "Zaktualizowano uzależnienia",
+        "uk": "Залежність оновлено",
+        "zh-cn": "附属关系得到更新"
+      },
+      "2.0.0": {
+        "en": "Adapter requires node.js >= 18, admin >= 6 and js-controller >= 5 now",
+        "de": "Adapter benötigt node.js >= 18, admin >= 6 und js-Controller >= 5 jetzt",
+        "ru": "Адаптер требует node.js >= 18, admin >= 6 и js-контроллер >= 5 сейчас",
+        "pt": "Adapter requer node.js >= 18, admin >= 6 e js-controller >= 5 agora",
+        "nl": "Adapter vereist node.js < 18, admin <= 6 en js-controller Nu 5",
+        "fr": "Adaptateur nécessite node.js >= 18, admin >= 6 et js-contrôleur >= 5 maintenant",
+        "it": "Adattatore richiede node.js >= 18, admin >= 6 e js-controller 5 ora",
+        "es": "Adaptador requiere node.js >= 18, admin 6 y js-controller 5 ahora",
+        "pl": "Adapter wymaga node.js > = 18, admin > = 6 i kontroler js- > = 5 teraz",
+        "uk": "Адаптер вимагає node.js >= 18, admin >= 6 і js-controller >= 5 тепер",
+        "zh-cn": "适配器需要节点.js QQ 18, admin QQ 6和js控制器 QQ 现在5号"
+      }
+    },
+    "titleLang": {
+      "en": "MELCloud",
+      "de": "MELCloud",
+      "ru": "MELCloud",
+      "pt": "MELCloud",
+      "nl": "MELCloud",
+      "fr": "MELCloud",
+      "it": "MELCloud",
+      "es": "MELCloud",
+      "pl": "MELCloud",
+      "zh-cn": "MEL云",
+      "uk": "MELCloud"
+    },
+    "desc": {
+      "en": "This adapter integrates Mitsubishi Electric devices via MELCloud into ioBroker.",
+      "de": "Dieser Adapter integriert Mitsubishi Electric Geräte über MELCloud in ioBroker.",
+      "ru": "Этот адаптер интегрирует Mitsubishi Electric устройства через MELCloud в ioBroker.",
+      "pt": "Este adaptador integra dispositivos Mitsubishi Electric via MELCloud no ioBroker.",
+      "nl": "Deze adapter integreert Mitsubishi Elektrische apparaten via MELCloud in ioBroker.",
+      "fr": "Cet adaptateur intègre les appareils Mitsubishi Electric via MELCloud dans ioBroker.",
+      "it": "Questo adattatore integra i dispositivi Mitsubishi Electric tramite MELCloud in ioBroker.",
+      "es": "Este adaptador integra dispositivos eléctricos Mitsubishi vía MELCloud en ioBroker.",
+      "pl": "Adapter ten integruje urządzenia Mitsubishi Electric za pośrednictwem MELCloud z joBroker.",
+      "uk": "Цей адаптер інтегрує Mitsubishi Electric devices через MELCloud в ioBroker.",
+      "zh-cn": "这个适配器通过MELCloud将三菱电器设备集成到ioBroker中."
+    },
+    "authors": [
+      "Black-Thunder <glwars@aol.de>"
+    ],
+    "keywords": [
+      "home automation",
+      "MELCloud",
+      "Mitsubishi",
+      "airconditioning"
+    ],
+    "licenseInformation": {
+      "license": "MIT",
+      "type": "free"
+    },
+    "platform": "Javascript/Node.js",
+    "icon": "melcloud.png",
+    "enabled": false,
+    "extIcon": "https://raw.githubusercontent.com/Black-Thunder/ioBroker.melcloud/master/admin/melcloud.png",
+    "readme": "https://github.com/Black-Thunder/ioBroker.melcloud/blob/master/README.md",
+    "loglevel": "info",
+    "mode": "daemon",
+    "type": "climate-control",
+    "compact": true,
+    "connectionType": "cloud",
+    "dataSource": "poll",
+    "adminUI": {
+      "config": "json"
+    },
+    "dependencies": [
+      {
+        "js-controller": ">=6.0.11"
+      }
+    ],
+    "globalDependencies": [
+      {
+        "admin": ">=7.4.10"
+      }
+    ],
+    "tier": 2
+  },
+  "encryptedNative": [
+    "melCloudPassword"
+  ],
+  "protectedNative": [
+    "melCloudPassword"
+  ],
+  "native": {
+    "melCloudEmail": "",
+    "melCloudPassword": "",
+    "melCloudLanguage": 4,
+    "enablePolling": false,
+    "pollingInterval": 10,
+    "ignoreSslErrors": false
+  },
+  "objects": [],
+  "instanceObjects": []
 }

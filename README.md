@@ -33,8 +33,7 @@ Discussion:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 3.0.0 (2025-07-29)
 
 - (Black-Thunder) Adapter requires node.js >= 20, admin >= 7.4.10 and js-controller >= 6 now
 - (Black-Thunder) Experimental support for ERV devices was added
