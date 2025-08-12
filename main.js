@@ -451,20 +451,18 @@ class Melcloud extends utils.Adapter {
 				);
 
 				const type = device.deviceType;
+				const handlers = {
+					[commonDefines.DeviceTypes.AirToAir]: this.processAtaDeviceCommand,
+					[commonDefines.DeviceTypes.AirToWater]: this.processAtwDeviceCommand,
+					[commonDefines.DeviceTypes.EnergyRecoveryVentilation]: this.processErvDeviceCommand,
+				};
 
-				switch (type) {
-					case commonDefines.DeviceTypes.AirToAir:
-						this.processAtaDeviceCommand(controlOption, state, device);
-						break;
-					case commonDefines.DeviceTypes.AirToWater:
-						this.processAtwDeviceCommand(controlOption, state, device);
-						break;
-					case commonDefines.DeviceTypes.EnergyRecoveryVentilation:
-						this.processErvDeviceCommand(controlOption, state, device);
-						break;
-					default:
-						this.log.error(`Unsupported device type: '${type}' - Please report this to the developer!`);
-						break;
+				const handler = handlers[type];
+
+				if (handler) {
+					handler.call(this, controlOption, state, device);
+				} else {
+					this.log.error(`Unsupported device type: '${type}' - Please report this to the developer!`);
 				}
 			}
 		} else {
@@ -616,55 +614,33 @@ class Melcloud extends utils.Adapter {
 	}
 
 	mapAtaDeviceOperationMode(value) {
-		switch (value) {
-			case commonDefines.AtaDeviceOperationModes.HEAT.value:
-				return commonDefines.AtaDeviceOperationModes.HEAT;
-			case commonDefines.AtaDeviceOperationModes.DRY.value:
-				return commonDefines.AtaDeviceOperationModes.DRY;
-			case commonDefines.AtaDeviceOperationModes.COOL.value:
-				return commonDefines.AtaDeviceOperationModes.COOL;
-			case commonDefines.AtaDeviceOperationModes.VENT.value:
-				return commonDefines.AtaDeviceOperationModes.VENT;
-			case commonDefines.AtaDeviceOperationModes.AUTO.value:
-				return commonDefines.AtaDeviceOperationModes.AUTO;
-			default:
-				this.log.error(`Unsupported ATA operation mode: '${value}' - Please report this to the developer!`);
-				return commonDefines.AtaDeviceOperationModes.UNDEF;
-		}
+		return this.mapDeviceOperationMode(value, commonDefines.AtaDeviceOperationModes, "ATA");
 	}
 
-	mapAtwDeviceZoneOperationMode(value) {
-		switch (value) {
-			case commonDefines.AtwDeviceZoneOperationModes.HEATTHERMOSTAT.value:
-				return commonDefines.AtwDeviceZoneOperationModes.HEATTHERMOSTAT;
-			case commonDefines.AtwDeviceZoneOperationModes.HEATFLOW.value:
-				return commonDefines.AtwDeviceZoneOperationModes.HEATFLOW;
-			case commonDefines.AtwDeviceZoneOperationModes.CURVE.value:
-				return commonDefines.AtwDeviceZoneOperationModes.CURVE;
-			case commonDefines.AtwDeviceZoneOperationModes.COOLTHERMOSTAT.value:
-				return commonDefines.AtwDeviceZoneOperationModes.COOLTHERMOSTAT;
-			case commonDefines.AtwDeviceZoneOperationModes.COOLFLOW.value:
-				return commonDefines.AtwDeviceZoneOperationModes.COOLFLOW;
-			default:
-				this.log.error(
-					`Unsupported ATW zone operation mode: '${value}' - Please report this to the developer!`,
-				);
-				return commonDefines.AtwDeviceZoneOperationModes.UNDEF;
-		}
+	mapAtwDeviceOperationMode(value) {
+		return this.mapDeviceOperationMode(value, commonDefines.AtwDeviceOperationModes, "ATW");
 	}
 
 	mapERVDeviceOperationMode(value) {
-		switch (value) {
-			case commonDefines.ErvDeviceOperationModes.RECOVERY.value:
-				return commonDefines.ErvDeviceOperationModes.RECOVERY;
-			case commonDefines.ErvDeviceOperationModes.BYPASS.value:
-				return commonDefines.ErvDeviceOperationModes.BYPASS;
-			case commonDefines.ErvDeviceOperationModes.AUTO.value:
-				return commonDefines.ErvDeviceOperationModes.AUTO;
-			default:
-				this.log.error(`Unsupported ERV operation mode: '${value}' - Please report this to the developer!`);
-				return commonDefines.ErvDeviceOperationModes.UNDEF;
+		return this.mapDeviceOperationMode(value, commonDefines.ErvDeviceOperationModes, "ERV");
+	}
+
+	mapDeviceOperationMode(value, enumObject, deviceName) {
+		const numValue = Number(value);
+
+		if (isNaN(numValue)) {
+			this.log.error(`Invalid ${deviceName} operation mode type: '${value}' (not a number)`);
+			return enumObject.UNDEF;
 		}
+
+		const foundMode = Object.values(enumObject).find(mode => mode.value === numValue);
+
+		if (!foundMode) {
+			this.log.error(`Unsupported ${deviceName} operation mode: '${value}'`);
+			return enumObject.UNDEF;
+		}
+
+		return foundMode;
 	}
 
 	processAtaDeviceCommand(controlOption, state, device) {
