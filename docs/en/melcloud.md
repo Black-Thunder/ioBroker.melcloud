@@ -193,7 +193,7 @@ Here are the actual aggregated power consumption values for the selected period 
 | totalPowerProduction                 |  X   |   -   | Aggregated total production for all operation modes (in kWh)                                               |
 | totalPowerProduction*OperationMode*  |  X   |   -   | Aggregated total production for operation mode _OperationMode_ (in kWh) - created for each operation mode  |
 
-### Lüftungsanlagen
+### Energy recovery ventilators
 
 #### melcloud.X.devices.Y.info
 
