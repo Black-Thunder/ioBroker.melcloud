@@ -170,29 +170,6 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | totalPowerProduction*Betriebsmodus*  |   X    |    -     | Gesamtverzeugung im Modus _Betriebsmodus_ (in kWh) - wird für jeden Betriebsmodus angelegt |
 | rawPowerConsumptionData              |   X    |    -     | Unverarbeite Rohantwort der MELCloud (als JSON) zur eigenen Verarbeitung                   |
 
-### melcloud.X.reports
-
-Analog zu den gerätespezifischen Berichten können hier aggregierte Berichte über alle unterstützen Geräte abgerungen werden. Um Berichte abrufen zu können, müssen zunächst ebenso Start- ("startDate") und Endzeitpunkt ("endDate") korrekt festgelegt werden. Dabei ist das Format JJJJ-MM-TT zu beachten! Zur eigentlichen Durchführung des Abrufs muss der Datenpunkt "getCumulatedPowerConsumptionReport" getriggert werden.
-Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData" mit den aggregierten Werten aus der Cloud befüllt.
-
-| ID                                 | lesbar | änderbar | Bemerkung                                                                    |
-| ---------------------------------- | :----: | :------: | ---------------------------------------------------------------------------- |
-| startDate                          |   X    |    X     | Beginn des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2020-05-31) |
-| endDate                            |   X    |    X     | Ende des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2021-01-08)   |
-| getCumulatedPowerConsumptionReport |   -    |    X     | Schalter, um das Abrufen der Berichte anzustoßen                             |
-
-#### melcloud.X.reports.lastReportData
-
-Hier werden die aggregierten Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
-
-| ID                                   | lesbar | änderbar | Bemerkung                                                                                              |
-| ------------------------------------ | :----: | :------: | ------------------------------------------------------------------------------------------------------ |
-| totalMinutes                         |   X    |    -     | Aggregierter Zeitraum des gemessenen Verbrauchs (in Minuten)                                           |
-| totalPowerConsumption                |   X    |    -     | Aggregierter Gesamtverbrauch aller Modi (in kWh)                                                       |
-| totalPowerConsumption*Betriebsmodus* |   X    |    -     | Aggregierter Gesamtverbrauch im Modus _Betriebsmodus_ (in kWh) - wird für jeden Betriebsmodus angelegt |
-| totalPowerProduction                 |   X    |    -     | Aggregierte Gesamterzeugung aller Modi (in kWh)                                                        |
-| totalPowerProduction*Betriebsmodus*  |   X    |    -     | Aggregierte Gesamtverzeugung im Modus _Betriebsmodus_ (in kWh) - wird für jeden Betriebsmodus angelegt |
-
 ### Lüftungsanlagen
 
 #### melcloud.X.devices.Y.info
@@ -227,3 +204,27 @@ Hier werden die aggregierten Verbrauchsdaten für den angeforderten Berichtszeit
 | ID          | lesbar | änderbar | Bemerkung                                                                   |
 | ----------- | :----: | :------: | --------------------------------------------------------------------------- |
 | timerToggle |   X    |    X     | Schalter, um den Timer für das Gerät ein- (true) bzw. auszuschalten (false) |
+
+
+### melcloud.X.reports
+
+Analog zu den gerätespezifischen Berichten können hier aggregierte Berichte über alle unterstützen Geräte abgerungen werden. Um Berichte abrufen zu können, müssen zunächst ebenso Start- ("startDate") und Endzeitpunkt ("endDate") korrekt festgelegt werden. Dabei ist das Format JJJJ-MM-TT zu beachten! Zur eigentlichen Durchführung des Abrufs muss der Datenpunkt "getCumulatedPowerConsumptionReport" getriggert werden.
+Kurz darauf werden die entsprechenden Datenpunkte im Unterkanal "lastReportData" mit den aggregierten Werten aus der Cloud befüllt.
+
+| ID                                 | lesbar | änderbar | Bemerkung                                                                    |
+| ---------------------------------- | :----: | :------: | ---------------------------------------------------------------------------- |
+| startDate                          |   X    |    X     | Beginn des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2020-05-31) |
+| endDate                            |   X    |    X     | Ende des Abrufzeitraums der Berichte (Format: JJJJ-MM-TT, z.B. 2021-01-08)   |
+| getCumulatedPowerConsumptionReport |   -    |    X     | Schalter, um das Abrufen der Berichte anzustoßen                             |
+
+#### melcloud.X.reports.lastReportData
+
+Hier werden die aggregierten Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt.
+
+| ID                                   | lesbar | änderbar | Bemerkung                                                                                              |
+| ------------------------------------ | :----: | :------: | ------------------------------------------------------------------------------------------------------ |
+| totalMinutes                         |   X    |    -     | Aggregierter Zeitraum des gemessenen Verbrauchs (in Minuten)                                           |
+| totalPowerConsumption                |   X    |    -     | Aggregierter Gesamtverbrauch aller Modi (in kWh)                                                       |
+| totalPowerConsumption*Betriebsmodus* |   X    |    -     | Aggregierter Gesamtverbrauch im Modus _Betriebsmodus_ (in kWh) - wird für jeden Betriebsmodus angelegt |
+| totalPowerProduction                 |   X    |    -     | Aggregierte Gesamterzeugung aller Modi (in kWh)                                                        |
+| totalPowerProduction*Betriebsmodus*  |   X    |    -     | Aggregierte Gesamtverzeugung im Modus _Betriebsmodus_ (in kWh) - wird für jeden Betriebsmodus angelegt |
