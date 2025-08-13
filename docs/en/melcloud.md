@@ -49,6 +49,7 @@ After successful start of the adapter instance (X), your devices are queried by 
 | canHeat           |  X   |   -   | Ability to heat                                                 |
 | canDry            |  X   |   -   | Ability to dry                                                  |
 | deviceName        |  X   |   -   | Name of the device                                              |
+| deviceType        |  X   |   -   | Type of the device                                              |
 | deviceOnline      |  X   |   -   | Indicates if device is reachable                                |
 | errorMessages     |  X   |   -   | Contains the current error messages of the device (if any)      |
 | errorCode         |  X   |   -   | Contains the current error code of the device (8000 = No error) |
@@ -105,39 +106,39 @@ Here are the actual power consumption values for the selected period of time sto
 
 #### melcloud.X.devices.Y.info
 
-| ID                         | lesbar | änderbar | Bemerkung                                                                           |
-| -------------------------- | :----: | :------: | ----------------------------------------------------------------------------------- |
-| buildingId                 |   X    |    -     | Assigned building ID                                                                |
-| canCool                    |   X    |    -     | Ability to cool                                                                     |
-| canHeat                    |   X    |    -     | Ability to heat                                                                     |
-| condensingTemperature      |   X    |    -     | Condensing temperature                                                              |
-| deviceName                 |   X    |    -     | Name of the device                                                                  |
-| deviceType                 |   X    |    -     | Type of device (0=Air to air heat pump / air conditioner, 1=Air to water heat pump) |
-| deviceOnline               |   X    |    -     | Indicates if device is reachable                                                    |
-| errorMessages              |   X    |    -     | Contains the current error messages of the device (if any)                          |
-| errorCode                  |   X    |    -     | Contains the current error code of the device (8000 = No error)                     |
-| floorId                    |   X    |    -     | Assigned floor ID                                                                   |
-| flowTemperature            |   X    |    -     | Flow temperature                                                                    |
-| flowTemperatureBoiler      |   X    |    -     | Flow temperature of the boiler                                                      |
-| flowTemperatureZone1       |   X    |    -     | Flow temperature of zone 1                                                          |
-| flowTemperatureZone2       |   X    |    -     | Flow temperature of zone 2 (if present)                                             |
-| hasError                   |   X    |    -     | Indiciates if the device is in error state                                          |
-| hasZone2                   |   X    |    -     | Flag, if zone 2 is present                                                          |
-| heatPumpFrequency          |   X    |    -     | Heat pump frequency                                                                 |
-| lastCommunication          |   X    |    -     | Last communication date/time (MELCloud to device)                                   |
-| macAddress                 |   X    |    -     | MAC address of the device                                                           |
-| mixingTankWaterTemperature |   X    |    -     | Water temperature of the mixing tank                                                |
-| nextCommunication          |   X    |    -     | Next communication date/time (MELCloud to device)                                   |
-| operationState             |   X    |    -     | Current operation state                                                             |
-| outdoorTemperature         |   X    |    -     | Outdoor temperature                                                                 |
-| returnTemperature          |   X    |    -     | Return temperature                                                                  |
-| returnTemperatureBoiler    |   X    |    -     | Return temperature of the boiler                                                    |
-| returnTemperatureZone1     |   X    |    -     | Return temperature of zone 1                                                        |
-| returnTemperatureZone2     |   X    |    -     | Return temperature of zone 2 (if present)                                           |
-| roomTemperatureZone1       |   X    |    -     | Room temperature of zone 1                                                          |
-| roomTemperatureZone2       |   X    |    -     | Room temperature of zone 1 (if present)                                             |
-| serialNumber               |   X    |    -     | Serial number of the device                                                         |
-| tankWaterTemperature       |   X    |    -     | Temperature of the water tank                                                       |
+| ID                         | lesbar | änderbar | Bemerkung                                                       |
+| -------------------------- | :----: | :------: | --------------------------------------------------------------- |
+| buildingId                 |   X    |    -     | Assigned building ID                                            |
+| canCool                    |   X    |    -     | Ability to cool                                                 |
+| canHeat                    |   X    |    -     | Ability to heat                                                 |
+| condensingTemperature      |   X    |    -     | Condensing temperature                                          |
+| deviceName                 |   X    |    -     | Name of the device                                              |
+| deviceType                 |   X    |    -     | Type of device                                                  |
+| deviceOnline               |   X    |    -     | Indicates if device is reachable                                |
+| errorMessages              |   X    |    -     | Contains the current error messages of the device (if any)      |
+| errorCode                  |   X    |    -     | Contains the current error code of the device (8000 = No error) |
+| floorId                    |   X    |    -     | Assigned floor ID                                               |
+| flowTemperature            |   X    |    -     | Flow temperature                                                |
+| flowTemperatureBoiler      |   X    |    -     | Flow temperature of the boiler                                  |
+| flowTemperatureZone1       |   X    |    -     | Flow temperature of zone 1                                      |
+| flowTemperatureZone2       |   X    |    -     | Flow temperature of zone 2 (if present)                         |
+| hasError                   |   X    |    -     | Indiciates if the device is in error state                      |
+| hasZone2                   |   X    |    -     | Flag, if zone 2 is present                                      |
+| heatPumpFrequency          |   X    |    -     | Heat pump frequency                                             |
+| lastCommunication          |   X    |    -     | Last communication date/time (MELCloud to device)               |
+| macAddress                 |   X    |    -     | MAC address of the device                                       |
+| mixingTankWaterTemperature |   X    |    -     | Water temperature of the mixing tank                            |
+| nextCommunication          |   X    |    -     | Next communication date/time (MELCloud to device)               |
+| operationState             |   X    |    -     | Current operation state                                         |
+| outdoorTemperature         |   X    |    -     | Outdoor temperature                                             |
+| returnTemperature          |   X    |    -     | Return temperature                                              |
+| returnTemperatureBoiler    |   X    |    -     | Return temperature of the boiler                                |
+| returnTemperatureZone1     |   X    |    -     | Return temperature of zone 1                                    |
+| returnTemperatureZone2     |   X    |    -     | Return temperature of zone 2 (if present)                       |
+| roomTemperatureZone1       |   X    |    -     | Room temperature of zone 1                                      |
+| roomTemperatureZone2       |   X    |    -     | Room temperature of zone 1 (if present)                         |
+| serialNumber               |   X    |    -     | Serial number of the device                                     |
+| tankWaterTemperature       |   X    |    -     | Temperature of the water tank                                   |
 
 #### melcloud.X.devices.Y.control
 
@@ -191,3 +192,38 @@ Here are the actual aggregated power consumption values for the selected period 
 | totalPowerConsumption*OperationMode* |  X   |   -   | Aggregated total consumption for operation mode _OperationMode_ (in kWh) - created for each operation mode |
 | totalPowerProduction                 |  X   |   -   | Aggregated total production for all operation modes (in kWh)                                               |
 | totalPowerProduction*OperationMode*  |  X   |   -   | Aggregated total production for operation mode _OperationMode_ (in kWh) - created for each operation mode  |
+
+### Lüftungsanlagen
+
+#### melcloud.X.devices.Y.info
+
+| ID                    | lesbar | änderbar | Bemerkung                                                       |
+| --------------------- | :----: | :------: | --------------------------------------------------------------- |
+| actualExhaustFanSpeed |   X    |    -     | Actual exhaust fan speed                                        |
+| actualSupplyFanSpeed  |   X    |    -     | Actual supply fan speed                                         |
+| buildingId            |   X    |    -     | Assigned building ID                                            |
+| canCool               |   X    |    -     | Ability to cool                                                 |
+| canHeat               |   X    |    -     | Ability to heat                                                 |
+| deviceName            |   X    |    -     | Name of the device                                              |
+| deviceType            |   X    |    -     | Type of the device                                              |
+| deviceOnline          |   X    |    -     | Indicates if device is reachable                                |
+| errorMessages         |   X    |    -     | Contains the current error messages of the device (if any)      |
+| errorCode             |   X    |    -     | Contains the current error code of the device (8000 = No error) |
+| floorId               |   X    |    -     | Assigned floor ID                                               |
+| hasError              |   X    |    -     | Indiciates if the device is in error state                      |
+| lastCommunication     |   X    |    -     | Last communication date/time (MELCloud to device)               |
+| macAddress            |   X    |    -     | MAC address of the device                                       |
+| minTempHeat           |   X    |    -     | Minimal temperature (Heat)                                      |
+| maxTempHeat           |   X    |    -     | Maximal temperature (Heat)                                      |
+| minTempAuto           |   X    |    -     | Minimal temperature (Auto)                                      |
+| maxTempAuto           |   X    |    -     | Maximal temperature (Auto)                                      |
+| nextCommunication     |   X    |    -     | Next communication date/time (MELCloud to device)               |
+| outdoorTemperature    |   X    |    -     | Outdoor temperature                                             |
+| roomTemp              |   X    |    -     | Current room temperature                                        |
+| serialNumber          |   X    |    -     | Serial number of the device                                     |
+
+#### melcloud.X.devices.Y.control
+
+| ID          | lesbar | änderbar | Bemerkung                                                          |
+| ----------- | :----: | :------: | ------------------------------------------------------------------ |
+| timerToggle |   X    |    X     | Switch used to enable (true) or disable (false) the device's timer |

@@ -49,6 +49,7 @@ Nachdem die Adapter-Instanz (X) erfolgreich (=grün) gestartet wurde, werden die
 | canHeat           |   X    |    -     | Fähigkeit zu heizen                                                |
 | canDry            |   X    |    -     | Fähigkeit zu entfeuchten                                           |
 | deviceName        |   X    |    -     | Name des Geräts                                                    |
+| deviceType        |   X    |    -     | Gerätetyp                                                          |
 | deviceOnline      |   X    |    -     | Gibt an, ob das Gerät erreichbar ist                               |
 | errorMessages     |   X    |    -     | Enthält die aktuellen Fehlermeldungen des Geräts (falls vorhanden) |
 | errorCode         |   X    |    -     | Enthält den aktuellen Fehlercode des Geräts (8000 = Kein Fehler)   |
@@ -105,39 +106,39 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 
 #### melcloud.X.devices.Y.info
 
-| ID                         | lesbar | änderbar | Bemerkung                                                                  |
-| -------------------------- | :----: | :------: | -------------------------------------------------------------------------- |
-| buildingId                 |   X    |    -     | Zugeordnete Gebäude-ID                                                     |
-| canCool                    |   X    |    -     | Fähigkeit zu kühlen                                                        |
-| canHeat                    |   X    |    -     | Fähigkeit zu heizen                                                        |
-| condensingTemperature      |   X    |    -     | Kondensationstemperatur                                                    |
-| deviceName                 |   X    |    -     | Name des Geräts                                                            |
-| deviceType                 |   X    |    -     | Gerätetyp (0=Luft-Luft-Wärmepumpe / Klimaanlage, 1=Luft-Wasser-Wärmepumpe) |
-| deviceOnline               |   X    |    -     | Gibt an, ob das Gerät erreichbar ist                                       |
-| errorMessages              |   X    |    -     | Enthält die aktuellen Fehlermeldungen des Geräts (falls vorhanden)         |
-| errorCode                  |   X    |    -     | Enthält den aktuellen Fehlercode des Geräts (8000 = Kein Fehler)           |
-| floorId                    |   X    |    -     | Zugeordnete Etagen-ID                                                      |
-| flowTemperature            |   X    |    -     | Vorlauftemperatur                                                          |
-| flowTemperatureBoiler      |   X    |    -     | Vorlauftemperatur des Boilers                                              |
-| flowTemperatureZone1       |   X    |    -     | Vorlauftemperatur Zone 1                                                   |
-| flowTemperatureZone2       |   X    |    -     | Vorlauftemperatur Zone 2 (falls vorhanden)                                 |
-| hasError                   |   X    |    -     | Gibt an, ob das Gerät einen Fehler aufweist                                |
-| hasZone2                   |   X    |    -     | Gibt an, ob das Gerät einen zweiten Kreislauf hat                          |
-| heatPumpFrequency          |   X    |    -     | Frequenz der Wärmepumpe                                                    |
-| lastCommunication          |   X    |    -     | Zeitstempel der letzten Kommunikation (MELCloud -> Gerät)                  |
-| macAddress                 |   X    |    -     | MAC-Adresse des Geräts                                                     |
-| mixingTankWaterTemperature |   X    |    -     | Temperatur des Mischwassertanks                                            |
-| nextCommunication          |   X    |    -     | Zeitstempel der nächsten Kommunikation (MELCloud -> Gerät)                 |
-| operationState             |   X    |    -     | Aktueller Betriebsmodus des Wärmepumpe                                     |
-| outdoorTemperature         |   X    |    -     | Außentemperatur                                                            |
-| returnTemperature          |   X    |    -     | Rücklauftemperatur                                                         |
-| returnTemperatureBoiler    |   X    |    -     | Rücklauftemperatur des Boilers                                             |
-| returnTemperatureZone1     |   X    |    -     | Rücklauftemperatur Zone 1                                                  |
-| returnTemperatureZone2     |   X    |    -     | Rücklauftemperatur Zone 2 (falls vorhanden)                                |
-| roomTemperatureZone1       |   X    |    -     | Raumtemperatur des ersten Kreislaufs                                       |
-| roomTemperatureZone2       |   X    |    -     | Raumtemperatur des zweiten Kreislaufs (falls vorhanden)                    |
-| serialNumber               |   X    |    -     | Seriennummer des Geräts                                                    |
-| tankWaterTemperature       |   X    |    -     | Temperatur des Wasserspeichers                                             |
+| ID                         | lesbar | änderbar | Bemerkung                                                          |
+| -------------------------- | :----: | :------: | ------------------------------------------------------------------ |
+| buildingId                 |   X    |    -     | Zugeordnete Gebäude-ID                                             |
+| canCool                    |   X    |    -     | Fähigkeit zu kühlen                                                |
+| canHeat                    |   X    |    -     | Fähigkeit zu heizen                                                |
+| condensingTemperature      |   X    |    -     | Kondensationstemperatur                                            |
+| deviceName                 |   X    |    -     | Name des Geräts                                                    |
+| deviceType                 |   X    |    -     | Gerätetyp                                                          |
+| deviceOnline               |   X    |    -     | Gibt an, ob das Gerät erreichbar ist                               |
+| errorMessages              |   X    |    -     | Enthält die aktuellen Fehlermeldungen des Geräts (falls vorhanden) |
+| errorCode                  |   X    |    -     | Enthält den aktuellen Fehlercode des Geräts (8000 = Kein Fehler)   |
+| floorId                    |   X    |    -     | Zugeordnete Etagen-ID                                              |
+| flowTemperature            |   X    |    -     | Vorlauftemperatur                                                  |
+| flowTemperatureBoiler      |   X    |    -     | Vorlauftemperatur des Boilers                                      |
+| flowTemperatureZone1       |   X    |    -     | Vorlauftemperatur Zone 1                                           |
+| flowTemperatureZone2       |   X    |    -     | Vorlauftemperatur Zone 2 (falls vorhanden)                         |
+| hasError                   |   X    |    -     | Gibt an, ob das Gerät einen Fehler aufweist                        |
+| hasZone2                   |   X    |    -     | Gibt an, ob das Gerät einen zweiten Kreislauf hat                  |
+| heatPumpFrequency          |   X    |    -     | Frequenz der Wärmepumpe                                            |
+| lastCommunication          |   X    |    -     | Zeitstempel der letzten Kommunikation (MELCloud -> Gerät)          |
+| macAddress                 |   X    |    -     | MAC-Adresse des Geräts                                             |
+| mixingTankWaterTemperature |   X    |    -     | Temperatur des Mischwassertanks                                    |
+| nextCommunication          |   X    |    -     | Zeitstempel der nächsten Kommunikation (MELCloud -> Gerät)         |
+| operationState             |   X    |    -     | Aktueller Betriebsmodus des Wärmepumpe                             |
+| outdoorTemperature         |   X    |    -     | Außentemperatur                                                    |
+| returnTemperature          |   X    |    -     | Rücklauftemperatur                                                 |
+| returnTemperatureBoiler    |   X    |    -     | Rücklauftemperatur des Boilers                                     |
+| returnTemperatureZone1     |   X    |    -     | Rücklauftemperatur Zone 1                                          |
+| returnTemperatureZone2     |   X    |    -     | Rücklauftemperatur Zone 2 (falls vorhanden)                        |
+| roomTemperatureZone1       |   X    |    -     | Raumtemperatur des ersten Kreislaufs                               |
+| roomTemperatureZone2       |   X    |    -     | Raumtemperatur des zweiten Kreislaufs (falls vorhanden)            |
+| serialNumber               |   X    |    -     | Seriennummer des Geräts                                            |
+| tankWaterTemperature       |   X    |    -     | Temperatur des Wasserspeichers                                     |
 
 #### melcloud.X.devices.Y.control
 
@@ -191,3 +192,38 @@ Hier werden die aggregierten Verbrauchsdaten für den angeforderten Berichtszeit
 | totalPowerConsumption*Betriebsmodus* |   X    |    -     | Aggregierter Gesamtverbrauch im Modus _Betriebsmodus_ (in kWh) - wird für jeden Betriebsmodus angelegt |
 | totalPowerProduction                 |   X    |    -     | Aggregierte Gesamterzeugung aller Modi (in kWh)                                                        |
 | totalPowerProduction*Betriebsmodus*  |   X    |    -     | Aggregierte Gesamtverzeugung im Modus _Betriebsmodus_ (in kWh) - wird für jeden Betriebsmodus angelegt |
+
+### Lüftungsanlagen
+
+#### melcloud.X.devices.Y.info
+
+| ID                    | lesbar | änderbar | Bemerkung                                                          |
+| --------------------- | :----: | :------: | ------------------------------------------------------------------ |
+| actualExhaustFanSpeed |   X    |    -     | Tatsächliche Lüfterstufe (Auslass)                                 |
+| actualSupplyFanSpeed  |   X    |    -     | Tatsächliche Lüfterstufe (Einlass)                                 |
+| buildingId            |   X    |    -     | Zugeordnete Gebäude-ID                                             |
+| canCool               |   X    |    -     | Fähigkeit zu kühlen                                                |
+| canHeat               |   X    |    -     | Fähigkeit zu heizen                                                |
+| deviceName            |   X    |    -     | Name des Geräts                                                    |
+| deviceType            |   X    |    -     | Gerätetyp                                                          |
+| deviceOnline          |   X    |    -     | Gibt an, ob das Gerät erreichbar ist                               |
+| errorMessages         |   X    |    -     | Enthält die aktuellen Fehlermeldungen des Geräts (falls vorhanden) |
+| errorCode             |   X    |    -     | Enthält den aktuellen Fehlercode des Geräts (8000 = Kein Fehler)   |
+| floorId               |   X    |    -     | Zugeordnete Etagen-ID                                              |
+| hasError              |   X    |    -     | Gibt an, ob das Gerät einen Fehler aufweist                        |
+| lastCommunication     |   X    |    -     | Zeitstempel der letzten Kommunikation (MELCloud -> Gerät)          |
+| macAddress            |   X    |    -     | MAC-Adresse des Geräts                                             |
+| minTempHeat           |   X    |    -     | Minimale Temperatur (Heizen)                                       |
+| maxTempHeat           |   X    |    -     | Maximale Temperatur (Heizen)                                       |
+| minTempAuto           |   X    |    -     | Minimale Temperatur (Automatik)                                    |
+| maxTempAuto           |   X    |    -     | Maximale Temperatur (Automatik)                                    |
+| nextCommunication     |   X    |    -     | Zeitstempel der nächsten Kommunikation (MELCloud -> Gerät)         |
+| outdoorTemperature    |   X    |    -     | Außentemperatur                                                    |
+| roomTemp              |   X    |    -     | Raumtemperatur                                                     |
+| serialNumber          |   X    |    -     | Seriennummer des Geräts                                            |
+
+#### melcloud.X.devices.Y.control
+
+| ID          | lesbar | änderbar | Bemerkung                                                                   |
+| ----------- | :----: | :------: | --------------------------------------------------------------------------- |
+| timerToggle |   X    |    X     | Schalter, um den Timer für das Gerät ein- (true) bzw. auszuschalten (false) |
