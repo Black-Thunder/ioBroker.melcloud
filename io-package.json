@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "3.0.0",
+    "version": "3.0.1",
     "news": {
+      "3.0.1": {
+        "en": "Setting a state value is now more tolerant of strings.\nFixed a bug that caused subsequent commands to fail after a failed state change.",
+        "de": "Die Einstellung eines Zustandswerts ist nun toleranter von Strings.\nEs wurde ein Fehler behoben, der nach einem fehlgeschlagenen Zustandswechsel die folgenden Befehle verfehlt hat.",
+        "ru": "Установление государственной ценности сейчас более терпимо к струнам.\nИсправлена ошибка, которая привела к отказу последующих команд после неудавшегося изменения состояния.",
+        "pt": "Definir um valor de estado agora é mais tolerante com as cordas.\nCorrigido um erro que fez com que os comandos subsequentes falhassem após uma alteração de estado falhada.",
+        "nl": "Een statuswaarde instellen is nu toleranter voor strings.\nEen bug die de volgende commando's deed falen na een mislukte statuswijziging.",
+        "fr": "Définir une valeur d'état est maintenant plus tolérant des cordes.\nCorrection d'un bug qui a causé l'échec des commandes ultérieures après un changement d'état échoué.",
+        "it": "Impostare un valore di stato è ora più tollerante di stringhe.\nRisolto un bug che ha causato i comandi successivi a fallire dopo un cambiamento di stato fallito.",
+        "es": "El establecimiento de un valor estatal es ahora más tolerante a las cuerdas.\nArregló un fallo que causó que los comandos posteriores fallaran después de un cambio de estado fallido.",
+        "pl": "Ustawienie wartości państwa jest teraz bardziej tolerancyjne dla strun.\nNaprawiono błąd, który spowodował niepowodzenie kolejnych poleceń po nieudanej zmianie stanu.",
+        "uk": "Налаштування державного значення тепер більше толерантності до рядків.\nВиправлено помилку, що викликало наступні команди, щоб не вдалося після невдалої зміни стану.",
+        "zh-cn": "设定国家值现在对字符串更加宽容.\n修复一个错误, 导致在状态改变失败后后续命令失败 ."
+      },
       "3.0.0": {
         "en": "Adapter requires node.js >= 20, admin >= 7.4.10 and js-controller >= 6 now\nExperimental support for ERV devices was added\nDependencies were updated and code refactorings applied",
         "de": "Adapter benötigt node.js >= 20, admin >= 7.4.10 und js-controller >== 6 jetzt\nExperimentelle Unterstützung für ERV-Geräte wurde hinzugefügt\nAbhängigkeiten wurden aktualisiert und Code-Refactorings angewendet",
@@ -80,19 +93,6 @@
         "pl": "Zaktualizowano uzależnienia",
         "uk": "Залежність оновлено",
         "zh-cn": "附属关系得到更新"
-      },
-      "2.0.0": {
-        "en": "Adapter requires node.js >= 18, admin >= 6 and js-controller >= 5 now",
-        "de": "Adapter benötigt node.js >= 18, admin >= 6 und js-Controller >= 5 jetzt",
-        "ru": "Адаптер требует node.js >= 18, admin >= 6 и js-контроллер >= 5 сейчас",
-        "pt": "Adapter requer node.js >= 18, admin >= 6 e js-controller >= 5 agora",
-        "nl": "Adapter vereist node.js < 18, admin <= 6 en js-controller Nu 5",
-        "fr": "Adaptateur nécessite node.js >= 18, admin >= 6 et js-contrôleur >= 5 maintenant",
-        "it": "Adattatore richiede node.js >= 18, admin >= 6 e js-controller 5 ora",
-        "es": "Adaptador requiere node.js >= 18, admin 6 y js-controller 5 ahora",
-        "pl": "Adapter wymaga node.js > = 18, admin > = 6 i kontroler js- > = 5 teraz",
-        "uk": "Адаптер вимагає node.js >= 18, admin >= 6 і js-controller >= 5 тепер",
-        "zh-cn": "适配器需要节点.js QQ 18, admin QQ 6和js控制器 QQ 现在5号"
       }
     },
     "titleLang": {
