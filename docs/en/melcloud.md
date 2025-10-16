@@ -205,7 +205,6 @@ Here are the actual power consumption values for the selected period of time sto
 | ----------- | :----: | :------: | ------------------------------------------------------------------ |
 | timerToggle |   X    |    X     | Switch used to enable (true) or disable (false) the device's timer |
 
-
 ### melcloud.X.reports
 
 Similiar to the device-specific reports here you can retrieve aggregated reports for all supported devices. Before retrieving the power consumption reports you again have to set the start ("startDate") and end date ("endDate") correctly. Please pay attention to the correct date format YYYY-MM-DD! Once these are set trigger the state "getCumulatedPowerConsumptionReport".

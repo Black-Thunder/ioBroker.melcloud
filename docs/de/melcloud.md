@@ -205,7 +205,6 @@ Hier werden die Verbrauchsdaten für den angeforderten Berichtszeitraum abgelegt
 | ----------- | :----: | :------: | --------------------------------------------------------------------------- |
 | timerToggle |   X    |    X     | Schalter, um den Timer für das Gerät ein- (true) bzw. auszuschalten (false) |
 
-
 ### melcloud.X.reports
 
 Analog zu den gerätespezifischen Berichten können hier aggregierte Berichte über alle unterstützen Geräte abgerungen werden. Um Berichte abrufen zu können, müssen zunächst ebenso Start- ("startDate") und Endzeitpunkt ("endDate") korrekt festgelegt werden. Dabei ist das Format JJJJ-MM-TT zu beachten! Zur eigentlichen Durchführung des Abrufs muss der Datenpunkt "getCumulatedPowerConsumptionReport" getriggert werden.
