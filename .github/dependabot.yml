@@ -1,19 +1,21 @@
+# Dependabot will run on day 12 of each month at 02:13 (Europe/Berlin timezone)
 version: 2
 updates:
     # Maintain dependencies for GitHub Actions
-    - package-ecosystem: github-actions
+    - package-ecosystem: "github-actions"
       directory: "/"
       schedule:
-          interval: daily
-          time: "04:00"
-          timezone: Europe/Berlin
-    - package-ecosystem: npm
+          interval: "cron"
+          timezone: "Europe/Berlin"
+          cronjob: "13 2 12 * *"
+      open-pull-requests-limit: 15
+    - package-ecosystem: "npm"
       directory: "/"
       schedule:
-          interval: daily
-          time: "04:00"
-          timezone: Europe/Berlin
-      open-pull-requests-limit: 20
+          interval: "cron"
+          timezone: "Europe/Berlin"
+          cronjob: "13 2 12 * *"
+      open-pull-requests-limit: 15
       assignees:
-          - Black-Thunder
-      versioning-strategy: increase
+          - "Black-Thunder"
+      versioning-strategy: "increase"
