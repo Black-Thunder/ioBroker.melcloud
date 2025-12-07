@@ -34,7 +34,7 @@ Discussion:
 	### __WORK IN PROGRESS__
 -->
 
-### **WORK IN PROGRESS**
+### 3.0.2 (2025-12-07)
 
 - (Black-Thunder) Dependencies were updated
 

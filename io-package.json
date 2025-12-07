@@ -1,8 +1,21 @@
 {
 	"common": {
 		"name": "melcloud",
-		"version": "3.0.1",
+		"version": "3.0.2",
 		"news": {
+			"3.0.2": {
+				"en": "Dependencies were updated",
+				"de": "Abhängigkeiten wurden aktualisiert",
+				"ru": "Зависимости обновлялись",
+				"pt": "As dependências foram atualizadas",
+				"nl": "Afhankelijkheden werden bijgewerkt",
+				"fr": "Mise à jour des dépendances",
+				"it": "Le dipendenze sono state aggiornate",
+				"es": "Se actualizaron las dependencias",
+				"pl": "Zaktualizowano uzależnienia",
+				"uk": "Залежність оновлено",
+				"zh-cn": "附属关系得到更新"
+			},
 			"3.0.1": {
 				"en": "Setting a state value is now more tolerant of strings.\nFixed a bug that caused subsequent commands to fail after a failed state change.",
 				"de": "Die Einstellung eines Zustandswerts ist nun toleranter von Strings.\nEs wurde ein Fehler behoben, der nach einem fehlgeschlagenen Zustandswechsel die folgenden Befehle verfehlt hat.",
@@ -69,19 +82,6 @@
 				"zh-cn": "添加了设置对话框的响应设计"
 			},
 			"2.0.2": {
-				"en": "Dependencies were updated",
-				"de": "Abhängigkeiten wurden aktualisiert",
-				"ru": "Были обновлены зависимости",
-				"pt": "As dependências foram atualizadas",
-				"nl": "Afhankelijkheden werden bijgewerkt",
-				"fr": "Mise à jour des dépendances",
-				"it": "Le dipendenze sono state aggiornate",
-				"es": "Se actualizaron las dependencias",
-				"pl": "Zaktualizowano uzależnienia",
-				"uk": "Залежність оновлено",
-				"zh-cn": "附属关系得到更新"
-			},
-			"2.0.1": {
 				"en": "Dependencies were updated",
 				"de": "Abhängigkeiten wurden aktualisiert",
 				"ru": "Были обновлены зависимости",
