@@ -621,6 +621,10 @@ class Melcloud extends utils.Adapter {
 		return this.mapDeviceOperationMode(value, commonDefines.AtwDeviceOperationModes, "ATW");
 	}
 
+	mapAtwDeviceZoneOperationMode(value) {
+		return this.mapDeviceOperationMode(value, commonDefines.AtwDeviceZoneOperationModes, "ATW zone");
+	}
+
 	mapERVDeviceOperationMode(value) {
 		return this.mapDeviceOperationMode(value, commonDefines.ErvDeviceOperationModes, "ERV");
 	}
