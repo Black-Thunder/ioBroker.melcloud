@@ -1,8 +1,21 @@
 {
   "common": {
     "name": "melcloud",
-    "version": "3.0.3",
+    "version": "3.0.4-alpha.0",
     "news": {
+      "3.0.4-alpha.0": {
+        "en": "Retry and queue handling was added when device information is missing",
+        "de": "Wiederholungs- und Wartenschlangenlogik wurde hinzugefügt, wenn Geräteinformationen fehlen",
+        "ru": "Обработка и обработка очередей были добавлены, когда информация об устройстве отсутствует",
+        "pt": "O tratamento de repetição e fila foi adicionado quando faltam informações do dispositivo",
+        "nl": "Herhaling en wachtrijafhandeling is toegevoegd wanneer apparaatinformatie ontbreekt",
+        "fr": "La manipulation de réessayer et de file d'attente a été ajoutée lorsque l'information de l'appareil est manquante",
+        "it": "È stata aggiunta la gestione della coda e del riparo quando manca l'informazione del dispositivo",
+        "es": "El manejo de entrada y cola se agregó cuando falta información del dispositivo",
+        "pl": "W przypadku braku informacji o urządzeniu dodano obsługę bieżni i kolejki",
+        "uk": "У разі відсутності інформації про пристрій",
+        "zh-cn": "设备信息缺失时添加了重试和队列处理"
+      },
       "3.0.3": {
         "en": "Setting ATW device zone operation modes was fixed\nDependencies were updated",
         "de": "Einstellung der Betriebsarten der ATW-Gerätezone wurde behoben\nAbhängigkeiten wurden aktualisiert",
@@ -69,19 +82,6 @@
         "zh-cn": "ATW设备的报告数据已固定"
       },
       "2.0.4": {
-        "en": "Responsive design for settings dialog was added",
-        "de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
-        "ru": "Добавлен ответный дизайн для диалога настроек",
-        "pt": "O projeto responsivo para configurações foi adicionado diálogo",
-        "nl": "Responsief ontwerp voor instellingendialoog is toegevoegd",
-        "fr": "La boîte de dialogue des paramètres a été ajoutée",
-        "it": "È stato aggiunto il design responsabile per la finestra di dialogo impostazioni",
-        "es": "Diseño responsable para el diálogo de configuración fue añadido",
-        "pl": "Dodano okno dialogowe odpowiadającego projektu ustawień",
-        "uk": "Додано адаптивний дизайн для діалогу налаштувань",
-        "zh-cn": "添加了设置对话框的响应设计"
-      },
-      "2.0.3": {
         "en": "Responsive design for settings dialog was added",
         "de": "Responsive Design für Einstellungen Dialog wurde hinzugefügt",
         "ru": "Добавлен ответный дизайн для диалога настроек",
