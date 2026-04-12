@@ -1,4 +1,5 @@
 # Older changes
+
 ## 2.0.5 (2024-12-11)
 
 - (Black-Thunder) Report data for ATW devices was fixed
