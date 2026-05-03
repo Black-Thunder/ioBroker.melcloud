@@ -61,6 +61,8 @@ Discussion:
 - (Black-Thunder) Experimental support for ERV devices was added
 - (Black-Thunder) Dependencies were updated and code refactorings applied
 
+[Older changelogs can be found there](CHANGELOG_OLD.md)
+
 ## License
 
 MIT License
