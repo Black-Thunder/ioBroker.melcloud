@@ -1,4 +1,10 @@
 # Older changes
+## 3.0.0 (2025-07-29)
+
+- (Black-Thunder) Adapter requires node.js >= 20, admin >= 7.4.10 and js-controller >= 6 now
+- (Black-Thunder) Experimental support for ERV devices was added
+- (Black-Thunder) Dependencies were updated and code refactorings applied
+
 
 ## 2.0.5 (2024-12-11)
 

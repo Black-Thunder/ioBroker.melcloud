@@ -33,8 +33,7 @@ Discussion:
 	Placeholder for the next version (at the beginning of the line):
 	### __WORK IN PROGRESS__
 -->
-
-### **WORK IN PROGRESS**
+### 4.0.0 (2026-08-26)
 
 - (Black-Thunder) Adapter requires node.js >= 22, js-controller >=7.2.2 and admin >=7.9.0 now
 - (Black-Thunder) Support for the central ioBroker credentials store was added, while legacy username/password configuration remains supported for backwards compatibility
@@ -56,12 +55,6 @@ Discussion:
 
 - (Black-Thunder) Setting a state value is now more tolerant of strings.
 - (Black-Thunder) Fixed a bug that caused subsequent commands to fail after a failed state change.
-
-### 3.0.0 (2025-07-29)
-
-- (Black-Thunder) Adapter requires node.js >= 20, admin >= 7.4.10 and js-controller >= 6 now
-- (Black-Thunder) Experimental support for ERV devices was added
-- (Black-Thunder) Dependencies were updated and code refactorings applied
 
 [Older changelogs can be found there](CHANGELOG_OLD.md)
 
