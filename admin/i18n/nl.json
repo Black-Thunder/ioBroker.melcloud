@@ -8,8 +8,10 @@
 	"Enter your desired polling interval (in minutes) here to query data from MELCloud": "Voer hier uw gewenste polling-interval (in minuten) in om gegevens uit MELCloud op te vragen",
 	"Ignore SSL errors": "Negeer SSL-fouten",
 	"Login details": "Inloggegevens",
+	"MELCloud credentials": "MELCloud-inloggegevens",
 	"Options": "Opties",
 	"Password": "Wachtwoord",
 	"Polling interval": "Polling-interval",
-	"Select language": "Selecteer taal"
+	"Select language": "Selecteer taal",
+	"Select or create credentials for your MELCloud account": "Selecteer of maak inloggegevens voor uw MELCloud-account"
 }

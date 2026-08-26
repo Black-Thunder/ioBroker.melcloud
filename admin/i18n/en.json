@@ -11,5 +11,7 @@
 	"Options": "Options",
 	"Password": "Password",
 	"Polling interval": "Polling interval",
-	"Select language": "Select language"
+	"Select language": "Select language",
+	"MELCloud credentials": "MELCloud credentials",
+	"Select or create credentials for your MELCloud account": "Select or create credentials for your MELCloud account"
 }

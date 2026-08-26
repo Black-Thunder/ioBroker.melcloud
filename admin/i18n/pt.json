@@ -8,8 +8,10 @@
 	"Enter your desired polling interval (in minutes) here to query data from MELCloud": "Digite o intervalo de pesquisa desejado (em minutos) aqui para consultar dados do MELCloud",
 	"Ignore SSL errors": "Ignorar erros de SSL",
 	"Login details": "Detalhes de login",
+	"MELCloud credentials": "Credenciais MELCloud",
 	"Options": "Opções",
 	"Password": "Senha",
 	"Polling interval": "Intervalo de pesquisa",
-	"Select language": "Selecione o idioma"
+	"Select language": "Selecione o idioma",
+	"Select or create credentials for your MELCloud account": "Selecione ou crie credenciais para a sua conta MELCloud"
 }
