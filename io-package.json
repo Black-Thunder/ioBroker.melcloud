@@ -108,8 +108,15 @@
 			"uk": "Цей адаптер інтегрує Mitsubishi Electric devices через MELCloud в ioBroker.",
 			"zh-cn": "这个适配器通过MELCloud将三菱电器设备集成到ioBroker中."
 		},
-		"authors": ["Black-Thunder <glwars@aol.de>"],
-		"keywords": ["home automation", "MELCloud", "Mitsubishi", "airconditioning"],
+		"authors": [
+			"Black-Thunder <glwars@aol.de>"
+		],
+		"keywords": [
+			"home automation",
+			"MELCloud",
+			"Mitsubishi",
+			"airconditioning"
+		],
 		"licenseInformation": {
 			"license": "MIT",
 			"type": "free"
@@ -130,19 +137,24 @@
 		},
 		"dependencies": [
 			{
-				"js-controller": ">=6.0.11"
+				"js-controller": ">=7.2.2"
 			}
 		],
 		"globalDependencies": [
 			{
-				"admin": ">=7.6.20"
+				"admin": ">=7.9.0"
 			}
 		],
 		"tier": 2
 	},
-	"encryptedNative": ["melCloudPassword"],
-	"protectedNative": ["melCloudPassword"],
+	"encryptedNative": [
+		"melCloudPassword"
+	],
+	"protectedNative": [
+		"melCloudPassword"
+	],
 	"native": {
+		"melCloudCredentialId": "",
 		"melCloudEmail": "",
 		"melCloudPassword": "",
 		"melCloudLanguage": 4,

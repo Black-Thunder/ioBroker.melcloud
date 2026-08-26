@@ -1,9 +1,5 @@
 "use strict";
 
-/*
- * Created with @iobroker/create-adapter v1.24.1
- */
-
 // The adapter-core module gives you access to the core ioBroker functions
 const utils = require("@iobroker/adapter-core");
 
@@ -34,14 +30,6 @@ class Melcloud extends utils.Adapter {
 	async checkSettings() {
 		this.log.debug("Checking adapter settings...");
 
-		if (this.config.melCloudEmail == null || this.config.melCloudEmail == "") {
-			throw new Error("MELCloud username empty! Check settings.");
-		}
-
-		if (this.config.melCloudPassword == null || this.config.melCloudPassword == "") {
-			throw new Error("MELCloud password empty! Check settings.");
-		}
-
 		// Minimum pollingInterval = 5 to prevent rate limiting
 		if (this.config.pollingInterval < 5) {
 			this.config.pollingInterval = 5;
@@ -53,6 +41,96 @@ class Melcloud extends utils.Adapter {
 		if (this.config.ignoreSslErrors) {
 			this.log.info("SSL errors are ignored when communicating with the cloud. This is potentially insecure!");
 		}
+	}
+
+	/**
+	 * Resolves the MELCloud login credentials.
+	 *
+	 * Credentials from the central credential store are preferred.
+	 * Legacy adapter configuration is used as fallback.
+	 *
+	 * @returns {Promise<{login: string, password: string, managed: boolean}>}
+	 */
+	async resolveCredentials() {
+		if (this.config.melCloudCredentialId) {
+			if (!utils.Credentials?.getCredentials) {
+				throw new Error(
+					"The credentials manager is not available. Please update js-controller to 7.2.2 or higher.",
+				);
+			}
+
+			const credential = await utils.Credentials.getCredentials(this, this.config.melCloudCredentialId);
+
+			if (utils.Credentials.getCredentialForm(credential.values) !== "login") {
+				throw new Error(`Credential "${this.config.melCloudCredentialId}" must contain login and password.`);
+			}
+
+			if (!credential.values.login || !credential.values.password) {
+				throw new Error(`Credential "${this.config.melCloudCredentialId}" is incomplete.`);
+			}
+
+			return {
+				login: credential.values.login.toString(),
+				password: credential.values.password.toString(),
+				managed: true,
+			};
+		}
+
+		if (!this.config.melCloudEmail) {
+			throw new Error("MELCloud username empty! Check settings.");
+		}
+
+		if (!this.config.melCloudPassword) {
+			throw new Error("MELCloud password empty! Check settings.");
+		}
+
+		return {
+			login: this.config.melCloudEmail,
+			password: this.config.melCloudPassword,
+			managed: false,
+		};
+	}
+
+	async subscribeToCredentialChanges() {
+		this.log.debug(`Subscribing to credential changes: ${this.config.melCloudCredentialId}`);
+
+		this.credentialUnsubscribe = await utils.Credentials.subscribeCredentials(
+			this,
+			this.config.melCloudCredentialId,
+			async (id, credential) => {
+				if (!credential) {
+					this.log.warn(`Credential "${id}" was deleted. Connection to MELCloud will be stopped.`);
+
+					await this.setAdapterConnectionState(false);
+
+					if (CloudPlatform != null) {
+						CloudPlatform.stopPolling();
+						CloudPlatform.stopContextKeyInvalidation();
+					}
+
+					return;
+				}
+
+				if (utils.Credentials.getCredentialForm(credential.values) !== "login") {
+					this.log.error(`Credential "${id}" must contain login and password.`);
+					return;
+				}
+
+				this.log.info(`Credential "${id}" changed. Reconnecting to MELCloud...`);
+
+				if (CloudPlatform) {
+					CloudPlatform.stopPolling();
+					CloudPlatform.stopContextKeyInvalidation();
+				}
+
+				await this.connectToCloud({
+					login: credential.values.login.toString(),
+					password: credential.values.password.toString(),
+				});
+			},
+		);
+
+		this.log.debug(`Subscribed to credential changes: ${this.config.melCloudCredentialId}`);
 	}
 
 	async setAdapterConnectionState(isConnected) {
@@ -333,27 +411,39 @@ class Melcloud extends utils.Adapter {
 	 * Is called when databases are connected and adapter received configuration.
 	 */
 	async onReady() {
-		this.initObjects()
-			.then(() =>
-				this.checkSettings().then(() =>
-					this.saveKnownDeviceIDs().then(() => {
-						this.connectToCloud();
-						this.subscribeStates("devices.*.control.*"); // subscribe to states changes under "devices.X.control."
-						this.subscribeStates("devices.*.reports.getPowerConsumptionReport"); // subscribe to state "devices.X.reports.getPowerConsumptionReport"
-						this.subscribeStates("reports.getCumulatedPowerConsumptionReport"); // subscribe to state "reports.getCumulatedPowerConsumptionReport"
-					}),
-				),
-			)
-			.catch(err => this.log.error(err));
+		try {
+			await this.initObjects();
+			await this.checkSettings();
+
+			const credentials = await this.resolveCredentials();
+
+			await this.saveKnownDeviceIDs();
+
+			await this.connectToCloud(credentials);
+
+			this.subscribeStates("devices.*.control.*");
+			this.subscribeStates("devices.*.reports.getPowerConsumptionReport");
+			this.subscribeStates("reports.getCumulatedPowerConsumptionReport");
+
+			if (credentials.managed) {
+				await this.subscribeToCredentialChanges();
+			}
+		} catch (error) {
+			this.log.error(error instanceof Error ? error.message : String(error));
+		}
 	}
 
-	async connectToCloud() {
+	/**
+	 * @param {{login: string, password: string}} credentials
+	 */
+	async connectToCloud(credentials) {
 		this.log.info(
-			`Connecting initially to MELCloud and retrieving device data. Polling is ${this.config.enablePolling ? `enabled (interval: ${this.config.pollingInterval} minutes)` : "disabled"}.`,
+			`Connecting initially to MELCloud and retrieving device data. Polling is ${
+				this.config.enablePolling ? `enabled (interval: ${this.config.pollingInterval} minutes)` : "disabled"
+			}.`,
 		);
 
-		// Connect to cloud and retrieve/update registered devices initially
-		CloudPlatform = new cloudPlatform.MelCloudPlatform(this);
+		CloudPlatform = new cloudPlatform.MelCloudPlatform(this, credentials);
 
 		if (this.config.enablePolling) {
 			CloudPlatform.GetContextKey(
@@ -369,18 +459,26 @@ class Melcloud extends utils.Adapter {
 	 * Is called when adapter shuts down - callback has to be called under any circumstances!
 	 * @param {() => void} callback
 	 */
-	onUnload(callback) {
+	async onUnload(callback) {
 		try {
-			this.setAdapterConnectionState(false);
+			await this.setAdapterConnectionState(false);
+
 			this.deviceObjects.length = 0;
+
+			if (this.credentialUnsubscribe) {
+				await this.credentialUnsubscribe();
+				this.credentialUnsubscribe = null;
+			}
+
 			if (CloudPlatform != null) {
 				CloudPlatform.stopPolling();
 				CloudPlatform.stopContextKeyInvalidation();
 			}
 
 			this.log.debug("onUnload(): Cleaned everything up...");
-			callback();
-		} catch {
+		} catch (error) {
+			this.log.error(`Error during cleanup: ${error instanceof Error ? error.message : String(error)}`);
+		} finally {
 			callback();
 		}
 	}

@@ -9,11 +9,25 @@
 			"type": "panel",
 			"label": "Login details",
 			"items": {
+				"melCloudCredentialId": {
+					"type": "credential",
+					"credentialType": "cloud",
+					"label": "MELCloud credentials",
+					"tooltip": "Select or create credentials for your MELCloud account",
+					"disableCreation": false,
+					"newLine": true,
+					"xs": 12,
+					"sm": 12,
+					"md": 6,
+					"lg": 4,
+					"xl": 4
+				},
 				"melCloudEmail": {
 					"type": "text",
 					"label": "Email address",
 					"newLine": true,
 					"tooltip": "Enter your MELCloud email address",
+					"hidden": "!!data.melCloudCredentialId",
 					"xs": 12,
 					"sm": 12,
 					"md": 6,
@@ -25,6 +39,7 @@
 					"label": "Password",
 					"newLine": true,
 					"tooltip": "Enter your MELCloud password",
+					"hidden": "!!data.melCloudCredentialId",
 					"visible": true,
 					"xs": 12,
 					"sm": 12,

@@ -8,8 +8,10 @@
 	"Enter your desired polling interval (in minutes) here to query data from MELCloud": "Введите желаемый интервал опроса (в минутах), чтобы запросить данные из MELCloud",
 	"Ignore SSL errors": "Игнорировать ошибки SSL",
 	"Login details": "Данные для входа",
+	"MELCloud credentials": "Учетные данные MELCloud",
 	"Options": "Параметры",
 	"Password": "пароль",
 	"Polling interval": "Интервал опроса",
-	"Select language": "Выберите язык"
+	"Select language": "Выберите язык",
+	"Select or create credentials for your MELCloud account": "Выберите или создайте учетные данные для своей учетной записи MELCloud."
 }

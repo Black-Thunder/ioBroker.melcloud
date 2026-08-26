@@ -36,7 +36,8 @@ Discussion:
 
 ### **WORK IN PROGRESS**
 
-- (copilot) Adapter requires node.js >= 22 now
+- (Black-Thunder) Adapter requires node.js >= 22, js-controller >=7.2.2 and admin >=7.9.0 now
+- (Black-Thunder) Support for the central ioBroker credentials store was added, while legacy username/password configuration remains supported for backwards compatibility
 
 ### 3.0.4 (2026-04-10)
 
